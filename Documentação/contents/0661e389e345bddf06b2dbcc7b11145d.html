@@ -259,19 +259,6 @@
             <td><span class='label label-info'>false</span></td>
           </tr>
           
-          <tr>
-            <td><a href="23da96e2d618c6b777b137d041a98384.html">IdFuncionário</a></td>
-            <td>INTEGER</td>
-            <td><span class='label label-info'>false</span></td>
-            <td><span class='label label-info'>true</span></td>
-            <td>
-              
-              <span class='label label-info'>null</span>
-            </td>
-            <td><span class='label label-info'>false</span></td>
-            <td><span class='label label-info'>false</span></td>
-          </tr>
-          
         </table>                
       </section>
       
@@ -292,26 +279,10 @@
           
           
           <tr>
-            <td><a href='69d121b88523c4fac0f6bd580fb03027.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Endereco</a></td>
-            <td>1</td>
-            <td></td>
-            <td><a href='1767ffa59caac74d89828daa2c6fce59.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Endereco—Venda)</a></td>
-          </tr>
-          
-          
-          <tr>
-            <td><a href='47b5fd3147732953ed5e12bf10984b3f.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Cartão</a></td>
-            <td>1</td>
-            <td></td>
-            <td><a href='b8f84fd42be022f768110356abc9e1ac.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Cartão—Venda)</a></td>
-          </tr>
-          
-          
-          <tr>
             <td><a href='b3e73c8b9332ecdb63ab3ee7159bc5cd.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Cliente</a></td>
             <td>1</td>
             <td></td>
-            <td><a href='1111d5f24b1a01679020aab0b0f98824.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Cliente—Venda)</a></td>
+            <td><a href='1111d5f24b1a01679020aab0b0f98824.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Realiza (Cliente—Venda)</a></td>
           </tr>
           
           
@@ -319,7 +290,7 @@
             <td><a href='1c6f4ff599cb72ee094f0a874eb55319.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>ItemVenda</a></td>
             <td>1..*</td>
             <td></td>
-            <td><a href='ba5fc1e1d93feeefb6d824e5eaf87e97.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Venda—ItemVenda)</a></td>
+            <td><a href='ba5fc1e1d93feeefb6d824e5eaf87e97.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Contém (Venda—ItemVenda)</a></td>
           </tr>
           
           
@@ -328,6 +299,22 @@
             <td>1</td>
             <td></td>
             <td><a href='662f39d6429f1a927309886efe5757df.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Funcionario—Venda)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='47b5fd3147732953ed5e12bf10984b3f.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Cartão</a></td>
+            <td>1</td>
+            <td></td>
+            <td><a href='b8f84fd42be022f768110356abc9e1ac.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Paga (Cartão—Venda)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='69d121b88523c4fac0f6bd580fb03027.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Endereco</a></td>
+            <td>1</td>
+            <td></td>
+            <td><a href='1767ffa59caac74d89828daa2c6fce59.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Entrega (Endereco—Venda)</a></td>
           </tr>
           
         </table>                
@@ -394,15 +381,15 @@
     <h3>Relationships</h3>
     <ul class="nav nav-list">
         
-        <li><a href='1767ffa59caac74d89828daa2c6fce59.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Endereco—Venda)</a></li>
+        <li><a href='1111d5f24b1a01679020aab0b0f98824.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Realiza (Cliente—Venda)</a></li>
         
-        <li><a href='b8f84fd42be022f768110356abc9e1ac.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Cartão—Venda)</a></li>
-        
-        <li><a href='1111d5f24b1a01679020aab0b0f98824.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Cliente—Venda)</a></li>
-        
-        <li><a href='ba5fc1e1d93feeefb6d824e5eaf87e97.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Venda—ItemVenda)</a></li>
+        <li><a href='ba5fc1e1d93feeefb6d824e5eaf87e97.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Contém (Venda—ItemVenda)</a></li>
         
         <li><a href='662f39d6429f1a927309886efe5757df.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Funcionario—Venda)</a></li>
+        
+        <li><a href='b8f84fd42be022f768110356abc9e1ac.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Paga (Cartão—Venda)</a></li>
+        
+        <li><a href='1767ffa59caac74d89828daa2c6fce59.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Entrega (Endereco—Venda)</a></li>
         
     </ul>
 </section>
@@ -417,7 +404,7 @@
     <h3>Owned Elements</h3>
     <ul class="nav nav-list">
         
-        <li><a href='ba5fc1e1d93feeefb6d824e5eaf87e97.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Venda—ItemVenda)</a></li>
+        <li><a href='ba5fc1e1d93feeefb6d824e5eaf87e97.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Contém (Venda—ItemVenda)</a></li>
         
     </ul>
 </section>
