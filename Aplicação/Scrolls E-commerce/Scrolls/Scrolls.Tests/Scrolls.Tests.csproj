@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F10E6BCF-ED09-4403-A3F5-B5A8A61BAFAF}</ProjectGuid>
+    <ProjectGuid>{82792804-9F5E-40FB-ACBD-65B8F4B9EFBE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Scrolls.Tests</RootNamespace>
@@ -100,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Scrolls\Scrolls.csproj">
-      <Project>{2704DF17-0995-4D51-93BA-025815D443DA}</Project>
+      <Project>{78E13FED-4590-442F-B459-23562F707901}</Project>
       <Name>Scrolls</Name>
     </ProjectReference>
   </ItemGroup>
