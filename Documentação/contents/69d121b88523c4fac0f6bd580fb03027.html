@@ -195,9 +195,22 @@
           </tr>
           
           <tr>
+            <td><a href="e812b558e302f770655b18652f7c827b.html">IdEndereco</a></td>
+            <td>INTEGER</td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
             <td><a href="764e3dbc9ba6d89eee2a46f5b3b7aefa.html">Cep</a></td>
             <td>CHAR(8)</td>
-            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
             <td><span class='label label-info'>false</span></td>
             <td>
               
@@ -272,6 +285,45 @@
             <td><span class='label label-info'>false</span></td>
           </tr>
           
+          <tr>
+            <td><a href="e114cac2ad4f6f95eb8b196e90917eee.html">Número</a></td>
+            <td>INTEGER</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="cfc40d8c5e922d30b388e01899ee7464.html">Complemento</a></td>
+            <td>VARCHAR(20)</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="62cad99f0cb202f3189b5f545ab9d94b.html">IdCliente</a></td>
+            <td>INTEGER</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
         </table>                
       </section>
       
@@ -292,26 +344,10 @@
           
           
           <tr>
-            <td><a href='d62b827bdd49787d082e4801670d7ef4.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>ClienteEndereco</a></td>
+            <td><a href='b3e73c8b9332ecdb63ab3ee7159bc5cd.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Cliente</a></td>
             <td>1</td>
             <td></td>
-            <td><a href='c4d06480864aff45364647a9fa3abdd1.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(ClienteEndereco—Endereco)</a></td>
-          </tr>
-          
-          
-          <tr>
-            <td><a href='0c96eb753d03eb02445c76176fb2a73f.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>BanerEndereco</a></td>
-            <td>1..*</td>
-            <td></td>
-            <td><a href='24e8c26292d793f7abef656dc3443ac0.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Indica (Endereco—BanerEndereco)</a></td>
-          </tr>
-          
-          
-          <tr>
-            <td><a href='d62b827bdd49787d082e4801670d7ef4.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>ClienteEndereco</a></td>
-            <td>1..*</td>
-            <td></td>
-            <td><a href='9f2b494cece11eba36fa32a55e08935b.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Expecifica (Endereco—ClienteEndereco)</a></td>
+            <td><a href='1821a89dcb883649e6313afab172cc9b.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Cliente—Endereco)</a></td>
           </tr>
           
           
@@ -319,7 +355,7 @@
             <td><a href='0661e389e345bddf06b2dbcc7b11145d.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Venda</a></td>
             <td>1..*</td>
             <td></td>
-            <td><a href='1767ffa59caac74d89828daa2c6fce59.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Entrega (Endereco—Venda)</a></td>
+            <td><a href='1767ffa59caac74d89828daa2c6fce59.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Venda)</a></td>
           </tr>
           
           
@@ -328,6 +364,38 @@
             <td>1..*</td>
             <td></td>
             <td><a href='189548a313b740a1d267c4e2653a74c8.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Funcionario)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='b3e73c8b9332ecdb63ab3ee7159bc5cd.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Cliente</a></td>
+            <td>0..*</td>
+            <td></td>
+            <td><a href='a8729fb58f19d126752542cffb7b9e32.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Endereco—Cliente)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='b3e73c8b9332ecdb63ab3ee7159bc5cd.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Cliente</a></td>
+            <td>1..*</td>
+            <td></td>
+            <td><a href='a0cd83a883f1768540f206459b31b8ce.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Cliente)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='15e297020adbe76c2ae6b3b93c43f525.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Banner</a></td>
+            <td>1..*</td>
+            <td></td>
+            <td><a href='7e9dedb20d7e33ad660edc5bac49b76e.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Está (Endereco—Banner)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='6478b766d5f61aa67b85d0352fc5ec8a.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Funcionario</a></td>
+            <td>1..*</td>
+            <td></td>
+            <td><a href='b0fa51af645b8cd2e232b8d690a908e7.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Funcionario)</a></td>
           </tr>
           
         </table>                
@@ -394,15 +462,19 @@
     <h3>Relationships</h3>
     <ul class="nav nav-list">
         
-        <li><a href='c4d06480864aff45364647a9fa3abdd1.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(ClienteEndereco—Endereco)</a></li>
+        <li><a href='1821a89dcb883649e6313afab172cc9b.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Cliente—Endereco)</a></li>
         
-        <li><a href='24e8c26292d793f7abef656dc3443ac0.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Indica (Endereco—BanerEndereco)</a></li>
-        
-        <li><a href='9f2b494cece11eba36fa32a55e08935b.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Expecifica (Endereco—ClienteEndereco)</a></li>
-        
-        <li><a href='1767ffa59caac74d89828daa2c6fce59.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Entrega (Endereco—Venda)</a></li>
+        <li><a href='1767ffa59caac74d89828daa2c6fce59.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Venda)</a></li>
         
         <li><a href='189548a313b740a1d267c4e2653a74c8.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Funcionario)</a></li>
+        
+        <li><a href='a8729fb58f19d126752542cffb7b9e32.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Endereco—Cliente)</a></li>
+        
+        <li><a href='a0cd83a883f1768540f206459b31b8ce.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Cliente)</a></li>
+        
+        <li><a href='7e9dedb20d7e33ad660edc5bac49b76e.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Está (Endereco—Banner)</a></li>
+        
+        <li><a href='b0fa51af645b8cd2e232b8d690a908e7.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Funcionario)</a></li>
         
     </ul>
 </section>
@@ -417,13 +489,17 @@
     <h3>Owned Elements</h3>
     <ul class="nav nav-list">
         
-        <li><a href='24e8c26292d793f7abef656dc3443ac0.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Indica (Endereco—BanerEndereco)</a></li>
-        
-        <li><a href='9f2b494cece11eba36fa32a55e08935b.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Expecifica (Endereco—ClienteEndereco)</a></li>
-        
-        <li><a href='1767ffa59caac74d89828daa2c6fce59.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Entrega (Endereco—Venda)</a></li>
+        <li><a href='1767ffa59caac74d89828daa2c6fce59.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Venda)</a></li>
         
         <li><a href='189548a313b740a1d267c4e2653a74c8.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Funcionario)</a></li>
+        
+        <li><a href='a8729fb58f19d126752542cffb7b9e32.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Endereco—Cliente)</a></li>
+        
+        <li><a href='a0cd83a883f1768540f206459b31b8ce.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Cliente)</a></li>
+        
+        <li><a href='7e9dedb20d7e33ad660edc5bac49b76e.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Está (Endereco—Banner)</a></li>
+        
+        <li><a href='b0fa51af645b8cd2e232b8d690a908e7.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Funcionario)</a></li>
         
     </ul>
 </section>

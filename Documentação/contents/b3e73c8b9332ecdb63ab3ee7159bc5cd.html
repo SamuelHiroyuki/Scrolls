@@ -204,7 +204,7 @@
               <span class='label label-info'>null</span>
             </td>
             <td><span class='label label-info'>false</span></td>
-            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
           </tr>
           
           <tr>
@@ -243,7 +243,7 @@
               <span class='label label-info'>null</span>
             </td>
             <td><span class='label label-info'>false</span></td>
-            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
           </tr>
           
           <tr>
@@ -255,7 +255,7 @@
               
               <span class='label label-info'>null</span>
             </td>
-            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
             <td><span class='label label-info'>false</span></td>
           </tr>
           
@@ -269,7 +269,7 @@
               <span class='label label-info'>null</span>
             </td>
             <td><span class='label label-info'>false</span></td>
-            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
           </tr>
           
           <tr>
@@ -305,22 +305,6 @@
           
           
           <tr>
-            <td><a href='d62b827bdd49787d082e4801670d7ef4.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>ClienteEndereco</a></td>
-            <td>1..*</td>
-            <td></td>
-            <td><a href='e14fc34faa507ccc7cba1a7771292016.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Cliente—ClienteEndereco)</a></td>
-          </tr>
-          
-          
-          <tr>
-            <td><a href='dd58dfcc3269a5f8974af2ad9d1f3c6f.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>ClienteCartão</a></td>
-            <td>1..*</td>
-            <td></td>
-            <td><a href='01b9c09b9df568eddce52a9fe4bf3880.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Possui (Cliente—ClienteCartão)</a></td>
-          </tr>
-          
-          
-          <tr>
             <td><a href='2f5a466ffe67a3e87ef59f9722a506af.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Carrinho</a></td>
             <td>1..*</td>
             <td></td>
@@ -332,7 +316,7 @@
             <td><a href='2e2906dfbe9329e509b0dde631441f27.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Avaliação</a></td>
             <td>1..*</td>
             <td></td>
-            <td><a href='d38840e15ee2970a9a42c6e00f92148f.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Cliente—Avaliação)</a></td>
+            <td><a href='d38840e15ee2970a9a42c6e00f92148f.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Faz (Cliente—Avaliação)</a></td>
           </tr>
           
           
@@ -341,6 +325,46 @@
             <td>1..*</td>
             <td></td>
             <td><a href='1111d5f24b1a01679020aab0b0f98824.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Realiza (Cliente—Venda)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='69d121b88523c4fac0f6bd580fb03027.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Endereco</a></td>
+            <td>1..*</td>
+            <td></td>
+            <td><a href='1821a89dcb883649e6313afab172cc9b.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Cliente—Endereco)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='47b5fd3147732953ed5e12bf10984b3f.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Cartão</a></td>
+            <td>1..*</td>
+            <td></td>
+            <td><a href='5807f9d6ef6d3cc13bbac8e453de022b.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Tem (Cliente—Cartão)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='47b5fd3147732953ed5e12bf10984b3f.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Cartão</a></td>
+            <td>1</td>
+            <td></td>
+            <td><a href='7d3398c7d1c5b45431ba54a547124205.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Tem (Cartão—Cliente)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='69d121b88523c4fac0f6bd580fb03027.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Endereco</a></td>
+            <td>1</td>
+            <td></td>
+            <td><a href='a8729fb58f19d126752542cffb7b9e32.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Endereco—Cliente)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='69d121b88523c4fac0f6bd580fb03027.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Endereco</a></td>
+            <td>1</td>
+            <td></td>
+            <td><a href='a0cd83a883f1768540f206459b31b8ce.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Cliente)</a></td>
           </tr>
           
         </table>                
@@ -407,15 +431,21 @@
     <h3>Relationships</h3>
     <ul class="nav nav-list">
         
-        <li><a href='e14fc34faa507ccc7cba1a7771292016.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Cliente—ClienteEndereco)</a></li>
-        
-        <li><a href='01b9c09b9df568eddce52a9fe4bf3880.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Possui (Cliente—ClienteCartão)</a></li>
-        
         <li><a href='d22b975b4dcce3f07731f712d40a5ecf.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Monta (Cliente—Carrinho)</a></li>
         
-        <li><a href='d38840e15ee2970a9a42c6e00f92148f.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Cliente—Avaliação)</a></li>
+        <li><a href='d38840e15ee2970a9a42c6e00f92148f.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Faz (Cliente—Avaliação)</a></li>
         
         <li><a href='1111d5f24b1a01679020aab0b0f98824.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Realiza (Cliente—Venda)</a></li>
+        
+        <li><a href='1821a89dcb883649e6313afab172cc9b.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Cliente—Endereco)</a></li>
+        
+        <li><a href='5807f9d6ef6d3cc13bbac8e453de022b.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Tem (Cliente—Cartão)</a></li>
+        
+        <li><a href='7d3398c7d1c5b45431ba54a547124205.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Tem (Cartão—Cliente)</a></li>
+        
+        <li><a href='a8729fb58f19d126752542cffb7b9e32.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Endereco—Cliente)</a></li>
+        
+        <li><a href='a0cd83a883f1768540f206459b31b8ce.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Cliente)</a></li>
         
     </ul>
 </section>
@@ -430,15 +460,15 @@
     <h3>Owned Elements</h3>
     <ul class="nav nav-list">
         
-        <li><a href='e14fc34faa507ccc7cba1a7771292016.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Cliente—ClienteEndereco)</a></li>
-        
-        <li><a href='01b9c09b9df568eddce52a9fe4bf3880.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Possui (Cliente—ClienteCartão)</a></li>
-        
         <li><a href='d22b975b4dcce3f07731f712d40a5ecf.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Monta (Cliente—Carrinho)</a></li>
         
-        <li><a href='d38840e15ee2970a9a42c6e00f92148f.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Cliente—Avaliação)</a></li>
+        <li><a href='d38840e15ee2970a9a42c6e00f92148f.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Faz (Cliente—Avaliação)</a></li>
         
         <li><a href='1111d5f24b1a01679020aab0b0f98824.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Realiza (Cliente—Venda)</a></li>
+        
+        <li><a href='1821a89dcb883649e6313afab172cc9b.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Cliente—Endereco)</a></li>
+        
+        <li><a href='5807f9d6ef6d3cc13bbac8e453de022b.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Tem (Cliente—Cartão)</a></li>
         
     </ul>
 </section>

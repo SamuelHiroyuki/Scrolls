@@ -209,7 +209,7 @@
           
           <tr>
             <td><a href="f5586d5f839fb2e9b8e365c16d156bf1.html">Nome</a></td>
-            <td></td>
+            <td>VARCHAR(20)</td>
             <td><span class='label label-info'>false</span></td>
             <td><span class='label label-info'>false</span></td>
             <td>
@@ -222,7 +222,7 @@
           
           <tr>
             <td><a href="3c6824da46421fb9a30dd1751259305d.html">Sobrenome</a></td>
-            <td></td>
+            <td>VARCHAR(20)</td>
             <td><span class='label label-info'>false</span></td>
             <td><span class='label label-info'>false</span></td>
             <td>
@@ -235,46 +235,20 @@
           
           <tr>
             <td><a href="30ffd639fe6fb2c6eca50127f56a890a.html">Cpf</a></td>
-            <td></td>
+            <td>CHAR(11)</td>
             <td><span class='label label-info'>false</span></td>
             <td><span class='label label-info'>false</span></td>
             <td>
               
               <span class='label label-info'>null</span>
             </td>
-            <td><span class='label label-info'>false</span></td>
-            <td><span class='label label-info'>false</span></td>
-          </tr>
-          
-          <tr>
-            <td><a href="0583b8021e665b8f15f6101f5c04794c.html">Salário</a></td>
-            <td></td>
-            <td><span class='label label-info'>false</span></td>
-            <td><span class='label label-info'>false</span></td>
-            <td>
-              
-              <span class='label label-info'>null</span>
-            </td>
-            <td><span class='label label-info'>false</span></td>
-            <td><span class='label label-info'>false</span></td>
-          </tr>
-          
-          <tr>
-            <td><a href="3957f5942b1f306329be5ed89b575823.html">Cep</a></td>
-            <td>CHAR(8)</td>
             <td><span class='label label-info'>false</span></td>
             <td><span class='label label-info'>true</span></td>
-            <td>
-              
-              <span class='label label-info'>null</span>
-            </td>
-            <td><span class='label label-info'>false</span></td>
-            <td><span class='label label-info'>false</span></td>
           </tr>
           
           <tr>
-            <td><a href="7e656abed4cb0dda2262e4ebaac915f8.html">Número</a></td>
-            <td>INTEGER</td>
+            <td><a href="c716e64cbcec10faff3b61a8219e613d.html">Email</a></td>
+            <td>VARCHAR(40)</td>
             <td><span class='label label-info'>false</span></td>
             <td><span class='label label-info'>false</span></td>
             <td>
@@ -282,12 +256,12 @@
               <span class='label label-info'>null</span>
             </td>
             <td><span class='label label-info'>false</span></td>
-            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>true</span></td>
           </tr>
           
           <tr>
-            <td><a href="eff611af30010cf94818b343080ae21c.html">Complemento</a></td>
-            <td>TEXT</td>
+            <td><a href="dd98cb157709a6dd1da80389e16e7c74.html">Senha</a></td>
+            <td>VARCHAR(30)</td>
             <td><span class='label label-info'>false</span></td>
             <td><span class='label label-info'>false</span></td>
             <td>
@@ -326,10 +300,26 @@
           
           
           <tr>
+            <td><a href='6478b766d5f61aa67b85d0352fc5ec8a.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Funcionario</a></td>
+            <td>0..*</td>
+            <td></td>
+            <td><a href='17d55244395c3dd32c30ccd1a1d296a7.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Funcionario—Funcionario)</a></td>
+          </tr>
+          
+          
+          <tr>
             <td><a href='69d121b88523c4fac0f6bd580fb03027.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Endereco</a></td>
             <td>1</td>
             <td></td>
             <td><a href='189548a313b740a1d267c4e2653a74c8.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Funcionario)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='69d121b88523c4fac0f6bd580fb03027.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Endereco</a></td>
+            <td>1</td>
+            <td></td>
+            <td><a href='b0fa51af645b8cd2e232b8d690a908e7.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Funcionario)</a></td>
           </tr>
           
         </table>                
@@ -398,7 +388,11 @@
         
         <li><a href='662f39d6429f1a927309886efe5757df.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Funcionario—Venda)</a></li>
         
+        <li><a href='17d55244395c3dd32c30ccd1a1d296a7.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Funcionario—Funcionario)</a></li>
+        
         <li><a href='189548a313b740a1d267c4e2653a74c8.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Funcionario)</a></li>
+        
+        <li><a href='b0fa51af645b8cd2e232b8d690a908e7.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Mora (Endereco—Funcionario)</a></li>
         
     </ul>
 </section>
@@ -414,6 +408,8 @@
     <ul class="nav nav-list">
         
         <li><a href='662f39d6429f1a927309886efe5757df.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Funcionario—Venda)</a></li>
+        
+        <li><a href='17d55244395c3dd32c30ccd1a1d296a7.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Funcionario—Funcionario)</a></li>
         
     </ul>
 </section>
