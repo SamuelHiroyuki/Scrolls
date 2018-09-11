@@ -1,0 +1,124 @@
+body
+{
+	background-color: #F2F2F2;
+}
+
+nav.navbar
+{
+	background-color:#0D7694 ;
+}
+
+a
+{
+	color: #fff;
+}
+
+a:hover
+{
+	color: #fff;
+}
+
+.navbar-collapse
+{
+
+}
+
+.ion-person
+{
+	font-size:25px ;
+	padding: 5px 9px;
+	margin-right: .30rem;
+	border: 1px solid #000 ;
+	border-radius: 50%;
+}
+
+.form-control
+{
+	border: 1px solid #fff ;
+}
+
+.btn-search
+{
+	color: #F8C141;
+	border-radius: 0rem .25rem .25rem 0rem ;
+	border-left: none;
+	border-left-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    border-color: #fff;
+}
+
+.btn-search:hover
+{
+	display: inline-block;
+	display: block;
+	background-color: #F8C141;
+}
+
+
+.navbar-toggler 
+{
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.ion-navicon-round
+{
+	color:#fff;
+}
+
+.carrinho
+{
+	font-size: 25px;
+}
+
+.navbar-brand
+{
+	margin-right: 14rem!important;
+}
+
+
+.log
+{
+	margin-right: 6rem!important;
+}
+
+
+#nav {
+    background: transparent; 
+    display: block;
+    position: relative;
+    width: 100%;
+    transition: all ease .5s;
+    top: 0; 
+    z-index: 999;
+    background-color: #0D7694;
+  }
+  
+  #logo {
+    color: #fff;
+    padding: 20px;
+    font-size: 18px;
+    transition: all ease .5s;
+  }
+  
+  #hero {
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  #nav.shrink {
+    transition: all ease .5s;
+    background: #0D7694; 
+    position: fixed;
+    width: 100%;
+    left: 0;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+}
+  #nav.shrink #logo {
+    padding: 10px;
+    transition: all ease .5s;
+  }
