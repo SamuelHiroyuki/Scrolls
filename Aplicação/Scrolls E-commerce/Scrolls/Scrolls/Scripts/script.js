@@ -3,7 +3,7 @@ function trocaCor(){
 }
 
 function retrocaCor(){
-	document.getElementById("lupa").style.color = "#F8C141";
+	document.getElementById("lupa").style.color = "#0D7694";
 }
 
     window.onload=function(){
