@@ -23,16 +23,13 @@
 
 
     <header>
-       <h3 class="text-center">Banner</h1>
+       <h6 class="text-center">Banner</h6>
     </header>
 
-    <nav class=" navbar navbar-expand-lg fixed-top d-flex justify-content-around" id="nav">
+    <nav class=" navbar navbar-expand-lg d-flex justify-content-around" id="nav">
         <a class="navbar-brand" href="#">Scroll</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"><i class="icon ion-navicon-round"></i>
-        </button>
 
-        <div class="collapse navbar-collapse justify-content-around" id="navbarTogglerDemo01">
-            <form class="form-inline">
+         <form class="form-inline">
                 <div class="input-group">
                     <input type="text" class="form-control pesquisa" type="Search" placeholder="Pesquisar" aria-label="Search" />
                     <div class="input-group-append">
@@ -47,10 +44,21 @@
                     </div>
                     <button class="btn btn-search" type="submit" id="bot"><i class="icon ion-search" id="lupa"></i></button>
                 </div>
-            </form>            
-            <a class="mr-5" href="#"><i class="icon ion-ios-cart carrinho"></i></a>
-            <a class="nav-link" href="#"><span class=" icon ion-person"></span>Entrar |<br />Inscrever-se</a>
-        </div>
+            </form><!-- Pesquisa -->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"><i class="icon ion-navicon-round"></i>
+        </button>
+        
+        <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">            
+            <div class="carrinho"  >
+                <a class="" href="#" ><span class="icon ion-ios-cart mdl-badge mdl-badge--overlap" data-badge="1"></span></a>
+            </div> <!-- Carrinho -->
+            
+            <div class="log d-inline-flex justify-content-start">
+                <img src="img/avatar.png" class="avatar"><a class="nav-link text-justify" href="#"><p class="removem">Entrar |</p><p class="removem"> Inscrever-se</p></a>
+            </div><!-- Botão Cadastro --> 
+
+        </div><!-- Sanduiche -->
     </nav>
     <!-- Barra de navegação -->
 
