@@ -10,22 +10,25 @@
     android:padding="16dp">
 
     <EditText
+        android:id="@+id/txtNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:hint="Nome" />
 
     <EditText
+        android:id="@+id/txtSobrenome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Sobrenome"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:hint="Sobrenome" />
 
     <EditText
+        android:id="@+id/txtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="E-mail"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:hint="E-mail" />
 
     <EditText
         android:layout_width="match_parent"

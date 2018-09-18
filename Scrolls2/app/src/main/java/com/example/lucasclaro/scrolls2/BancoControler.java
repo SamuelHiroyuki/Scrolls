@@ -17,16 +17,14 @@ public class                                                                    
         banco = new CriaBanco(context);
     }
 
-    public String CriaUsuario(String nome, String sobrenome, String email, String cpf, String senha) {
+    public void CriaUsuario(String nome, String sobrenome, String email, String senha) {
         ContentValues valores;
         long resultado;
-
         db = banco.getWritableDatabase();
         valores = new ContentValues();
         valores.put("Nome", nome);
         valores.put("Sobrenome", sobrenome);
         valores.put("Email", email);
-        valores.put("Cpf", cpf);
         valores.put("Senha", senha);
 
         resultado = db.insert("Cliente", null, valores);
