@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Config"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="1dp"
+            android:src="@drawable/gest" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lucas Claro"
+                android:textSize="25dp"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="lucasbrclaro@gmail.com"
+                android:textSize="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="São Paulo - SP"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/lblEndereco"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="Alterar endereço"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:id="@+id/btnAlterarEndereco"
+            android:onClick="ConfigAlterarEndereco"/>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="Alterar Cartão"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:id="@+id/btnAlterarCartao"
+            android:onClick="ConfigAlterarCartao"/>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="Alterar imagem"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:text="Sair da conta"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
