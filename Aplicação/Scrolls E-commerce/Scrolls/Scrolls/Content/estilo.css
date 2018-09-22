@@ -14,21 +14,13 @@ body {
 }
 
 
-.ion-person {
-    font-size: 25px;
-    margin-right: .30rem;
-    float: left;
-    clear: both;
-    display: inline-block;
-}
-
 .form-control {
     border: 1px solid #fff;
 }
 
 .btn-search {
     color: #000;
-    border-radius: 0rem .25rem .25rem 0rem;
+    border-radius: 0 .25rem .25rem 0;
     background-color: #f8c141;
     border-color: transparent;
 }
@@ -60,8 +52,6 @@ body {
     border-left: 1px solid #2f2f2f;
     text-align: center;
 }
-
-.btn-outline-secondary:hover{}
 
 .log {
     background-color: #425D80;
