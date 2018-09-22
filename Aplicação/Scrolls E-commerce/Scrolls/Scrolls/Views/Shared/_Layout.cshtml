@@ -26,41 +26,39 @@
        <h6 class="text-center">Banner</h6>
     </header>
 
-    <nav class=" navbar navbar-expand-lg d-flex justify-content-around" id="nav">
+    <nav class="navbar navbar-expand-lg d-inline-flex justify-content-between" id="nav">
+        
         <a class="navbar-brand" href="#">Scroll</a>
 
          <form class="form-inline">
                 <div class="input-group">
-                    <input type="text" class="form-control pesquisa" type="Search" placeholder="Pesquisar" aria-label="Search" />
-                    <div class="input-group-append">
+                    <input class="form-control pesquisa" type="Search" placeholder="Pesquisar" aria-label="Search" />
+                    <div class="input-group-prepend">
                         <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Todas as categorias</button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
                             <a class="dropdown-item" href="#">Something else here</a>
-                            <div role="separator" class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Separated link</a>
-                        </div><!-- Lista de categorias -->                        
-                    </div>
+                        </div>                        
+                    </div><!-- Lista de categorias -->
                     <button class="btn btn-search" type="submit" id="bot"><i class="icon ion-search" id="lupa"></i></button>
                 </div>
             </form><!-- Pesquisa -->
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"><i class="icon ion-navicon-round"></i>
-        </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"><i class="icon ion-navicon-round"></i></button>
         
-        <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">            
-            <div class="carrinho"  >
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">            
+            <div class="carrinho">
                 <a class="" href="#" ><span class="icon ion-ios-cart mdl-badge mdl-badge--overlap" data-badge="1"></span></a>
             </div> <!-- Carrinho -->
             
-            <div class="log d-inline-flex justify-content-start">
-                <img src="img/avatar.png" class="avatar"><a class="nav-link text-justify" href="#"><p class="removem">Entrar |</p><p class="removem"> Inscrever-se</p></a>
-            </div><!-- Botão Cadastro --> 
+            <button class="btn log d-flex justify-content-center text-justify">
+                <img src="img/avatar.png" class="avatar"><a class="nav-link" href="#"><p class="removem">Entrar |</p><p class="removem"> Inscrever-se</p></a>
+            </button><!-- Botão Cadastro --> 
 
         </div><!-- Sanduiche -->
-    </nav>
-    <!-- Barra de navegação -->
+    </nav><!-- Barra de navegação -->
 
     <main class="container-fluid">
         @RenderBody()
