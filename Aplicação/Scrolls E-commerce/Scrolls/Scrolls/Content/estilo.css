@@ -45,14 +45,6 @@ body {
     color: #000;
 }
 
-.btn-outline-secondary{
-    color: #000;
-    background-color: #fff;
-    border: none;
-    border-left: 1px solid #2f2f2f;
-    text-align: center;
-}
-
 .log {
     background-color: #425D80;
     padding: 10px;
