@@ -1,0 +1,105 @@
+body {
+    background-color: #F2F2F2;
+}
+
+.navbar {
+    background-color: #0D7694;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+}
+
+.navbar a {
+    color: #fff;
+}
+
+
+.form-control {
+    border: 1px solid #fff;
+}
+
+.btn-search {
+    color: #000;
+    border-radius: 0 .25rem .25rem 0;
+    background-color: #f8c141;
+    border-color: transparent;
+}
+
+.navbar-toggler {
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.ion-navicon-round {
+    color: #fff;
+}
+
+.carrinho {
+    font-size: 35px; 
+    padding: 25px 25px; 
+    border-left: 1px solid #425D80;
+}
+
+.mdl-badge[data-badge]:after{
+    background-color: #f8c141;
+    color: #000;
+}
+
+.log {
+    background-color: #425D80;
+    padding: 10px;
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.navbar-collapse{
+    flex-grow: 0 ;
+}
+
+.removem{
+    margin: 0;
+}
+
+#nav {
+    background: transparent;
+    display: block;
+    position: relative;
+    width: 100%;
+    transition: all ease .5s;
+    top: 0;
+    z-index: 999;
+    background-color: #0D7694;
+}
+
+#logo {
+    color: #fff;
+    padding: 20px;
+    font-size: 18px;
+    transition: all ease .5s;
+}
+
+#hero {
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#nav.shrink {
+    transition: all ease .5s;
+    background: #0D7694;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+#nav.shrink #logo {
+    padding: 10px;
+    transition: all ease .5s;
+}
