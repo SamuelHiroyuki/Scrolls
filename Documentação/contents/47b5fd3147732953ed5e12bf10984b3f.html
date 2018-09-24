@@ -40,7 +40,7 @@
           <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>DiagramasScroll</a></span>
         
           <span>::</span>
-          <span class="label label-info"><a href='304364ca7598f91a0737fc3a19107521.html'><span class='node-icon staruml-icon icon-ERDDataModel'></span>Data Model1</a></span>
+          <span class="label label-info"><a href='304364ca7598f91a0737fc3a19107521.html'><span class='node-icon staruml-icon icon-ERDDataModel'></span>Modelos de Dados</a></span>
         
           <span>::</span>
           <span class="label label-info"><a href='47b5fd3147732953ed5e12bf10984b3f.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Cartão</a></span>
@@ -246,19 +246,6 @@
             <td><span class='label label-info'>false</span></td>
           </tr>
           
-          <tr>
-            <td><a href="57489b08987cf196c457b7e779b823ac.html">IdCliente</a></td>
-            <td>INTEGER</td>
-            <td><span class='label label-info'>false</span></td>
-            <td><span class='label label-info'>true</span></td>
-            <td>
-              
-              <span class='label label-info'>null</span>
-            </td>
-            <td><span class='label label-info'>false</span></td>
-            <td><span class='label label-info'>false</span></td>
-          </tr>
-          
         </table>                
       </section>
       
@@ -299,6 +286,14 @@
             <td>1..*</td>
             <td></td>
             <td><a href='7d3398c7d1c5b45431ba54a547124205.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Tem (Cartão—Cliente)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='d3b55aa634e1b602389d950c7864b19b.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>ClienteCartão</a></td>
+            <td>1..*</td>
+            <td></td>
+            <td><a href='f43d6dd2203970f63b6db59584d8759c.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Pertence (Cartão—ClienteCartão)</a></td>
           </tr>
           
         </table>                
@@ -371,6 +366,8 @@
         
         <li><a href='7d3398c7d1c5b45431ba54a547124205.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Tem (Cartão—Cliente)</a></li>
         
+        <li><a href='f43d6dd2203970f63b6db59584d8759c.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Pertence (Cartão—ClienteCartão)</a></li>
+        
     </ul>
 </section>
 
@@ -387,6 +384,8 @@
         <li><a href='b8f84fd42be022f768110356abc9e1ac.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Paga (Cartão—Venda)</a></li>
         
         <li><a href='7d3398c7d1c5b45431ba54a547124205.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Tem (Cartão—Cliente)</a></li>
+        
+        <li><a href='f43d6dd2203970f63b6db59584d8759c.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Pertence (Cartão—ClienteCartão)</a></li>
         
     </ul>
 </section>
