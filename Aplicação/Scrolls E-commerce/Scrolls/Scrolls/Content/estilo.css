@@ -2,6 +2,10 @@ body {
     background-color: #F2F2F2;
 }
 
+body a{
+    color: #fff;
+}
+
 .barracagada{
     color: #fff;
     font-size: 16px;
@@ -24,6 +28,11 @@ body {
  .segunda{
     clear: both;
  }
+
+.rodape{
+    background-color: #0D7694;
+    padding: 5px;
+}
 
 .form-control {
     border: 1px solid #fff;
