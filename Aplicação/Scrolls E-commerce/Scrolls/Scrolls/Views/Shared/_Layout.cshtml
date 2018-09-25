@@ -14,6 +14,7 @@
     <link href="~/Content/estilo.css" rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" href="~/Content/media.css" media="screen and (max-width: 768px)">
+    <link rel="stylesheet" href="~/Content/ganbiarra.css" media="screen and (min-width: 1024px)">
 
     <link href="~/Content/ionicons.css" rel="stylesheet" type="text/css" />
 
@@ -26,52 +27,55 @@
     </header>
     
     <div id="Navbar-Desktop">
-        
-        <nav class="navbar navbar-expand-lg d-inline-flex justify-content-between" id="nav">
+        <div class="segunda">
+            <nav class="navbar navbar-expand-lg d-inline-flex justify-content-between" id="nav">
 
-            <a class="navbar-brand" href="#">Scroll</a>
+                <a class="navbar-brand" href="#">Scroll</a>
 
-            <form>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Input text com botão dropdown">
-                    <select class="c-select">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                    <button class="btn btn-search" type="submit" id="bot"><i class="icon ion-search"></i></button>
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" size="75%" placeholder="Pesquisar" aria-label="Input text com botão dropdown">
+                        <select class="c-select">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <button class="btn btn-search" type="submit" id="bot"><i class="icon ion-search"></i></button>
+                    </div>
+                </form><!-- Pesquisa -->
+
+                <div class="d-inline-flex">
+
+                    <div class="carrinho">
+                        <a class="" href="#"><span class="icon ion-ios-cart mdl-badge mdl-badge--overlap" data-badge="1"></span></a>
+                    </div> <!-- Carrinho -->
+
+                    <button class="btn log d-flex justify-content-center text-justify">
+                        <img src="img/avatar.png" class="avatar">
+                        <a class="nav-link" href="#">
+                            <p class="removem">Entrar |</p>
+                            <p class="removem"> Inscrever-se</p>
+                        </a>
+                    </button><!-- Botão Cadastro -->
                 </div>
-            </form><!-- Pesquisa -->
 
-            <div class="d-inline-flex">
+            </nav><!-- Barra principal -->
 
-                <div class="carrinho">
-                    <a class="" href="#"><span class="icon ion-ios-cart mdl-badge mdl-badge--overlap" data-badge="1"></span></a>
-                </div> <!-- Carrinho -->
+            <div class="terca navbar navbar-expand-sm justify-content-center">
 
-                <button class="btn log d-flex justify-content-center text-justify">
-                    <img src="img/avatar.png" class="avatar">
-                    <a class="nav-link" href="#">
-                        <p class="removem">Entrar |</p>
-                        <p class="removem"> Inscrever-se</p>
-                    </a>
-                </button><!-- Botão Cadastro -->
+                <a href="#" class="nav-link">Livros</a><span class="barracagada">|</span>
+                <a href="#" class="nav-link">Chaveiros</a><span class="barracagada">|</span>
+                <a href="#" class="nav-link">Mangás</a><span class="barracagada">|</span>
+                <a href="#" class="nav-link">Acessórios</a>
 
-            </div>
+            </div><!-- Barra Secundaria -->
+
+        </div>
             
-        </nav><!-- Navbar principal -->
-
-        <nav class="navbar navbar-expand-lg">
-            <a href="#" class="nav-link">Livros</a>
-            <a href="#" class="nav-link">Chaveiros</a>
-            <a href="#" class="nav-link">Mangás</a>
-            <a href="#" class="nav-link">Acessórios</a>
-        </nav><!-- NavBar Secundaria -->
-
     </div><!-- NavBar Desktop -->
 
-    <div id="Navbar-Mobile" class="invisible">
+    <div id="Navbar-Mobile">
         <nav class="navbar navbar-expand-xl d-flex justify-content-between" id="nav">
           
             <div class="d-flex justify-content-start">
@@ -105,11 +109,15 @@
     </div><!-- NavBar Mobile -->
 
     <main class="container-fluid">
-        @RenderBody();
+        @RenderBody()
     </main>
     <!-- Corpo-->
 
-    <footer></footer>
+    <footer class="rodapé">
+        <div class="col-3">
+            
+        </div>
+    </footer>
 
     <script src="~/Scripts/script.js" type="text/javascript"></script>
     

@@ -2,6 +2,15 @@ body {
     background-color: #F2F2F2;
 }
 
+.barracagada{
+    color: #fff;
+    font-size: 16px;
+}
+
+.terca{
+    clear: both;
+}
+
 .navbar {
     background-color: #0D7694;
     padding-top: 0;
@@ -12,7 +21,9 @@ body {
 .navbar a {
     color: #fff;
 }
-
+ .segunda{
+    clear: both;
+ }
 
 .form-control {
     border: 1px solid #fff;

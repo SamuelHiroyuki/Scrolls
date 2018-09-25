@@ -1,5 +1,14 @@
 @media screen and (max-width: 768px) 
 { 
+
+    #Navbar-Desktop{
+        display: none;
+    }
+    
+    header{
+        display: none;
+    }
+    
 	.navbar {
     	padding: 7px 14px;
     }
@@ -34,3 +43,4 @@
         color: #fff;
 	}
 }
+
