@@ -11,8 +11,8 @@ body a{
     font-size: 16px;
 }
 
-.terca{
-    clear: both;
+.social li{
+    text-decoration: none;
 }
 
 .navbar {
@@ -25,9 +25,6 @@ body a{
 .navbar a {
     color: #fff;
 }
- .segunda{
-    clear: both;
- }
 
 .rodape{
     background-color: #0D7694;
@@ -45,6 +42,13 @@ body a{
     border-color: transparent;
 }
 
+.ion-md-menu:before{
+    color: #fff;
+}
+
+.ion-md-search:before{
+    font-size: 15px;
+}
 .navbar-toggler {
     background-color: transparent;
     border: 1px solid #fff;
