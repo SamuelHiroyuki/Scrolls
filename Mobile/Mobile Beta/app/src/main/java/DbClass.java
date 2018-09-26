@@ -18,7 +18,7 @@ public class DbClass extends SQLiteOpenHelper  {
         db.execSQL("CREATE TABLE Endereco(_IdEnd INTEGER PRIMARY KEY AUTOINCREMENT, CEP TEXT, Pais TEXT, Estado TEXT, Cidade TEXT, Bairro TEXT, Logradouro TEXT, Numero Integer, Complemento TEXT, FOREIGN KEY (IdCliente) REFERENCES Cliente(_IdCli))");
         db.execSQL("CREATE TABLE Cartao(_IdCart INTEGER PRIMARY KEY AUTOINCREMENT, Nome TEXT, Numero TEXT, Validade DATE, FOREIGN KEY (IdCliente) REFERENCES Cliente(_IdCli))");
         db.execSQL("CREATE TABLE Venda(_IdVenda INTEGER PRIMARY KEY AUTOINCREMENT, Data DATE, FOREIGN KEY (PkCartao) REFERENCES Cartao(_IdCart), FOREIGN KEY (IdCliente) REFERENCES Cliente(_IdCli),FOREIGN KEY (IdEndereco) REFERENCES Endereco(_IdEndereco))");
-        db.execSQL("CREATE TABLE Carrinho(_IdCar INTEGER PRIMARY KEY AUTOINCREMENT, FOREIGN KEY (IdCliente) REFERENCES Cliente(IdCli),FOREIGN KEY (IdProduto) REFERENCES Produto(IdProd))");
+        db.execSQL("CREATE TABLE Carrinho(_IdCar INTEGER PRIMARY KEY AUTOINCREMENT, QUANTIDADE INTEGER, FOREIGN KEY (IdProduto) REFERENCES Produto(_IdProd), FOREIGN KEY (IdCliente) REFERENCES Cliente(_IdCli))");
 
 
 

@@ -1,0 +1,46 @@
+@media screen and (max-width: 768px) 
+{ 
+
+    #Navbar-Desktop{
+        display: none;
+    }
+    
+    header{
+        display: none;
+    }
+    
+	.navbar {
+    	padding: 7px 14px;
+    }
+
+    .navbar-inverse{
+        display: inline-block;
+        padding: 0 0 5px 0;                
+        background-color: #0D7694;
+        position: absolute;
+        z-index: 999;
+    }
+
+    .log{
+        border-radius: 0 ;
+    }
+
+    .carrinho{
+        border: none;
+        padding: 5px;
+        font-size: 30px;
+    }
+
+	.pesquisar{
+		display: flex;
+	}
+
+	.pesquisa{
+		border-radius: 0.25rem 0 0 0.25rem;
+	}
+
+	.navbar-inverse a{
+        color: #fff;
+	}
+}
+
