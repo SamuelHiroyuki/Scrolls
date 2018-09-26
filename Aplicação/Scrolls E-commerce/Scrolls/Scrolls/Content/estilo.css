@@ -11,8 +11,18 @@ body a{
     font-size: 16px;
 }
 
+.social{
+    padding: 0;
+}
+
 .social li{
-    text-decoration: none;
+    list-style-type: none; 
+    display: inline-flex;
+    padding: 5px;
+}
+
+.rodape a:hover{
+     color: #fff;
 }
 
 .navbar {
@@ -49,6 +59,11 @@ body a{
 .ion-md-search:before{
     font-size: 15px;
 }
+
+.ion-logo-facebook, .ion-logo-twitter, .ion-logo-instagram{
+    font-size: 25px;
+}
+
 .navbar-toggler {
     background-color: transparent;
     border: 1px solid #fff;
