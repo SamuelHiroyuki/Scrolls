@@ -37,6 +37,8 @@ body a{
 }
 
 .rodape{
+    position:absolute;
+    bottom:0;
     background-color: #0D7694;
     padding: 5px;
 }
