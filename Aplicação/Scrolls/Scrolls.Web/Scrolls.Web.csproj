@@ -97,6 +97,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="MaterialDesignLite\material.css" />
+    <Content Include="MaterialDesignLite\material.js" />
+    <Content Include="MaterialDesignLite\material.min.css" />
+    <Content Include="MaterialDesignLite\material.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -202,6 +206,11 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="MaterialDesignLite\bower.json" />
+    <Content Include="MaterialDesignLite\LICENSE" />
+    <Content Include="MaterialDesignLite\material.min.css.map" />
+    <Content Include="MaterialDesignLite\material.min.js.map" />
+    <Content Include="MaterialDesignLite\package.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
