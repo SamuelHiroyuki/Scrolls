@@ -1,0 +1,82 @@
+﻿body {
+    background-color : #f2f2f2;
+    color:#fff;
+}
+
+body a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.navbar {
+    background-color: #0D7694;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+}
+
+.navbar a {
+    color: #fff;
+}
+
+.btn-search {
+    color: #000;
+    border-radius: 0 .25rem .25rem 0;
+    background-color: #f8c141;
+    border-color: transparent;
+}
+
+.ion-md-search:before {
+    font-size: 15px;
+}
+
+.navbar-toggler {
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.ion-md-menu:before {
+    color: #fff;
+}
+
+.carrinho {
+    font-size: 35px;
+    padding: 25px 25px;
+    border-left: 1px solid #425D80;
+}
+
+.mdl-badge:after {
+    background-color: #f8c141;
+    color: #000;
+}
+
+.log {
+    background-color: #425D80;
+    padding: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.removem {
+    margin: 0;
+}
+
+.barracagada {
+    color: #fff;
+    font-size: 16px;
+}
+
+.social li {
+    list-style-type: none;
+    padding: 5px;
+}
+
+.ion-logo-facebook, .ion-logo-twitter, .ion-logo-instagram {
+    font-size: 25px;
+}
+
+/*-------------------------------------- Estilização Layout --------------------------------------------------------------*/

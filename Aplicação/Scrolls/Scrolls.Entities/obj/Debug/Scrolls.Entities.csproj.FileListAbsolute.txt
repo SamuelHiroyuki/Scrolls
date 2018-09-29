@@ -30,3 +30,5 @@ C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\obj\Debug\Scrolls.Entities.cs
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\obj\Debug\Scrolls.Entities.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\obj\Debug\Scrolls.Entities.pdb
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\obj\Debug\Scrolls.Entities.csprojAssemblyReference.cache
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\bin\Debug\Google.Protobuf.dll
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\bin\Debug\Google.Protobuf.xml
