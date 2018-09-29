@@ -1,11 +1,17 @@
 ﻿body {
     background-color : #f2f2f2;
-    color:#fff;
 }
 
 body a{
     color:#fff;
     text-decoration:none;
+}
+
+footer{
+    background-color:#0D7694;
+    color:#fff;
+    bottom:0;
+    position: absolute;
 }
 
 .navbar {
@@ -17,6 +23,9 @@ body a{
 
 .navbar a {
     color: #fff;
+}
+.form-control {
+    border-radius: 0;
 }
 
 .btn-search {
@@ -45,7 +54,7 @@ body a{
     border-left: 1px solid #425D80;
 }
 
-.mdl-badge:after {
+.mdl-badge[data-badge]:after {
     background-color: #f8c141;
     color: #000;
 }
@@ -70,9 +79,17 @@ body a{
     font-size: 16px;
 }
 
+.social{
+    padding:0;
+}
+
+.social a:hover{
+    color:#fff;
+}
+
 .social li {
     list-style-type: none;
-    padding: 5px;
+    padding: 8px;
 }
 
 .ion-logo-facebook, .ion-logo-twitter, .ion-logo-instagram {

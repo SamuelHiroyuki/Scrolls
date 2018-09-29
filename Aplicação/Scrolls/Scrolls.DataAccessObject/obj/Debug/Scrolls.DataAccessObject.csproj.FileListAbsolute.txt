@@ -42,3 +42,5 @@ C:\TCCScrolls\Aplicação\Scrolls\Scrolls.DataAccessObject\obj\Debug\Scrolls.Dat
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.DataAccessObject\obj\Debug\Scrolls.DataAccessObject.csproj.CopyComplete
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.DataAccessObject\obj\Debug\Scrolls.DataAccessObject.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.DataAccessObject\obj\Debug\Scrolls.DataAccessObject.pdb
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.DataAccessObject\bin\Debug\Google.Protobuf.dll
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.DataAccessObject\bin\Debug\Google.Protobuf.xml

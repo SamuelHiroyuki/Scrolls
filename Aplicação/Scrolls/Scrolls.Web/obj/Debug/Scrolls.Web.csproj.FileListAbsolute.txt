@@ -57,7 +57,6 @@ C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\System.Web.Webpages.Razor.xml
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\System.Web.Helpers.xml
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\System.Web.Mvc.xml
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\obj\Debug\Scrolls.Web.csprojAssemblyReference.cache
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\obj\Debug\Scrolls.Web.csproj.CoreCompileInputs.cache
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\obj\Debug\Scrolls.Web.csproj.CopyComplete
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\obj\Debug\Scrolls.Web.dll
@@ -70,3 +69,4 @@ C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\roslyn\System.Net.Http.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\roslyn\System.Net.Sockets.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\obj\Debug\Scrolls.Web.csprojAssemblyReference.cache
