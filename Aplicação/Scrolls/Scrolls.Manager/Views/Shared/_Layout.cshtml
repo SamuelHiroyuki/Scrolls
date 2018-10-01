@@ -3,16 +3,143 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>ViewBag.Title</title>
+    <title>@ViewBag.Title</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="~/MaterialDesignLite/material.min.js">
+    <link href="~/MaterialDesignLite/material.min.css" rel="stylesheet" type="text/css"/>
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
-   
+    @*
+        Produto
+            Cadastro
+            Promoção
+            Código de desconto (apenas se der tempo)
+            Em falta (mostra apenas os q tem 0 de qtd)
+            Consulta
 
-    <div class="container-fluid"> 
+        Funcionário
+            Cadastro
+            Consulta
+
+        Consulta
+            Cliente
+            Produto
+            Funcionario
+            Vendas
+
+        Mapa
+            Cadastro Banner
+            Visão Geral Banner
+            Visualizar loja (se der tempo)
+
+        Vendas
+            Realizar
+            Consulta
+    *@
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Scrolls</a>
+            <div class="justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    </li>
+
+                    <li class="nav-item">
+
+                        <button id="demo-menu-lower-right" class="mdl-js-button bg-dark border-bottom border-right border-dark">
+                            <span class="mdl-chip mdl-chip--contact">
+                                <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">J</span>
+                                <span class="mdl-chip__text">Jotinha god</span>
+                            </span>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                Foto
+            </div>
+
+            <ul class="list-unstyled">
+                <li>
+                    <a href="#dropFunc" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Funcionário</a>
+                    <ul class="collapse list-unstyled" id="dropFunc">
+                        <li>
+                            <a href="#">Cadastro</a>
+                        </li>
+                        <li>
+                            <a href="#">Consultar</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#dropProd" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Produto</a>
+                    <ul class="collapse list-unstyled" id="dropProd">
+                        <li>
+                            <a href="#">Cadastro</a>
+                        </li>
+                        <li>
+                            <a href="#">Promoção</a>
+                        </li>
+                        <li>
+                            <a href="#">Código de desconto</a>
+                        </li>
+                        <li>
+                            <a href="#">Em falta</a>
+                        </li>
+                        <li>
+                            <a href="#">Consultar</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Consultar</a>
+                </li>
+
+                <li>
+                    <a href="#dropMap" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Mapa</a>
+                    <ul class="collapse list-unstyled" id="dropMap">
+                        <li>
+                            <a href="#">Configurar banner</a>
+                        </li>
+                        <li>
+                            <a href="#">Gerenciar banners</a>
+                        </li>
+                        <li>
+                            <a href="#">Visualizar loja</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#dropVen" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Vendas</a>
+                    <ul class="collapse list-unstyled" id="dropVen">
+                        <li>
+                            <a href="#">Realizar venda</a>
+                        </li>
+                        <li>
+                            <a href="#">Consultar</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="container-fluid" id="content">
+            @RenderBody()
+        </div>
     </div>
+
 
     <script src="~/Scripts/jquery-3.3.1.slim.min.js"></script>
     <script src="~/Scripts/popper.min.js"></script>
