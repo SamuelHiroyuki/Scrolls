@@ -10,7 +10,6 @@ body a{
 footer{
     background-color:#0D7694;
     color:#fff;
-    bottom:0;
     position: absolute;
 }
 
@@ -416,6 +415,10 @@ footer{
 
 .img-container1 {
     padding: 0 10px;
+}
+
+.carrossel{
+    padding:0;
 }
 
 .img-container1 {
