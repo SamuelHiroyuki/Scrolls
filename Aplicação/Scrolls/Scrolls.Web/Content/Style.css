@@ -408,4 +408,31 @@ footer{
     }
 }
 
-/*---------------------------------------------------- Index -------------------------------------------------------------------*/
+/*---------------------------------------------------- Home -------------------------------------------------------------------*/
+
+.novidades {
+    background-color: #343F4B;
+}
+
+.img-container1 {
+    padding: 0 10px;
+}
+
+.img-container1 {
+    width:600px;
+    height:600px;
+}
+
+.img-container2 {
+    padding: 0 10px;
+}
+
+.img-container2 {
+        width: 500px;
+        height: 500px;
+}
+
+.img-container3 {
+        width: 1000px;
+        height: 700px;
+}
