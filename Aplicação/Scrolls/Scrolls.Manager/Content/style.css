@@ -17,8 +17,8 @@ a:focus {
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
+    min-width: 225px;
+    max-width: 225px;
     background: #7386D5;
     color: #fff;
     transition: all 0.3s;
@@ -43,11 +43,12 @@ a:focus {
     padding: 10px;
 }
 
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-}
+    #sidebar ul li a {
+        padding: 10px;
+        padding-left: 20px;
+        font-size: 1.1em;
+        display: block;
+    }
 
     #sidebar ul li a:hover {
         color: #7386D5;
@@ -74,7 +75,7 @@ a[data-toggle="collapse"] {
 
 ul ul a {
     font-size: 0.9em !important;
-    padding-left: 30px !important;
+    padding-left: 35px !important;
     background: #6d7fcc;
 }
 
@@ -83,4 +84,17 @@ ul ul a {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
+}
+
+#pnav {
+    box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+}
+
+.p-t-b-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#pnav div a {
+    padding-left: 6px;
 }
