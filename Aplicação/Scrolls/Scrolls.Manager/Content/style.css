@@ -28,12 +28,6 @@ a:focus {
     margin-left: -250px;
 }
 
-#sidebar .sidebar-header {
-    padding: 20px;
-    min-height: 225px;
-    background: #1C313A;
-}
-
 #sidebar ul.components {
     padding: 20px 0;
     border-bottom: 1px solid #47748b;
@@ -87,7 +81,7 @@ ul ul a {
 }
 
 #pnav {
-    box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.5);
 }
 
 .p-t-b-10 {
@@ -101,4 +95,36 @@ ul ul a {
 
 .bg-dark {
     background: #074152 !important
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.40);
+}
+
+.flexbox {
+    align-items: center;
+    display: flex;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    min-height: 225px;
+    background: #1C313A;
+    display: block;
+}
+
+.sidebar-header img {
+    vertical-align: middle;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.8);
+}
+
+.user-pic {
+    margin: 0 auto 30px;
 }

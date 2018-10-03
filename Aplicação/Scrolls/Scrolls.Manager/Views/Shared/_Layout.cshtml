@@ -37,36 +37,23 @@
             Realizar
             Consulta
     *@
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0" id="pnav">
-        <div class="container-fluid p-3">
-            <a class="navbar-brand" href="#">Scrolls</a>
-        </div>
 
-        @*<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <div class="profile-avatar">
-                <img src="~/Resources/avatar-01.jpg" />
-            </div>
-            <span class="user-name">Jotinha God</span>
-        </a>*@
-
-        <button id="demo-menu-lower-right" class="mdl-js-button bg-dark border-0 p-t-b-10">
-            <span class="mdl-chip mdl-chip--contact">
-                <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">J</span>
-                <span class="mdl-chip__text">Jotinha god</span>
-            </span>
-        </button>
-        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
-            <li class="mdl-menu__item">Some Action</li>
-            <li class="mdl-menu__item">Another Action</li>
-            <li class="mdl-menu__item">Yet Another Action</li>
-        </ul>
-
-    </nav>
 
     <div class="wrapper">
+
         <nav id="sidebar">
             <div class="sidebar-header">
-                Foto
+
+                <div class="user-pic d-flex justify-content-center">
+                    <img src="~/Resources/avatar-01.jpg" />
+                </div>
+
+                <div class="text-center">
+                    <span>Nome</span>
+                    <br />
+                    <span>email@emai.com</span>
+                </div>
+
             </div>
 
 
@@ -139,9 +126,29 @@
                 </li>
             </ul>
         </nav>
+
+
         <div class="container-fluid" id="content">
             @RenderBody()
         </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0" id="pnav">
+            <div class="container-fluid p-3">
+                <a class="navbar-brand" href="#">Scrolls</a>
+            </div>
+
+            <button id="demo-menu-lower-right" class="mdl-js-button bg-dark border-0 p-t-b-10 flexbox">
+                <img src="~/Resources/avatar-01.jpg" class="avatar" />
+                <span class="pl-3 pr-3">Jotinha</span>
+            </button>
+
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                <li class="mdl-menu__item">Some Action</li>
+                <li class="mdl-menu__item">Another Action</li>
+                <li class="mdl-menu__item">Yet Another Action</li>
+            </ul>
+
+        </nav>
     </div>
 
 
