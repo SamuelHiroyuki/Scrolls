@@ -5,7 +5,7 @@
 }
 <section class="pincipal d-inline-flex">
 
-    <div class="col-2 col-sm-3 p-0">
+    <div class="col-lg-2 col-sm-3 p-0">
         <div class="list-group">
             <a class="list-group-item list-group-item-action disabled" href="#">Selecionar Categoria<i class="mdl-icon-toggle ion-ios-arrow-down"></i></a>
             <a class="list-group-item list-group-item-action" href="#">Opção 1</a>
@@ -17,17 +17,17 @@
         </div>
     </div><!-- Botão das categorias -->
 
-    <div class="col-8 col-sm-9  p-0">
+    <div class="col-lg-10 col-sm-9  p-0">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="~/img/carrossel-img/img1.jpg" alt="Primeiro Slide">
+                    <img class="d-block img-fluid" src="~/img/carrossel-img/img1.jpg" alt="Primeiro Slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="~/img/carrossel-img/img1.jpg" alt="Segundo Slide">
+                    <img class="d-block img-fluid" src="~/img/carrossel-img/img2.jpg" alt="Segundo Slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="~/img/carrossel-img/img1.jpg" alt="Terceiro Slide">
+                    <img class="d-block img-fluid" src="~/img/carrossel-img/img3.jpg" alt="Terceiro Slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -41,36 +41,218 @@
         </div>
     </div><!-- Carrosel -->
 
-</section>
+</section><!-- Painel inicial -->
 
-<!-- <section class="novidades">
+<section class="novidades col-12">
 
-    <div class="col-12 justify-content-center">
-        <h1>Novidades</h1>
-        <div class="col-10">
-            <div class="col-4">
-                <div class="img-container1">
-                    <img src="#" alt="Alternate Text" />
-                    <br />
-                    <img src="#" alt="Alternate Text" />
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="img-container2">
-                    <img src="#" alt="Alternate Text" />
-                    <img src="#" alt="Alternate Text" />
-                </div>
-                <br />
-                <div class="img-container3">
-                    <img src="#" alt="Alternate Text" />
-                </div>
-            </div>
-        </div>
-
-        <div class="col-8">
-            <img src="#" alt="Alternate Text" />
-        </div>
-
+    <div class="row text-center">
+        <h5>Novidades</h5>
     </div>
 
-</section>-->
+    <div class="container">
+        <div class="row blog pb-5<">
+            <div class="col-md-12">
+                <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#blogCarousel" data-slide-to="1"></li>
+                    </ol>
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+                    </div>
+                    <!--.carousel-inner-->
+                </div>
+                <!--.Carousel-->
+            </div>
+        </div>
+    </div><!-- Carosel -->
+
+</section><!-- Novidades -->
+
+<section class="lancrepo">
+
+    <div class="container rounded" style="background-color:#0D7694;">
+        <div class="row">
+            <div class="col-md-12 p-1">
+              <h5 class="text-white ">Lançamentos e Reposições</h5>
+            </div>
+        </div>
+    </div><!-- Titulo -->
+
+    <div class="container">
+      <div class="row blog">
+        <div class="col-md-12">
+          <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+          
+            <div class="indicador rounded p-2">            
+              <ol class="carousel-indicators">
+                <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#blogCarousel" data-slide-to="1"></li>
+              </ol>
+            </div>
+
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+
+              <div class="carousel-item active">
+                <div class="row">
+
+                  <div class="card border-0 col-sm-3">
+                    <a href="#" class="text-white nav-link">
+                      <img class="card-img-top pb-1 " src="product-1.jpg" alt="Imagem de capa do card">
+                      <div class="card-body text-center p-1 border border-dark" style="background-color: #F8C141">
+                        <h5 class="card-title m-0">Livro 1</h5><!-- Titulo -->
+                        <p class="card-text">Carlos Marcos</p><!-- Titulo -->
+                      </div>
+                    </a>
+                  </div><!-- Card produto -->
+
+                  <div class="card border-0 col-sm-3">
+                    <a href="#" class="text-white nav-link">
+                      <img class="card-img-top pb-1 " src="product-1.jpg" alt="Imagem de capa do card">
+                      <div class="card-body text-center p-1 border border-dark" style="background-color: #F8C141">
+                        <h5 class="card-title m-0">Livro 1</h5><!-- Titulo -->
+                        <p class="card-text">Carlos Marcos</p><!-- Titulo -->
+                      </div>
+                    </a>
+                  </div><!-- Card produto -->
+
+                  <div class="card border-0 col-sm-3">
+                    <a href="#" class="text-white nav-link">
+                      <img class="card-img-top pb-1 " src="product-1.jpg" alt="Imagem de capa do card">
+                      <div class="card-body text-center p-1 border border-dark" style="background-color: #F8C141">
+                        <h5 class="card-title m-0">Livro 1</h5><!-- Titulo -->
+                        <p class="card-text">Carlos Marcos</p><!-- Titulo -->
+                      </div>
+                    </a>
+                  </div><!-- Card produto -->
+
+                  <div class="card border-0 col-sm-3">
+                    <a href="#" class="text-white nav-link">
+                      <img class="card-img-top pb-1 " src="product-1.jpg" alt="Imagem de capa do card">
+                      <div class="card-body text-center p-1 border border-dark" style="background-color: #F8C141">
+                        <h5 class="card-title m-0">Livro 1</h5><!-- Titulo -->
+                        <p class="card-text">Carlos Marcos</p><!-- Titulo -->
+                      </div>
+                    </a>
+                  </div><!-- Card produto -->
+
+                </div><!--.row-->
+              </div><!--.item-->
+
+              <div class="carousel-item">
+                <div class="row">
+
+                  <div class="card border-0 col-sm-3">
+                    <a href="#" class="text-white nav-link">
+                      <img class="card-img-top pb-1 " src="product-1.jpg" alt="Imagem de capa do card">
+                      <div class="card-body text-center p-1 border border-dark" style="background-color: #F8C141">
+                        <h5 class="card-title m-0">Livro 1</h5><!-- Titulo -->
+                        <p class="card-text">Carlos Marcos</p><!-- Titulo -->
+                      </div>
+                    </a>
+                  </div><!-- Card produto -->
+
+                  <div class="card border-0 col-sm-3">
+                    <a href="#" class="text-white nav-link">
+                      <img class="card-img-top pb-1 " src="product-1.jpg" alt="Imagem de capa do card">
+                      <div class="card-body text-center p-1 border border-dark" style="background-color: #F8C141">
+                        <h5 class="card-title m-0">Livro 1</h5><!-- Titulo -->
+                        <p class="card-text">Carlos Marcos</p><!-- Titulo -->
+                      </div>
+                    </a>
+                  </div><!-- Card produto -->
+
+                  <div class="card border-0 col-sm-3">
+                    <a href="#" class="text-white nav-link">
+                      <img class="card-img-top pb-1 " src="product-1.jpg" alt="Imagem de capa do card">
+                      <div class="card-body text-center p-1 border border-dark" style="background-color: #F8C141">
+                        <h5 class="card-title m-0">Livro 1</h5><!-- Titulo -->
+                        <p class="card-text">Carlos Marcos</p><!-- Titulo -->
+                      </div>
+                    </a>
+                  </div><!-- Card produto -->
+
+                  <div class="card border-0 col-sm-3">
+                    <a href="#" class="text-white nav-link">
+                      <img class="card-img-top pb-1 " src="product-1.jpg" alt="Imagem de capa do card">
+                      <div class="card-body text-center p-1 border border-dark" style="background-color: #F8C141">
+                        <h5 class="card-title m-0">Livro 1</h5><!-- Titulo -->
+                        <p class="card-text">Carlos Marcos</p><!-- Titulo -->
+                      </div>
+                    </a>
+                  </div><!-- Card produto -->
+
+                </div><!--.row-->
+              </div><!--.item-->
+
+            </div><!--.carousel-inner-->            
+
+          </div><!--.Carousel-->
+          <a class="carousel-control-prev" href="#blogCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+          </a>
+
+          <a class="carousel-control-next" href="#blogCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+          </a>
+        </div>
+
+      </div>
+    </div> <!-- Carrossel -->  
+
+</section><!--Lançamentos/Reposições-->

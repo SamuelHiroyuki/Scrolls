@@ -17,3 +17,4 @@ cartbtn2.on('click', function () {
     cartOverlay.removeClass(cartOverlayOn);
     cartWrapper.removeClass(cartOn);
 });
+

@@ -101,6 +101,8 @@
     <Content Include="Global.asax" />
     <Content Include="img\avatar.png" />
     <Content Include="img\carrossel-img\img1.jpg" />
+    <Content Include="img\carrossel-img\img2.jpg" />
+    <Content Include="img\carrossel-img\img3.jpg" />
     <Content Include="img\product-img\product-1.jpg" />
     <Content Include="img\product-img\product-2.jpg" />
     <Content Include="img\product-img\product-3.jpg" />

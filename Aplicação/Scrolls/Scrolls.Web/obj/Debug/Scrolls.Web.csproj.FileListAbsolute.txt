@@ -1,3 +1,4 @@
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\obj\Debug\Scrolls.Web.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Scrolls.Web.dll.config
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Scrolls.Web.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Scrolls.Web.pdb
@@ -68,5 +69,4 @@ C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\System.Web.WebPages.Razor.xml
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\obj\Debug\Scrolls.Web.csprojAssemblyReference.cache
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\obj\Debug\Scrolls.Web.csproj.CoreCompileInputs.cache
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\obj\Debug\Scrolls.Web.csproj.CopyComplete
-C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\obj\Debug\Scrolls.Web.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\obj\Debug\Scrolls.Web.pdb
