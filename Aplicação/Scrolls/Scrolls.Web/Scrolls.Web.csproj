@@ -96,7 +96,25 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\responsivo.css" />
+    <Content Include="Content\Style.css" />
     <Content Include="Global.asax" />
+    <Content Include="img\avatar.png" />
+    <Content Include="img\carrossel-img\img1.jpg" />
+    <Content Include="img\carrossel-img\img2.jpg" />
+    <Content Include="img\carrossel-img\img3.jpg" />
+    <Content Include="img\product-img\product-1.jpg" />
+    <Content Include="img\product-img\product-2.jpg" />
+    <Content Include="img\product-img\product-3.jpg" />
+    <Content Include="img\product-img\product-4.jpg" />
+    <Content Include="img\product-img\product-5.jpg" />
+    <Content Include="img\product-img\product-6.jpg" />
+    <Content Include="img\product-img\product-7.jpg" />
+    <Content Include="img\product-img\product-8.jpg" />
+    <Content Include="img\product-img\product-9.jpg" />
+    <Content Include="img\product-img\product-big-1.jpg" />
+    <Content Include="img\product-img\product-big-2.jpg" />
+    <Content Include="img\product-img\product-big-3.jpg" />
     <Content Include="MaterialDesignLite\material.css" />
     <Content Include="MaterialDesignLite\material.js" />
     <Content Include="MaterialDesignLite\material.min.css" />
@@ -220,6 +238,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\Script.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -237,6 +256,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -247,6 +267,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -256,7 +279,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

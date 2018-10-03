@@ -31,6 +31,8 @@ namespace Scrolls.Entities
         [Required(ErrorMessage = "O campo complemento não pode estar vazio")]
         public string Complemento { get; set; }
 
+        public bool Reposto { get; set; }
+
         public virtual Genero Genero { get; set; }
         public int? GeneroId { get; set; }
 

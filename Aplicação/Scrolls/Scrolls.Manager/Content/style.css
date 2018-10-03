@@ -1,0 +1,130 @@
+body {
+    background-color: #fafafa;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 212px;
+    max-width: 225px;
+    background: #374851;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    background: #132228;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #132228;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 35px !important;
+    background: #1C313A;
+}
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+#pnav {
+    box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+}
+
+.p-t-b-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#pnav div a {
+    padding-left: 6px;
+}
+
+.bg-dark {
+    background: #074152 !important
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.40);
+}
+
+.flexbox {
+    align-items: center;
+    display: flex;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    min-height: 225px;
+    background: #1C313A;
+    display: block;
+}
+
+.sidebar-header img {
+    vertical-align: middle;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.8);
+}
+
+.user-pic {
+    margin: 0 auto 30px;
+}

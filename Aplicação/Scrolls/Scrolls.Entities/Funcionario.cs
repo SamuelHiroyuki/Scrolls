@@ -12,8 +12,11 @@ namespace Scrolls.Entities
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "O campo nome não pode estar vazio."), MaxLength(50, ErrorMessage = "O nome deve conter apenas 50 caracteres.")]
+        [Required(ErrorMessage = "O campo nome não pode estar vazio."), MaxLength(15, ErrorMessage = "O nome deve conter apenas 15 caracteres.")]
         public string Nome { get; set; }
+
+        [Required(ErrorMessage = "O campo sobrenome não pode estar vazio."), MaxLength(50, ErrorMessage = "O sobrenome deve conter apenas 50 caracteres.")]
+        public string Sobrenome { get; set; }
 
         [Required(ErrorMessage = "O campo CPF não pode estar vazio."), RegularExpression(@"(^\d{3}\x2E\d{3}\x2E\d{3}\x2D\d{2}$)", ErrorMessage = "Somente números são aceitos."), MaxLength(14)]
         public string CPF { get; set; }
