@@ -12,8 +12,11 @@ namespace Scrolls.Entities
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "O campo nome não pode estar vazio."), MaxLength(50, ErrorMessage = "O nome deve conter apenas 50 caracteres.")]
+        [Required(ErrorMessage = "O campo nome não pode estar vazio."), MaxLength(15, ErrorMessage = "O nome deve conter apenas 15 caracteres.")]
         public string Nome { get; set; }
+
+        [Required(ErrorMessage = "O campo sobrenome não pode estar vazio."), MaxLength(50, ErrorMessage = "O sobrenome deve conter apenas 50 caracteres.")]
+        public string Sobrenome { get; set; }
 
         [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "Formato de email inválido."), MaxLength(320)]
         public string Email { get; set; } 

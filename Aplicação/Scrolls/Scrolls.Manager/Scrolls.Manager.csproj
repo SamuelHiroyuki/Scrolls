@@ -102,6 +102,7 @@
     <Content Include="MaterialDesignLite\material.js" />
     <Content Include="MaterialDesignLite\material.min.css" />
     <Content Include="MaterialDesignLite\material.min.js" />
+    <Content Include="Resources\avatar-01.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
