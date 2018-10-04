@@ -18,7 +18,7 @@
     </div><!-- Botão das categorias -->
 
     <div class="col-lg-10 col-sm-9  p-0">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div id="CarouselPrinc" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="d-block img-fluid" src="~/img/carrossel-img/img1.jpg" alt="Primeiro Slide">
@@ -30,35 +30,259 @@
                     <img class="d-block img-fluid" src="~/img/carrossel-img/img3.jpg" alt="Terceiro Slide">
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+            <a class="carousel-control-prev" href="#CarouselPrinc" role="button" data-slide="prev">
+                <i class="icon ion-ios-arrow-back" aria-hidden="true"></i>
                 <span class="sr-only">Anterior</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            
+            <a class="carousel-control-next" href="#CarouselPrinc" role="button" data-slide="next">
+                <i class="icon ion-ios-arrow-forward" aria-hidden="true"></i>
                 <span class="sr-only">Próximo</span>
             </a>
+
         </div>
     </div><!-- Carrosel -->
 
 </section><!-- Painel inicial -->
 
-<section class="novidades col-12">
-
-    <div class="row">
-        <h5>Novidades</h5>
+<section class="novidades col-12 my-3">
+    
+    <div class="container">
+        <div class="row text-white">
+            <h4>Novidades</h4>
+        </div>
     </div>
+    
+
+    <div class="container">
+        <div class="row nov">
+            <div class="col-md-12">
+                <div id="NovCarousel" class="carousel slide" data-ride="carousel">
+
+
+
+                    <!-- Carousel items -->
+                    <div class="carousel-inner my-3">
+
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <a href="#">
+                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                    </a>
+                                </div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+
+                    </div>
+                    <!--.carousel-inner-->
+                    
+                    <ol class="carousel-indicators my-2">
+                        <li data-target="#NovCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#NovCarousel" data-slide-to="1"></li>
+                    </ol>
+
+                </div>
+                    <!--.Carousel-->
+
+            </div>
+        </div>
+    </div><!-- Carrosel Novidade -->
 
 </section><!-- Novidades -->
 
-<section class="lancrepo">
+<section class="lancrepo my-3">
 
-    <div class="container rounded" style="background-color:#0D7694;">
-        <div class="row">
-            <div class="col-md-12 p-1">
-              <h5 class="text-white ">Lançamentos e Reposições</h5>
+    <div class="container-fluid">
+      <div class="row lanrep d-flex justify-content-center">
+        <div class="col-md-10 ">
+          <div id="LancCarousel" class="carousel slide" data-ride="carousel">
+            
+            <div class="container rounded" style="background-color:#0D7694;">
+              <div class="row text-center">
+                <div class="col-md-12 p-3  text-white">
+                  <h5 class="m-0"> Lançamentos e Reposições </h5>
+                </div>
+              </div>
             </div>
+
+            <!-- Carousel items -->
+            <div class="carousel-inner my-2">
+
+              <div class="carousel-item active">
+                <div class="row justify-content-center">
+                                    
+                  <div class="card col-md-2 border-0" style="width: 10rem;">
+                    <a href="#" class="nav-link p-0" >
+                      <img class="card-img-top" src="~/img/product-img/product-1.jpg" alt="Card image cap">
+                    <div class="card-block p-0 text-center text-white border border-dark" style="background-color:#F8C141 ;">
+                      <h4 class="card-title m-0">Livro1</h4>
+                      <p class="card-text m-0">Carlos Marcos</p>
+                    </div>
+                    </a>
+                  </div>
+                  
+                  <div class="card col-md-2 border-0" style="width: 10rem;">
+                    <a href="#" class="nav-link p-0" >
+                      <img class="card-img-top" src="~/img/product-img/product-2.jpg" alt="Card image cap">
+                    <div class="card-block p-0 text-center text-white border border-dark" style="background-color:#F8C141 ;">
+                      <h4 class="card-title m-0">Livro1</h4>
+                      <p class="card-text m-0">Carlos Marcos</p>
+                    </div>
+                    </a>
+                  </div>
+
+                  <div class="card col-md-2 border-0" style="width: 10rem;">
+                    <a href="#" class="nav-link p-0" >
+                      <img class="card-img-top" src="~/img/product-img/product-3.jpg" alt="Card image cap">
+                    <div class="card-block p-0 text-center text-white border border-dark" style="background-color:#F8C141 ;">
+                      <h4 class="card-title m-0">Livro1</h4>
+                      <p class="card-text m-0">Carlos Marcos</p>
+                    </div>
+                    </a>
+                  </div>
+
+                  <div class="card col-md-2 border-0" style="width: 10rem;">
+                    <a href="#" class="nav-link p-0" >
+                      <img class="card-img-top" src="~/img/product-img/product-4.jpg" alt="Card image cap">
+                    <div class="card-block p-0 text-center text-white border border-dark" style="background-color:#F8C141 ;">
+                      <h4 class="card-title m-0">Livro1</h4>
+                      <p class="card-text m-0">Carlos Marcos</p>
+                    </div>
+                    </a>
+                  </div>
+
+                </div>
+                <!--.row-->
+              </div>
+              <!--.item-->
+
+              <div class="carousel-item">
+                <div class="row justify-content-center">
+                                    
+                  <div class="card col-md-2 border-0" style="width: 10rem;">
+                    <a href="#" class="nav-link p-0" >
+                      <img class="card-img-top" src="~/img/product-img/product-1.jpg" alt="Card image cap">
+                    <div class="card-block p-0 text-center text-white border border-dark" style="background-color:#F8C141 ;">
+                      <h4 class="card-title m-0">Livro1</h4>
+                      <p class="card-text m-0">Carlos Marcos</p>
+                    </div>
+                    </a>
+                  </div>
+                  
+                  <div class="card col-md-2 border-0" style="width: 10rem;">
+                    <a href="#" class="nav-link p-0" >
+                      <img class="card-img-top" src="~/img/product-img/product-2.jpg" alt="Card image cap">
+                    <div class="card-block p-0 text-center text-white border border-dark" style="background-color:#F8C141 ;">
+                      <h4 class="card-title m-0">Livro1</h4>
+                      <p class="card-text m-0">Carlos Marcos</p>
+                    </div>
+                    </a>
+                  </div>
+
+                  <div class="card col-md-2 border-0" style="width: 10rem;">
+                    <a href="#" class="nav-link p-0" >
+                      <img class="card-img-top" src="~/img/product-img/product-3.jpg" alt="Card image cap">
+                    <div class="card-block p-0 text-center text-white border border-dark" style="background-color:#F8C141 ;">
+                      <h4 class="card-title m-0">Livro1</h4>
+                      <p class="card-text m-0">Carlos Marcos</p>
+                    </div>
+                    </a>
+                  </div>
+
+                  <div class="card col-md-2 border-0" style="width: 10rem;">
+                    <a href="#" class="nav-link p-0" >
+                      <img class="card-img-top" src="~/img/product-img/product-4.jpg" alt="Card image cap">
+                    <div class="card-block p-0 text-center text-white border border-dark" style="background-color:#F8C141 ;">
+                      <h4 class="card-title m-0">Livro1</h4>
+                      <p class="card-text m-0">Carlos Marcos</p>
+                    </div>
+                    </a>
+                  </div>
+                </div>
+                <!--.row-->
+              </div>
+              <!--.item-->
+
+            </div>
+            <!--.carousel-inner-->
+
+            <a class="carousel-control-prev" href="#LancCarousel" role="button" data-slide="prev">
+                <i class="icon ion-ios-arrow-back" aria-hidden="true"></i>
+                <span class="sr-only">Anterior</span>
+            </a>
+
+            <a class="carousel-control-next" href="#LancCarousel" role="button" data-slide="next">
+                <i class="icon ion-ios-arrow-forward" aria-hidden="true"></i>
+                <span class="sr-only">Próximo</span>
+            </a>
+
+            <div class="container rounded" style="background-color:#0D7694;">
+              <div class="row">
+                <div class="col-md-12 p-3">
+                  <ol class="carousel-indicators">
+                    <li data-target="#LancCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#LancCarousel" data-slide-to="1"></li>
+                  </ol>
+                </div>
+              </div>
+          </div>
+
         </div>
-    </div><!-- Titulo -->
+        <!--.Carousel-->
+      </div>
+    </div>
+  </div>
 
 </section><!--Lançamentos/Reposições-->

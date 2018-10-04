@@ -407,7 +407,55 @@ footer{
     }
 }
 
-/*------------------------------------------- Carrossel de produtos  -----------------------------------------------------------*/
+/*------------------------------------------- Carrossel de Novidades  -----------------------------------------------------------*/
+.nov .carousel-indicators {
+	left: 0;
+	top: auto;
+    bottom: -40px;
+	z-index: auto; 
+    position: static;
+}
+
+/* The colour of the indicators */
+.nov .carousel-indicators li {
+    background: #a3a3a3;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+}
+
+.nov .carousel-indicators .active {
+background: #f2f2f2;
+}
+
+/*------------------------------------------- Carrossel de Lançamentos/Reposição ---------------------------------------------*/
+
+.lanrep .carousel-indicators {
+      left: 0;
+      top: auto;
+      margin: 0;
+      z-index: auto; 
+      position: static;
+    }
+
+      /* The colour of the indicators */
+      .lanrep .carousel-indicators li {
+          background: #020202;
+          border-radius: 50%;
+          width: 8px;
+          height: 8px;
+          opacity: 0.8;
+      }
+
+      .lanrep .carousel-indicators .active {
+      background: #f2f2f2;
+      opacity: 0.8;
+      }
+
+      .ion-ios-arrow-back, .ion-ios-arrow-forward{
+        color: #000;
+        font-size: 25px;
+      }
 
 
 /*---------------------------------------------------- Home -------------------------------------------------------------------*/
