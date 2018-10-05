@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/bookbackground"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginLeft="150dp"
+            android:src="@drawable/bookicon" />
+
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@drawable/button_shape"
+           android:textColor="#ffffff"
+           android:textSize="16dp"
+           android:text="        inscreva_se_gratis         "
+           android:layout_marginTop="150dp"
+           android:layout_marginLeft="90dp"
+           android:alpha="128"
+           />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#D2691E"
+            android:textSize="16dp"
+            android:text="Ja possui conta na Scrolls?"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="120dp"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_login_shape"
+
+            android:textSize="16dp"
+            android:text="                     Entrar                       "
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="90dp"
+            />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
