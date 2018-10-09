@@ -18,3 +18,20 @@ cartbtn2.on('click', function () {
     cartWrapper.removeClass(cartOn);
 });
 
+$('.owl-carousel').owlCarousel({
+				margin:10,
+			    loop:true,	
+			    nav:true,
+			    responsive:{
+			        0:{
+			            items:1
+			        },
+			        600:{
+			            items:3
+			        },
+			        1000:{
+			            items:5
+			        }
+			    }
+			})
+

@@ -428,37 +428,70 @@ footer{
 background: #f2f2f2;
 }
 
-/*------------------------------------------- Carrossel de Lançamentos/Reposição ---------------------------------------------*/
+/*------------------------------------------- Cards de produto e Carousel produtos ---------------------------------------------*/
 
-.lanrep .carousel-indicators {
-      left: 0;
-      top: auto;
-      margin: 0;
-      z-index: auto; 
-      position: static;
-    }
+.card-prod {
+            /* Add shadows to create the "card" effect */
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
 
-      /* The colour of the indicators */
-      .lanrep .carousel-indicators li {
-          background: #020202;
-          border-radius: 50%;
-          width: 8px;
-          height: 8px;
-          opacity: 0.8;
-      }
 
-      .lanrep .carousel-indicators .active {
-      background: #f2f2f2;
-      opacity: 0.8;
-      }
+        .card-prod a {
+            /* Add shadows to create the "card" effect */
+            color: #000;
+            text-decoration: none;
+        }
+
+
+        /* On mouse-over, add a deeper shadow */
+        .card-prod:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+        }
+
+        /* Add some padding inside the card container */
+        .card-prod-body {
+            padding: 4px 30px;
+            background-color: rgba(255, 200, 44, 0.6);
+        }
+
+        .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev{
+                position: absolute;
+                top: 7%;
+                bottom: 7%;
+                display: -ms-flexbox;
+                align-items: center;
+                justify-content: center;
+                width:  5%;
+                height: 75%;
+                color: #000;
+                opacity: 1.0;
+                text-align: center;
+        }
+        
+
+        .owl-theme .owl-nav [class*=owl-]:hover{
+            background-color: #2f2f2f;
+            opacity: 0.5;
+        }
+
+        .owl-carousel .owl-nav button.owl-next{
+            right: -6%;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev{
+            left: -6%;
+        }
+
+        .owl-theme .owl-dots{
+            background-color: #0D7694;
+            padding: 5px;
+            border-radius: .25rem;
+        }
 
       .ion-ios-arrow-back, .ion-ios-arrow-forward{
         color: #000;
         font-size: 25px;
       }
 
-
 /*---------------------------------------------------- Home -------------------------------------------------------------------*/
-.novidades {
-    background-color: #343F4B;
-}
