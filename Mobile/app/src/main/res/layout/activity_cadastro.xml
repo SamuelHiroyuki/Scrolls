@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastroActivity"
+    android:background="@drawable/bookbackground"
+    >
+
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="515dp"
+        android:background="#66ffffff"
+        android:orientation="vertical"
+        >
+
+        <EditText
+            android:layout_width="332dp"
+            android:layout_height="50dp"
+            android:hint="Nome"
+            tools:layout_marginLeft="15dp"
+            tools:layout_marginTop="10dp"
+            android:textColorHint="#696969"
+            />
+
+        <EditText
+            android:layout_width="332dp"
+            android:layout_height="50dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            tools:layout_marginLeft="15dp"
+            android:textColorHint="#696969"
+             />
+
+        <EditText
+            android:layout_width="332dp"
+            android:layout_height="50dp"
+            android:hint="Senha"
+            android:inputType="textPassword"
+            tools:layout_marginLeft="15dp"
+            android:textColorHint="#696969"
+             />
+
+        <EditText
+            android:layout_width="332dp"
+            android:layout_height="50dp"
+            android:hint="Confirmar senha"
+            android:inputType="textPassword"
+            android:textColorHint="#696969"
+            tools:layout_marginLeft="15dp"
+          />
+
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:text="CRIAR CONTA"
+            tools:layout_marginLeft="40dp"
+
+            />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?android:attr/listDivider"
+            android:visibility="true" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
