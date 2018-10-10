@@ -14,21 +14,21 @@
         >
 
         <ImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_marginTop="130dp"
-            android:layout_marginLeft="150dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="120dp"
             android:src="@drawable/bookicon" />
 
        <Button
            android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
+           android:layout_height="50dp"
            android:background="@drawable/button_shape"
            android:textColor="#ffffff"
            android:textSize="16dp"
            android:text="        inscreva_se_gratis         "
-           android:layout_marginTop="150dp"
-           android:layout_marginLeft="90dp"
+           android:layout_marginTop="110dp"
+           android:layout_marginLeft="65dp"
            android:alpha="128"
            />
         <TextView
@@ -38,17 +38,17 @@
             android:textSize="16dp"
             android:text="Ja possui conta na Scrolls?"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="100dp"
             />
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:background="@drawable/button_login_shape"
 
             android:textSize="16dp"
             android:text="                     Entrar                       "
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="90dp"
+            android:layout_marginLeft="70dp"
             />
 
     </LinearLayout>
