@@ -1,4 +1,4 @@
-﻿@media screen and (max-width: 768px) {
+﻿@media screen and (max-width: 992px) {
     .navbar {
         padding: 7px 14px;
     }
@@ -33,3 +33,5 @@
         color: #fff;
     }
 }
+
+

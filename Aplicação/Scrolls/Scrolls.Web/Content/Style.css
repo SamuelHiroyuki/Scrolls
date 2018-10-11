@@ -429,20 +429,21 @@ background: #f2f2f2;
 }
 
 /*------------------------------------------- Cards de produto e Carousel produtos ---------------------------------------------*/
-
 .card-prod {
-            /* Add shadows to create the "card" effect */
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-            transition: 0.3s;
-        }
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
 
 
+    
 
-        .card-prod a {
-            /* Add shadows to create the "card" effect */
-            color: #000;
-            text-decoration: none;
-        }
+
+    .card-prod a {
+        /* Add shadows to create the "card" effect */
+        color: #000;
+        text-decoration: none;
+    }
 
 
         /* On mouse-over, add a deeper shadow */
@@ -450,11 +451,36 @@ background: #f2f2f2;
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
         }
 
-        /* Add some padding inside the card container */
-        .card-prod-body {
-            padding: 4px 30px;
-            background-color: rgba(255, 200, 44, 0.6);
+     .card-prod-img {
+        width: auto;
+        height: 35vh;
+        padding: 2rem;
+        justify-content:center;
+        align-items:center;
+        display:flex;
+        background-color:rgba(255,255,255,0.8);
+     }
+
+        .card-prod-img img {
+            max-height: 100%;
         }
+
+        .card-prod-img .ion-md-cart {
+            display: none;
+            font-size: 2px;
+            color: rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+
+.card-prod-img:hover .ion-md-cart {
+    display: block;
+}
+
+        /* Add some padding inside the card container */
+    .card-prod-body {
+        padding: 4px 30px;
+        background-color: rgba(255, 200, 44, 0.6);
+    }
 
         .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev{
                 position: absolute;

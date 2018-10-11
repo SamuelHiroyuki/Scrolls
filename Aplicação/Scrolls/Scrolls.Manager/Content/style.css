@@ -4,13 +4,14 @@
     flex: unset;
 }
 
+
 .tam {
     height: 75px !important;
 }
 
 .sidebar-left {
     height: 100%;
-    position: fixed;
+    position:fixed;
     width: 65px;
 }
 
@@ -118,7 +119,7 @@ ion-icon {
 }
 
 .main-content {
-    position: relative;
+    position: absolute;
     display: table-cell;
     vertical-align: top;
     padding: 20px;
@@ -129,14 +130,14 @@ ion-icon {
 }
 
 nav {
-    z-index: 100000;
+    z-index: 999;
 }
 
-#card1 {
+/*#card1 {
     position: absolute;
     top: 32%;
     left: 77.5%;
-}
+}*/
 
 canvas {
     user-select: none;

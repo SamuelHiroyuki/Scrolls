@@ -11,111 +11,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js" type="text/javascript"></script>
 </head>
 <body>
-
-    @*
-        Produto
-            Cadastro
-            Promoção
-            Código de desconto (apenas se der tempo)
-            Em falta (mostra apenas os q tem 0 de qtd)
-            Consulta
-
-        Funcionário
-            Cadastro
-            Consulta
-
-        Consulta
-            Cliente
-            Produto
-            Funcionario
-            Vendas
-
-        Mapa
-            Cadastro Banner
-            Visão Geral Banner
-            Visualizar loja (se der tempo)
-
-        Vendas
-            Realizar
-            Consulta
-    *@
-
-    @*<nav class="navbar navbar-expand-lg navbar-dark bg-dark sidebar-left p-0">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropright">
-                    <a class="nav-link disabled" id="dropVend" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <ion-icon name="search"></ion-icon>
-                    </a>
-                </li>
-
-                <li class="nav-item dropright">
-                    <a class="nav-link disabled" id="dorpFunc" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <ion-icon name="person"></ion-icon>
-                    </a>
-                    <div class="dropdown-menu p-0" aria-labelledby="dorpFunc">
-                        <a class="dropdown-item p-tb-10 disabled" href="#">Funcionário</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item p-tb-10" href="#">Cadastro</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item p-tb-10" href="#">Consulta</a>
-                    </div>
-                </li>
-
-                <li class="nav-item dropright">
-                    <a class="nav-link disabled" id="dropProd" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <ion-icon name="book"></ion-icon>
-                    </a>
-                    <div class="dropdown-menu p-0" aria-labelledby="dropProd">
-                        <a class="dropdown-item p-tb-10 disabled" href="#">Produto</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item p-tb-10" href="#">Cadastro</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item p-tb-10" href="#">Promoção</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item p-tb-10" href="#">Código de desconto</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item p-tb-10" href="#">Em falta</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item p-tb-10" href="#">Consulta</a>
-                    </div>
-                </li>
-
-                <li class="nav-item dropright">
-                    <a class="nav-link disabled" id="dropBan" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <ion-icon name="map"></ion-icon>
-                    </a>
-                    <div class="dropdown-menu p-0" aria-labelledby="dropBan">
-                        <a class="dropdown-item p-tb-10 disabled" href="#">Banner</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item p-tb-10" href="#">Configurar banner</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item p-tb-10" href="#">Gerenciar banner</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item p-tb-10" href="#">Visualizar loja</a>
-                    </div>
-                </li>
-
-                <li class="nav-item dropright">
-                    <a class="nav-link disabled" id="dropVend" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <ion-icon name="appstore"></ion-icon>
-                    </a>
-                    <div class="dropdown-menu p-0" aria-labelledby="dropVend">
-                        <a class="dropdown-item p-tb-10 disabled" href="#">Venda</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item p-tb-10" href="#">Realizar venda</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item p-tb-10" href="#">Consulta</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="main-content"></div>
-        <nav></nav>*@
-
-    <div class="container-fluid">
-        <div class="row">
-
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark sidebar-left p-0">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropright">
@@ -186,32 +81,24 @@
                 </ul>
             </nav>
 
-            <main role="main" class="ml-sm-auto col-lg-10 px-4">
+                <div class="espacolateral col-12 d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom tam d-inline-flex">
+                        <h1 class="h2">Admin</h1>
+                        <div class="btn-toolbar ml-auto">
+                            <button id="demo-menu-lower-right" class="mdl-js-button border-0 p-tb-10 flexbox">
+                                <img src="~/Resources/avatar-01.jpg" class="avatar" />
+                                <span class="pl-3 pr-3">Jotinha</span>
+                            </button>
 
-                <div class="container-fluid d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom tam">
-                    <div class="row">
-                        <div class="col-12 d-flex justify-content-beetwen">
-                            <h1 class="h2">Admin</h1>
-                            <div class="btn-toolbar mb-2 mb-md-0 mr-5">
-                                <button id="demo-menu-lower-right" class="mdl-js-button border-0 p-tb-10 flexbox">
-                                    <img src="~/Resources/avatar-01.jpg" class="avatar" />
-                                    <span class="pl-3 pr-3">Jotinha</span>
-                                </button>
-
-                                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
-                                    <li class="mdl-menu__item mdl-menu__item--full-bleed-divider flexbox"><ion-icon name="briefcase" size="small"></ion-icon><span class="dist">Editar perfil</span></li>
-                                    <li class="mdl-menu__item flexbox"><ion-icon name="log-out" size="small"></ion-icon><span class="dist">Logout</span></li>
-                                </ul>
-                            </div>
+                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                                <li class="mdl-menu__item mdl-menu__item--full-bleed-divider flexbox"><ion-icon name="briefcase" size="small"></ion-icon><span class="dist">Editar perfil</span></li>
+                                <li class="mdl-menu__item flexbox"><ion-icon name="log-out" size="small"></ion-icon><span class="dist">Logout</span></li>
+                            </ul>
                         </div>
                     </div>
-                </div>
 
-                @RenderBody()
-            </main>
-        </div>
-    </div>
-
+    <main role="main" class="espacolateral col-10 px-4">
+    @RenderBody()
+    </main>
 
 
 
