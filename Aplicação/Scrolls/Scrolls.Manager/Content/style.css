@@ -4,14 +4,13 @@
     flex: unset;
 }
 
-
 .tam {
     height: 75px !important;
 }
 
 .sidebar-left {
     height: 100%;
-    position:fixed;
+    position: fixed;
     width: 65px;
 }
 
@@ -49,7 +48,7 @@
 
 .demo-card-square.mdl-card {
     width: 250px;
-    min-height: 130px;
+    min-height: 160px;
 }
 
 .demo-card-square > .mdl-card__title {
@@ -119,7 +118,7 @@ ion-icon {
 }
 
 .main-content {
-    position: absolute;
+    position: relative;
     display: table-cell;
     vertical-align: top;
     padding: 20px;
@@ -130,14 +129,8 @@ ion-icon {
 }
 
 nav {
-    z-index: 999;
+    z-index: 100000;
 }
-
-/*#card1 {
-    position: absolute;
-    top: 32%;
-    left: 77.5%;
-}*/
 
 canvas {
     user-select: none;
