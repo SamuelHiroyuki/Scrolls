@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LoginPage</title>
+</head>
+<body>
+    <center>
+        <br /><br /><br />
+        <form action="Home/Login" method="post">
+            <div class="row col-4">
+                <label for="Login">Login:</label>
+                <input id="Login" name="n" value="@ViewBag.Nome" placeholder="Nome de usuário/Email" class="form-control" />
+            </div>
+            <div class="row col-4">
+                <label for="Senha">Senha:</label>
+                <input id="Senha" type="password" name="s" placeholder="Senha" class="form-control" />
+            </div>
+            <br /><br />
+            @Html.ValidationMessage("funcionario.LoginError")
+            <br />
+            <input type="submit" class="btn btn-primary" value="Entrar" />
+        </form>
+    </center>
+</body>
+</html>

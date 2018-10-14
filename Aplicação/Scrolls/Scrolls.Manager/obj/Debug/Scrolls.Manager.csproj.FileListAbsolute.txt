@@ -70,3 +70,10 @@ C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\roslyn\vbc.exe
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\roslyn\vbc.exe.config
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\roslyn\vbc.rsp
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\roslyn\VBCSCompiler.exe.config
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\Scrolls.Entities.dll
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\MySql.Data.Entity.EF6.dll
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\EntityFramework.dll
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\Scrolls.Entities.pdb
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\Scrolls.Entities.dll.config
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\MySql.Data.Entity.EF6.xml
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\EntityFramework.xml
