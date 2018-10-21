@@ -1,5 +1,5 @@
-﻿using Scrolls.Entities;
-using Scrolls.Entities.DAO;
+﻿using Scrolls.DataAccessObject;
+using Scrolls.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +37,14 @@ namespace Scrolls.Manager.Controllers
                 ViewBag.Nome = n;
                 return View("LoginPage");
             }
+        }
+
+        public ActionResult Logout()
+        {
+            Session["_Id"] = 0;
+            Session["_Nome"] = string.Empty;
+            Session["_Imagem"] = string.Empty;
+            return RedirectToAction("LoginPage");
         }
     }
 }

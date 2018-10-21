@@ -71,9 +71,15 @@ C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\roslyn\vbc.exe.config
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\roslyn\vbc.rsp
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\roslyn\VBCSCompiler.exe.config
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\Scrolls.Entities.dll
-C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\MySql.Data.Entity.EF6.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\EntityFramework.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\Scrolls.Entities.pdb
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\Scrolls.Entities.dll.config
-C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\MySql.Data.Entity.EF6.xml
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\EntityFramework.xml
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\Scrolls.DataAccessObject.dll
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\Scrolls.Database.dll
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\Scrolls.DataAccessObject.pdb
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\Scrolls.DataAccessObject.dll.config
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\Scrolls.Database.pdb
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\Scrolls.Database.dll.config
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\EntityFramework.SqlServer.dll
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Manager\bin\EntityFramework.SqlServer.xml

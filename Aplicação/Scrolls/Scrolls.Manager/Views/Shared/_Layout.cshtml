@@ -101,17 +101,17 @@
                             }
                             else
                             {
-                                Response.Redirect("../../Views/Home/LoginPage");
+                                Response.Redirect("~/Home/LoginPage");
                             }
 
                         }
-                        catch (Exception e)
+                        catch (Exception)
                         {
-                            Response.Redirect("../../Views/Home/LoginPage");
+                            Response.Redirect("~/Home/LoginPage");
                         }
                         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
                             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider flexbox"><ion-icon name="briefcase" size="small"></ion-icon><span class="dist">Editar perfil</span></li>
-                            <li class="mdl-menu__item flexbox"><ion-icon name="log-out" size="small"></ion-icon><span class="dist">Logout</span></li>
+                            <li class="mdl-menu__item flexbox"><a href="~/Home/Logout"><ion-icon name="log-out" size="small"></ion-icon><span class="dist">Logout</span></a></li>
                         </ul>
                     </div>
                 </div>
