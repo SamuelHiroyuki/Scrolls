@@ -8,31 +8,48 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>LoginPage</title>
+    <title>Pagina de Login</title>
 
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/MaterialDesignLite/material.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <center>
-        <br /><br /><br />
-        <form action="~/Home/Login" method="post">
-            <div class="row col-4">
-                <label for="Login">Login:</label>
-                <input id="Login" name="n" value="@ViewBag.Nome" placeholder="Nome de usuário/Email" class="form-control" />
-            </div>
-            <div class="row col-4">
-                <label for="Senha">Senha:</label>
-                <input id="Senha" type="password" name="s" placeholder="Senha" class="form-control" />
-            </div>
-            <br /><br />
-            @Html.ValidationMessage("funcionario.LoginError")
-            <br />
-            <input type="submit" class="btn btn-primary" value="Entrar" />
-        </form>
+        <div class="mdl-layout mdl-js-layout mdl-color--grey-100">
+            <main class="mdl-layout__content" style="padding-top: 8%;">
+                <div class="mdl-card mdl-shadow--6dp">
+                    <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+                        <h2 class="mdl-card__title-text">Login</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <form action="~/Home/Login" method="post">
+
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="username" name="n" value="@ViewBag.Nome" />
+                                <label class="mdl-textfield__label" for="username">Username</label>
+                            </div>
+
+                            <br />
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="password" id="userpass" name="s" />
+                                <label class="mdl-textfield__label" for="userpass">Password</label>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+                            @Html.ValidationMessage("funcionario.LoginError")
+                            <div class="mdl-card__actions mdl-card--border">
+                                <br />
+                                <input type="submit" value="Logar" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
     </center>
 
-    <script src="~/Scripts/jquery-3.3.1.slim.min.js"></script>
-    <script src="~/Scripts/popper.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/MaterialDesignLite/material.min.js"></script>
 </body>
 </html>
