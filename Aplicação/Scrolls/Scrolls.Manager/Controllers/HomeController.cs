@@ -30,11 +30,20 @@ namespace Scrolls.Manager.Controllers
                 Session["_Id"] = f.Id;
                 Session["_Nome"] = f.Nome;
                 Session["_Imagem"] = f.Imagem;
+                if (f.Gerente == true)
+                {
+                    Session["Tipo"] = "Administrador";
+                }
+                else
+                {
+                    Session["Tipo"] = "Funcionário";
+                }
                 return RedirectToAction("Index");
             }
             else {
                 ModelState.AddModelError("funcionario.LoginError", "Nome e/ou Senha incorretos");
                 ViewBag.Nome = n;
+                Session["Tipo"] = string.Empty;
                 return View("LoginPage");
             }
         }
