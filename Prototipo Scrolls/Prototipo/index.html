@@ -47,7 +47,7 @@
 
 
 			.primary-color {
-			  color: #F8694A;
+			  color: #F8C141
 			}
 
 			.white-color {
@@ -110,7 +110,7 @@
 			
 			.primary-btn {
 			  color: #FFF;
-			  background-color: #F8694A;
+			  background-color: #F8C141;
 			}
 
 			.primary-btn:hover, .primary-btn:focus {
@@ -233,7 +233,7 @@
 			  bottom: -1.5px;
 			  height: 3px;
 			  width: 60px;
-			  background-color: #F8694A;
+			  background-color: #F8C141;
 			}
 
 			/*----------------------------*\
@@ -254,7 +254,7 @@
 			}
 
 			.breadcrumb>.active {
-			  color: #F8694A;
+			  color: #F8C141;
 			}
 
 			.breadcrumb>li+li:before {
@@ -358,14 +358,31 @@
 			  margin-left: 15px;
 			}
 
-			.header-btns>li .header-btns-icon {
+			.header-btns>li .header-btns-img {
 			  position: relative;
 			  float: left;
-			  font-size: 20px;
+			  font-size: 30px;
 			  margin-right: 15px;
 			  width: 40px;
 			  height: 40px;
 			  line-height: 40px;
+			  text-align: center;
+			}
+			
+			.header-btns-img img{
+				width: 40px;
+				height: auto;
+				line-height: 30px;
+			}
+
+			.header-btns>li .header-btns-icon {
+			  position: relative;
+			  float: left;
+			  font-size: 25px;
+			  margin-right: 15px;
+			  width: 40px;
+			  height: 40px;
+			  line-height: 45px;
 			  text-align: center;
 			  color: #30323A;
 			  background-color: #FFF;
@@ -379,7 +396,7 @@
 
 			.header-account.dropdown .dropdown-menu>li>a>i {
 			  margin-right: 15px;
-			  color: #F8694A;
+			  color: #F8C141;
 			}
 
 			/*----------------------------*\
@@ -405,13 +422,9 @@
 				color: #30323A;
 			}
 
-			/*----------------------------*\
-				Cart Area
-			\*----------------------------*/
-
 
 			/*=========================================================
-				03 -> NAVIGATION
+				                   NAVIGATION
 			===========================================================*/
 
 			#navigation {
@@ -489,7 +502,7 @@
 			}
 
 			.category-nav .category-list>li>a:hover, .category-nav .category-list>li>a:focus, .category-nav .category-list>li.dropdown.open>a {
-			  color: #F8694A;
+			  color: #F8C141;
 			}
 
 			/*----------------------------*\
@@ -516,13 +529,13 @@
 
 			.menu-nav .menu-list>li>a {
 			  display: block;
-			  padding: 15px;
+			  padding: 13px;
 			  color: #FFF;
 			  text-transform: uppercase;
 			}
 
 			.menu-nav .menu-list>li>a:hover, .menu-nav .menu-list>li>a:focus, .menu-nav .menu-list>li.dropdown.open>a {
-			  color: #F8694A;
+			  color: #F8C141;
 			}
 
 			/*----------------------------*\
@@ -537,7 +550,7 @@
 			/*-- Default Dropdown --*/
 
 			.dropdown.default-dropdown>.dropdown-menu {
-			  border-top: 2px solid #F8694A;
+			  border-top: 2px solid #F8C141;
 			  padding: 15px;
 			  background: #FFF;
 			  left: 50%;
@@ -565,7 +578,7 @@
 			}
 
 			.dropdown.mega-dropdown>.custom-menu {
-			  border-top: 2px solid #F8694A;
+			  border-top: 2px solid #F8C141;
 			  left: 0;
 			  -webkit-transform: translate(0px, 15px);
 			  -ms-transform: translate(0px, 15px);
@@ -588,7 +601,7 @@
 			/*-- Side Dropdown --*/
 
 			.dropdown.side-dropdown>.custom-menu {
-			  border-left: 2px solid #F8694A;
+			  border-left: 2px solid #F8C141;
 			  left: 100%;
 			  top: 0;
 			  width: 750px;
@@ -650,7 +663,7 @@
 			    -webkit-box-shadow: none;
 			    box-shadow: none;
 			    border-top: none;
-			    border-left: 2px solid #F8694A;
+			    border-left: 2px solid #F8C141;
 			  }
 			  #responsive-nav .dropdown.open .custom-menu {
 			    display: block;
@@ -709,8 +722,237 @@
 			}
 
 			/*=========================================================
-				                   My Aterations
+				                     CART AREA
 			===========================================================*/
+
+			.cart-bg-overlay.cart-bg-overlay-on {
+			  -webkit-transition-duration: 1000ms;
+			  transition-duration: 1000ms;
+			  position: fixed;
+			  width: 100%;
+			  height: 100%;
+			  top: 0;
+			  left: 0;
+			  background-color: rgba(0, 0, 0, 0.4);
+			  z-index: 1050; }
+
+			/* Cart Area CSS */
+			.right-side-cart-area {
+			  position: fixed;
+			  width: 670px;
+			  height: 100%;
+			  top: 0;
+			  right: -800px;
+			  background-color: #ffffff;
+			  z-index: 1100;
+			  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+			  -webkit-transition-duration: 800ms;
+			  transition-duration: 800ms; }
+			  @media only screen and (min-width: 768px) and (max-width: 991px) {
+			    .right-side-cart-area {
+			      width: 500px;
+			      right: -600px; } }
+			  @media only screen and (max-width: 767px) {
+			    .right-side-cart-area {
+			      width: 270px;
+			      right: -400px; } }
+			  @media only screen and (min-width: 576px) and (max-width: 767px) {
+			    .right-side-cart-area {
+			      width: 400px;
+			      right: -550px; } }
+			  .right-side-cart-area.cart-on {
+			    right: 0; }
+			  .right-side-cart-area .cart-button a {
+			    position: absolute;
+			    top: 0;
+			    right: 100%;
+			    z-index: 100;
+			    width: 90px;
+			    display: block;
+			    font-size: 25px;
+			    text-align: center;
+			    border-left: 1px solid #ebebeb;
+			    height: 85px;
+			    line-height: 80px;
+			    background-color: #f5f7f9; }
+			    @media only screen and (max-width: 767px) {
+			      .right-side-cart-area .cart-button a {
+			        width: 50px;
+			        height: 50px;
+			        line-height: 50px; } }
+			    .right-side-cart-area .cart-button a img {
+			      max-width: 20px; }
+			    .right-side-cart-area .cart-button a span {
+			      font-family: "Ubuntu", sans-serif;
+			      font-size: 18px;
+			      font-weight: 700;
+			      position: absolute;
+			      top: -10px;
+				  color: #000;}
+
+			  .right-side-cart-area .cart-content {
+			    position: relative;
+			    z-index: 1;
+			    width: 100%;
+			    overflow-x: hidden;
+			    overflow-y: scroll;
+			    height: 100%; }
+			    .right-side-cart-area .cart-content .cart-list {
+			      position: relative;
+			      z-index: 10;
+			      -webkit-box-flex: 0;
+			      -ms-flex: 0 0 190px;
+			      flex: 0 0 190px;
+			      width: 190px; }
+			      @media only screen and (max-width: 767px) {
+			        .right-side-cart-area .cart-content .cart-list {
+			          -webkit-box-flex: 0;
+			          -ms-flex: 0 0 100px;
+			          flex: 0 0 100px;
+			          width: 100px; } }
+			      @media only screen and (min-width: 576px) and (max-width: 767px) {
+			        .right-side-cart-area .cart-content .cart-list {
+			          -webkit-box-flex: 0;
+			          -ms-flex: 0 0 150px;
+			          flex: 0 0 150px;
+			          width: 150px; } }
+			      .right-side-cart-area .cart-content .cart-list .single-cart-item {
+			        position: relative;
+			        z-index: 1;
+			        -webkit-transition-duration: 500ms;
+			        transition-duration: 500ms; }
+			        .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image {
+			          position: relative;
+			          z-index: 1;
+			          display: block; }
+			          .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc {
+			            position: absolute;
+			            top: 0;
+			            left: 0;
+			            width: 100%;
+			            height: 100%;
+			            background-color: rgba(0, 0, 0, 0.6);
+			            padding: 50px 15px 15px;
+			            -webkit-transition-duration: 500ms;
+			            transition-duration: 500ms; }
+			            @media only screen and (max-width: 767px) {
+			              .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc {
+			                padding: 5px; } }
+			            @media only screen and (min-width: 576px) and (max-width: 767px) {
+			              .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc {
+			                padding: 30px 20px; } }
+			            .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc .product-remove {
+			              position: absolute;
+			              top: 15px;
+			              right: 15px;
+			              color: #ffffff;
+			              font-size: 12px;
+			              padding: 5px; }
+			              @media only screen and (max-width: 767px) {
+			                .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc .product-remove {
+			                  top: 5px;
+			                  right: 5px; } }
+			            .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc .badge {
+			              display: block;
+			              font-weight: 600;
+			              font-size: 10px;
+			              color: rgba(255, 255, 255, 0.5);
+			              text-transform: uppercase;
+			              margin-bottom: 5px;
+			              text-align: left;
+			              padding: 0; }
+			            .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc h6 {
+			              font-size: 12px;
+			              color: #ffffff;
+			              text-transform: capitalize;
+			              margin-bottom: 30px; }
+			              @media only screen and (max-width: 767px) {
+			                .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc h6 {
+			                  margin-bottom: 10px; } }
+			            .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc .size,
+			            .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc .color {
+			              display: block;
+			              font-weight: 600;
+			              font-size: 10px;
+			              color: rgba(255, 255, 255, 0.5);
+			              text-transform: uppercase;
+			              margin-bottom: 5px;
+			              line-height: 1; }
+			            .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc .price {
+			              font-family: "Ubuntu", sans-serif;
+			              font-size: 16px;
+			              font-weight: 700;
+			              margin-bottom: 0;
+			              margin-top: 30px;
+			              color: #ffffff; }
+			              @media only screen and (max-width: 767px) {
+			                .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc .price {
+			                  margin-top: 10px;
+			                  font-size: 12px; } }
+			        .right-side-cart-area .cart-content .cart-list .single-cart-item:hover .product-image .cart-item-desc {
+			          background-color: rgba(0, 0, 0, 0.8); }
+			    .right-side-cart-area .cart-content .cart-amount-summary {
+			      padding: 100px 10%;
+			      position: relative;
+			      z-index: 10;
+			      -webkit-box-flex: 0;
+			      -ms-flex: 0 0 calc(100% - 190px);
+			      flex: 0 0 calc(100% - 190px);
+			      width: calc(100% - 190px); }
+			      @media only screen and (max-width: 767px) {
+			        .right-side-cart-area .cart-content .cart-amount-summary {
+			          -webkit-box-flex: 0;
+			          -ms-flex: 0 0 calc(100% - 100px);
+			          flex: 0 0 calc(100% - 100px);
+			          width: calc(100% - 100px);
+			          padding: 50px 15px; } }
+			      @media only screen and (min-width: 576px) and (max-width: 767px) {
+			        .right-side-cart-area .cart-content .cart-amount-summary {
+			          -webkit-box-flex: 0;
+			          -ms-flex: 0 0 calc(100% - 150px);
+			          flex: 0 0 calc(100% - 150px);
+			          width: calc(100% - 150px);
+			          padding: 50px 30px; } }
+			      .right-side-cart-area .cart-content .cart-amount-summary h2 {
+			        font-size: 30px;
+			        margin-bottom: 100px; }
+			        @media only screen and (max-width: 767px) {
+			          .right-side-cart-area .cart-content .cart-amount-summary h2 {
+			            font-size: 24px;
+			            margin-bottom: 30px; } }
+			        @media only screen and (max-width: 767px) {
+			          .right-side-cart-area .cart-content .cart-amount-summary h2 {
+			            font-size: 30px;
+			            margin-bottom: 50px; } }
+			      .right-side-cart-area .cart-content .cart-amount-summary .summary-table li {
+			        margin-bottom: 20px;
+			        color: #000000;
+			        font-size: 14px;
+			        letter-spacing: 0.75px;
+			        text-transform: uppercase;
+			        font-weight: 600;
+			        display: -webkit-box;
+			        display: -ms-flexbox;
+			        display: flex;
+			        -webkit-box-pack: justify;
+			        -ms-flex-pack: justify;
+			        justify-content: space-between; }
+			        @media only screen and (max-width: 767px) {
+			          .right-side-cart-area .cart-content .cart-amount-summary .summary-table li {
+			            font-size: 12px;
+			            margin-bottom: 10px; } }
+			        @media only screen and (min-width: 576px) and (max-width: 767px) {
+			          .right-side-cart-area .cart-content .cart-amount-summary .summary-table li {
+			            font-size: 14px;
+			            margin-bottom: 15px; } }
+			        .right-side-cart-area .cart-content .cart-amount-summary .summary-table li span:last-child {
+			          font-weight: 700;
+			          font-family: "Ubuntu", sans-serif; }
+			      @media only screen and (max-width: 767px) {
+			        .right-side-cart-area .cart-content .cart-amount-summary .essence-btn {
+			          min-width: 140px;
+			          width: 140px;
+			          padding: 0 15px; } }
 
 		</style>
 
@@ -731,7 +973,7 @@
 
 		<!-- header -->
 		<div id="header" style="background-color: #0D7694;">
-			<div class="container d-lg-flex justify-content-lg-around">
+			<div class="container-fluid d-lg-flex justify-content-lg-between">
 				<div class="">
 					<!-- Logo -->
 					<div class="header-logo">
@@ -758,11 +1000,26 @@
 
 				<div class="">
 					<ul class="header-btns">
+
+						<!-- Cart Button -->
+						<li class="header-cart">
+							<a href="#" class="" id="essenceCartBtn">
+								<div class="header-btns-icon">
+									<i class="icon ion-md-cart"></i>
+									<span class="qty">3</span>
+								</div>
+								<strong class="text-uppercase">Meu Carrinho:</strong>
+								<br>
+								<span>R$ 35,20</span>
+							</a>
+						</li>
+						<!-- /Cart Button -->
+
 						<!-- Account -->
 						<li class="header-account dropdown default-dropdown">
 							<div class="dropdown-toggle" id="drop-perf" role="button" data-toggle="dropdown" aria-expanded="true">
-								<div class="header-btns-icon">
-									<i class="icon ion-md-person"></i>
+								<div class="header-btns-img">
+									<img src="avatar.png" alt="">
 								</div>
 								<strong class="text-uppercase">Minha Conta</strong>
 							</div>
@@ -776,19 +1033,7 @@
 						</li>
 						<!-- /Account -->
 
-						<!-- Cart Button -->
-						<li class="header-cart">
-							<a href="#" class="">
-								<div class="header-btns-icon">
-									<i class="icon ion-md-cart"></i>
-									<span class="qty">3</span>
-								</div>
-								<strong class="text-uppercase">Meu Carrinho:</strong>
-								<br>
-								<span>R$ 35,20</span>
-							</a>
-						</li>
-						<!-- /Cart Button -->
+						
 						<!-- Mobile nav toggle-->
 						<li class="nav-toggle">
 							<button class=" main-btn icon-btn"><i class="icon ion-md-menu"></i></button>
@@ -806,7 +1051,7 @@
 	<!-- NAVIGATION -->
 	<div id="navigation">
 		<!-- container -->
-		<div class="container">
+		<div class="container-fluid p-0">
 			<div id="responsive-nav">
 				<!-- category nav -->
 				<div class="category-nav">
@@ -839,10 +1084,90 @@
 		<!-- /container -->
 	</div>
 	<!-- /NAVIGATION -->
+	
+
+	<!-- CART AREA -->
 		
+	<div class="cart-bg-overlay"></div>
 
+    <div class="right-side-cart-area">
 
+        <!-- Cart Button -->
+        <div class="cart-button">
+            <a href="#" id="rightSideCart"><i class="icon ion-md-cart"></i><span>3</span></a>
+        </div>
 
+        <div class="cart-content d-flex">
+
+            <!-- Cart List Area -->
+            <div class="cart-list">
+                <!-- Single Cart Item -->
+                <div class="single-cart-item">
+                    <a href="#" class="product-image">
+                        <img src="product-img/product-1.png" class="img-fluid p-3 " alt="">
+                        <!-- Cart Item Desc -->
+                        <div class="cart-item-desc">
+                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
+                            <span class="badge">Mango</span>
+                            <h6>Button Through Strap Mini Dress</h6>
+                            <p class="size">Size: S</p>
+                            <p class="color">Color: Red</p>
+                            <p class="price">$45.00</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Cart Item -->
+                <div class="single-cart-item">
+                    <a href="#" class="product-image">
+                        <img src="product-img/product-2.jpg" class="img-fluid p-3 " alt="">
+                        <!-- Cart Item Desc -->
+                        <div class="cart-item-desc">
+                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
+                            <span class="badge">Mango</span>
+                            <h6>Button Through Strap Mini Dress</h6>
+                            <p class="size">Size: S</p>
+                            <p class="color">Color: Red</p>
+                            <p class="price">$45.00</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Cart Item -->
+                <div class="single-cart-item">
+                    <a href="#" class="product-image">
+                        <img src="product-img/product-3.jpg" class="img-fluid p-3 " alt="">
+                        <!-- Cart Item Desc -->
+                        <div class="cart-item-desc">
+                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
+                            <span class="badge">Mango</span>
+                            <h6>Button Through Strap Mini Dress</h6>
+                            <p class="size">Size: S</p>
+                            <p class="color">Color: Red</p>
+                            <p class="price">$45.00</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="cart-amount-summary">
+
+                <h2>Summary</h2>
+                <ul class="summary-table">
+                    <li><span>subtotal:</span> <span>$274.00</span></li>
+                    <li><span>delivery:</span> <span>Free</span></li>
+                    <li><span>discount:</span> <span>-15%</span></li>
+                    <li><span>total:</span> <span>$232.00</span></li>
+                </ul>
+                <div class="checkout-btn mt-100">
+                    <a href="checkout.html" class="btn essence-btn">check out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<!-- /CART AREA -->
 
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
