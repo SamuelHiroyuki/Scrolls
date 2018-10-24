@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LooginActivity"
+    android:background="@drawable/bookbg"
+    >
+
+    <include
+        layout="@layout/backtb"
+        android:id="@+id/tb">
+    </include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#887d7d7d"
+        android:orientation="vertical"
+        >
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/googleicon"
+            android:text="ACESSE SUA CONTA PELO GOOGLE"
+            android:textSize="13dp"
+            tools:layout_marginLeft="28dp"
+            android:layout_marginTop="30dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="ou"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            tools:layout_marginLeft="170dp" />
+
+        <EditText
+            android:layout_width="332dp"
+            android:layout_height="50dp"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"
+            tools:layout_marginLeft="15dp"
+            tools:layout_marginTop="50dp"
+            android:textColorHint="#000"
+            />
+        <EditText
+            android:layout_width="332dp"
+            android:layout_height="50dp"
+            android:hint="Senha"
+            android:layout_marginTop="20dp"
+            android:inputType="textPassword"
+            tools:layout_marginLeft="15dp"
+
+            android:textColorHint="#000"
+            />
+        <Button
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:text="CONTINUAR"
+            tools:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:background="#21C769"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Não tem conta? Cadastre-se"
+            tools:layout_marginTop="10dp"
+            tools:layout_marginLeft="82dp"
+            android:textSize="16dp"
+            android:textColor="#3270EC"
+            />
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     tools:context=".MainActivity"
-    android:background="@drawable/bookbackground"
+    android:background="@drawable/bookbg"
     >
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         >
 
@@ -30,6 +30,7 @@
            android:text="        inscreva_se_gratis         "
            android:layout_marginTop="110dp"
            android:layout_marginLeft="65dp"
+           android:onClick="CadastroClique"
            android:alpha="128"
            />
         <TextView
