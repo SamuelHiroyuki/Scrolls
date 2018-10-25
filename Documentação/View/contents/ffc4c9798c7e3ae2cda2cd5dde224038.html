@@ -209,7 +209,7 @@
           
           <tr>
             <td><a href="22b1cae7b396bb855ed34963a3bc3ad0.html">Nome</a></td>
-            <td>VARBINARY(50)</td>
+            <td>VARCHAR(100)</td>
             <td><span class='label label-info'>false</span></td>
             <td><span class='label label-info'>false</span></td>
             <td>
@@ -247,19 +247,6 @@
           </tr>
           
           <tr>
-            <td><a href="df3d823e63ee171d41267cc6088709e9.html">Imagem</a></td>
-            <td>TEXT</td>
-            <td><span class='label label-info'>false</span></td>
-            <td><span class='label label-info'>false</span></td>
-            <td>
-              
-              <span class='label label-info'>null</span>
-            </td>
-            <td><span class='label label-info'>false</span></td>
-            <td><span class='label label-info'>false</span></td>
-          </tr>
-          
-          <tr>
             <td><a href="99ddba6cbee5d7f810aee52afd066aee.html">Estoque</a></td>
             <td>INTEGER</td>
             <td><span class='label label-info'>false</span></td>
@@ -275,6 +262,19 @@
           <tr>
             <td><a href="e9675eb5ac74b4e10245678e649410f5.html">Promoção</a></td>
             <td>FLOAT</td>
+            <td><span class='label label-info'>false</span></td>
+            <td><span class='label label-info'>false</span></td>
+            <td>
+              
+              <span class='label label-info'>null</span>
+            </td>
+            <td><span class='label label-info'>true</span></td>
+            <td><span class='label label-info'>false</span></td>
+          </tr>
+          
+          <tr>
+            <td><a href="67026e5175e1733b4c50d0e02188ae72.html">Reposição</a></td>
+            <td>DATE</td>
             <td><span class='label label-info'>false</span></td>
             <td><span class='label label-info'>false</span></td>
             <td>
@@ -360,10 +360,10 @@
           
           
           <tr>
-            <td><a href='1c6f4ff599cb72ee094f0a874eb55319.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>ItemVenda</a></td>
+            <td><a href='1c6f4ff599cb72ee094f0a874eb55319.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>ProdutoVenda</a></td>
             <td>1..*</td>
             <td></td>
-            <td><a href='d03c78d163a07955dda936407b3aacc9.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Pertence (Produto—ItemVenda)</a></td>
+            <td><a href='d03c78d163a07955dda936407b3aacc9.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Pertence (Produto—ProdutoVenda)</a></td>
           </tr>
           
           
@@ -380,6 +380,14 @@
             <td>1</td>
             <td></td>
             <td><a href='0b657176760d54d0145256b63043d500.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Tem (Gênero—Produto)</a></td>
+          </tr>
+          
+          
+          <tr>
+            <td><a href='93bbb6edeb5b3e8c55c871ef87694061.html'><span class='node-icon staruml-icon icon-ERDEntity'></span>Imagem</a></td>
+            <td>1..*</td>
+            <td></td>
+            <td><a href='411df4bd1660a96bac537900f111c60e.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Produto—Imagem)</a></td>
           </tr>
           
         </table>                
@@ -450,11 +458,13 @@
         
         <li><a href='f74738ccd5abc3c73a9ddc9516dc73f3.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Avalia (Produto—Avaliação)</a></li>
         
-        <li><a href='d03c78d163a07955dda936407b3aacc9.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Pertence (Produto—ItemVenda)</a></li>
+        <li><a href='d03c78d163a07955dda936407b3aacc9.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Pertence (Produto—ProdutoVenda)</a></li>
         
         <li><a href='57b3d9286644e8a1c6f983c6ff46c93d.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Pertence (Categoria—Produto)</a></li>
         
         <li><a href='0b657176760d54d0145256b63043d500.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Tem (Gênero—Produto)</a></li>
+        
+        <li><a href='411df4bd1660a96bac537900f111c60e.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Produto—Imagem)</a></li>
         
     </ul>
 </section>
@@ -473,7 +483,9 @@
         
         <li><a href='f74738ccd5abc3c73a9ddc9516dc73f3.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Avalia (Produto—Avaliação)</a></li>
         
-        <li><a href='d03c78d163a07955dda936407b3aacc9.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Pertence (Produto—ItemVenda)</a></li>
+        <li><a href='d03c78d163a07955dda936407b3aacc9.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>Pertence (Produto—ProdutoVenda)</a></li>
+        
+        <li><a href='411df4bd1660a96bac537900f111c60e.html'><span class='node-icon staruml-icon icon-ERDRelationship'></span>(Produto—Imagem)</a></li>
         
     </ul>
 </section>
