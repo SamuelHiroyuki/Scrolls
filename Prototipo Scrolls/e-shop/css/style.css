@@ -1640,6 +1640,7 @@ textarea.input {
 \*----------------------------*/
 
 .slick-prev, .slick-next {
+  
   width: 40px;
   height: 40px;
   background: #30323A;

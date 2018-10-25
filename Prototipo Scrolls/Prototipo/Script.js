@@ -1,5 +1,10 @@
 (function($) {
 
+  // :: Nicescroll Active Code
+    if ($.fn.niceScroll) {
+        $(".cart-list, .cart-content").niceScroll();
+    }
+
   // NAVIGATION
   var responsiveNav = $('#responsive-nav'),
     catToggle = $('#responsive-nav .category-nav .category-header'),
@@ -54,4 +59,6 @@ cartbtn2.on('click', function () {
     cartOverlay.removeClass(cartOverlayOn);
     cartWrapper.removeClass(cartOn);
 });
+
+
 

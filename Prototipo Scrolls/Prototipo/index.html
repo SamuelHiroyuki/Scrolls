@@ -11,1168 +11,588 @@
 		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
 		<link href="https://unpkg.com/ionicons@4.4.4/dist/css/ionicons.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="slick.css"/>
+		<link rel="stylesheet" type="text/css" href="slick-theme.css"/>
+		<link rel="stylesheet" href="Style.css">
 
 		<style type="text/css">
 			/*=========================================================
-				                         GENERAL
+				                        BANNERS
 			===========================================================*/
 
-			/*----------------------------*\
-				Typography
-			\*----------------------------*/
-
-			body {
-			  font-family: 'Hind', sans-serif;
-			  color: #4A4E5A;
-			  overflow-x: hidden;
-			}
-
-			h1, h2, h3, h4, h5, h6 {
-			  color: #30323A;
-			  margin: 0 0 10px;
-			  font-weight: 700;
-			}
-
-			a {
-			  color: #30323A;
-			  -webkit-transition: 0.3s color;
-			  transition: 0.3s color;
-			}
-			a:hover, a:focus{
-			  color: #30323A;
-			  text-decoration: none;
-			  outline: none;
-			}
-
-
-
-			.primary-color {
-			  color: #F8C141
-			}
-
-			.white-color {
-			  color: #FFF;
-			}
-
-			.font-weak {
-			  font-weight: 400;
-			}
-
-			strong {
-			  color: #30323A;
-			}
-
-			ul, ol {
-			  margin: 0;
-			  padding: 0;
-			  list-style: none
-			}
-
-			hr {
+			.banner {
+			  display: block;
+			  position: relative;
 			  margin-top: 15px;
 			  margin-bottom: 15px;
-			  border-color: #DADADA;
 			}
 
-			/*----------------------------*\
-				Buttons
-			\*----------------------------*/
-
-			.main-btn, .primary-btn {
-			  display: inline-block;
-			  padding: 10px 15px;
-			  text-transform: uppercase;
-			  font-weight: 700;
-			  border: none;
-			  -webkit-transition: 0.3s all;
-			  transition: 0.3s all;
-			}
-
-			.icon-btn.main-btn, .icon-btn.primary-btn {
-			  width: 40px;
-			  height: 40px;
-			  font-size: 25px;
-			  line-height: 10px;
-			  padding: 0px;
-			  border: none;
-			}
-
-			.main-btn {
-			  color: #30323A;
-			  background-color: #FFF;
-			  -webkit-box-shadow: 0px 0px 0px 1px #DADADA inset, 0px 0px 0px 6px transparent;
-			  box-shadow: 0px 0px 0px 1px #DADADA inset, 0px 0px 0px 6px transparent;
-			}
-
-			.main-btn:hover, .main-btn:focus {
-			  color: #30323A;
-			}
-			
-			.primary-btn {
-			  color: #FFF;
-			  background-color: #F8C141;
-			}
-
-			.primary-btn:hover, .primary-btn:focus {
-			  color: #FFF;
-			  background-color: #30323A;
-			}
-
-			/*----------------------------*\
-				Inputs
-			\*----------------------------*/
-
-			.input {
+			.banner>img {
 			  width: 100%;
-			  height: 40px;
-			  border: none;
-			  -webkit-box-shadow: 0px 0px 0px 1px #DADADA inset, 0px 0px 0px 5px transparent;
-			  box-shadow: 0px 0px 0px 1px #DADADA inset, 0px 0px 0px 5px transparent;
-			  -webkit-transition: 0.3s all;
-			  transition: 0.3s all;
+			  height: 385px;
 			}
 
-			.input:focus {
-			  -webkit-box-shadow: 0px 0px 0px 1px ##0D7694 inset, 0px 0px 0px 0px #0D7694;
-			  box-shadow: 0px 0px 0px 1px ##0D7694 inset, 0px 0px 0px 0px #0D7694;
-			}
-
-			textarea.input {
-			  padding: 15px;
-			}
-
-			.input-checkbox .caption {
-			  max-height: 0;
-			  overflow: hidden;
-			  -webkit-transition: 0.3s max-height;
-			  transition: 0.3s max-height;
-			}
-
-			.input-checkbox>label {
-			  color: #30323A;
-			}
-
-			.input-checkbox input[type="checkbox"]:checked+label+.caption, .input-checkbox input[type="radio"]:checked+label+.caption {
-			  max-height: 800px;
-			}
-
-			/*----------------------------*\
-				Lists
-			\*----------------------------*/
-
-			.list-links .list-links-title {
-			  text-transform: uppercase;
-			  margin-bottom: 10px;
-			  font-size: 16px;
-			}
-
-			.list-links li>a {
-			  position: relative;
-			  display: inline-block;
-			  text-transform: uppercase;
-			  padding: 2px 0px;
-			  -webkit-transition: 0.3s all;
-			  transition: 0.3s all;
-			}
-
-			.list-links li>a:before {
-			  content: "\f105";
+			.banner.banner-1 .banner-caption {
 			  position: absolute;
-			  left: 0px;
-			  font-family: FontAwesome;
-			  -webkit-transform: translateX(-10px);
-			  -ms-transform: translateX(-10px);
-			  transform: translateX(-10px);
-			  opacity: 0;
-			  visibility: hidden;
-			  -webkit-transition: 0.3s all;
-			  transition: 0.3s all;
-			}
-
-			.list-links li>a:hover, .list-links li>a:focus, .list-links li.active>a {
-			  color: #30323A;
-			  -webkit-transform: translateX(10px);
-			  -ms-transform: translateX(10px);
-			  transform: translateX(10px);
-			}
-
-			.list-links li>a:hover:before, .list-links li>a:focus:before, .list-links li.active>a:before {
-			  opacity: 1;
-			  visibility: visible;
-			}
-
-			/*----------------------------*\
-				Sections
-			\*----------------------------*/
-
-			.section {
-			  padding-top: 30px;
-			  padding-bottom: 30px;
-			}
-
-			.section-grey {
-			  background: #F6F7F8;
-			}
-
-			.section-title {
-			  position: relative;
-			  margin-bottom: 15px;
-			  margin-top: 15px;
-			  border-bottom: 1px solid #DADADA;
-			}
-
-			.section-title .title {
-			  display: inline-block;
-			  text-transform: uppercase;
-			}
-
-			.section-title:after {
-			  content: "";
-			  position: absolute;
-			  left: 0;
-			  bottom: -1.5px;
-			  height: 3px;
-			  width: 60px;
-			  background-color: #F8C141;
-			}
-
-			/*----------------------------*\
-				Breadcrumb
-			\*----------------------------*/
-
-			#breadcrumb {
-			  -webkit-box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.175);
-			  box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.175);
-			}
-
-			.breadcrumb {
-			  background-color: transparent;
-			  border: none;
-			  border-radius: 0px;
-			  padding: 15px 0px;
-			  margin: 0;
-			}
-
-			.breadcrumb>.active {
-			  color: #F8C141;
-			}
-
-			.breadcrumb>li+li:before {
-			  color: #DADADA;
-			}
-
-			/*=========================================================
-				02 -> HEADER
-			===========================================================*/
-
-			#header {
-			  padding-top: 15px;
-			  padding-bottom: 15px;
-			}
-
-			/*----------------------------*\
-				Top header
-			\*----------------------------*/
-
-			#top-header {
-			  padding-top: 5px;
-			  padding-bottom: 5px;
-			  border-bottom: 1px solid #DADADA;
-			}
-
-			.header-top-links>li {
-			  display: inline-block;
-			}
-
-			.header-top-links>li+li {
-			  margin-left: 15px;
-			}
-
-			.header-top-links>li>a {
-			  cursor: pointer;
-			  text-transform: uppercase;
-			}
-
-			/*----------------------------*\
-				logo
-			\*----------------------------*/
-
-			.header-logo {
-			  display: inline-block;
-			  margin-right: 15px;
-			}
-
-			.header-logo .logo>img {
-			  width: 100%;
-			  max-height: 70px;
-			}
-
-			/*----------------------------*\
-				Search header
-			\*----------------------------*/
-
-			.header-search {
-			  display: inline-block;
-			  padding: 15px 0px;
-			  max-width: 400px;
-			}
-
-			.header-search>form {
-			  position: relative;
-			}
-
-			.header-search>form .search-input {
-			  padding-left: 150px;
-			  padding-right: 45px;
-			}
-
-			.header-search>form .search-categories {
-			  position: absolute;
-			  left: 0px;
-			  top: 0px;
-			  width: auto;
-			}
-
-			.header-search>form .search-btn {
-			  position: absolute;
-			  top: 0px;
-			  right: 0px;
-			  width: 40px;
-			  height: 40px;
-			  background-color: transparent;
-			  border: none;
-			  font-size: 25px;
-			}
-
-			/*----------------------------*\
-				Account header
-			\*----------------------------*/
-
-			.header-btns>li {
-			  display: inline-block;
-			  vertical-align: top;
-			  padding: 15px 0px;
-			}
-
-			.header-btns>li+li {
-			  margin-left: 15px;
-			}
-
-			.header-btns>li .header-btns-img {
-			  position: relative;
-			  float: left;
-			  font-size: 30px;
-			  margin-right: 15px;
-			  width: 40px;
-			  height: 40px;
-			  line-height: 40px;
-			  text-align: center;
-			}
-			
-			.header-btns-img img{
-				width: 40px;
-				height: auto;
-				line-height: 30px;
-			}
-
-			.header-btns>li .header-btns-icon {
-			  position: relative;
-			  float: left;
-			  font-size: 25px;
-			  margin-right: 15px;
-			  width: 40px;
-			  height: 40px;
-			  line-height: 45px;
-			  text-align: center;
-			  color: #30323A;
-			  background-color: #FFF;
-			  border: 1px solid #DADADA;
-			}
-
-			.header-btns .dropdown-toggle {
-			  display: block;
-			  cursor: pointer;
-			}
-
-			.header-account.dropdown .dropdown-menu>li>a>i {
-			  margin-right: 15px;
-			  color: #F8C141;
-			}
-
-			/*----------------------------*\
-				Cart header
-			\*----------------------------*/
-
-			.header-cart .header-btns-icon .qty {
-			  position: absolute;
-			  right: -9px;
-			  top: -9px;
-			  width: 20px;
-			  height: 20px;
-			  line-height: 20px;
-			  text-align: center;
-			  font-size: 12px;
-			  background: #FFC82C;
-			  color: #000;
-			  border-radius: 50%;
-			}
-
-			.header-cart a:hover
-			{
-				color: #30323A;
-			}
-
-
-			/*=========================================================
-				                   NAVIGATION
-			===========================================================*/
-
-			#navigation {
-			  background-color: #30323A;
-			}
-
-			#navigation .container {
-			  position: relative;
-			}
-
-			/*----------------------------*\
-				Category nav
-			\*----------------------------*/
-
-			.category-nav {
-			  float: left;
-			  width: 270px;
-			}
-
-			.category-nav .category-header {
-			  padding: 15px;
-			  display: block;
-			  text-transform: uppercase;
-			  background: #F8C141;
-			  color: #FFF;
-			  font-weight: 700;
-			}
-
-			.category-nav .category-header>i {
-			  float: right;
-			  line-height: 20px;
-			}
-
-			.category-nav .category-list {
-			  position: absolute;
-			  width: 270px;
-			  background-color: #FFF;
-			  border-left: 1px solid #DADADA;
-			  border-right: 1px solid #DADADA;
-			  border-bottom: 1px solid #DADADA;
-			  z-index: 50;
-			  -webkit-transition: 0.3s all;
-			  transition: 0.3s all;
-			}
-
-			.category-nav.show-on-click .category-list {
-			  opacity: 0;
-			  visibility: hidden;
-			  -webkit-transform: translate(0px, 15px);
-			  -ms-transform: translate(0px, 15px);
-			  transform: translate(0px, 15px);
-			}
-
-			.category-nav.show-on-click .category-list.open {
-			  opacity: 1;
-			  visibility: visible;
-			  -webkit-transform: translate(0px, 0px);
-			  -ms-transform: translate(0px, 0px);
-			  transform: translate(0px, 0px);
-			}
-
-			.category-nav .category-list>li+li {
-			  border-top: 1px solid #DADADA;
-			}
-
-			.category-nav .category-list>li.dropdown>.dropdown-toggle>i {
-			  float: right;
-			  line-height: 20px;
-			}
-
-			.category-nav .category-list>li>a {
-			  display: block;
-			  padding: 15px;
-			  text-transform: uppercase;
-			}
-
-			.category-nav .category-list>li>a:hover, .category-nav .category-list>li>a:focus, .category-nav .category-list>li.dropdown.open>a {
-			  color: #F8C141;
-			}
-
-			/*----------------------------*\
-				Menu nav
-			\*----------------------------*/
-
-			.menu-nav .menu-header {
-			  display: none;
-			  padding: 15px;
-			  text-transform: uppercase;
-			  background: #30323A;
-			  color: #FFF;
-			  font-weight: 700;
-			}
-
-			.menu-nav .menu-header>i {
-			  float: right;
-			  line-height: 20px;
-			}
-
-			.menu-nav .menu-list>li {
-			  display: inline-block;
-			}
-
-			.menu-nav .menu-list>li>a {
-			  display: block;
-			  padding: 13px;
-			  color: #FFF;
-			  text-transform: uppercase;
-			}
-
-			.menu-nav .menu-list>li>a:hover, .menu-nav .menu-list>li>a:focus, .menu-nav .menu-list>li.dropdown.open>a {
-			  color: #F8C141;
-			}
-
-			/*----------------------------*\
-				Dropdowns
-			\*----------------------------*/
-
-			.dropdown.open>.custom-menu {
-			  opacity: 1;
-			  visibility: visible;
-			}
-
-			/*-- Default Dropdown --*/
-
-			.dropdown.default-dropdown>.dropdown-menu {
-			  border-top: 2px solid #F8C141;
-			  padding: 15px;
-			  background: #FFF;
+			  top: 50%;
 			  left: 50%;
-			  -webkit-transform: translateX(-50%) translateY(15px);
-			  -ms-transform: translateX(-50%) translateY(15px);
-			  transform: translateX(-50%) translateY(15px);
+			  -webkit-transform: translate(-50%, -50%);
+			  -ms-transform: translate(-50%, -50%);
+			  transform: translate(-50%, -50%);
 			}
 
-			.dropdown.default-dropdown.open>.custom-menu {
-			  -webkit-transform: translateX(-50%) translateY(0px);
-			  -ms-transform: translateX(-50%) translateY(0px);
-			  transform: translateX(-50%) translateY(0px);
+			.banner.banner-2 .banner-caption {
+			  position: absolute;
+			  left: 10%;
+			  right: 10%;
+			  bottom: 10%;
 			}
 
-			.dropdown.default-dropdown>.custom-menu>li>a {
-			  display: block;
-			  padding: 10px 0px;
+			.banner h1 {
+			  font-size: 46px;
 			  text-transform: uppercase;
 			}
 
-			/*-- Mega Dropdown --*/
+			/*=========================================================
+				                HOME SLIDER
+			===========================================================*/
 
-			.dropdown.mega-dropdown.full-width {
-			  position: static !important;
+			#home .home-wrap {
+			  margin-left: 270px;
 			}
 
-			.dropdown.mega-dropdown>.custom-menu {
-			  border-top: 2px solid #F8C141;
-			  left: 0;
-			  -webkit-transform: translate(0px, 15px);
-			  -ms-transform: translate(0px, 15px);
-			  transform: translate(0px, 15px);
-			  width: auto;
-			  min-width: 750px;
-			  max-width: 100%;
+			#home-slick .banner {
+			  margin: 0px;
 			}
 
-			.dropdown.mega-dropdown.full-width>.custom-menu {
-			  width: 100%;
-			}
-
-			.dropdown.mega-dropdown.open>.custom-menu {
-			  -webkit-transform: translate(0px, 0px);
-			  -ms-transform: translate(0px, 0px);
-			  transform: translate(0px, 0px);
-			}
-
-			/*-- Side Dropdown --*/
-
-			.dropdown.side-dropdown>.custom-menu {
-			  border-left: 2px solid #F8C141;
-			  left: 100%;
-			  top: 0;
-			  width: 750px;
-			  -webkit-transform: translate(15px, 0px);
-			  -ms-transform: translate(15px, 0px);
-			  transform: translate(15px, 0px);
-			}
-
-			.dropdown.side-dropdown.open>.custom-menu {
-			  -webkit-transform: translate(0px, 0px);
-			  -ms-transform: translate(0px, 0px);
-			  transform: translate(0px, 0px);
-			}
+			/*=========================================================
+				11 -> SLICK
+			===========================================================*/
 
 			/*----------------------------*\
-				Mobile nav
+				Arrows
 			\*----------------------------*/
 
-			#header .nav-toggle {
-			  display: none;
+			.slick-prev, .slick-next {			  
+			  width: 40px;
+			  height: 40px;
+			  background: #30323A;
+			  z-index: 22;
 			}
+
+			.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+			  background: #F8C141;
+			}
+
+			.slick-next::before{
+				font-family: "Ionicons";
+				content: "\f3d1";
+			}
+
+			.slick-prev::before{
+				font-family: "Ionicons";
+				content: "\f3cf";
+			}
+
+			.slick-prev {
+			  left: 15px;
+			}
+
+			.slick-next {
+			  right: 15px;
+			}
+
+			.custom-nav .slick-prev, .custom-nav .slick-next {
+			  display: inline-block;
+			  position: static;
+			  -webkit-transform: translate(0px, 0px);
+			  -ms-transform: translate(0px, 0px);
+			  transform: translate(0px, 0px);
+			}
+
+			/*=========================================================
+				                      NEWS
+			===========================================================*/
+			
+			.news a{
+				display: block;
+			}
+
+			@media only screen and (min-width: 768px) {
+				.news-left {
+				  padding-left: 0;
+				  position:relative;
+				}
+				.news-right {
+				  padding-right: 0;
+				  position:relative;
+				}
+				.news-left1 {
+				  padding-left: 0;
+				  position: relative;
+				}
+				.news-left2 {
+				  padding-left: 0;
+				  position: relative;
+				}
+				.news-right1 {
+				  padding-right: 0;
+				  position: relative;
+				}
+				.news-right2 {
+				  padding-right: 0;
+				  position: relative;
+				}
+
+				.news-top{
+					margin-bottom: 1.5rem ;
+					display: flex;
+				}
+
+				.news-bottom{
+					margin-bottom: 1.5rem ;
+					display: flex;
+				}
+			}
+
+			@media only screen and (max-width: 480px) {
+			  .news img{
+			  	margin-top: 1.5rem;
+			  	margin-bottom:  1.5rem;
+			  	display: block;
+			    margin-left: auto;
+			    margin-right: auto;
+			  }
+			}
+
+			/*=========================================================
+				                      RESPONSIVE
+			===========================================================*/
 
 			@media only screen and (max-width: 991px) {
-			  #header .nav-toggle {
-			    display: inline-block;
-			  }
-			  header .pull-left, header .pull-right {
-			    float: none !important;
-			  }
-			  header .pull-right {
-			    margin-top: 10px;
-			  }
-			  #responsive-nav {
-			    position: fixed;
-			    left: 0;
-			    top: 0;
-			    bottom: 0;
-			    max-width: 270px;
-			    width: 0%;
-			    overflow: hidden;
-			    background-color: #FFF;
-			    -webkit-transform: translateX(-100%);
-			    -ms-transform: translateX(-100%);
-			    transform: translateX(-100%);
-			    -webkit-transition: 0.5s all;
-			    transition: 0.5s all;
-			    z-index: 990;
-			  }
-			  #responsive-nav.open {
-			    width: 100%;
-			    -webkit-transform: translateX(0%);
-			    -ms-transform: translateX(0%);
-			    transform: translateX(0%);
-			  }
-			  #responsive-nav .dropdown .custom-menu {
-			    display: none;
-			    position: static;
-			    width: 100%;
-			    -webkit-box-shadow: none;
-			    box-shadow: none;
-			    border-top: none;
-			    border-left: 2px solid #F8C141;
-			  }
-			  #responsive-nav .dropdown.open .custom-menu {
-			    display: block;
-			    min-width: auto;
-			    -webkit-transform: translate(0px, 0px);
-			    -ms-transform: translate(0px, 0px);
-			    transform: translate(0px, 0px);
-			  }
-			  .category-nav .category-list, .menu-nav .menu-list {
-			    display: none;
-			    overflow-y: scroll;
-			    overflow-x: hidden;
-			    max-height: calc(100vh - 100px);
-			  }
-			  .category-nav .category-list.open, .menu-nav .menu-list.open {
-			    display: block;
-			  }
-			  .menu-nav .menu-header, .category-nav .category-header {
-			    cursor: pointer;
-			  }
-			  .category-nav {
-			    float: none;
-			    width: 100%;
-			  }
-			  .category-nav .category-list {
-			    position: static;
-			  }
-			  .menu-nav .menu-header {
-			    display: block;
-			  }
-			  .menu-nav .menu-list {
-			    float: none;
-			    border-left: 1px solid #DADADA;
-			    border-right: 1px solid #DADADA;
-			    border-bottom: 1px solid #DADADA;
-			  }
-			  .menu-nav .menu-list>li {
-			    display: block;
-			  }
-			  .menu-nav .menu-list>li+li {
-			    border-top: 1px solid #DADADA;
-			  }
-			  .menu-nav .menu-list>li>a {
-			    color: #30323A;
-			  }
-			  #navigation.shadow:after {
-			    content: "";
-			    position: fixed;
-			    left: 0;
-			    right: 0;
-			    top: 0;
-			    bottom: 0;
-			    background-color: rgba(0, 0, 0, 0.7);
-			    z-index: 99;
+			  #home .home-wrap {
+			    margin-left: 0px;
 			  }
 			}
 
-			/*=========================================================
-				                     CART AREA
-			===========================================================*/
-
-			.cart-bg-overlay.cart-bg-overlay-on {
-			  -webkit-transition-duration: 1000ms;
-			  transition-duration: 1000ms;
-			  position: fixed;
-			  width: 100%;
-			  height: 100%;
-			  top: 0;
-			  left: 0;
-			  background-color: rgba(0, 0, 0, 0.4);
-			  z-index: 1050; }
-
-			/* Cart Area CSS */
-			.right-side-cart-area {
-			  position: fixed;
-			  width: 670px;
-			  height: 100%;
-			  top: 0;
-			  right: -800px;
-			  background-color: #ffffff;
-			  z-index: 1100;
-			  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
-			  -webkit-transition-duration: 800ms;
-			  transition-duration: 800ms; }
-			  @media only screen and (min-width: 768px) and (max-width: 991px) {
-			    .right-side-cart-area {
-			      width: 500px;
-			      right: -600px; } }
-			  @media only screen and (max-width: 767px) {
-			    .right-side-cart-area {
-			      width: 270px;
-			      right: -400px; } }
-			  @media only screen and (min-width: 576px) and (max-width: 767px) {
-			    .right-side-cart-area {
-			      width: 400px;
-			      right: -550px; } }
-			  .right-side-cart-area.cart-on {
-			    right: 0; }
-			  .right-side-cart-area .cart-button a {
-			    position: absolute;
-			    top: 0;
-			    right: 100%;
-			    z-index: 100;
-			    width: 90px;
-			    display: block;
-			    font-size: 25px;
-			    text-align: center;
-			    border-left: 1px solid #ebebeb;
-			    height: 85px;
-			    line-height: 80px;
-			    background-color: #f5f7f9; }
-			    @media only screen and (max-width: 767px) {
-			      .right-side-cart-area .cart-button a {
-			        width: 50px;
-			        height: 50px;
-			        line-height: 50px; } }
-			    .right-side-cart-area .cart-button a img {
-			      max-width: 20px; }
-			    .right-side-cart-area .cart-button a span {
-			      font-family: "Ubuntu", sans-serif;
-			      font-size: 18px;
-			      font-weight: 700;
-			      position: absolute;
-			      top: -10px;
-				  color: #000;}
-
-			  .right-side-cart-area .cart-content {
-			    position: relative;
-			    z-index: 1;
+			@media only screen and (max-width: 480px) {
+			  [class*='col-xs'] {
 			    width: 100%;
-			    overflow-x: hidden;
-			    overflow-y: scroll;
-			    height: 100%; }
-			    .right-side-cart-area .cart-content .cart-list {
-			      position: relative;
-			      z-index: 10;
-			      -webkit-box-flex: 0;
-			      -ms-flex: 0 0 190px;
-			      flex: 0 0 190px;
-			      width: 190px; }
-			      @media only screen and (max-width: 767px) {
-			        .right-side-cart-area .cart-content .cart-list {
-			          -webkit-box-flex: 0;
-			          -ms-flex: 0 0 100px;
-			          flex: 0 0 100px;
-			          width: 100px; } }
-			      @media only screen and (min-width: 576px) and (max-width: 767px) {
-			        .right-side-cart-area .cart-content .cart-list {
-			          -webkit-box-flex: 0;
-			          -ms-flex: 0 0 150px;
-			          flex: 0 0 150px;
-			          width: 150px; } }
-			      .right-side-cart-area .cart-content .cart-list .single-cart-item {
-			        position: relative;
-			        z-index: 1;
-			        -webkit-transition-duration: 500ms;
-			        transition-duration: 500ms; }
-			        .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image {
-			          position: relative;
-			          z-index: 1;
-			          display: block; }
-			          .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc {
-			            position: absolute;
-			            top: 0;
-			            left: 0;
-			            width: 100%;
-			            height: 100%;
-			            background-color: rgba(0, 0, 0, 0.6);
-			            padding: 50px 15px 15px;
-			            -webkit-transition-duration: 500ms;
-			            transition-duration: 500ms; }
-			            @media only screen and (max-width: 767px) {
-			              .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc {
-			                padding: 5px; } }
-			            @media only screen and (min-width: 576px) and (max-width: 767px) {
-			              .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc {
-			                padding: 30px 20px; } }
-			            .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc .product-remove {
-			              position: absolute;
-			              top: 15px;
-			              right: 15px;
-			              color: #ffffff;
-			              font-size: 12px;
-			              padding: 5px; }
-			              @media only screen and (max-width: 767px) {
-			                .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc .product-remove {
-			                  top: 5px;
-			                  right: 5px; } }
-			            .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc .badge {
-			              display: block;
-			              font-weight: 600;
-			              font-size: 10px;
-			              color: rgba(255, 255, 255, 0.5);
-			              text-transform: uppercase;
-			              margin-bottom: 5px;
-			              text-align: left;
-			              padding: 0; }
-			            .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc h6 {
-			              font-size: 12px;
-			              color: #ffffff;
-			              text-transform: capitalize;
-			              margin-bottom: 30px; }
-			              @media only screen and (max-width: 767px) {
-			                .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc h6 {
-			                  margin-bottom: 10px; } }
-			            .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc .size,
-			            .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc .color {
-			              display: block;
-			              font-weight: 600;
-			              font-size: 10px;
-			              color: rgba(255, 255, 255, 0.5);
-			              text-transform: uppercase;
-			              margin-bottom: 5px;
-			              line-height: 1; }
-			            .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc .price {
-			              font-family: "Ubuntu", sans-serif;
-			              font-size: 16px;
-			              font-weight: 700;
-			              margin-bottom: 0;
-			              margin-top: 30px;
-			              color: #ffffff; }
-			              @media only screen and (max-width: 767px) {
-			                .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc .price {
-			                  margin-top: 10px;
-			                  font-size: 12px; } }
-			        .right-side-cart-area .cart-content .cart-list .single-cart-item:hover .product-image .cart-item-desc {
-			          background-color: rgba(0, 0, 0, 0.8); }
-			    .right-side-cart-area .cart-content .cart-amount-summary {
-			      padding: 100px 10%;
-			      position: relative;
-			      z-index: 10;
-			      -webkit-box-flex: 0;
-			      -ms-flex: 0 0 calc(100% - 190px);
-			      flex: 0 0 calc(100% - 190px);
-			      width: calc(100% - 190px); }
-			      @media only screen and (max-width: 767px) {
-			        .right-side-cart-area .cart-content .cart-amount-summary {
-			          -webkit-box-flex: 0;
-			          -ms-flex: 0 0 calc(100% - 100px);
-			          flex: 0 0 calc(100% - 100px);
-			          width: calc(100% - 100px);
-			          padding: 50px 15px; } }
-			      @media only screen and (min-width: 576px) and (max-width: 767px) {
-			        .right-side-cart-area .cart-content .cart-amount-summary {
-			          -webkit-box-flex: 0;
-			          -ms-flex: 0 0 calc(100% - 150px);
-			          flex: 0 0 calc(100% - 150px);
-			          width: calc(100% - 150px);
-			          padding: 50px 30px; } }
-			      .right-side-cart-area .cart-content .cart-amount-summary h2 {
-			        font-size: 30px;
-			        margin-bottom: 100px; }
-			        @media only screen and (max-width: 767px) {
-			          .right-side-cart-area .cart-content .cart-amount-summary h2 {
-			            font-size: 24px;
-			            margin-bottom: 30px; } }
-			        @media only screen and (max-width: 767px) {
-			          .right-side-cart-area .cart-content .cart-amount-summary h2 {
-			            font-size: 30px;
-			            margin-bottom: 50px; } }
-			      .right-side-cart-area .cart-content .cart-amount-summary .summary-table li {
-			        margin-bottom: 20px;
-			        color: #000000;
-			        font-size: 14px;
-			        letter-spacing: 0.75px;
-			        text-transform: uppercase;
-			        font-weight: 600;
-			        display: -webkit-box;
-			        display: -ms-flexbox;
-			        display: flex;
-			        -webkit-box-pack: justify;
-			        -ms-flex-pack: justify;
-			        justify-content: space-between; }
-			        @media only screen and (max-width: 767px) {
-			          .right-side-cart-area .cart-content .cart-amount-summary .summary-table li {
-			            font-size: 12px;
-			            margin-bottom: 10px; } }
-			        @media only screen and (min-width: 576px) and (max-width: 767px) {
-			          .right-side-cart-area .cart-content .cart-amount-summary .summary-table li {
-			            font-size: 14px;
-			            margin-bottom: 15px; } }
-			        .right-side-cart-area .cart-content .cart-amount-summary .summary-table li span:last-child {
-			          font-weight: 700;
-			          font-family: "Ubuntu", sans-serif; }
-			      @media only screen and (max-width: 767px) {
-			        .right-side-cart-area .cart-content .cart-amount-summary .essence-btn {
-			          min-width: 140px;
-			          width: 140px;
-			          padding: 0 15px; } }
+			  }
+			}
+
 
 		</style>
 
 	</head>
 	<body>
 
-	<!-- HEADER -->
-	<header>
-		<!-- top Header -->
-		<div id="top-header">
-			<div class="container">
-				<div class="text-center">
-					<h3>Banner</h3>
-				</div>
-			</div>
-		</div>
-		<!-- /top Header -->
-
-		<!-- header -->
-		<div id="header" style="background-color: #0D7694;">
-			<div class="container-fluid d-lg-flex justify-content-lg-between">
-				<div class="">
-					<!-- Logo -->
-					<div class="header-logo">
-						<a class="logo" href="#">
-							<img src="logo.png" alt="">
-						</a>
+		<!-- HEADER -->
+			<header>
+				<!-- top Header -->
+				<div id="top-header" class="d-none d-lg-block" > 
+					<div class="container">
+						<div class="text-center">
+							<h3>Banner</h3>
+						</div>
 					</div>
-					<!-- /Logo -->
-
-					<!-- Search -->
-					<div class="header-search">
-						<form>
-							<input class="input search-input" type="text" placeholder="Pesquisar">
-							<select class="input search-categories">
-								<option value="0">Todas as Categorias</option>
-								<option value="1">Livros</option>
-								<option value="1">Mangas</option>
-							</select>
-							<button class="search-btn"><i class="icon ion-md-search"></i></button>
-						</form>
-					</div>
-					<!-- /Search -->
 				</div>
+				<!-- /top Header -->
 
-				<div class="">
-					<ul class="header-btns">
-
-						<!-- Cart Button -->
-						<li class="header-cart">
-							<a href="#" class="" id="essenceCartBtn">
-								<div class="header-btns-icon">
-									<i class="icon ion-md-cart"></i>
-									<span class="qty">3</span>
-								</div>
-								<strong class="text-uppercase">Meu Carrinho:</strong>
-								<br>
-								<span>R$ 35,20</span>
-							</a>
-						</li>
-						<!-- /Cart Button -->
-
-						<!-- Account -->
-						<li class="header-account dropdown default-dropdown">
-							<div class="dropdown-toggle" id="drop-perf" role="button" data-toggle="dropdown" aria-expanded="true">
-								<div class="header-btns-img">
-									<img src="avatar.png" alt="">
-								</div>
-								<strong class="text-uppercase">Minha Conta</strong>
+				<!-- header -->
+				<div id="header" style="background-color: #0D7694;">
+					<div class="container-fluid d-lg-flex justify-content-lg-between">
+						<div class="">
+							<!-- Logo -->
+							<div class="header-logo">
+								<a class="logo" href="#">
+									<img src="logo.png" alt="">
+								</a>
 							</div>
-							<a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
-							<ul class="dropdown-menu" arial-labelledby="drop-perf" >
-								<li><a href="#"><i class="icon ion-md-person"></i> Minha Conta</a></li>
-								<li><a href="#"><i class="icon ion-md-heart"></i> Meus Desejos</a></li>
-								<li><a href="#"><i class="icon ion-ios-unlock"></i> Login</a></li>
-								<li><a href="#"><i class="icon ion-md-person-add"></i> Criar Conta</a></li>
+							<!-- /Logo -->
+
+							<!-- Search -->
+							<div class="header-search">
+								<form>
+									<input class="input search-input rounded-right" type="text" placeholder="Pesquisar">
+									<select class="input search-categories rounded-left">
+										<option value="0">Todas as Categorias</option>
+										<option value="1">Livros</option>
+										<option value="1">Mangas</option>
+									</select>
+									<button class="search-btn"><i class="icon ion-md-search"></i></button>
+								</form>
+							</div>
+							<!-- /Search -->
+						</div>
+
+						<div class="">
+							<ul class="header-btns">
+
+								<!-- Cart Button -->
+								<li class="header-cart">
+									<a href="#" class="" id="essenceCartBtn">
+										<div class="header-btns-icon">
+											<i class="icon ion-md-cart"></i>
+											<span class="qty">3</span>
+										</div>
+										<strong class="text-uppercase">Meu Carrinho:</strong>
+										<br>
+										<span>R$ 35,20</span>
+									</a>
+								</li>
+								<!-- /Cart Button -->
+
+								<!-- Account -->
+								<li class="header-account dropdown default-dropdown">
+									<div class="dropdown-toggle" id="drop-perf" role="button" data-toggle="dropdown" aria-expanded="true">
+										<div class="header-btns-img">
+											<img src="avatar.png" alt="">
+										</div>
+										<strong class="text-uppercase">Minha Conta</strong>
+									</div>
+									<a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
+									<ul class="dropdown-menu" arial-labelledby="drop-perf" >
+										<li><a href="#"><i class="icon ion-md-person"></i> Minha Conta</a></li>
+										<li><a href="#"><i class="icon ion-md-heart"></i> Lista de Desejos</a></li>
+										<li><a href="#"><i class="icon ion-ios-unlock"></i> Login</a></li>
+										<li><a href="#"><i class="icon ion-md-person-add"></i> Criar Conta</a></li>
+									</ul>
+								</li>
+								<!-- /Account -->
+
+								
+								<!-- Mobile nav toggle-->
+								<li class="nav-toggle">
+									<button class=" main-btn icon-btn"><i class="icon ion-md-menu"></i></button>
+								</li>
+								<!-- / Mobile nav toggle -->
 							</ul>
-						</li>
-						<!-- /Account -->
-
-						
-						<!-- Mobile nav toggle-->
-						<li class="nav-toggle">
-							<button class=" main-btn icon-btn"><i class="icon ion-md-menu"></i></button>
-						</li>
-						<!-- / Mobile nav toggle -->
-					</ul>
+						</div>
+					</div>
+					<!-- header -->
 				</div>
-			</div>
-			<!-- header -->
-		</div>
-		<!-- container -->
-	</header>
-	<!-- /HEADER -->
-		
-	<!-- NAVIGATION -->
-	<div id="navigation">
-		<!-- container -->
-		<div class="container-fluid p-0">
-			<div id="responsive-nav">
-				<!-- category nav -->
-				<div class="category-nav">
-					<span class="category-header">Categorias <i class="icon ion-md-menu" style="font-size: 20px;"></i></span>
-					<ul class="category-list">
-						<li><a href="#">Livros</a></li>						
-						<li><a href="#">Mangas</a></li>
-						<li><a href="#">Blusas</a></li>
-						<li><a href="#">Action's Figures</a></li>
-						<li><a href="#">Canecas</a></li>					
-						<li><a href="#">Chaveiros</a></li>						
-						<li><a href="#">Ver Todos</a></li>
-					</ul>
+				<!-- container -->
+			</header>
+		<!-- /HEADER -->
+
+
+		<!-- CART AREA -->
+			<div class="cart-bg-overlay"></div>
+
+		    <div class="right-side-cart-area">
+
+		        <!-- Cart Button -->
+		        <div class="cart-button">
+		            <a href="#" id="rightSideCart"><i class="icon ion-md-cart"></i><span>3</span></a>
+		        </div>
+
+		        <div class="cart-content d-flex">
+
+		            <!-- Cart List Area -->
+		            <div class="cart-list">
+		                <!-- Single Cart Item -->
+		                <div class="single-cart-item">
+		                    <a href="#" class="product-image">
+		                        <img src="product-img/product-1.png" class="img-fluid p-3 " alt="">
+		                        <!-- Cart Item Desc -->
+		                        <div class="cart-item-desc">
+		                        	<form action="">
+		                        		<button class="product-remove"><i class="icon ion-md-close" aria-hidden="true"></i></button>
+		                        	</form>                          	
+		                            <span class="badge">Harry Poter</span>
+		                            <h6>Button Through Strap Mini Dress</h6>
+		                            <p class="price">R$ 45,00</p>
+		                        </div>
+		                    </a>
+		                </div>
+
+		                <!-- Single Cart Item -->
+		                <div class="single-cart-item">
+		                    <a href="#" class="product-image">
+		                        <img src="product-img/product-2.jpg" class="img-fluid p-3 " alt="">
+		                        <!-- Cart Item Desc -->
+		                        <div class="cart-item-desc">
+		                          	<form action="">
+		                        		<button class="product-remove"><i class="icon ion-md-close" aria-hidden="true"></i></button>
+		                        	</form>
+		                            <span class="badge">Nanatsu no Taizai</span>
+		                            <h6>Button Through Strap Mini Dress</h6>
+		                            <p class="price">R$ 45,00</p>
+		                        </div>
+		                    </a>
+		                </div>
+
+		                <!-- Single Cart Item -->
+		                <div class="single-cart-item">
+		                    <a href="#" class="product-image">
+		                        <img src="product-img/product-3.jpg" class="img-fluid p-3 " alt="">
+		                        <!-- Cart Item Desc -->
+		                        <div class="cart-item-desc">
+		                          	<form action="">
+		                        		<button class="product-remove"><i class="icon ion-md-close" aria-hidden="true"></i></button>
+		                        	</form>
+		                            <span class="badge">HighSchool of the Death</span>
+		                            <h6>Button Through Strap Mini Dress</h6>
+		                            <p class="price">$45.00</p>
+		                        </div>
+		                    </a>
+		                </div>
+		            </div>
+
+		            <!-- Cart Summary -->
+		            <div class="cart-amount-summary">
+
+		                <h2>Summary</h2>
+		                <ul class="summary-table">
+		                    <li><span>subtotal:</span> <span>R$ 274,00</span></li>
+		                    <li><span>desconto:</span> <span>-15%</span></li>
+		                    <li><span>total:</span> <span>R$ 232,00</span></li>
+		                </ul>
+		                <div class="btn btn-primary p-3 mt-5">
+		                    <a href="#" class="text-white font-weight-bold text-uppercase">Conferir</a>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		<!-- /CART AREA -->
+
+		<!-- MAIN -->
+			<main>
+				<!-- NAVIGATION -->
+					<div id="navigation">
+						<!-- container -->
+						<div class="container-fluid p-0">
+							<div id="responsive-nav">
+								<!-- category nav -->
+								<div class="category-nav">
+									<span class="category-header">Categorias <i class="icon ion-md-menu" style="font-size: 20px;"></i></span>
+									<ul class="category-list">
+										<li><a href="#">Livros</a></li>						
+										<li><a href="#">Mangas</a></li>
+										<li><a href="#">Blusas</a></li>
+										<li><a href="#">Action's Figures</a></li>
+										<li><a href="#">Canecas</a></li>					
+										<li><a href="#">Chaveiros</a></li>						
+										<li><a href="#">Ver Todos</a></li>
+									</ul>
+								</div>
+								<!-- /category nav -->
+
+								<!-- menu nav -->
+								<div class="menu-nav">
+									<span class="menu-header">Menu <i class="icon ion-md-menu" style="font-size: 20px;"></i></span>
+									<ul class="menu-list">
+										<li><a href="#">Home</a></li>
+										<li><a href="#">Shop</a></li>
+										<li><a href="#">Home</a></li>
+										<li><a href="#">Shop</a></li>
+									</ul>
+								</div>
+								<!-- menu nav -->
+							</div>
+						</div>
+						<!-- /container -->
+					</div>
+				<!-- /NAVIGATION -->
+
+				<!-- HOME -->
+					<section id="home">
+						<!-- container -->
+						<div class="container-fluid p-0">
+							<!-- home wrap -->
+							<div class="home-wrap">
+								<!-- home slick -->
+								<div id="home-slick">
+									<!-- banner -->
+									<div class="banner banner-1">
+										<img src="carousel-img/banner01.jpg" alt="">
+									</div>
+									<!-- /banner -->
+
+									<!-- banner -->
+									<div class="banner banner-1">
+										<img src="carousel-img/banner01.jpg" alt="">
+										<div class="banner-caption">
+										</div>
+									</div>
+									<!-- /banner -->
+
+									<!-- banner -->
+									<div class="banner banner-1">
+										<img src="carousel-img/banner01.jpg"  alt="">
+										<div class="banner-caption">
+										</div>
+									</div>
+									<!-- /banner -->
+								</div>
+								<!-- /home slick -->
+							</div>
+							<!-- /home wrap -->
+						</div>
+						<!-- /container -->
+					</section>
+				<!-- /HOME -->
+
+				<!-- NEWS -->
+					<section id="news" style="background-color: #343F4B;">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 my-4">
+									<h4 class="text-white text-uppercase m-0">Novidades</h4>
+								</div><!-- news title -->
+							</div><!-- /row 1 -->								
+							<div class="row">
+								<div class="col-md-12 news">
+									<div class="news-top">
+										<div class="col-md-4 news-left1">
+											<a href=""><img src="images/5.jpg" class="img-fluid" alt=""></a>
+										</div>
+										<div class="col-md-4 news-middle">
+											<a href=""><img src="images/6.jpg" class="img-fluid" alt=""></a>
+										</div>
+										<div class="col-md-4 news-right1">
+											<a href=""><img src="images/7.jpg" class="img-fluid" alt=""></a>
+										</div>
+										<div class="clearfix"></div>
+									</div><!-- newsnews-top -->
+									<div class="news-bottom">
+										<div class="col-md-4 news-left2">
+											<a href=""><img src="images/4.jpg" class="img-fluid" alt=""></a>
+										</div>
+										<div class="col-md-8 news-right2">
+											<a href=""><img src="images/3.jpg" class="img-fluid" alt=""></a>
+										</div>									
+										<div class="clearfix"> </div>
+									</div><!-- /news-bottm -->
+								</div><!-- /news painel image -->
+							</div><!-- /row 2-->
+							<div class="row">
+								<div class="col-md-12 mb-4 border border-light text-center rounded">
+									<h4 class="text-white text-uppercase my-4">Banner</h4>
+								</div><!-- Banner -->
+							</div><!-- /row 1 -->
+						</div><!-- /container -->
+					</section>
+				<!-- /NEWS -->
+
+
+
+			</main>
+		<!-- /MAIN -->
+
+		<!-- FOOTER -->
+			<footer id="footer" class="section section-grey p-0">
+				<!-- container -->
+				<div class="container-fluid">
+					<!-- row -->
+					<div class="row">
+						<!-- footer widget -->
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="footer">
+								<!-- footer logo -->
+								<div class="footer-logo">
+									<a class="logo" href="#">
+				            <img src="./img/logo.png" alt="">
+				          </a>
+								</div>
+								<!-- /footer logo -->
+
+								<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+
+								<!-- footer social -->
+								<ul class="footer-social">
+									<li><a href="#"><i class="icon ion-logo-facebook"></i></a></li>
+									<li><a href="#"><i class="icon ion-logo-twitter"></i></a></li>
+									<li><a href="#"><i class="icon ion-logo-instagram"></i></a></li>
+								</ul>
+								<!-- /footer social -->
+							</div>
+						</div>
+						<!-- /footer widget -->
+
+						<!-- footer widget -->
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-header">Conta</h3>
+								<ul class="list-links">
+									<li><a href="#">Minha Conta</a></li>
+									<li><a href="#">Lista de Desejos</a></li>
+									<li><a href="#">Login</a></li>
+									<li><a href="#">Criar Conta</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /footer widget -->
+
+						<div class="clearfix visible-sm visible-xs"></div>
+
+						<!-- footer widget -->
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-header">Serviço do Clinte</h3>
+								<ul class="list-links">
+									<li><a href="#">Sobre Nós</a></li>
+									<li><a href="#">Envio e Devolução</a></li>
+									<li><a href="#">Guia de envio</a></li>
+									<li><a href="#">FAQ</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /footer widget -->
+
+						<!-- footer subscribe -->
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="footer text-justify">
+								<h3 class="footer-header">Permaneça conectado</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+								<form>
+									<div class="form-group">
+										<input class="input p-2 rounded" placeholder="Insira o endereço de e-mail">
+									</div>
+									<button class="primary-btn">Receber Novidades</button>
+								</form>
+							</div>
+						</div>
+						<!-- /footer subscribe -->
+					</div>
+					<!-- /row -->
+					<hr class="mt-3 mb-2">
+					<!-- row -->
+					<div class="row justify-content-center">
+						<div class="col-md-8 text-white text-center my-2">
+							<!-- footer copyright -->
+							<div class="footer-copyright">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos os Direitos Reservados a <a href="#" target="_blank">Puzzle</a>
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</div>
+							<!-- /footer copyright -->
+						</div>
+					</div>
+					<!-- /row -->
 				</div>
-				<!-- /category nav -->
-
-				<!-- menu nav -->
-				<div class="menu-nav">
-					<span class="menu-header">Menu <i class="icon ion-md-menu" style="font-size: 20px;"></i></span>
-					<ul class="menu-list">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Shop</a></li>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Shop</a></li>
-					</ul>
-				</div>
-				<!-- menu nav -->
-			</div>
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /NAVIGATION -->
-	
-
-	<!-- CART AREA -->
-		
-	<div class="cart-bg-overlay"></div>
-
-    <div class="right-side-cart-area">
-
-        <!-- Cart Button -->
-        <div class="cart-button">
-            <a href="#" id="rightSideCart"><i class="icon ion-md-cart"></i><span>3</span></a>
-        </div>
-
-        <div class="cart-content d-flex">
-
-            <!-- Cart List Area -->
-            <div class="cart-list">
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="product-img/product-1.png" class="img-fluid p-3 " alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <span class="badge">Mango</span>
-                            <h6>Button Through Strap Mini Dress</h6>
-                            <p class="size">Size: S</p>
-                            <p class="color">Color: Red</p>
-                            <p class="price">$45.00</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="product-img/product-2.jpg" class="img-fluid p-3 " alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <span class="badge">Mango</span>
-                            <h6>Button Through Strap Mini Dress</h6>
-                            <p class="size">Size: S</p>
-                            <p class="color">Color: Red</p>
-                            <p class="price">$45.00</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="product-img/product-3.jpg" class="img-fluid p-3 " alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <span class="badge">Mango</span>
-                            <h6>Button Through Strap Mini Dress</h6>
-                            <p class="size">Size: S</p>
-                            <p class="color">Color: Red</p>
-                            <p class="price">$45.00</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Cart Summary -->
-            <div class="cart-amount-summary">
-
-                <h2>Summary</h2>
-                <ul class="summary-table">
-                    <li><span>subtotal:</span> <span>$274.00</span></li>
-                    <li><span>delivery:</span> <span>Free</span></li>
-                    <li><span>discount:</span> <span>-15%</span></li>
-                    <li><span>total:</span> <span>$232.00</span></li>
-                </ul>
-                <div class="checkout-btn mt-100">
-                    <a href="checkout.html" class="btn essence-btn">check out</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-	<!-- /CART AREA -->
+				<!-- /container -->
+			</footer>
+		<!-- /FOOTER -->
 
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="jquery.nicescroll.js"></script>
 		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="slick.min.js"></script>
+		<script type="text/javascript" src="Script.js"></script>
+		
+		<script>
+			// HOME SLICK
+			  $('#home-slick').slick({
+			    autoplay: true,
+			    infinite: true,
+			    speed: 300,
+			    arrows: true,
+			  });
+		</script>
+
 	</body>
 </html>
