@@ -38,6 +38,7 @@
       }
     }
   });
+
 })(jQuery);
 
 var cartbtn1 = $('#essenceCartBtn');

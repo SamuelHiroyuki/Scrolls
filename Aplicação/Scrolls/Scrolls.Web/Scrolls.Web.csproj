@@ -90,6 +90,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\slick-theme.css" />
+    <Content Include="Content\slick.css" />
+    <Content Include="img\carousel-img\banner01.jpg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -101,19 +104,19 @@
     <Content Include="Content\responsivo.css" />
     <Content Include="Content\responsivo2.css" />
     <Content Include="Content\Style.css" />
+    <Content Include="fonts\slick.svg" />
     <Content Include="Global.asax" />
-    <Content Include="img\338x370.png" />
-    <Content Include="img\361x370.png" />
-    <Content Include="img\739x370.png" />
     <Content Include="img\app-area.png" />
     <Content Include="img\appgoogle.png" />
     <Content Include="img\appmaca.png" />
     <Content Include="img\avatar.png" />
-    <Content Include="img\carrossel-img\img1.jpg" />
-    <Content Include="img\carrossel-img\img2.jpg" />
-    <Content Include="img\carrossel-img\img3.jpg" />
     <Content Include="img\logo_scrolls.png" />
     <Content Include="img\logo_scrolls_ico.ico" />
+    <Content Include="img\news-img\3.jpg" />
+    <Content Include="img\news-img\4.jpg" />
+    <Content Include="img\news-img\5.jpg" />
+    <Content Include="img\news-img\6.jpg" />
+    <Content Include="img\news-img\7.jpg" />
     <Content Include="img\product-img\product-1.png" />
     <Content Include="img\product-img\product-2.jpg" />
     <Content Include="img\product-img\product-3.jpg" />
@@ -123,6 +126,7 @@
     <Content Include="MaterialDesignLite\material.js" />
     <Content Include="MaterialDesignLite\material.min.css" />
     <Content Include="MaterialDesignLite\material.min.js" />
+    <Content Include="Scripts\active.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -233,17 +237,22 @@
     <Content Include="MaterialDesignLite\material.min.css.map" />
     <Content Include="MaterialDesignLite\material.min.js.map" />
     <Content Include="MaterialDesignLite\package.json" />
+    <Content Include="fonts\slick.eot" />
+    <Content Include="fonts\slick.ttf" />
+    <Content Include="fonts\slick.woff" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery.nicescroll.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\Script.js" />
+    <Content Include="Scripts\slick.min.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
