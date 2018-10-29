@@ -1,10 +1,4 @@
 (function($) {
-
-  // :: Nicescroll Active Code
-    if ($.fn.niceScroll) {
-        $(".cart-list, .cart-content").niceScroll();
-    }
-
   // NAVIGATION
   var responsiveNav = $('#responsive-nav'),
     catToggle = $('#responsive-nav .category-nav .category-header'),
@@ -39,6 +33,11 @@
     }
   });
 
+    // :: Nicescroll Active Code
+    if ($.fn.niceScroll) {
+        $(".cart-list, .cart-content").niceScroll();
+    }
+        
         //HOME SLICK
         $('#home-slick').slick({
           autoplay: true,
