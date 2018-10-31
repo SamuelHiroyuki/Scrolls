@@ -110,8 +110,8 @@
     <Content Include="img\appgoogle.png" />
     <Content Include="img\appmaca.png" />
     <Content Include="img\avatar.png" />
+    <Content Include="img\icone_scrolls.ico" />
     <Content Include="img\logo_scrolls.png" />
-    <Content Include="img\logo_scrolls_ico.ico" />
     <Content Include="img\news-img\3.jpg" />
     <Content Include="img\news-img\4.jpg" />
     <Content Include="img\news-img\5.jpg" />
@@ -122,6 +122,8 @@
     <Content Include="img\product-img\product-3.jpg" />
     <Content Include="img\product-img\product-4.jpg" />
     <Content Include="img\qrcode.png" />
+    <Content Include="img\scrollsicon.ico" />
+    <Content Include="img\scrollslogo.png" />
     <Content Include="MaterialDesignLite\material.css" />
     <Content Include="MaterialDesignLite\material.js" />
     <Content Include="MaterialDesignLite\material.min.css" />

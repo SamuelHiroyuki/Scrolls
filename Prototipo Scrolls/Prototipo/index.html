@@ -80,15 +80,15 @@
 								<!-- /Cart Button -->
 
 								<!-- Account -->
-								<li class="header-account dropdown default-dropdown">
-									<div class="dropdown-toggle" id="drop-perf" role="button" data-toggle="dropdown" aria-expanded="false">
+								<li class="header-account dropdown">
+									<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
 										<div class="header-btns-img">
 											<img src="avatar.png" alt="">
 										</div>
 										<strong class="text-uppercase">Minha Conta</strong>
 									</div>
 									<a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
-									<ul class="dropdown-menu" arial-labelledby="drop-perf" >
+									<ul class="dropdown-menu" >
 										<li><a href="#"><i class="icon ion-md-person"></i> Minha Conta</a></li>
 										<li><a href="#"><i class="icon ion-md-heart"></i> Lista de Desejos</a></li>
 										<li><a href="#"><i class="icon ion-ios-unlock"></i> Login</a></li>
@@ -96,6 +96,11 @@
 									</ul>
 								</li>
 								<!-- /Account -->
+								<!-- Mobile nav toggle-->
+		                        <li class="nav-toggle">
+		                            <button class=" main-btn icon-btn"><i class="icon ion-md-menu"></i></button>
+		                        </li>
+		                        <!-- / Mobile nav toggle -->
 							</ul>
 						</div>
 					</div>
@@ -188,7 +193,41 @@
 
 		<!-- MAIN -->
 			<main>
-				
+				<!-- NAVIGATION -->
+			        <div id="navigation">
+			            <!-- container -->
+			            <div class="container-fluid p-0">
+			                <div id="responsive-nav">
+			                    <!-- category nav -->
+			                    <div id="category-nav" class="category-nav show-on-click">
+			                        <span class="category-header">Categorias <i class="icon ion-md-menu" style="font-size: 20px;"></i></span>
+			                        <ul class="category-list">
+			                            <li><a href="#">Livros</a></li>
+			                            <li><a href="#">Mangas</a></li>
+			                            <li><a href="#">Blusas</a></li>
+			                            <li><a href="#">Action's Figures</a></li>
+			                            <li><a href="#">Canecas</a></li>
+			                            <li><a href="#">Chaveiros</a></li>
+			                            <li><a href="#">Ver Todos</a></li>
+			                        </ul>
+			                    </div>
+			                    <!-- /category nav -->
+			                    <!-- menu nav -->
+			                    <div class="menu-nav">
+			                        <span class="menu-header">Menu <i class="icon ion-md-menu" style="font-size: 20px;"></i></span>
+			                        <ul class="menu-list">
+			                            <li><a href="#">Home</a></li>
+			                            <li><a href="#">Shop</a></li>
+			                            <li><a href="#">Home</a></li>
+			                            <li><a href="#">Shop</a></li>
+			                        </ul>
+			                    </div>
+			                    <!-- menu nav -->
+			                </div>
+			            </div>
+			            <!-- /container -->
+			        </div>
+			        <!-- /NAVIGATION -->
 
 			</main>
 		<!-- /MAIN -->
