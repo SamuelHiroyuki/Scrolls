@@ -229,20 +229,101 @@
 			        </div>
 			    <!-- /NAVIGATION -->
 
-			        <section class="mt-4">
+			        <section class="mt-5">
 			        	<div class="container">
 			        		<div class="row">
-			        				<!-- Product Single -->
-						            <div class="product-page product-single col-sm-6 col-md-4 col-lg-3">
-						              <div class="product-thumb">
-						                <div class="product-label">
+			        			<div class="col-md-12 my-3">
+			        				<button class="btn btn-filter rounded-0 py-2 pl-3 text-uppercase" type="button" data-toggle="collapse" data-target="#Category-filter" aria-expanded="false" aria-controls="Category-filter"><i class="icon ion-md-funnel mr-2 font-weight-bold"></i>Filtros</button>
+									<div class="collapse mt-1" id="Category-filter">
+										<div class="col-12 card card-body border-0 d-flex justify-content-between">
+										    <div class="col-3">
+										    	<h5>Categorias</h5>
+										    	<div class="category-filter px-2">
+										    		<div class="custom-control custom-checkbox my-1">
+													  <input type="checkbox" class="custom-control-input" id="c1">
+													  <label class="custom-control-label" for="c1">Livros(152)</label>
+													</div><!-- CheckBox category -->
+													<div class="custom-control custom-checkbox my-1">
+													  <input type="checkbox" class="custom-control-input" id="c2">
+													  <label class="custom-control-label" for="c2">Mangas(152)</label>
+													</div><!-- CheckBox category -->
+													<div class="custom-control custom-checkbox my-1">
+													  <input type="checkbox" class="custom-control-input" id="c3">
+													  <label class="custom-control-label" for="c3">Camisas(152)</label>
+													</div><!-- CheckBox category -->
+													<div class="custom-control custom-checkbox my-1">
+													  <input type="checkbox" class="custom-control-input" id="c4">
+													  <label class="custom-control-label" for="c4">Drama(152)</label>
+													</div><!-- CheckBox category -->
+													<div class="custom-control custom-checkbox my-1">
+													  <input type="checkbox" class="custom-control-input" id="c5">
+													  <label class="custom-control-label" for="c5">Histótia(152)</label>
+													</div><!-- CheckBox category -->
+													<div class="custom-control custom-checkbox my-1">
+													  <input type="checkbox" class="custom-control-input" id="c6">
+													  <label class="custom-control-label" for="c6">Fantasia(152)</label>
+													</div><!-- CheckBox category -->
+										    	</div><!-- Category filter -->
+										    </div><!-- Grid --><!-- categoria conforme o produto selecionado -->
+										    <div class="col-3">
+										    	<h5>Preço</h5>
+										    	<div class="price-filter px-2">
+										    		<div class="custom-control custom-checkbox my-1">
+													  <input type="checkbox" class="custom-control-input" id="p1">
+													  <label class="custom-control-label" for="p1">Até R$ 50,00 (152)</label>
+													</div><!-- CheckBox price -->
+													<div class="custom-control custom-checkbox my-1">
+													  <input type="checkbox" class="custom-control-input" id="p2">
+													  <label class="custom-control-label" for="p2">De R$ 50,00 á R$ 150,00 (152)</label>
+													</div><!-- CheckBox price -->
+													<div class="custom-control custom-checkbox my-1">
+													  <input type="checkbox" class="custom-control-input" id="p3">
+													  <label class="custom-control-label" for="p3">De R$ 150,00 á R$ 250,00 (152)</label>
+													</div><!-- CheckBox price -->
+													<div class="custom-control custom-checkbox my-1">
+													  <input type="checkbox" class="custom-control-input" id="p4">
+													  <label class="custom-control-label" for="p4">De R$ 250,00 á R$ 450,00 (152)</label>
+													</div><!-- CheckBox price -->
+										    	</div><!-- Price filter -->
+										    </div><!-- Grid -->
+										     <div class="col-3">
+										    	<h5>Desconto</h5>
+										    	<div class="sale-filter px-2">
+										    		<div class="custom-control custom-checkbox my-1">
+													  <input type="checkbox" class="custom-control-input" id="p1">
+													  <label class="custom-control-label" for="s1">Até 10% (152)</label>
+													</div><!-- CheckBox sale -->
+													<div class="custom-control custom-checkbox my-1">
+													  <input type="checkbox" class="custom-control-input" id="p2">
+													  <label class="custom-control-label" for="s2">De 10% á 30% (152)</label>
+													</div><!-- CheckBox sale -->
+													<div class="custom-control custom-checkbox my-1">
+													  <input type="checkbox" class="custom-control-input" id="p3">
+													  <label class="custom-control-label" for="s3">De 30% á R$ 60% (152)</label>
+													</div><!-- CheckBox sale -->
+													<div class="custom-control custom-checkbox my-1">
+													  <input type="checkbox" class="custom-control-input" id="p4">
+													  <label class="custom-control-label" for="s4">De R$ 60% á R$ 80% (152)</label>
+													</div><!-- CheckBox sale -->
+										    	</div><!-- Sale filter -->
+										    </div><!-- Grid -->
+									  	</div><!-- Card filter -->
+									</div><!-- Collapse filter -->
+			        			</div>
+			        		</div>
+
+			        		<div class="row">
+			        			<!-- Product Single -->
+						        <div class="product-page product-single col-sm-6 col-md-4 col-lg-3">
+						        	<div class="product-thumb">
+						        		<div class="product-label">
 						                  <span>New</span>
 						                  <span class="sale"></span>
 						                </div>
 						                <img src="product-img/product-1.png" alt="">
-						              </div>
-						              <div class="product-body">
-						                <h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
+						            </div>
+						            <div class="product-body">
+						             	<h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
 						                <p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
 						                <div class="product-rating">
 						                  <i class="icon ion-md-star"></i>
@@ -255,7 +336,7 @@
 						                  <button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
 						                </form>
 						              </div>
-						            </div>
+						        </div>
 						            <!-- /Product Single -->
 						            <!-- Product Single -->
 						            <div class="product-page product-single col-sm-6 col-md-4 col-lg-3">

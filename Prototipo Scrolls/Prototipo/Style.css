@@ -1443,6 +1443,25 @@ textarea.input {
                     PRODUCT PAGE
 ===========================================================*/
 
+/*----------------------------*\
+	Filter
+\*----------------------------*/
+
+.btn-filter{
+	color: #FFF;
+	font-weight: bold;
+	background-color:  #30323A;
+}
+
+.btn-filter i{
+	font-size: 15px;
+	line-height: 15px; 
+}
+
+/*----------------------------*\
+	Product artifices
+\*----------------------------*/
+
     .product-page .product-old-price {
         color: #F8C141;
         font-size: 70%;
