@@ -1616,53 +1616,12 @@ textarea.input {
         			PRODUCT PAGE
 ===========================================================*/
 
-.product-details-slick{
-	border: 1px solid #DADADA;
-}
-
-.product-view{
-	height: 25vw;
-	overflow: hidden;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.product-view img{
-	max-width: 68%;
-}
-
-.product-view:hover{
-	opacity: 0.5;
-	transition: 0.8s all;
-}
-
-
-/*----------------------------*\
-	Product details
-\*----------------------------*/
-
-.product.product-details .product-name {
-  margin-top: 15px;
-}
-
-.product.product-details .product-rating {
-  margin-right: 15px;
-  margin-bottom: 15px;
-}
-
-.product.product-details .product-options {
-  padding-top: 30px;
-  margin-bottom: 15px;
-  border-top: 1px solid #DADADA;
-  margin-top: 15px;
-}
 
 /*=========================================================
         			RESPONSIVE
 ===========================================================*/
 
-    @media only screen and (max-width: 991px) {
+    @media only screen and (max-width: 992px) {
         #home .home-wrap {
             margin-left: 0px;
         }
@@ -1678,11 +1637,11 @@ textarea.input {
             padding: 1.5rem;
         }
 
-            .product.product-single .product-thumb > img {
-                max-width: 60%;
-            }
+        .product.product-single .product-thumb > img {
+            max-width: 60%;
+        }
 
-            .product-page.product-single .product-thumb {
+        .product-page.product-single .product-thumb {
             position: relative;
             height: 22vw;
             display: flex;
@@ -1693,12 +1652,21 @@ textarea.input {
             padding: 1.5rem;
         }
 
-            .product-page.product-single .product-thumb > img {
-                max-width: 15vw;
-            }
+        .product-page.product-single .product-thumb > img {
+            max-width: 15vw;
+        }
+		
+		.product-view{
+			height: 30vw;
+		}
+
+		.product-view img{
+			max-width: 18vw;
+		}
+
     }
 
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 576px) {
         [class*='col-xs'] {
             width: 100%;
         }
@@ -1732,6 +1700,14 @@ textarea.input {
         .product-page.product-single .product-thumb > img {
             max-width: 75%;
         }
+
+        .product-view{
+			height: 80vw;
+		}
+
+		.product-view img{
+			max-width: 70%;
+		}
     }
 
 
