@@ -1613,9 +1613,102 @@ textarea.input {
     }
 
 /*=========================================================
-        			PRODUCT PAGE
+        			PRODUCT Details
 ===========================================================*/
 
+.product-old-price {
+  color: #F8C141;
+  font-size: 70%;
+}
+
+.product-rating {
+  display: inline-block;
+}
+
+.product-rating>i {
+  color: #FFB656;
+}
+
+ .product-rating>i.empty {
+  color: #DADADA;
+}
+
+.product-label>span {
+  position: relative;
+  display: inline-block;
+  padding: 5px 15px;
+  font-weight: 700;
+  color: #FFF;
+  background-color: #30323A;
+  z-index: 22;
+}
+
+ .product-label>span.sale {
+  background-color: #F8C141;
+}
+
+ .product-label>span:empty{
+  display: none;
+}
+
+.product-view{
+	height: 30vw;
+	overflow: hidden;
+	padding: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #323A3D;
+}
+
+.product-view img{
+	max-width: 65%;
+}
+
+.product-view img:hover{
+	opacity: .5;
+	transition:  0.8s all;
+}
+
+@media only screen and (width: 1024px){
+	.product-view img{
+	max-width: 60%;
+}
+	.product-btns >form+form{
+			margin-left:  1rem;
+		}
+}
+
+@media only screen and (min-width: 992px){
+	.product-btns >form+form{
+			margin-left:  1rem;
+		}
+}
+
+/*----------------------------*\
+	Product details
+\*----------------------------*/
+
+.product.product-details .product-name {
+  margin-top: 15px;
+}
+
+.product.product-details .product-rating {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.product.product-details .product-options {
+  padding-top: 30px;
+  margin-bottom: 15px;
+  border-top: 1px solid #DADADA;
+  margin-top: 15px;
+}
+
+.input-group-text{
+	background-color: transparent;
+	border: none;
+}
 
 /*=========================================================
         			RESPONSIVE
@@ -1655,13 +1748,21 @@ textarea.input {
         .product-page.product-single .product-thumb > img {
             max-width: 15vw;
         }
+
+        .product-view{
+        	margin-bottom: 2rem;
+        }
 		
 		.product-view{
-			height: 30vw;
+			height: 70vw;
 		}
 
 		.product-view img{
-			max-width: 18vw;
+			max-width: 65%;
+		}
+
+		.product-btns >form+form{
+			margin-left:  1rem;
 		}
 
     }
@@ -1702,11 +1803,15 @@ textarea.input {
         }
 
         .product-view{
-			height: 80vw;
+			height: 90vw;
 		}
 
 		.product-view img{
 			max-width: 70%;
+		}
+
+		.product-btns >form+form{
+			margin-bottom: 1rem;
 		}
     }
 

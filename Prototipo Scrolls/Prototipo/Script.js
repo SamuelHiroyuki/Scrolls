@@ -38,9 +38,22 @@
       }
     }
   });
-  
-
 })(jQuery);
+
+if ($.fn.owlCarousel) {
+  $('.product_thumbnail_slides').owlCarousel({
+    items: 1,
+    margin: 0,
+    loop: true,
+    nav: true,
+    //navText: ["<img src='img/core-img/long-arrow-left.svg' alt=''>", "<img src='img/core-img/long-arrow-right.svg' alt=''>"],
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    smartSpeed: 1000
+  });
+}
+
 
 var cartbtn1 = $('#essenceCartBtn');
 var cartOverlay = $(".cart-bg-overlay");
