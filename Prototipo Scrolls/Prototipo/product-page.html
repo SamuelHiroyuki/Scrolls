@@ -22,171 +22,91 @@
 
 <body>
 	<!-- HEADER -->
-			<header>
-				<!-- top Header -->
-				<div id="top-header" class="d-none d-lg-block" > 
-					<div class="container">
-						<div class="text-center">
-							<h3>Banner</h3>
-						</div>
+		<header>
+			<!-- top Header -->
+			<div id="top-header" class="d-none d-lg-block" > 
+				<div class="container">
+					<div class="text-center">
+						<h3>Banner</h3>
 					</div>
 				</div>
-				<!-- /top Header -->
+			</div>
+			<!-- /top Header -->
 
-				<!-- header -->
-				<div id="header" style="background-color: #0D7694;">
-					<div class="container-fluid d-lg-flex justify-content-lg-between">
-						<div class="">
-							<!-- Logo -->
-							<div class="header-logo text-center">
-								<a class="logo" href="#">
-									<img src="logo_scrolls.png" class="img-fluid w-75"  alt="">
-								</a>
-							</div>
-							<!-- /Logo -->
-
-							<!-- Search -->
-							<div class="header-search">
-								<form>
-									<input class="input search-input rounded-left rounded-right" type="text" placeholder="Pesquisar">
-									<select class="input search-categories rounded-left">
-										<option value="0">Todas as Categorias</option>
-										<option value="1">Livros</option>
-										<option value="1">Mangas</option>
-									</select>
-									<button class="search-btn"><i class="icon ion-md-search"></i></button>
-								</form>
-							</div>
-							<!-- /Search -->
+			<!-- header -->
+			<div id="header" style="background-color: #0D7694;">
+				<div class="container-fluid d-lg-flex justify-content-lg-between">
+					<div class="">
+						<!-- Logo -->
+						<div class="header-logo text-center">
+							<a class="logo" href="#">
+								<img src="logo_scrolls.png" class="img-fluid w-75"  alt="">
+							</a>
 						</div>
+						<!-- /Logo -->
 
-						<div class="">
-							<ul class="header-btns">
+						<!-- Search -->
+						<div class="header-search">
+							<form class="input-group">
+								<select class=" form-control custom-select rounded-left border-left-0">
+									<option value="0">Todas as Categorias</option>
+									<option value="1">Livros</option>
+									<option value="1">Mangas</option>
+								</select>
+								<input class=" form-control border-left-0 border-right-0" type="text" placeholder="Pesquisar">
+								<button class="btn border-left-0 search-btn"><i class="icon ion-ios-search"></i></button>
+							</form>
+						</div>
+						<!-- /Search -->
+					</div>
 
-								<!-- Cart Button -->
-								<li class="header-cart">
-									<a href="#" class="" id="essenceCartBtn">
-										<div class="header-btns-icon">
-											<i class="icon ion-md-cart"></i>
-											<span class="qty">3</span>
-										</div>
-										<strong class="text-uppercase">Meu Carrinho:</strong>
-										<br>
-										<span>R$ 35,20</span>
-									</a>
-								</li>
-								<!-- /Cart Button -->
+					<div class="">
+						<ul class="header-btns">
 
-								<!-- Account -->
-								<li class="header-account dropdown">
-									<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
-										<div class="header-btns-img">
-											<img src="avatar.png" alt="">
-										</div>
-										<strong class="text-uppercase">Minha Conta</strong>
+							<!-- Cart Button -->
+							<li class="header-cart">
+								<a href="#" class="" id="essenceCartBtn">
+									<div class="header-btns-icon">
+										<i class="icon ion-md-cart"></i>
+										<span class="qty">3</span>
 									</div>
-									<a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
-									<ul class="dropdown-menu" >
-										<li><a href="#"><i class="icon ion-md-person"></i> Minha Conta</a></li>
-										<li><a href="#"><i class="icon ion-md-heart"></i> Lista de Desejos</a></li>
-										<li><a href="#"><i class="icon ion-ios-unlock"></i> Login</a></li>
-										<li><a href="#"><i class="icon ion-md-person-add"></i> Criar Conta</a></li>
-									</ul>
-								</li>
-								<!-- /Account -->
-								<!-- Mobile nav toggle-->
-		                        <li class="nav-toggle">
+									<strong class="text-uppercase">Meu Carrinho:</strong>
+									<br>
+									<span>R$ 35,20</span>
+								</a>
+							</li>
+							<!-- /Cart Button -->
+
+							<!-- Account -->
+							<li class="header-account dropdown">
+								<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
+									<div class="header-btns-img">
+										<img src="avatar.png" alt="">
+									</div>
+									<strong class="text-uppercase">Minha Conta</strong>
+								</div>
+								<a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
+								<ul class="dropdown-menu" >
+									<li><a href="#"><i class="icon ion-md-person"></i> Minha Conta</a></li>
+									<li><a href="#"><i class="icon ion-md-heart"></i> Lista de Desejos</a></li>
+									<li><a href="#"><i class="icon ion-ios-unlock"></i> Login</a></li>
+									<li><a href="#"><i class="icon ion-md-person-add"></i> Criar Conta</a></li>
+								</ul>
+							</li>
+							<!-- /Account -->
+							<!-- Mobile nav toggle-->
+		                    	<li class="nav-toggle">
 		                            <button class=" main-btn icon-btn"><i class="icon ion-md-menu"></i></button>
 		                        </li>
-		                        <!-- / Mobile nav toggle -->
-							</ul>
-						</div>
+		                    <!-- / Mobile nav toggle -->
+						</ul>
 					</div>
-					<!-- header -->
 				</div>
-				<!-- container -->
-			</header>
+				<!-- header -->
+			</div>
+			<!-- container -->
+		</header>
 	<!-- /HEADER -->
-
-	<!-- CART AREA -->
-			<div class="cart-bg-overlay"></div>
-
-		    <div class="right-side-cart-area">
-
-		        <!-- Cart Button -->
-		        <div class="cart-button">
-		            <a href="#" id="rightSideCart"><i class="icon ion-md-cart"></i><span>3</span></a>
-		        </div>
-
-		        <div class="cart-content d-flex">
-
-		            <!-- Cart List Area -->
-		            <div class="cart-list">
-		                <!-- Single Cart Item -->
-		                <div class="single-cart-item">
-		                    <a href="#" class="product-image">
-		                        <img src="product-img/product-1.png" class="img-fluid p-3 " alt="">
-		                        <!-- Cart Item Desc -->
-		                        <div class="cart-item-desc">
-		                        	<form action="">
-		                        		<button class="product-remove"><i class="icon ion-md-close" aria-hidden="true"></i></button>
-		                        	</form>                          	
-		                            <span class="badge">Harry Poter</span>
-		                            <h6>Button Through Strap Mini Dress</h6>
-		                            <p class="price">R$ 45,00</p>
-		                        </div>
-		                    </a>
-		                </div>
-
-		                <!-- Single Cart Item -->
-		                <div class="single-cart-item">
-		                    <a href="#" class="product-image">
-		                        <img src="product-img/product-2.jpg" class="img-fluid p-3 " alt="">
-		                        <!-- Cart Item Desc -->
-		                        <div class="cart-item-desc">
-		                          	<form action="">
-		                        		<button class="product-remove"><i class="icon ion-md-close" aria-hidden="true"></i></button>
-		                        	</form>
-		                            <span class="badge">Nanatsu no Taizai</span>
-		                            <h6>Button Through Strap Mini Dress</h6>
-		                            <p class="price">R$ 45,00</p>
-		                        </div>
-		                    </a>
-		                </div>
-
-		                <!-- Single Cart Item -->
-		                <div class="single-cart-item">
-		                    <a href="#" class="product-image">
-		                        <img src="product-img/product-3.jpg" class="img-fluid p-3 " alt="">
-		                        <!-- Cart Item Desc -->
-		                        <div class="cart-item-desc">
-		                          	<form action="">
-		                        		<button class="product-remove"><i class="icon ion-md-close" aria-hidden="true"></i></button>
-		                        	</form>
-		                            <span class="badge">HighSchool of the Death</span>
-		                            <h6>Button Through Strap Mini Dress</h6>
-		                            <p class="price">$45.00</p>
-		                        </div>
-		                    </a>
-		                </div>
-		            </div>
-
-		            <!-- Cart Summary -->
-		            <div class="cart-amount-summary">
-
-		                <h2>Summary</h2>
-		                <ul class="summary-table">
-		                    <li><span>subtotal:</span> <span>R$ 274,00</span></li>
-		                    <li><span>desconto:</span> <span>-15%</span></li>
-		                    <li><span>total:</span> <span>R$ 232,00</span></li>
-		                </ul>
-		                <div class="btn btn-primary p-3 mt-5">
-		                    <a href="#" class="text-white font-weight-bold text-uppercase">Conferir</a>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-	<!-- /CART AREA -->
 	
 	<!-- NAVIGATION -->
 			        <div id="navigation">
@@ -223,68 +143,67 @@
 			            <!-- /container -->
 			        </div>
 	<!-- /NAVIGATION -->
-	
 
-
-	<!-- section -->
-	<section class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<!--  Product Details -->
-				<div class="product product-details clearfix col-md-12 d-md-flex justify-content-md-between align-items-md-center">
-					<div class="col-md-5 col-12">
-						<div id="product-main-view">
-							<div class="product-view">
-								<img src="product-img/product-2.jpg" class="img-fluid" alt="">
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-12">
-						<div class="product-body">
-							<div class="product-label">
-								<span>New</span>
-								<span class="sale">-20%</span>
-							</div>
-							<h4 class="product-name">Nome do Produto vai aki</h4>
-							<h5 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h5>
-							<div class="d-flex">
-								<div class="product-rating">
-									<i class="icon ion-md-star"></i>
-									<i class="icon ion-md-star"></i>
-									<i class="icon ion-md-star"></i>
-									<i class="icon ion-md-star"></i>
-									<i class="icon ion-md-star-outline empty"></i>
+	<!-- PRODUCT VIEW -->
+		<section class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!--  Product Details -->
+					<div class="product product-details col-md-12 d-md-flex justify-content-md-between align-items-md-center">
+						<div class="col-md-5 col-12">
+							<div id="product-main-view">
+								<div class="product-view  owl-carousel">
+									<img src="product-img/product-2.jpg" class="img-fluid" alt="">
+									<img src="product-img/product-2.jpg" class="img-fluid" alt="">
 								</div>
-								<p>(152)</p>
 							</div>
-							<p><strong>Disponibilidade:</strong>(152)</p>
-							<form class="input-group col-7 my-2 d-flex p-0">
-								<span class="text-uppercase input-group-text p-0 font-weight-bold" for="cep">CEP: </span>
-								<input class="form-control mx-2" type="text">
-								<button class="text-uppercase btn btn-primary">Calcular</button>
-							</form>
-							<div class="product-btns d-sm-flex">
-								<form action="" class="mb-2">
-									<button class="secundary-btn add-to-cart">Conprar Agora</button>
+						</div>
+						<div class="col-md-6 col-12">
+							<div class="product-body">
+								<div class="product-label">
+									<span>New</span>
+									<span class="sale">-20%</span>
+								</div>
+								<h4 class="product-name">Nome do Produto vai aki</h4>
+								<h5 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h5>
+								<div class="d-flex">
+									<div class="product-rating">
+										<i class="icon ion-md-star"></i>
+										<i class="icon ion-md-star"></i>
+										<i class="icon ion-md-star"></i>
+										<i class="icon ion-md-star"></i>
+										<i class="icon ion-md-star-outline empty"></i>
+									</div>
+									<p>(152)</p>
+								</div>
+								<p><strong>Disponibilidade:</strong>(152)</p>
+								<form class="input-group col-sm-6 my-2 d-flex p-0">
+									<span class="text-uppercase input-group-text p-0 font-weight-bold" for="cep">CEP: </span>
+									<input class="form-control mx-2" type="text">
+									<button class="text-uppercase btn btn-primary">Calcular</button>
 								</form>
-								<form action="">
-									<button class="primary-btn add-to-cart"><i class="icon ion-md-cart"></i> Add to Cart</button>
-								</form>													
+								<div class="product-btns d-sm-flex">
+									<form action="" class="mb-2">
+										<button class="secundary-btn add-to-cart">Conprar Agora</button>
+									</form>
+									<form action="">
+										<button class="primary-btn add-to-cart"><i class="icon ion-md-cart"></i> Add to Cart</button>
+									</form>													
+								</div>
 							</div>
 						</div>
 					</div>
+					<!-- /Product Details -->
 				</div>
-				<!-- /Product Details -->
+				<!-- /row -->
 			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</section>
-	<!-- /section -->
+			<!-- /container -->
+		</section>
+	<!-- /PRODUCT VIEW -->
 
-
+	
 	<!-- FOOTER -->
 			<footer id="footer" class="section section-grey p-0">
 				<!-- container -->
@@ -388,6 +307,19 @@
 	<script type="text/javascript" src="slick/slick.min.js"></script>
 	<script type="text/javascript" src="owl-carousel/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="Script.js"></script>
+	<<script>
+		$('.product-view').owlCarousel({
+            items: 1,
+            margin: 0,
+            lop: true;
+            nav: false,
+            navText: ["<i class='icon ion-md-arrow-round-back'></i>", "<i class='icon ion-md-arrow-round-forward'></i>"],
+            dots: false,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            smartSpeed: 1000
+        });
+	</script>
 
 </body>
 
