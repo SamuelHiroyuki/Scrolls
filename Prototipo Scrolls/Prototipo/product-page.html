@@ -153,10 +153,18 @@
 					<!--  Product Details -->
 					<div class="product product-details col-md-12 d-md-flex justify-content-md-between align-items-md-center">
 						<div class="col-md-5 col-12">
-							<div id="product-main-view">
-								<div class="product-view  owl-carousel">
-									<img src="product-img/product-2.jpg" class="img-fluid" alt="">
-									<img src="product-img/product-2.jpg" class="img-fluid" alt="">
+							<div id="product-main-view" class="owl-carousel">
+								<div class="product-view item">
+									<img src="product-img/product-2.jpg" alt="">
+								</div>
+								<div class="product-view item">
+									<img src="product-img/product-2.jpg" alt="">
+								</div>
+								<div class="product-view item">
+									<img src="product-img/product-2.jpg" alt="">
+								</div>
+								<div class="product-view item">
+									<img src="product-img/product-2.jpg" alt="">
 								</div>
 							</div>
 						</div>
@@ -307,18 +315,22 @@
 	<script type="text/javascript" src="slick/slick.min.js"></script>
 	<script type="text/javascript" src="owl-carousel/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="Script.js"></script>
-	<<script>
-		$('.product-view').owlCarousel({
-            items: 1,
-            margin: 0,
-            lop: true;
-            nav: false,
-            navText: ["<i class='icon ion-md-arrow-round-back'></i>", "<i class='icon ion-md-arrow-round-forward'></i>"],
-            dots: false,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            smartSpeed: 1000
-        });
+	<script>
+		$(document).ready(function() {
+ 
+		  $("#product-main-view").owlCarousel({
+		 
+		      navigation : true, // Show next and prev buttons
+		      slideSpeed : 300,
+		      loop: true,
+		      nav: false,
+		      navText: ["<i class='icon ion-md-arrow-round-back'><i>", "<i class='icon ion-md-arrow-round-forward'><i>"],
+		      paginationSpeed : 400,
+		      singleItem:true,
+		      items : 1,
+		  });
+		 
+		});
 	</script>
 
 </body>

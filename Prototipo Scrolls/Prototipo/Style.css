@@ -1639,20 +1639,23 @@ textarea.input {
 .product-view{
 	height: 30vw;
 	overflow: hidden;
-	padding: 1.5rem;
+	padding: .5rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 1px solid #323A3D;
 }
 
 .product-view img{
-	max-width: 65%;
+	max-height: 100%;
 }
 
 .product-view img:hover{
 	opacity: .5;
 	transition:  0.8s all;
+}
+
+.owl-carousel .owl-item img{
+	width: auto;
 }
 
 @media only screen and (width: 1024px){
@@ -1669,6 +1672,11 @@ textarea.input {
 			margin-left:  1rem;
 		}
 }
+
+/*----------------------------*\
+	Owl-dots
+\*----------------------------*/
+
 
 /*----------------------------*\
 	Product details
@@ -1716,7 +1724,7 @@ textarea.input {
         }
 
         .product.product-single .product-thumb > img {
-            max-width: 60%;
+            max-height: 100%;
         }
 
         .product-page.product-single .product-thumb {
@@ -1731,7 +1739,7 @@ textarea.input {
         }
 
         .product-page.product-single .product-thumb > img {
-            max-width: 15vw;
+            max-height: 100%;
         }
 		
 		.product-view{
@@ -1739,7 +1747,7 @@ textarea.input {
 		}
 
 		.product-view img{
-			max-width: 70%;
+			max-height: 100%;
 		}
     }
 
@@ -1749,7 +1757,7 @@ textarea.input {
 		}
 
 		.product-view img{
-			max-width: 60%;
+			max-height: 100%;
 		}
 	 }
 
@@ -1770,7 +1778,7 @@ textarea.input {
         }
 
         .product.product-single .product-thumb > img {
-            max-width: 80%;
+            max-height: 100%;
         }
 
         .product-page.product-single .product-thumb {
@@ -1785,7 +1793,7 @@ textarea.input {
         }
 
         .product-page.product-single .product-thumb > img {
-            max-width: 75%;
+            max-height: 100%;
         }
 
         .product-view{
@@ -1794,7 +1802,7 @@ textarea.input {
 		}
 
 		.product-view img{
-			max-width: 70%;
+			max-height: 100%;
 		}
 
 		.product-btns >form+form{
