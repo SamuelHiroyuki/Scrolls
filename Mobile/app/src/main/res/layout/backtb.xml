@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:outlineAmbientShadowColor="887d7d7d"
-    android:outlineSpotShadowColor="887d7d7d"
+    android:outlineAmbientShadowColor="#887d7d7d"
+    android:outlineSpotShadowColor="#887d7d7d"
     android:titleTextColor="#000000"
     android:subtitleTextColor="#000"
     >

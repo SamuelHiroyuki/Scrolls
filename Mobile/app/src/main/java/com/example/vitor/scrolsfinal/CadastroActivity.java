@@ -1,9 +1,11 @@
 package com.example.vitor.scrolsfinal;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -12,9 +14,10 @@ public class CadastroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.tb);
-       setSupportActionBar(toolbar);
-        ActionBar ab = getSupportActionBar();
-        ab.setDisplayHomeAsUpEnabled(true);
+
+    }
+    public void LoginClique(View v){
+        Intent intent = new Intent(this, LooginActivity.class);
+        startActivity(intent);
     }
 }

@@ -16,4 +16,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CadastroActivity.class);
         startActivity(intent);
     }
+    public void LoginClique(View v){
+        Intent intent = new Intent(this, LooginActivity.class);
+        startActivity(intent);
+    }
 }
