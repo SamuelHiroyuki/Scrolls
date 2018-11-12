@@ -13,8 +13,10 @@
     <link href="~/MaterialDesignLite/material.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
     <link href="https://unpkg.com/ionicons@4.4.4/dist/css/ionicons.min.css" rel="stylesheet">
-    <link href="~/Content/slick.css" rel="stylesheet" />
-    <link href="~/Content/slick-theme.css" rel="stylesheet" />
+    <link href="~/Content/slick/slick.css" rel="stylesheet" />
+    <link href="~/Content/slick/slick-theme.css" rel="stylesheet" />
+    <link href="~/Content/owl-carousel/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/owl-carousel/owl.theme.default.css" rel="stylesheet" />
     <link href="~/Content/Style.css" rel="stylesheet" />
 
     <title>Scrolls</title>
@@ -62,7 +64,6 @@
 
                 <div>
                     <ul class="header-btns">
-
                         <!-- Cart Button -->
                         <li class="header-cart">
                             <a href="#" class="" id="essenceCartBtn">
@@ -76,7 +77,7 @@
                             </a>
                         </li>
                         <!-- /Cart Button -->
-                        
+              
                         <!-- Account -->
                         <li class="header-account dropdown">
                             <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -94,6 +95,7 @@
                             </ul>
                         </li>
                         <!-- /Account -->
+
                         <!-- Mobile nav toggle-->
                         <li class="nav-toggle">
                             <button class=" main-btn icon-btn"><i class="icon ion-md-menu"></i></button>
@@ -213,8 +215,8 @@
                     <div class="menu-nav">
                         <span class="menu-header">Menu <i class="icon ion-md-menu" style="font-size: 20px;"></i></span>
                         <ul class="menu-list">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Shop</a></li>
+                            <li><a href="~/Views/Home/Index.cshtml">Home</a></li>
+                            <li><a href="~/Views/Home/Lancamentos.cshtml">Lançamentos</a></li>
                             <li><a href="#">Home</a></li>
                             <li><a href="#">Shop</a></li>
                         </ul>
@@ -326,7 +328,8 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/MaterialDesignLite/material.min.js"></script>
     <script src="~/Scripts/jquery.nicescroll.js"></script>
-    <script src="~/Scripts/slick.min.js"></script>
+    <script src="~/Scripts/slick/slick.min.js"></script>
+    <script src="~/Scripts/owl-carousel/owl.carousel.js"></script>
     <script src="~/Scripts/Script.js"></script>
 
 </body>

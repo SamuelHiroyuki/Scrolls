@@ -1,0 +1,392 @@
+﻿
+@{
+    ViewBag.Title = "Lancamentos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- /FILTER AREA -->
+<section class="mt-5 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-filter rounded-0 py-2 pl-3 text-uppercase" type="button" data-toggle="collapse" data-target="#Filter" aria-expanded="false" aria-controls="Filter"><i class="icon ion-md-menu mr-2 font-weight-bold"></i>Filtros</button>
+                <div class="collapse float-right" id="Filter">
+                    <button class="btn btn-filter rounded-0 py-2 pl-3 text-uppercase" type="button"><i class="icon ion-md-funnel mr-2 font-weight-bold"></i>Filtrar</button>
+                    <button class="btn btn-clear rounded-0 py-2 pl-3 text-uppercase" type="button"><i class="icon ion-md-close mr-2 font-weight-bold"></i>Limpar</button>
+                </div>
+                <div class="collapse Filter-conteiner mt-4" id="Filter">
+                    <div class="row d-flex-flex">
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            <h5>Categorias</h5>
+                            <div class="category-filter px-2">
+                                <div class="custom-control custom-checkbox my-1">
+                                    <input type="checkbox" class="custom-control-input" id="c1">
+                                    <label class="custom-control-label" for="c1">Livros(152)</label>
+                                </div><!-- CheckBox category -->
+                                <div class="custom-control custom-checkbox my-1">
+                                    <input type="checkbox" class="custom-control-input" id="c2">
+                                    <label class="custom-control-label" for="c2">Mangas(152)</label>
+                                </div><!-- CheckBox category -->
+                                <div class="custom-control custom-checkbox my-1">
+                                    <input type="checkbox" class="custom-control-input" id="c3">
+                                    <label class="custom-control-label" for="c3">Camisas(152)</label>
+                                </div><!-- CheckBox category -->
+                                <div class="custom-control custom-checkbox my-1">
+                                    <input type="checkbox" class="custom-control-input" id="c4">
+                                    <label class="custom-control-label" for="c4">Drama(152)</label>
+                                </div><!-- CheckBox category -->
+                                <div class="custom-control custom-checkbox my-1">
+                                    <input type="checkbox" class="custom-control-input" id="c5">
+                                    <label class="custom-control-label" for="c5">Histótia(152)</label>
+                                </div><!-- CheckBox category -->
+                                <div class="custom-control custom-checkbox my-1">
+                                    <input type="checkbox" class="custom-control-input" id="c6">
+                                    <label class="custom-control-label" for="c6">Fantasia(152)</label>
+                                </div><!-- CheckBox category -->
+                            </div><!-- Category filter -->
+                        </div><!-- Category --><!-- categoria conforme o produto selecionado -->
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            <h5>Mais Avaliados</h5>
+                            <div class="ma-filter px-2">
+                                <div class="custom-control custom-radio my-1">
+                                    <input type="radio" id="ma1" name="mafilter" class="custom-control-input">
+                                    <label class="custom-control-label" for="ma1">
+                                        <div class="product-rating">
+                                            <i class="icon ion-md-star"></i>
+                                            <i class="icon ion-md-star"></i>
+                                            <i class="icon ion-md-star"></i>
+                                            <i class="icon ion-md-star"></i>
+                                            <i class="icon ion-md-star"></i>
+                                        </div> (152)
+                                    </label>
+                                </div><!-- Radio ma 5 -->
+                                <div class="custom-control custom-radio my-1">
+                                    <input type="radio" id="ma1" name="mafilter" class="custom-control-input">
+                                    <label class="custom-control-label" for="ma1">
+                                        <div class="product-rating">
+                                            <i class="icon ion-md-star"></i>
+                                            <i class="icon ion-md-star"></i>
+                                            <i class="icon ion-md-star"></i>
+                                            <i class="icon ion-md-star"></i>
+                                            <i class="icon ion-md-star-outline empty"></i>
+                                        </div> (152)
+                                    </label>
+                                </div><!-- Radio ma 4 -->
+                                <div class="custom-control custom-radio my-1">
+                                    <input type="radio" id="ma1" name="mafilter" class="custom-control-input">
+                                    <label class="custom-control-label" for="ma1">
+                                        <div class="product-rating">
+                                            <i class="icon ion-md-star"></i>
+                                            <i class="icon ion-md-star"></i>
+                                            <i class="icon ion-md-star"></i>
+                                            <i class="icon ion-md-star-outline empty"></i>
+                                            <i class="icon ion-md-star-outline empty"></i>
+                                        </div> (152)
+                                    </label>
+                                </div><!-- Radio ma 3 -->
+                                <div class="custom-control custom-radio my-1">
+                                    <input type="radio" id="ma1" name="mafilter" class="custom-control-input">
+                                    <label class="custom-control-label" for="ma1">
+                                        <div class="product-rating">
+                                            <i class="icon ion-md-star"></i>
+                                            <i class="icon ion-md-star"></i>
+                                            <i class="icon ion-md-star-outline empty"></i>
+                                            <i class="icon ion-md-star-outline empty"></i>
+                                            <i class="icon ion-md-star-outline empty"></i>
+                                        </div> (152)
+                                    </label>
+                                </div><!-- Radio ma 2 -->
+                            </div><!-- Best Rated filter -->
+                        </div><!-- Best Rated -->
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            <h5>Preço</h5>
+                            <div class="price-filter px-2">
+                                <div class="custom-control custom-radio my-1">
+                                    <input type="radio" id="p1" name="pricefilter" class="custom-control-input">
+                                    <label class="custom-control-label" for="p1">Até R$ 50,00 (152)</label>
+                                </div><!-- CheckBox price -->
+                                <div class="custom-control custom-radio my-1">
+                                    <input type="radio" id="p2" name="pricefilter" class="custom-control-input">
+                                    <label class="custom-control-label" for="p2">De R$ 50,00 até R$ 150,00 (152)</label>
+                                </div><!-- CheckBox price -->
+                                <div class="custom-control custom-radio my-1">
+                                    <input type="radio" id="p3" name="pricefilter" class="custom-control-input">
+                                    <label class="custom-control-label" for="p3">De R$ 150,00 até R$ 250,00 (152)</label>
+                                </div><!-- CheckBox price -->
+                                <div class="custom-control custom-radio my-1">
+                                    <input type="radio" id="p4" name="pricefilter" class="custom-control-input">
+                                    <label class="custom-control-label" for="p4">De R$ 250,00 até R$ 500,00 (152)</label>
+                                </div><!-- CheckBox price -->
+                            </div><!-- Price filter -->
+                        </div><!-- Price -->
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            <h5>Desconto</h5>
+                            <div class="sale-filter px-2">
+                                <div class="custom-control custom-radio my-1">
+                                    <input type="radio" id="s1" name="salefilter" class="custom-control-input">
+                                    <label class="custom-control-label" for="s1">Até 10% (152)</label>
+                                </div><!-- radio sale -->
+                                <div class="custom-control custom-radio my-1">
+                                    <input type="radio" id="s2" name="salefilter" class="custom-control-input">
+                                    <label class="custom-control-label" for="s2">De 10% á 30% (152)</label>
+                                </div><!-- radio sale -->
+                                <div class="custom-control custom-radio my-1">
+                                    <input type="radio" id="s3" name="salefilter" class="custom-control-input">
+                                    <label class="custom-control-label" for="s3">De 30% á R$ 60% (152)</label>
+                                </div><!-- radio sale -->
+                                <div class="custom-control custom-radio my-1">
+                                    <input type="radio" id="s4" name="salefilter" class="custom-control-input">
+                                    <label class="custom-control-label" for="s4">De R$ 60% á R$ 80% (152)</label>
+                                </div><!-- radio sale -->
+                            </div><!-- Sale filter -->
+                        </div><!-- Sale -->
+                    </div>
+                </div><!-- Card filter -->
+            </div><!-- Collapse filter -->
+        </div>
+        <hr>
+    </div>
+</section>
+<!-- FILTER AREA -->
+
+<!-- PRODUCT VIEW -->
+<section class="mt-5">
+    <div class="container">
+        <div class="row">
+            <!-- Product Single -->
+            <div class="product-page product-single col-sm-6 col-md-4 col-lg-3">
+                <div class="product-thumb">
+                    <div class="product-label">
+                        <span>New</span>
+                        <span class="sale"></span>
+                    </div>
+                    <img src="product-img/product-1.png" alt="">
+                </div>
+                <div class="product-body">
+                    <h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
+                    <p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+                    <div class="product-rating">
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star-outline empty"></i>
+                    </div>
+                    <form action="" class="product-btns d-flex justify-content-center">
+                        <button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /Product Single -->
+
+            <!-- Product Single -->
+            <div class="product-page product-single col-sm-6 col-md-4 col-lg-3">
+                <div class="product-thumb">
+                    <div class="product-label">
+                        <span></span>
+                        <span class="sale">20%</span>
+                    </div>
+                    <img src="product-img/product-2.jpg" alt="">
+                </div>
+                <div class="product-body">
+                    <h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
+                    <p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+                    <div class="product-rating">
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star-outline empty"></i>
+                    </div>
+                    <form action="" class="product-btns d-flex justify-content-center">
+                        <button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /Product Single -->
+
+            <!-- Product Single -->
+            <div class="product-page product-single col-sm-6 col-md-4 col-lg-3">
+                <div class="product-thumb">
+                    <div class="product-label">
+                        <span></span>
+                        <span class="sale">20%</span>
+                    </div>
+                    <img src="product-img/product-3.jpg" alt="">
+                </div>
+                <div class="product-body">
+                    <h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
+                    <p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+                    <div class="product-rating">
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star-outline empty"></i>
+                    </div>
+                    <form action="" class="product-btns d-flex justify-content-center">
+                        <button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /Product Single -->
+
+            <!-- Product Single -->
+            <div class="product-page product-single col-sm-6 col-md-4 col-lg-3">
+                <div class="product-thumb">
+                    <div class="product-label">
+                        <span></span>
+                        <span class="sale">20%</span>
+                    </div>
+                    <img src="product-img/product-4.jpg" alt="">
+                </div>
+                <div class="product-body">
+                    <h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
+                    <p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+                    <div class="product-rating">
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star-outline empty"></i>
+                    </div>
+                    <form action="" class="product-btns d-flex justify-content-center">
+                        <button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /Product Single -->
+
+            <!-- Product Single -->
+            <div class="product-page product-single col-sm-6 col-md-4 col-lg-3">
+                <div class="product-thumb">
+                    <div class="product-label">
+                        <span>New</span>
+                        <span class="sale"></span>
+                    </div>
+                    <img src="product-img/product-1.png" alt="">
+                </div>
+                <div class="product-body">
+                    <h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
+                    <p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+                    <div class="product-rating">
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star-outline empty"></i>
+                    </div>
+                    <form action="" class="product-btns d-flex justify-content-center">
+                        <button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /Product Single -->
+
+            <!-- Product Single -->
+            <div class="product-page product-single col-sm-6 col-md-4 col-lg-3">
+                <div class="product-thumb">
+                    <div class="product-label">
+                        <span></span>
+                        <span class="sale">20%</span>
+                    </div>
+                    <img src="product-img/product-2.jpg" alt="">
+                </div>
+                <div class="product-body">
+                    <h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
+                    <p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+                    <div class="product-rating">
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star-outline empty"></i>
+                    </div>
+                    <form action="" class="product-btns d-flex justify-content-center">
+                        <button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /Product Single -->
+
+            <!-- Product Single -->
+            <div class="product-page product-single col-sm-6 col-md-4 col-lg-3">
+                <div class="product-thumb">
+                    <div class="product-label">
+                        <span></span>
+                        <span class="sale">20%</span>
+                    </div>
+                    <img src="product-img/product-3.jpg" alt="">
+                </div>
+                <div class="product-body">
+                    <h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
+                    <p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+                    <div class="product-rating">
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star-outline empty"></i>
+                    </div>
+                    <form action="" class="product-btns d-flex justify-content-center">
+                        <button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /Product Single -->
+
+            <!-- Product Single -->
+            <div class="product-page product-single col-sm-6 col-md-4 col-lg-3">
+                <div class="product-thumb">
+                    <div class="product-label">
+                        <span></span>
+                        <span class="sale">20%</span>
+                    </div>
+                    <img src="product-img/product-4.jpg" alt="">
+                </div>
+                <div class="product-body">
+                    <h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
+                    <p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+                    <div class="product-rating">
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star-outline empty"></i>
+                    </div>
+                    <form action="" class="product-btns d-flex justify-content-center">
+                        <button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /Product Single -->
+        </div>
+    </div><!-- Product's views -->
+</section>
+<!-- /PRODUCT VIEW -->
+
+<!-- PRODUCT PAGINATION -->
+<section class="mb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav aria-label="...">
+                    <ul class="pagination pagination-lg justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1 <span class="sr-only">(atual)</span></a></li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Próximo</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /PRODUCT PAGINATION -->
