@@ -222,30 +222,6 @@ textarea.input {
 	background-color: #F8C141;
 }
 
-/*----------------------------*\
-			Breadcrumb
-\*----------------------------*/
-
-#breadcrumb {
-	-webkit-box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.175);
-	box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.175);
-}
-
-.breadcrumb {
-	background-color: transparent;
-	border: none;
-	border-radius: 0px;
-	padding: 15px 0px;
-	margin: 0;
-}
-
-.breadcrumb>.active {
-	color: #F8C141;
-}
-
-.breadcrumb>li+li:before {
-	color: #DADADA;
-}
 /*=========================================================
 		             HEADER
 ===========================================================*/
@@ -361,7 +337,7 @@ textarea.input {
 
 .header-account.dropdown .dropdown-menu>li>a>i {
 	margin-right:  15px;
-	color: #F8C141;
+	color: #30323A;
 }
 
 .header-account.dropdown .dropdown-menu>li {
@@ -373,7 +349,7 @@ textarea.input {
 }
 
 .header-account.dropdown .dropdown-menu>li:hover>a>i{
-	color: #30323A;
+	color:#F8C141;
 }
 
 /*----------------------------*\
@@ -1606,6 +1582,10 @@ textarea.input {
   font-size: 70%;
 }
 
+del.product-old-price:empty {
+	display: none;
+}
+
 .product-rating {
   display: inline-block;
 }
@@ -1676,7 +1656,35 @@ textarea.input {
 /*----------------------------*\
 	Owl-dots
 \*----------------------------*/
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
+	background-color: #F8C141;
+}
 
+.owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next{
+	  position: absolute;
+	  top: 45%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  width: 40px;
+	  height: 40px;
+	  background-color: #30323A;
+	  color: #FFF;
+	  text-align: center;
+}
+
+.owl-carousel .owl-nav button.owl-prev:hover, .owl-carousel .owl-nav button.owl-next:hover,
+.owl-carousel .owl-nav button.owl-prev:focus, .owl-carousel .owl-nav button.owl-next:focus{
+	background-color: #F8C141;
+}
+
+.owl-carousel .owl-nav button.owl-prev{
+	left: 0;
+}
+
+.owl-carousel .owl-nav button.owl-next{
+	right: 0;
+}
 
 /*----------------------------*\
 	Product details

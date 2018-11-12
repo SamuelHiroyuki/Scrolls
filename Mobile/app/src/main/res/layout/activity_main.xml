@@ -18,7 +18,7 @@
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:layout_marginTop="70dp"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="140dp"
             android:src="@drawable/bookicon" />
 
        <Button
@@ -29,28 +29,29 @@
            android:textSize="16dp"
            android:text="        inscreva_se_gratis         "
            android:layout_marginTop="110dp"
-           android:layout_marginLeft="65dp"
+           android:layout_marginLeft="90dp"
            android:onClick="CadastroClique"
-           android:alpha="128"
+
            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#D2691E"
+            android:textColor="#3270EC"
             android:textSize="16dp"
             android:text="Ja possui conta na Scrolls?"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="125dp"
             />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:background="@drawable/button_login_shape"
-
             android:textSize="16dp"
             android:text="                     Entrar                       "
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="70dp"
+            android:layout_marginLeft="95dp"
+            android:onClick="LoginClique"
+            android:textColor="#fff"
             />
 
     </LinearLayout>

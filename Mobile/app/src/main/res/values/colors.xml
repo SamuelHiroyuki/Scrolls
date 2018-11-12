@@ -2,5 +2,11 @@
 <resources>
     <color name="colorPrimary">#aaA9A9A9</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#F8C141</color>
+    <color name="AmareloPrincipal">#F8C141</color>
+    <color name="AzulPrincipal">#0d7694</color>
+    <color name="PretoPrincipal">#30323A</color>
+    <color name="AmareloPrincipalT">#EEF8C141</color>
+    <color name="AzulPrincipalT">#EE0d7694</color>
+    <color name="PretoPrincipalT">#EE30323A</color>
 </resources>
