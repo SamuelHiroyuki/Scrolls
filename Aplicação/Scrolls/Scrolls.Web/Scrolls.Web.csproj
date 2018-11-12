@@ -90,8 +90,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\slick-theme.css" />
-    <Content Include="Content\slick.css" />
+    <Content Include="Content\owl-carousel\owl.carousel.css" />
+    <Content Include="Content\owl-carousel\owl.theme.default.css" />
+    <Content Include="Content\slick\slick-theme.css" />
+    <Content Include="Content\slick\slick.css" />
     <Content Include="img\carousel-img\banner01.jpg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -99,10 +101,6 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\owl.carousel.min.css" />
-    <Content Include="Content\owl.theme.default.min.css" />
-    <Content Include="Content\responsivo.css" />
-    <Content Include="Content\responsivo2.css" />
     <Content Include="Content\Style.css" />
     <Content Include="fonts\slick.svg" />
     <Content Include="Global.asax" />
@@ -248,13 +246,13 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\jquery.nicescroll.js" />
-    <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Scripts\owl-carousel\owl.carousel.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\Script.js" />
-    <Content Include="Scripts\slick.min.js" />
+    <Content Include="Scripts\slick\slick.min.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -286,6 +284,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Lancamentos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
