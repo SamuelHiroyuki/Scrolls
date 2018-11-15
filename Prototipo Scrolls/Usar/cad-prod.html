@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="icon" href="assets/images/favicon.ico">
+
+	<title>Cadastro produto | Scrolls Manager</title>
+
+	<link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
+	<link rel="stylesheet" href="assets/css/font-icons/entypo/css/entypo.css">
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic">
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/neon-core.css">
+	<link rel="stylesheet" href="assets/css/neon-theme.css">
+	<link rel="stylesheet" href="assets/css/neon-forms.css">
+	<link rel="stylesheet" href="assets/css/custom.css">
+
+	<script src="assets/js/jquery-1.11.3.min.js"></script>
+
+	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+
+</head>
+<body class="page-body">
+
+<div class="page-container horizontal-menu with-sidebar sidebar-collapsed right-sidebar">
+		
+	
+	<header class="navbar navbar-fixed-top"><!-- set fixed position by adding class "navbar-fixed-top" -->
+		
+		<div class="navbar-inner">
+		
+			<!-- logo -->
+			<div class="navbar-brand" style="padding-top: 8px;">
+				<a href="index.html">
+					<img src="assets/images/logo@2x.png" width="66" alt="" />
+				</a>
+			</div>
+			
+			
+			<!-- main menu -->
+						
+			<ul class="navbar-nav">
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-user"></i>
+						<span class="title">Funcionário</span>
+					</a>
+					<ul>
+						<li>
+							<a href="cad-func.html">
+								<span class="title">Cadastrar funcionário</span>
+							</a>
+						</li>
+						<li>
+							<a href="query-func.html">
+								<span class="title">Consulta</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-book"></i>
+						<span class="title">Produtos</span>
+					</a>
+					<ul class="visible">
+						<li>
+							<a href="cad-prod.html">
+								<span class="title">Cadastrar produto</span>
+							</a>
+						</li>
+						<li>
+							<a href="promo-prod.html">
+								<span class="title">Gerenciar promoção</span>
+							</a>
+						</li>
+						<li>
+							<a href="repor-prod.html">
+								<span class="title">Repor</span>
+								<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="" data-original-title="Em falta">3</span>
+							</a>
+						</li>
+						<li>
+							<a href="query-prod.html">
+								<span class="title">Consulta</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-basket"></i>
+						<span class="title">Vendas</span>
+					</a>
+					<ul>
+						<li>
+							<a href="query-vendas.html">
+								<span class="title">Consulta</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-compass"></i>
+						<span class="title">Mapa</span>
+						<span class="badge badge-success" data-toggle="tooltip" data-placement="right" title="" data-original-title="Banners ativos">9</span>
+					</a>
+					<ul>
+						
+						<li>
+							<a href="mapa-cad.html">
+								<span class="title">Cadastrar banner</span>
+							</a>
+						</li>
+						<li>
+							<a href="query-mapa.html">
+								<span class="title">Visão geral</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+			</ul>
+						
+			
+			<!-- notifications and other links -->
+			<ul class="nav navbar-right pull-right">
+				
+				
+				
+				
+				<li class="sep"></li>
+				
+				<li>
+					<a href="extra-login.html">
+						Log Out <i class="entypo-logout right"></i>
+					</a>
+				</li>
+				
+				
+				<!-- mobile only -->
+				<li class="visible-xs">	
+				
+					<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+					<div class="horizontal-mobile-menu visible-xs">
+						<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
+							<i class="entypo-menu"></i>
+						</a>
+					</div>
+					
+				</li>
+				
+			</ul>
+	
+		</div>
+		
+	</header>
+	
+
+	<style>
+		.fbg{
+			border-color: #f2f2f2;
+		}
+
+		.btn-blue:hover {
+		    background-color: #005389;
+		    border-color: #005389;
+		}
+
+		.btn-blue:active:hover, .btn-blue.active:hover, .open > .dropdown-toggle.btn-blue:hover, .btn-blue:active:focus, .btn-blue.active:focus, .open > .dropdown-toggle.btn-blue:focus, .btn-blue:active.focus, .btn-blue.active.focus, .open > .dropdown-toggle.btn-blue.focus {
+			    background-color: #003d65;
+			    border-color: #003d65;
+			}
+
+			.btn-blue:focus, .btn-blue.focus {
+			    background-color: #005389;
+			    border-color: #005389;
+			}
+
+			.btn-gold:hover {
+			    background-color: #fbc404;
+			    border-color: #fbc404;
+			}
+
+			.btn-gold:active:hover, .btn-gold.active:hover, .open > .dropdown-toggle.btn-gold:hover, .btn-gold:active:focus, .btn-gold.active:focus, .open > .dropdown-toggle.btn-gold:focus, .btn-gold:active.focus, .btn-gold.active.focus, .open > .dropdown-toggle.btn-gold.focus {
+			    background-color: #b08903;
+			    border-color: #b08903;
+			}
+
+
+			.btn-gold:focus, .btn-gold.focus {
+			    background-color: #fbc404;
+			    border-color: #fbc404;
+			}
+
+
+			.btn-danger:hover {
+			    background-color: #a11c1c;
+			    border-color: #a11c1c;
+			}
+
+			.btn-danger:active:hover, .btn-danger.active:hover, .open > .dropdown-toggle.btn-danger:hover, .btn-danger:active:focus, .btn-danger.active:focus, .open > .dropdown-toggle.btn-danger:focus, .btn-danger:active.focus, .btn-danger.active.focus, .open > .dropdown-toggle.btn-danger.focus {
+			    background-color: #821717;
+			    border-color: #821717;
+			}
+
+			
+			.btn-danger:focus, .btn-danger.focus {
+			    background-color: #a11c1c;
+			    border-color: #a11c1c;
+			}
+
+	</style>
+
+	<div class="sidebar-menu" style="width: 40px;">
+
+		<div class="sidebar-menu-inner" style="position: fixed !important;">
+			<div class="row" style="padding-top: 160px; margin-left: -17px;">
+				<div class="col-sm-12" style="padding-left: 0px;">
+						<button type="button" class="btn btn-blue fbg" style="border-radius: 50%;  height: 52px; width: 52px; border-width: 5px; padding-bottom: 8px; padding-left: 11px;">
+							<i class="entypo-plus-squared" style="font-size: 15px;"></i>
+						</button>	
+				</div>
+			</div>
+			<div class="row" style="padding-top: 50px; padding-bottom: 50px;">
+				<div class="col-sm-12" style="padding-left: 0px;">
+						<button type="button" class="btn btn-gold fbg" style="border-radius: 50%;  height: 48px; border-width: 4px;">
+							<i class="entypo-trash"></i>
+						</button>	
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12" style="padding-left: 0px;">
+						<button type="button" class="btn btn-danger fbg" onclick="mst();" style="border-radius: 50%;  height: 48px; border-width: 4px;">
+							<i class="entypo-cancel-squared "></i>
+						</button>	
+				</div>
+			</div>
+		</div>
+
+	</div>	
+
+	<div class="main-content" style="background-color: #efebe9;">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="well" style="background-color: #fff !important;">
+					<form role="form" id="form1" method="post" class="validate">
+						<div class="row">
+							<div class="col-sm-12">
+								<div action="data/upload-file.php" class="dropzone" id="dropzone_example" style="min-height: 150px !important;">
+									<div class="fallback">
+										<input name="file" type="file" multiple />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">	
+							<br/>
+							<br/>
+								<div class="form-group">
+									<label class="form-label">Nome</label>
+									<input type="text" class="form-control" name="name" data-validate="required" data-message-required="O campo é requerido" placeholder="Nome" />
+								</div>
+							</div>							
+
+							<div class="col-sm-3">
+							<br/>
+							<br/>
+								<div class="form-group">
+									<label class="control-label">Categoria</label>
+									
+										<select class="form-control">
+											<option>Option 1</option>
+											<option>Option 2</option>
+											<option>Option 3</option>
+											<option>Option 4</option>
+											<option>Option 5</option>
+										</select>
+								</div>
+							</div>
+
+							<div class="col-sm-3">
+							<br/>
+							<br/>
+								<div class="form-group">
+									<label class="control-label">Gênero</label>
+									
+										<select class="form-control">
+											<option>Option 1</option>
+											<option>Option 2</option>
+											<option>Option 3</option>
+											<option>Option 4</option>
+											<option>Option 5</option>
+										</select>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="row">
+							<style>
+								#prec{
+									z-index: 1; 
+									top: 58px; 
+									left: -48px; 
+									padding-left: 0px;
+								}
+
+								@media only screen and (max-width: 992px ){
+									#prec{
+										left: 0px;
+										top: 0px;
+									}
+								}
+							</style>
+							<br/>
+							<br/>
+							<div class="col-sm-2" style="z-index: 2; padding-left: 35px;">
+								<label class="control-label" >Quantidade</label><br/>
+								<input class="knob" data-min="0" data-max="999" data-width="145" data-height="145" data-thickness=".25" data-fgColor="#0fbd71" data-bgColor="#ebebeb" value="0">
+							</div>
+
+
+							<div class="col-sm-2" id="prec" style="padding-left: 20px;">
+
+								<label class="control-label" style="padding-left: 20px;">Preço</label>
+								<div class="input-group">	
+									<span class="input-group-addon" style="color: #0fbd71">R$</span>
+									<input type="number" class="form-control" value="2.00" min="2.00 max="any" step=".1">
+								</div>
+							</div>
+
+							<div class="col-sm-8">							
+								<div class="form-group">
+									<label for="field-ta" class="control-label">Descrição</label>
+									<textarea class="form-control" style="resize: none;" id="field-ta" placeholder="Descrição" rows="8" cols="2"></textarea>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<br/>
+							<br/>
+							<div class="col-sm-12" style="padding-left: 40px; padding-right: 40px;">
+								<div class="form-group">
+									<label class="control-label">Complemento 
+										<i class="entypo-info-circled" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="O complemento serve para adiconar informações especificas sobre o produto, como autor, tamanho, peso, material e etc. O campo Titulo é responsavel por identificar o tipo do complemento e o campo Descrição por apresentar os dados." data-original-title="Como funciona"></i>
+									</label>
+									<table class="table table-bordered responsive" id="products-table">	
+										<tbody>	 
+											<tr>	  
+												<th>Titulo</th>	   
+												<th>Descrição</th>	   
+												<th>Ações</th>	
+											</tr>	 
+											<tr>	   
+												<td contenteditable="true" style="vertical-align: middle; max-width: 295px;" width="295">&nbsp;</td>	  
+												<td contenteditable="true" style="vertical-align: middle; max-width: 665px;" width="665">&nbsp;</td>   
+												<td style="text-align: center; vertical-align: middle; max-width: 157px;" width="157">
+													<button type="button" class="btn btn-white" onclick="RemoveTableRow(this)" style="border-radius: 50%;  height: 42px;">
+														<i class="entypo-cancel"></i>
+													</button>
+												</td>	 
+											</tr>	
+										</tbody>	
+										<tfoot>	 
+											<tr>	  
+												<td colspan="5" style="text-align: left;">	    
+													<button onclick="AddTableRow()" type="button" style="border-radius: 25%;"><i class="entypo-plus"></i></button>	   
+												</td>	 
+											</tr>	
+										</tfoot>	
+									</table>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+	<!-- Imported styles on this page -->
+	<link rel="stylesheet" href="assets/js/jvectormap/jquery-jvectormap-1.2.2.css">
+	<link rel="stylesheet" href="assets/js/rickshaw/rickshaw.min.css">
+
+	<!-- Bottom scripts (common) -->
+	<script src="assets/js/gsap/TweenMax.min.js"></script>
+	<script src="assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
+	<script src="assets/js/joinable.js"></script>
+	<script src="assets/js/resizeable.js"></script>
+	<script src="assets/js/neon-api.js"></script>
+	<script src="assets/js/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+	<script src="assets/js/jvectormap/jquery-jvectormap-europe-merc-en.js"></script>
+	<script src="assets/js/jquery.sparkline.min.js"></script>
+	<script src="assets/js/rickshaw/vendor/d3.v3.js"></script>
+	<script src="assets/js/rickshaw/rickshaw.min.js"></script>
+	<script src="assets/js/raphael-min.js"></script>
+	<script src="assets/js/morris.min.js"></script>
+	<script src="assets/js/toastr.js"></script>
+	<script src="assets/js/neon-chat.js"></script>
+
+	<script src="assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+	<script src="assets/js/jquery.knob.js"></script>
+
+	<script src="assets/js/bootstrap-datepicker.js"></script>
+	<script src="assets/js/bootstrap-timepicker.min.js"></script>
+
+	<script src="assets/js/bootstrap-switch.min.js"></script>
+	<script src="assets/js/jquery.inputmask.bundle.js"></script>
+	<script src="assets/js/fileinput.js"></script>
+	<script type="text/javascript" src="assets/js/neon-calendar.js"></script>
+
+	<script src="assets/js/zurb-responsive-tables/responsive-tables.js"></script>
+	<!-- JavaScripts initializations and stuff -->
+	<script src="assets/js/neon-custom.js"></script>
+
+	<script src="assets/js/dropzone/dropzone.js"></script>
+
+	<link rel="stylesheet" href="assets/js/dropzone/dropzone.css">
+
+	<!-- Demo Settings -->
+	<script src="assets/js/neon-demo.js"></script>
+
+	<script>
+		$(window).resize(function(){
+
+	       if ($(window).width() <= 768) {  
+		        var el = document.getElementById( 'id' );
+				el.parentNode.removeChild( el );
+	       	}    
+		});
+	</script>
+
+	<script>
+		$(function($) {	  
+			AddTableRow = function() {	
+    			var newRow = $("<tr>");	    
+    			var cols = "";	
+    			cols += '<td contenteditable="true" style="vertical-align: middle; max-width: 295px;" width="295">&nbsp;</td>';	    
+    			cols += '<td contenteditable="true" style="vertical-align: middle; max-width: 465px;" width="465">&nbsp;</td>';    
+    			cols += '<td style="text-align: center; vertical-align: middle;">';	    
+    			cols += '<button type="button" class="btn btn-white" onclick="RemoveTableRow(this)" style="border-radius: 50%;  height: 42px;">'+'<i class="entypo-cancel"></i></button>';	    
+    			cols += '</td>';	
+    			newRow.append(cols);	    
+    			$("#products-table").append(newRow);	
+    			return false;	  
+    		};	
+    	});
+
+    	$(function($) {	  
+    		RemoveTableRow = function(item) {	    
+    			var tr = $(item).closest('tr');	
+    			tr.fadeOut(400, function() { tr.RemoveTableRow(); });
+    			tr.remove();	
+				return false;
+			}	
+		});
+	</script>
+
+	<script>
+		$('.inserttb').on('click', mst)
+		function mst(){
+			var elementHtml = document.getElementById( 'products-table' );
+			var tb = elementHtml.outerHTML;
+			$('.itb').text(tb);
+		}
+	</script>
+
+</body>
+</html>

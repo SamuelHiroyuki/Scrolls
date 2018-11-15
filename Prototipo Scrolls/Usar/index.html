@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="icon" href="assets/images/favicon.ico">
+
+	<title>Home | Scrolls Manager</title>
+
+	<link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
+	<link rel="stylesheet" href="assets/css/font-icons/entypo/css/entypo.css">
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic">
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/neon-core.css">
+	<link rel="stylesheet" href="assets/css/neon-theme.css">
+	<link rel="stylesheet" href="assets/css/neon-forms.css">
+	<link rel="stylesheet" href="assets/css/custom.css">
+
+	<script src="assets/js/jquery-1.11.3.min.js"></script>
+
+	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+
+</head>
+<body class="page-body">
+
+<div class="page-container horizontal-menu with-sidebar sidebar-collapsed right-sidebar">
+		
+	
+	<header class="navbar navbar-fixed-top"><!-- set fixed position by adding class "navbar-fixed-top" -->
+		
+		<div class="navbar-inner">
+		
+			<!-- logo -->
+			<div class="navbar-brand" style="padding-top: 8px;">
+				<a href="index.html">
+					<img src="assets/images/logo@2x.png" width="66" alt="" />
+				</a>
+			</div>
+			
+			
+			<!-- main menu -->
+						
+			<ul class="navbar-nav">
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-user"></i>
+						<span class="title">Funcionário</span>
+					</a>
+					<ul>
+						<li>
+							<a href="cad-func.html">
+								<span class="title">Cadastrar funcionário</span>
+							</a>
+						</li>
+						<li>
+							<a href="query-func.html">
+								<span class="title">Consulta</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-book"></i>
+						<span class="title">Produtos</span>
+					</a>
+					<ul class="visible">
+						<li>
+							<a href="cad-prod.html">
+								<span class="title">Cadastrar produto</span>
+							</a>
+						</li>
+						<li>
+							<a href="promo-prod.html">
+								<span class="title">Gerenciar promoção</span>
+							</a>
+						</li>
+						<li>
+							<a href="repor-prod.html">
+								<span class="title">Repor</span>
+								<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="" data-original-title="Em falta">3</span>
+							</a>
+						</li>
+						<li>
+							<a href="query-prod.html">
+								<span class="title">Consulta</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-basket"></i>
+						<span class="title">Vendas</span>
+					</a>
+					<ul>
+						<li>
+							<a href="query-vendas.html">
+								<span class="title">Consulta</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-compass"></i>
+						<span class="title">Mapa</span>
+						<span class="badge badge-success" data-toggle="tooltip" data-placement="right" title="" data-original-title="Banners ativos">9</span>
+					</a>
+					<ul>
+						
+						<li>
+							<a href="mapa-cad.html">
+								<span class="title">Cadastrar banner</span>
+							</a>
+						</li>
+						<li>
+							<a href="query-mapa.html">
+								<span class="title">Visão geral</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+			</ul>
+						
+			
+			<!-- notifications and other links -->
+			<ul class="nav navbar-right pull-right">
+				
+				
+				
+				
+				<li class="sep"></li>
+				
+				<li>
+					<a href="login.html">
+						Log Out <i class="entypo-logout right"></i>
+					</a>
+				</li>
+				
+				
+				<!-- mobile only -->
+				<li class="visible-xs">	
+				
+					<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+					<div class="horizontal-mobile-menu visible-xs">
+						<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
+							<i class="entypo-menu"></i>
+						</a>
+					</div>
+					
+				</li>
+				
+			</ul>
+	
+		</div>
+		
+	</header>
+	
+	<div class="sidebar-menu">
+
+		<div class="sidebar-menu-inner" style="position: fixed !important;">
+			
+			<div class="sidebar-user-info" id="id">
+				<div class="sui-normal">
+					<a href="profile.html" class="user-link">
+						<img src="assets/images/thumb-1@2x.png" width="55" alt="" class="img-circle">
+					</a>
+				</div>
+			</div>
+									
+			<ul id="main-menu" class="main-menu">
+				<li>
+					<a href="#">
+						<i class="entypo-home" style="padding-left: 4px;"></i>
+						<i style="font-size: 8px; padding-left: 6px;">Loja</i>
+					</a>
+				</li>
+			</ul>
+			
+		</div>
+
+	</div>	
+	<div class="main-content" style="background-color: #efebe9;">
+	
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="well" style="background-color: #fff !important;">
+					<h1>Novembro 13, 2018</h1>
+					<h3>Bem-vindo novamente <strong>Administrador</strong></h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+					<div class="col-sm-8">
+						<div class="panel panel-primary panel-table">
+							<div class="panel-heading">
+								<div class="panel-title" style="padding-bottom: 15px;">
+									<h3>Mais vendidos</h3>
+									<br/>
+									<span>Estatísticas mensais da Scrolls</span>
+								</div>
+							</div>
+							<div class="panel-body">	
+								<table class="table table-responsive no-margin">
+									<thead>
+										<tr>
+											<th>Nome</th>
+											<th>Vendas</th>
+											<th class="text-center">Posição mensal</th>
+										</tr>
+									</thead>
+									
+									<tbody>
+										<tr>
+											<td>Hari Boder</td>
+											<td>600</td>
+											<td class="text-center"><span class="top-apps">4,3,5,4,5,6,3,2,5,3</span></td>
+										</tr>
+										
+										<tr>
+											<td>Game of Tronos</td>
+											<td>540</td>
+											<td class="text-center"><span class="top-apps">3,2,5,4,3,6,7,5,7,9</span></td>
+										</tr>
+										
+										<tr>
+											<td>HTML para idiotas</td>
+											<td>300</td>
+											<td class="text-center"><span class="top-apps">1,3,4,3,5,4,3,6,9,8</span></td>
+										</tr>
+					
+										
+										<tr>
+											<td>Camisa - Naruto to Boruto</td>
+											<td>200</td>
+											<td class="text-center"><span class="top-apps">9,2,5,7,2,4,6,7,2,6</span></td>
+										</tr>
+					
+										
+										<tr>
+											<td>FUNKO POP! VINYL - LEAGUE OF LEGENDS - JINX</td>
+											<td>190</td>
+											<td class="text-center"><span class="top-apps">1,4,5,4,4,3,2,5,4,3</span></td>
+										</tr>
+					
+									</tbody>
+								</table>
+							</div>
+						</div>
+						
+					</div>
+					<div class="col-md-4">	
+						<div class="tile-stats tile-primary" style="background: #287fb8;">
+							<div class="icon"><i class="entypo-users"></i></div>
+							<div class="num" data-start="0" data-end="213" data-postfix="" data-duration="1400" data-delay="0">0</div>
+							
+							<h3>Novos Clientes</h3>
+							<p>Estatística mensal de cadastros da Scrolls</p>
+						</div>
+
+						<br />
+
+						<div class="tile-progress tile-red" style="background-color: #f79d1e;">
+							<div class="tile-header">
+								<h3>Vendas</h3>
+								<span>5.000 vendas realizadas até o momento</span>
+							</div>
+				
+							<div class="tile-progressbar">
+								<span data-fill="35.5%"></span>
+							</div>
+				
+							<div class="tile-footer">
+								<h4>
+									<span class="pct-counter">0</span>% de acréscimo 
+								</h4>
+				
+								<span>% em relação as vendas do mês anterior</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+</div>
+
+
+
+
+
+	<!-- Imported styles on this page -->
+	<link rel="stylesheet" href="assets/js/jvectormap/jquery-jvectormap-1.2.2.css">
+	<link rel="stylesheet" href="assets/js/rickshaw/rickshaw.min.css">
+
+	<!-- Bottom scripts (common) -->
+	<script src="assets/js/gsap/TweenMax.min.js"></script>
+	<script src="assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
+	<script src="assets/js/joinable.js"></script>
+	<script src="assets/js/resizeable.js"></script>
+	<script src="assets/js/neon-api.js"></script>
+	<script src="assets/js/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+	<script src="assets/js/jvectormap/jquery-jvectormap-europe-merc-en.js"></script>
+	<script src="assets/js/jquery.sparkline.min.js"></script>
+	<script src="assets/js/rickshaw/vendor/d3.v3.js"></script>
+	<script src="assets/js/rickshaw/rickshaw.min.js"></script>
+	<script src="assets/js/raphael-min.js"></script>
+	<script src="assets/js/morris.min.js"></script>
+	<script src="assets/js/toastr.js"></script>
+	<script src="assets/js/neon-chat.js"></script>
+
+
+	<!-- JavaScripts initializations and stuff -->
+	<script src="assets/js/neon-custom.js"></script>
+
+	<script>
+		$(window).resize(function(){
+
+	       if ($(window).width() <= 768) {  
+		        var el = document.getElementById( 'id' );
+				el.parentNode.removeChild( el );
+	       	}    
+		});
+		
+	</script>
+
+	<!-- Demo Settings -->
+	<script src="assets/js/neon-demo.js"></script>
+
+</body>
+</html>

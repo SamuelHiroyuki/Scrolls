@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="icon" href="assets/images/favicon.ico">
+
+	<title>Gerenciar promoção | Scrolls Manager</title>
+
+	<link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
+	<link rel="stylesheet" href="assets/css/font-icons/entypo/css/entypo.css">
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic">
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/neon-core.css">
+	<link rel="stylesheet" href="assets/css/neon-theme.css">
+	<link rel="stylesheet" href="assets/css/neon-forms.css">
+	<link rel="stylesheet" href="assets/css/custom.css">
+
+	<script src="assets/js/jquery-1.11.3.min.js"></script>
+
+	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+
+</head>
+<body class="page-body">
+
+<div class="page-container horizontal-menu with-sidebar sidebar-collapsed right-sidebar">
+		
+	
+	<header class="navbar navbar-fixed-top"><!-- set fixed position by adding class "navbar-fixed-top" -->
+		
+		<div class="navbar-inner">
+		
+			<!-- logo -->
+			<div class="navbar-brand" style="padding-top: 8px;">
+				<a href="index.html">
+					<img src="assets/images/logo@2x.png" width="66" alt="" />
+				</a>
+			</div>
+			
+			
+			<!-- main menu -->
+						
+			<ul class="navbar-nav">
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-user"></i>
+						<span class="title">Funcionário</span>
+					</a>
+					<ul>
+						<li>
+							<a href="#">
+								<span class="title">Cadastrar funcionário</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="title">Consulta</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-book"></i>
+						<span class="title">Produtos</span>
+					</a>
+					<ul class="visible">
+						<li>
+							<a href="#">
+								<span class="title">Cadastrar produto</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="title">Gerenciar promoção</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="title">Em falta</span>
+								<span class="badge badge-secondary">3</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="title">Consulta</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-basket"></i>
+						<span class="title">Vendas</span>
+					</a>
+					<ul>
+						<li>
+							<a href="#">
+								<span class="title">Realizar venda</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="title">Consulta</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-compass"></i>
+						<span class="title">Mapa</span>
+						<span class="badge badge-success">9</span>
+					</a>
+					<ul>
+						
+						<li>
+							<a href="#">
+								<span class="title">Cadastrar banner</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="title">Visão geral</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+			</ul>
+						
+			
+			<!-- notifications and other links -->
+			<ul class="nav navbar-right pull-right">
+				
+				
+				
+				
+				<li class="sep"></li>
+				
+				<li>
+					<a href="extra-login.html">
+						Log Out <i class="entypo-logout right"></i>
+					</a>
+				</li>
+				
+				
+				<!-- mobile only -->
+				<li class="visible-xs">	
+				
+					<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+					<div class="horizontal-mobile-menu visible-xs">
+						<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
+							<i class="entypo-menu"></i>
+						</a>
+					</div>
+					
+				</li>
+				
+			</ul>
+	
+		</div>
+		
+	</header>
+	
+	<div class="sidebar-menu">
+
+		<div class="sidebar-menu-inner" style="position: fixed !important;">
+			
+			<div class="sidebar-user-info">
+				<div class="sui-normal">
+					<a href="#" class="user-link">
+						<img src="assets/images/thumb-1@2x.png" width="55" alt="" class="img-circle">
+					</a>
+				</div>
+			</div>
+									
+			<ul id="main-menu" class="main-menu">
+				
+				<li>
+					<a href="#">
+						<i class="entypo-home" style="padding-left: 4px;"></i>
+						<i style="font-size: 8px; padding-left: 6px;">Loja</i>
+					</a>
+				</li>
+			</ul>
+			
+		</div>
+
+	</div>	
+	<div class="main-content">
+		
+		<script type="text/javascript">
+			jQuery( document ).ready( function( $ ) {
+				var $table3 = jQuery("#table-3");
+				
+				var table3 = $table3.DataTable( {
+					"aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]]
+				} );
+				
+				// Initalize Select Dropdown after DataTables is created
+				$table3.closest( '.dataTables_wrapper' ).find( 'select' ).select2( {
+					minimumResultsForSearch: -1
+				});
+				
+				// Setup - add a text input to each footer cell
+				$( '#table-3 tfoot .src' ).each( function () {
+					var title = $('#table-3 thead th').eq( $(this).index() ).text();
+					$(this).html( '<input type="text" class="form-control" placeholder="Procurar ' + title + '" />' );
+				} );
+				
+				// Apply the search
+				table3.columns().every( function () {
+					var that = this;
+				
+					$( 'input', this.footer() ).on( 'keyup change', function () {
+						if ( that.search() !== this.value ) {
+							that
+								.search( this.value )
+								.draw();
+						}
+					} );
+				} );
+			} );
+
+			jQuery( document ).ready( function( $ ) {
+				var $table3 = jQuery("#table-prod");
+				
+				var table3 = $table3.DataTable( {
+					"aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]]
+				} );
+				
+				// Initalize Select Dropdown after DataTables is created
+				$table3.closest( '.dataTables_wrapper' ).find( 'select' ).select2( {
+					minimumResultsForSearch: -1
+				});
+				
+				// Apply the search
+				table3.columns().every( function () {
+					var that = this;
+				
+					$( 'input', this.footer() ).on( 'keyup change', function () {
+						if ( that.search() !== this.value ) {
+							that
+								.search( this.value )
+								.draw();
+						}
+					} );
+				} );
+			} );
+		</script>
+
+
+				<div class="panel-group joined" id="accordion-test-2">
+					<div class="">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-sm-11" style="top: 10px;">
+									<h3>Produtos em promoção</h3>
+								</div>
+								<div class="col-sm-1" style="left: 60px; width: 67px; top: 20px; padding-left: 0px;">
+									<button type="button" class="btn btn-blue" style="border-radius: 50%;  height: 37px; width: 37px; padding-left: 8px;" data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseOne-2">
+										<i class="entypo-plus" style="font-size: 14px;"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div id="collapseOne-2" class="panel-collapse collapse" style="background-color: unset;">
+								<div class="panel-body" style="border-top: unset;">
+									<div class="row">
+										<table class="table table-bordered datatable" id="table-prod">
+											<thead>
+												<tr class="replace-inputs">
+													<th>Imagem</th>
+													<th>Nome</th>
+													<th>Ações</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><img src="#" class="img-rounded" /></td>
+													<td>Livro 2</td>
+								 					 <td>
+								 					 	<div class="input-group">
+															<span class="input-group-btn">
+																<button class="btn btn-default" type="button"><i class="entypo-plus-circled"></i></button>
+															</span>
+															<input type="text" class="form-control">
+															<span class="input-group-addon">%</span>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<th></th>
+													<th></th>
+													<th></th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+		<table class="table table-bordered datatable" id="table-3">
+			<thead>
+				<tr class="replace-inputs">
+					<th>Nome</th>
+					<th>Quantidade do desconto</th>
+					<th>Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Livro</td>
+					<td>50%</td>
+ 					 <td>
+						<a href="#" class="btn btn-default btn-sm btn-icon icon-left">
+							<i class="entypo-pencil"></i>
+							Editar
+						</a>
+						
+						<a href="#" class="btn btn-danger btn-sm btn-icon icon-left">
+							<i class="entypo-cancel"></i>
+							Excluir
+						</a>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th class="src"></th>
+					<th class="src"></th>
+					<th></th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+
+
+
+
+
+	<!-- Imported styles on this page -->
+	<link rel="stylesheet" href="assets/js/jvectormap/jquery-jvectormap-1.2.2.css">
+	<link rel="stylesheet" href="assets/js/rickshaw/rickshaw.min.css">
+
+	<!-- Bottom scripts (common) -->
+	<script src="assets/js/gsap/TweenMax.min.js"></script>
+	<script src="assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
+
+	<script src="assets/js/joinable.js"></script>
+	<script src="assets/js/resizeable.js"></script>
+	<script src="assets/js/neon-api.js"></script>
+	<script src="assets/js/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+	<script src="assets/js/jvectormap/jquery-jvectormap-europe-merc-en.js"></script>
+	<script src="assets/js/jquery.sparkline.min.js"></script>
+	<script src="assets/js/rickshaw/vendor/d3.v3.js"></script>
+	<script src="assets/js/rickshaw/rickshaw.min.js"></script>
+	<script src="assets/js/raphael-min.js"></script>
+	<script src="assets/js/morris.min.js"></script>
+	<script src="assets/js/toastr.js"></script>
+	<script src="assets/js/neon-chat.js"></script>
+
+	<link rel="stylesheet" href="assets/js/datatables/datatables.css">
+	<link rel="stylesheet" href="assets/js/select2/select2-bootstrap.css">
+	<link rel="stylesheet" href="assets/js/select2/select2.css">
+
+
+	<script src="assets/js/datatables/datatables.js"></script>
+	<script src="assets/js/select2/select2.min.js"></script>
+
+	<!-- JavaScripts initializations and stuff -->
+	<script src="assets/js/neon-custom.js"></script>
+
+	
+	<!-- Demo Settings -->
+	<script src="assets/js/neon-demo.js"></script>
+</body>
+</html>
