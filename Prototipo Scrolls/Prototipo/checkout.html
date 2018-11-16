@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Page Title</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
+		<link href="https://unpkg.com/ionicons@4.4.4/dist/css/ionicons.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+		<link rel="stylesheet" href="owl-carousel/owl-carousel.css">
+		<link rel="stylesheet" href="owl-carousel/owl-carousel.css">
+		<link rel="stylesheet" href="Style.css">
+		<link rel="shortcut icon" href="icone_scrolls.ico">
+	</head>
+	<body>
+
+		<!-- HEADER -->
+			<header>
+				<!-- top Header -->
+				<div id="top-header" class="d-none d-lg-block" > 
+					<div class="container">
+						<div class="text-center">
+							<h3>Banner</h3>
+						</div>
+					</div>
+				</div>
+				<!-- /top Header -->
+
+				<!-- header -->
+				<div id="header" style="background-color: #0D7694;">
+					<div class="container-fluid d-lg-flex justify-content-lg-between">
+						<div class="">
+							<!-- Logo -->
+							<div class="header-logo">
+								<a class="logo" href="#">
+									<img src="logo_scrolls.png" class="img-fluid w-75"  alt="">
+								</a>
+							</div>
+							<!-- /Logo -->
+
+							<!-- Search -->
+							<div class="header-search">
+								<form class="input-group">
+									<select class=" form-control custom-select rounded-left border-left-0">
+										<option value="0">Todas as Categorias</option>
+										<option value="1">Livros</option>
+										<option value="1">Mangas</option>
+									</select>
+									<input class=" form-control border-left-0 border-right-0" type="text" placeholder="Pesquisar">
+									<button class="btn border-left-0 search-btn"><i class="icon ion-ios-search"></i></button>
+								</form>
+							</div>
+							<!-- /Search -->
+						</div>
+
+						<div class="">
+							<ul class="header-btns">
+
+								<!-- Cart Button -->
+								<li class="header-cart">
+									<a href="#" class="" id="essenceCartBtn">
+										<div class="header-btns-icon">
+											<i class="icon ion-md-cart"></i>
+											<span class="qty">3</span>
+										</div>
+										<strong class="text-uppercase">Meu Carrinho:</strong>
+										<br>
+										<span>R$ 35,20</span>
+									</a>
+								</li>
+								<!-- /Cart Button -->
+
+								<!-- Account -->
+								<li class="header-account dropdown">
+									<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
+										<div class="header-btns-img">
+											<img src="avatar.png" alt="">
+										</div>
+										<strong class="text-uppercase">Minha Conta</strong>
+									</div>
+									<a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
+									<ul class="dropdown-menu" >
+										<li><a href="#"><i class="icon ion-md-person"></i> Minha Conta</a></li>
+										<li><a href="#"><i class="icon ion-md-heart"></i> Lista de Desejos</a></li>
+										<li><a href="#"><i class="icon ion-ios-unlock"></i> Login</a></li>
+										<li><a href="#"><i class="icon ion-md-person-add"></i> Criar Conta</a></li>
+									</ul>
+								</li>
+								<!-- /Account -->
+								<!-- Mobile nav toggle-->
+		                        <li class="nav-toggle">
+		                            <button class=" main-btn icon-btn"><i class="icon ion-md-menu"></i></button>
+		                        </li>
+		                        <!-- / Mobile nav toggle -->
+							</ul>
+						</div>
+					</div>
+					<!-- header -->
+				</div>
+				<!-- container -->
+			</header>
+		<!-- /HEADER -->
+
+
+		<!-- CART AREA -->
+			<div class="cart-bg-overlay"></div>
+
+		    <div class="right-side-cart-area">
+
+		        <!-- Cart Button -->
+		        <div class="cart-button">
+		            <a href="#" id="rightSideCart"><i class="icon ion-md-cart"></i><span>3</span></a>
+		        </div>
+
+		        <div class="cart-content d-flex">
+
+		            <!-- Cart List Area -->
+		            <div class="cart-list">
+		                <!-- Single Cart Item -->
+		                <div class="single-cart-item">
+		                    <a href="#" class="product-image">
+		                        <img src="product-img/product-1.png" class="img-fluid p-3 " alt="">
+		                        <!-- Cart Item Desc -->
+		                        <div class="cart-item-desc">
+		                        	<form action="">
+		                        		<button class="product-remove"><i class="icon ion-md-close" aria-hidden="true"></i></button>
+		                        	</form>                          	
+		                            <span class="badge">Harry Poter</span>
+		                            <h6>Button Through Strap Mini Dress</h6>
+		                            <p class="price">R$ 45,00</p>
+		                        </div>
+		                    </a>
+		                </div>
+
+		                <!-- Single Cart Item -->
+		                <div class="single-cart-item">
+		                    <a href="#" class="product-image">
+		                        <img src="product-img/product-2.jpg" class="img-fluid p-3 " alt="">
+		                        <!-- Cart Item Desc -->
+		                        <div class="cart-item-desc">
+		                          	<form action="">
+		                        		<button class="product-remove"><i class="icon ion-md-close" aria-hidden="true"></i></button>
+		                        	</form>
+		                            <span class="badge">Nanatsu no Taizai</span>
+		                            <h6>Button Through Strap Mini Dress</h6>
+		                            <p class="price">R$ 45,00</p>
+		                        </div>
+		                    </a>
+		                </div>
+
+		                <!-- Single Cart Item -->
+		                <div class="single-cart-item">
+		                    <a href="#" class="product-image">
+		                        <img src="product-img/product-3.jpg" class="img-fluid p-3 " alt="">
+		                        <!-- Cart Item Desc -->
+		                        <div class="cart-item-desc">
+		                          	<form action="">
+		                        		<button class="product-remove"><i class="icon ion-md-close" aria-hidden="true"></i></button>
+		                        	</form>
+		                            <span class="badge">HighSchool of the Death</span>
+		                            <h6>Button Through Strap Mini Dress</h6>
+		                            <p class="price">$45.00</p>
+		                        </div>
+		                    </a>
+		                </div>
+		            </div>
+
+		            <!-- Cart Summary -->
+		            <div class="cart-amount-summary">
+
+		                <h2>Summary</h2>
+		                <ul class="summary-table">
+		                    <li><span>subtotal:</span> <span>R$ 274,00</span></li>
+		                    <li><span>desconto:</span> <span>-15%</span></li>
+		                    <li><span>total:</span> <span>R$ 232,00</span></li>
+		                </ul>
+		                <div class="btn btn-primary p-3 mt-5">
+		                    <a href="#" class="text-white font-weight-bold text-uppercase">Conferir</a>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		<!-- /CART AREA -->
+
+		<!-- MAIN -->
+			<main>
+				<!-- NAVIGATION -->
+			        <div id="navigation">
+			            <!-- container -->
+			            <div class="container-fluid p-0">
+			                <div id="responsive-nav">
+			                    <!-- category nav -->
+			                    <div id="category-nav" class="category-nav show-on-click">
+			                        <span class="category-header">Categorias <i class="icon ion-md-menu" style="font-size: 20px;"></i></span>
+			                        <ul class="category-list">
+			                            <li><a href="#">Livros</a></li>
+			                            <li><a href="#">Mangas</a></li>
+			                            <li><a href="#">Blusas</a></li>
+			                            <li><a href="#">Action's Figures</a></li>
+			                            <li><a href="#">Canecas</a></li>
+			                            <li><a href="#">Chaveiros</a></li>
+			                            <li><a href="#">Ver Todos</a></li>
+			                        </ul>
+			                    </div>
+			                    <!-- /category nav -->
+			                    <!-- menu nav -->
+			                    <div class="menu-nav">
+			                        <span class="menu-header">Menu <i class="icon ion-md-menu" style="font-size: 20px;"></i></span>
+			                        <ul class="menu-list">
+			                            <li><a href="#">Home</a></li>
+			                            <li><a href="#">Shop</a></li>
+			                            <li><a href="#">Home</a></li>
+			                            <li><a href="#">Shop</a></li>
+			                        </ul>
+			                    </div>
+			                    <!-- menu nav -->
+			                </div>
+			            </div>
+			            <!-- /container -->
+			        </div>
+			    <!-- /NAVIGATION -->
+				
+				<!-- CHECKOUT -->
+					<section class="section">
+						<!-- container -->
+						<div class="container">
+							<!-- row -->
+							<div class="row">
+								<form id="checkout-form" class="clearfix col-md-12">
+									<div class="col-md-12">
+										<div class="order-summary clearfix">
+											<div class="section-title">
+												<h3 class="title">Meu Carrinho</h3>
+											</div>
+											<table class="shopping-cart-table table">
+												<thead>
+													<tr>
+														<th>Produto</th>
+														<th></th>
+														<th class="text-center">Preço</th>
+														<th class="text-center">Quantidade</th>
+														<th class="text-center">Total</th>
+														<th class="text-right"></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td class="thumb"><img src="product-img/product-2.jpg" alt=""></td>
+														<td class="details">
+															<a href="#">Nome do produto vai aqui</a>
+														</td>
+														<td class="price text-center"><strong>$32.50</strong><br><del class="font-weak"><small>$40.00</small></del></td>
+														<td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
+														<td class="total text-center"><strong class="primary-color">$32.50</strong></td>
+														<td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
+													</tr>
+													<tr>
+														<td class="thumb"><img src="product-img/product-2.jpg" alt=""></td>
+														<td class="details">
+															<a href="#">Nome do produto vai aqui</a>
+														</td>
+														<td class="price text-center"><strong>$32.50</strong><br><del class="font-weak"><small></small></del></td>
+														<td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
+														<td class="total text-center"><strong class="primary-color">$32.50</strong></td>
+														<td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
+													</tr>
+													<tr>
+														<td class="thumb"><img src="product-img/product-2.jpg" alt=""></td>
+														<td class="details">
+															<a href="#">Nome do produto vai aqui</a>
+														</td>
+														<td class="price text-center"><strong>$32.50</strong><br><del class="font-weak"><small></small></del></td>
+														<td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
+														<td class="total text-center"><strong class="primary-color">$32.50</strong></td>
+														<td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
+													</tr>
+												</tbody>
+												<tfoot>
+													<tr>
+														<th class="empty" colspan="3"></th>
+														<th>SUBTOTAL</th>
+														<th colspan="2" class="sub-total">$97.50</th>
+													</tr>
+													<tr>
+														<th class="empty" colspan="3"></th>
+														<th>FRETE</th>
+														<td colspan="2" >--</td>
+													</tr>
+													<tr>
+														<th class="empty" colspan="3"></th>
+														<th>TOTAL</th>
+														<th colspan="2" class="total">$97.50</th>
+													</tr>
+												</tfoot>
+											</table>
+											<div class="float-right">
+												<button class="primary-btn">Continuar</button>
+											</div>
+										</div>
+									</div>
+								</form>
+								<div class="col-md-5 px-5 ml-auto">
+									<form action="" class="form-group w-100">											
+										<label for="inputCEP" class="font-weight-bold">Calcular frete e prazo</label>
+										<div class="form-group d-flex">
+											<input type="text" class="form-control col-sm-5 mr-2" placeholder="CEP" id="inputCEP">
+											<button type="submit" data-toggle="collapse" data-target="#frete" aria-expanded="false" aria-controls="frete" class="btn btn-primary">Calcular</button>
+										</div>
+									</form>
+									<div class="collapse my-2" id="frete">
+										<strong>7 á 10 dias uteis - R$ 3,50</strong>
+									</div>
+									<a href="#" class="" style="color: #00A6FF;">Não sei meu CEP?</a>
+								</div>
+							</div>
+							<!-- /row -->
+						</div>
+						<!-- /container -->
+					</section>
+				<!-- /CHECKOUT -->
+
+			</main>
+		<!-- /MAIN -->
+
+		<!-- FOOTER -->
+			<footer id="footer" class="section section-grey p-0">
+				<!-- container -->
+				<div class="container-fluid">
+					<!-- row -->
+					<div class="row">
+						<!-- footer widget -->
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="footer">
+								<!-- footer logo -->
+								<div class="footer-logo">
+									<a class="logo" href="#">
+						            	<img src="logo_scrolls.png" class="img-fluid w-75" alt="">
+						        	</a>
+								</div>
+								<!-- /footer logo -->
+
+								<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+
+								<!-- footer social -->
+								<ul class="footer-social">
+									<li><a href="#"><i class="icon ion-logo-facebook"></i></a></li>
+									<li><a href="#"><i class="icon ion-logo-twitter"></i></a></li>
+									<li><a href="#"><i class="icon ion-logo-instagram"></i></a></li>
+								</ul>
+								<!-- /footer social -->
+							</div>
+						</div>
+						<!-- /footer widget -->
+
+						<!-- footer widget -->
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-header">Conta</h3>
+								<ul class="list-links">
+									<li><a href="#">Minha Conta</a></li>
+									<li><a href="#">Lista de Desejos</a></li>
+									<li><a href="#">Login</a></li>
+									<li><a href="#">Criar Conta</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /footer widget -->
+
+						<div class="clearfix visible-sm visible-xs"></div>
+
+						<!-- footer widget -->
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-header">Serviço do Clinte</h3>
+								<ul class="list-links">
+									<li><a href="#">Sobre Nós</a></li>
+									<li><a href="#">Envio e Devolução</a></li>
+									<li><a href="#">Guia de envio</a></li>
+									<li><a href="#">FAQ</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /footer widget -->
+
+						<!-- footer subscribe -->
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="footer text-justify">
+								<h3 class="footer-header">Permaneça conectado</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+								<form>
+									<div class="form-group">
+										<input class="input p-2 rounded" placeholder="Insira o endereço de e-mail">
+									</div>
+									<button class="primary-btn">Receber Novidades</button>
+								</form>
+							</div>
+						</div>
+						<!-- /footer subscribe -->
+					</div>
+					<!-- /row -->
+					<hr class="mt-3 mb-2">
+					<!-- row -->
+					<div class="row justify-content-center">
+						<div class="col-md-8 text-white text-center my-2">
+							<!-- footer copyright -->
+							<div class="footer-copyright">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos os Direitos Reservados a <a href="#" target="_blank">Puzzle</a>
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</div>
+							<!-- /footer copyright -->
+						</div>
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</footer>
+		<!-- /FOOTER -->
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="jquery.nicescroll.js"></script>
+		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		<script type="text/javascript" src="slick/slick.js"></script>
+		<script type="text/javascript" src="Script.js"></script>
+
+	</body>
+</html>

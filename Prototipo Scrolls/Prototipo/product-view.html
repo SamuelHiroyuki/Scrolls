@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Page Title</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
+		<link href="https://unpkg.com/ionicons@4.4.4/dist/css/ionicons.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+		<link rel="stylesheet" type="text/css" href="owl-carousel/owl.carousel.css">
+		<link rel="stylesheet" type="text/css" href="owl-carousel/owl.theme.default.css">
+		<link rel="stylesheet" href="Style.css">
+		<link rel="shortcut icon" href="icone_scrolls.ico">
+	</head>
+
+<body>
+	<!-- HEADER -->
+		<header>
+			<!-- top Header -->
+			<div id="top-header" class="d-none d-lg-block" > 
+				<div class="container">
+					<div class="text-center">
+						<h3>Banner</h3>
+					</div>
+				</div>
+			</div>
+			<!-- /top Header -->
+
+			<!-- header -->
+			<div id="header" style="background-color: #0D7694;">
+				<div class="container-fluid d-lg-flex justify-content-lg-between">
+					<div class="">
+						<!-- Logo -->
+						<div class="header-logo text-center">
+							<a class="logo" href="#">
+								<img src="logo_scrolls.png" class="img-fluid w-75"  alt="">
+							</a>
+						</div>
+						<!-- /Logo -->
+
+						<!-- Search -->
+						<div class="header-search">
+							<form class="input-group">
+								<select class=" form-control custom-select rounded-left border-left-0">
+									<option value="0">Todas as Categorias</option>
+									<option value="1">Livros</option>
+									<option value="1">Mangas</option>
+								</select>
+								<input class=" form-control border-left-0 border-right-0" type="text" placeholder="Pesquisar">
+								<button class="btn border-left-0 search-btn"><i class="icon ion-ios-search"></i></button>
+							</form>
+						</div>
+						<!-- /Search -->
+					</div>
+
+					<div class="">
+						<ul class="header-btns">
+
+							<!-- Cart Button -->
+							<li class="header-cart">
+								<a href="#" class="" id="essenceCartBtn">
+									<div class="header-btns-icon">
+										<i class="icon ion-md-cart"></i>
+										<span class="qty">3</span>
+									</div>
+									<strong class="text-uppercase">Meu Carrinho:</strong>
+									<br>
+									<span>R$ 35,20</span>
+								</a>
+							</li>
+							<!-- /Cart Button -->
+
+							<!-- Account -->
+							<li class="header-account dropdown">
+								<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+									<div class="header-btns-img">
+										<img src="avatar.png" alt="">
+									</div>
+									<strong class="text-uppercase">Minha Conta</strong>
+								</div>
+								<a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
+								<ul class="dropdown-menu" >
+									<li><a href="#"><i class="icon ion-md-person"></i> Minha Conta</a></li>
+									<li><a href="#"><i class="icon ion-md-heart"></i> Lista de Desejos</a></li>
+									<li><a href="#"><i class="icon ion-ios-unlock"></i> Login</a></li>
+									<li><a href="#"><i class="icon ion-md-person-add"></i> Criar Conta</a></li>
+								</ul>
+							</li>
+							<!-- /Account -->
+							<!-- Mobile nav toggle-->
+		                    	<li class="nav-toggle">
+		                            <button class=" main-btn icon-btn"><i class="icon ion-md-menu"></i></button>
+		                        </li>
+		                    <!-- / Mobile nav toggle -->
+						</ul>
+					</div>
+				</div>
+				<!-- header -->
+			</div>
+			<!-- container -->
+		</header>
+	<!-- /HEADER -->
+	
+	<!-- NAVIGATION -->
+		<div id="navigation">
+			<!-- container -->
+			<div class="container-fluid p-0">
+			    <div id="responsive-nav">
+			        <!-- category nav -->
+			        <div id="category-nav" class="category-nav show-on-click">
+			            <span class="category-header">Categorias <i class="icon ion-md-menu" style="font-size: 20px;"></i></span>
+			            <ul class="category-list">
+			                <li><a href="#">Livros</a></li>
+			                <li><a href="#">Mangas</a></li>
+			                <li><a href="#">Blusas</a></li>
+			                <li><a href="#">Action's Figures</a></li>
+			                <li><a href="#">Canecas</a></li>
+			                <li><a href="#">Chaveiros</a></li>
+			                <li><a href="#">Ver Todos</a></li>
+			            </ul>
+			        </div>
+			    	 <!-- /category nav -->
+			        <!-- menu nav -->
+			        <div class="menu-nav">
+			            <span class="menu-header">Menu <i class="icon ion-md-menu" style="font-size: 20px;"></i></span>
+			            <ul class="menu-list">
+			        	    <li><a href="#">Home</a></li>
+			            	<li><a href="#">Shop</a></li>
+			                <li><a href="#">Home</a></li>
+			                <li><a href="#">Shop</a></li>
+			            </ul>
+			        </div>
+			        <!-- menu nav -->
+		        </div>
+		    </div>
+		    <!-- /container -->
+		</div>
+	<!-- /NAVIGATION -->
+
+	<!-- PRODUCT VIEW -->
+		<section class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!--  Product Details -->
+					<div class="product product-details col-md-12 d-md-flex justify-content-md-between align-items-md-center">
+						<div class="col-md-5 col-12">
+							<div id="product-main-view" class="owl-carousel owl-theme">
+								<div class="product-view item">
+									<img src="product-img/product-1.png" alt="">
+								</div>
+								<div class="product-view item">
+									<img src="product-img/product-2.jpg" alt="">
+								</div>
+								<div class="product-view item">
+									<img src="product-img/product-3.jpg" alt="">
+								</div>
+								<div class="product-view item">
+									<img src="product-img/product-4.jpg" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-12">
+							<div class="product-body ">
+								<div class="product-label">
+									<span>New</span>
+									<span class="sale">-20%</span>
+								</div>
+								<h4 class="product-name">Nome do Produto vai aki</h4>
+								<h5 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h5>
+								<div class="d-flex">
+									<p class="mr-2">CÓD.:(8792367234)</p>
+									<div class="product-rating">
+										<i class="icon ion-md-star"></i>
+										<i class="icon ion-md-star"></i>
+										<i class="icon ion-md-star"></i>
+										<i class="icon ion-md-star"></i>
+										<i class="icon ion-md-star-outline empty"></i>
+									</div>
+									<p>(152)</p>
+								</div>
+								<p><strong>Disponibilidade:</strong>(152)</p>
+									<form class="input-group col-sm-6 my-2 d-flex p-0">
+									<span class="text-uppercase input-group-text p-0 font-weight-bold" for="cep">CEP: </span>
+									<input class="form-control mx-2" type="text">
+									<button class="text-uppercase btn btn-primary">Calcular</button>
+								</form>
+								<div class="product-btns d-sm-flex">
+									<form action="" class="mb-2">
+										<button class="secundary-btn add-to-cart">Comprar Agora</button>
+									</form>
+									<form action="">
+										<button class="primary-btn add-to-cart"><i class="icon ion-md-cart"></i> Add to Cart</button>
+									</form>													
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Product Details -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</section>
+	<!-- /PRODUCT VIEW -->
+	
+	<!-- DISCRETION -->
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="section-title">
+				            <h4 class="title">Descrição</h4>
+				          </div>
+					</div>
+					<div class="col-md-12 text-justify">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- /DISCRETION  -->
+
+	<!-- BUY TOGETHER-->
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="section-title">
+				            <h4 class="title">Leve Junto</h4>
+				          </div>
+					</div>
+					<div class="col-md-12 d-md-flex align-items-md-center">
+						<div class="col-md-4 fp">
+							<!-- Product Single -->
+				            <div class="product-takealong product-single">
+				            	<div class="product-thumb">
+				                	<div class="product-label">
+					                	<span>New</span>
+					                	<span class="sale"></span>
+					                </div>
+				                	<img src="product-img/product-2.jpg" alt="">
+				            	</div>
+				              	<div class="product-body">
+				                	<h5 class="product-price">R$ 32.50 <del class="product-old-price"></del></h5>
+				                	<p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+				                	<div class="product-rating">
+				                  		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star"></i>
+				                 		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star-outline empty"></i>
+				                	</div>
+				              	</div>
+				            </div>
+				            <!-- /Product Single -->
+						</div>
+						<div class="col-md-5 d-inline-block py-md-5 dp">
+							<!-- Product Single -->
+				            <div class="product-takealong product-single-2 d-flex">
+				            	<div class="product-thumb">
+				                	<div class="product-label">
+					                	<span>New</span>
+					                	<span class="sale"></span>
+					                </div>
+				                	<img src="product-img/product-3.jpg" alt="">
+				            	</div>
+				              	<div class="product-body">
+				                	<h5 class="product-price">R$ 32.50 <del class="product-old-price"></del></h5>
+				                	<p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+				                	<div class="product-rating">
+				                  		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star"></i>
+				                 		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star-outline empty"></i>
+				                	</div>
+				              	</div>
+				            </div>
+				            <!-- /Product Single -->
+				            <hr>
+				            <!-- Product Single -->
+				            <div class="product-takealong product-single-2 d-flex">
+				            	<div class="product-thumb">
+				                	<div class="product-label">
+					                	<span>New</span>
+					                	<span class="sale"></span>
+					                </div>
+				                	<img src="product-img/product-4.jpg" alt="">
+				            	</div>
+				              	<div class="product-body">
+				                	<h5 class="product-price">R$ 32.50 <del class="product-old-price"></del></h5>
+				                	<p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+				                	<div class="product-rating">
+				                  		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star"></i>
+				                 		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star-outline empty"></i>
+				                	</div>
+				              	</div>
+				            </div>
+				            <!-- /Product Single -->
+						</div>
+						<div class="col-md-3 d-flex justify-content-center align-items-center buy-to">
+							<form action="">
+								<button type="submit" class="btn primary-btn">Compre Junto</button>
+							</form>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- /BUY TOGETHER  -->
+
+	<!-- DATASHEET -->
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="section-title">
+				            <h4 class="title">Ficha Técnica</h4>
+				          </div>
+					</div>
+					<div class="col-md-12">
+						<table class="table table-striped">
+							<tbody>
+							    <tr>
+							      <td>Autor</td>
+							      <td>Nakaba Suzuki</td>
+							    </tr>
+							    <tr>
+							      <td>Título</td>
+							      <td>Nanatsu no Taizai</td>
+							    </tr>
+							    <tr>
+							      <td>ISBN</td>
+							      <td>9781612629216</td>
+							    </tr>
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- /DATASHEET  -->
+
+	<!-- SEE TOO -->
+		<section id="st">
+		    <div class="container">
+		    	<div class="row">
+			        <div class="col-md-12">
+			        	<div class="section-title">
+			            	<h4 class="title">Veja Também</h4>
+			            	<div class="float-right">
+			            		<div class="product-slick-dots-3 custom-dots"></div>
+			            	</div>
+			          	</div>
+			        </div>
+		     	</div>
+		      	<!-- Title -->
+		    
+		    	<div class="row">
+		        	<div class="col-md-12 col-sm-12 col-xs-12">
+		          		<div id="product-slick-3" class="product-slick">
+			            	<!-- Product Single -->
+				            <div class="product product-single">
+				            	<div class="product-thumb">
+				                	<div class="product-label">
+					                	<span>New</span>
+					                	<span class="sale"></span>
+					                </div>
+				                	<img src="product-img/product-1.png" alt="">
+				            	</div>
+				              	<div class="product-body">
+				                	<h5 class="product-price">R$ 32.50 <del class="product-old-price"></del></h5>
+				                	<p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+				                	<div class="product-rating">
+				                  		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star"></i>
+				                 		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star-outline empty"></i>
+				                	</div>
+				                	<form action="" class="product-btns d-flex justify-content-center">
+				                  		<button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+				                	</form>
+				              	</div>
+				            </div>
+				            <!-- /Product Single -->
+							<!-- Product Single -->
+				            <div class="product product-single">
+				            	<div class="product-thumb">
+				                	<div class="product-label">
+					                	<span>New</span>
+					                	<span class="sale"></span>
+					                </div>
+				                	<img src="product-img/product-2.jpg" alt="">
+				            	</div>
+				              	<div class="product-body">
+				                	<h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
+				                	<p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+				                	<div class="product-rating">
+				                  		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star"></i>
+				                 		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star-outline empty"></i>
+				                	</div>
+				                	<form action="" class="product-btns d-flex justify-content-center">
+				                  		<button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+				                	</form>
+				              	</div>
+				            </div>
+				            <!-- /Product Single -->
+				            <!-- Product Single -->
+				            <div class="product product-single">
+				            	<div class="product-thumb">
+				                	<div class="product-label">
+					                	<span>New</span>
+					                	<span class="sale"></span>
+					                </div>
+				                	<img src="product-img/product-3.jpg" alt="">
+				            	</div>
+				              	<div class="product-body">
+				                	<h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
+				                	<p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+				                	<div class="product-rating">
+				                  		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star"></i>
+				                 		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star-outline empty"></i>
+				                	</div>
+				                	<form action="" class="product-btns d-flex justify-content-center">
+				                  		<button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+				                	</form>
+				              	</div>
+				            </div>
+				            <!-- /Product Single -->
+				            <!-- Product Single -->
+				            <div class="product product-single">
+				            	<div class="product-thumb">
+				                	<div class="product-label">
+					                	<span>New</span>
+					                	<span class="sale"></span>
+					                </div>
+				                	<img src="product-img/product-4.jpg" alt="">
+				            	</div>
+				              	<div class="product-body">
+				                	<h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
+				                	<p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+				                	<div class="product-rating">
+				                  		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star"></i>
+				                 		<i class="icon ion-md-star"></i>
+				                  		<i class="icon ion-md-star-outline empty"></i>
+				                	</div>
+				                	<form action="" class="product-btns d-flex justify-content-center">
+				                  		<button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+				                	</form>
+				              	</div>
+				            </div>
+				            <!-- /Product Single -->
+			            	
+		          		</div><!-- Product-Slick -->
+		        	</div><!-- grid -->
+		     	 </div><!-- row -->
+		    </div><!-- container -->
+	  	</section>
+	<!-- /SEE TOO -->
+
+	<!-- ASSESSMENTS -->
+		<section class="mb-4">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="section-title">
+				            <h4 class="title">Avaliações</h4>
+				        </div>
+						<div class="col-md-12 py-2 d-flex justify-content-between align-items-center">
+							<div class="d-flex">
+								<h4 class="mr-2 mb-0" >4.7</h4>
+								<div class="product-rating" style="font-size: 25px">
+									<i class="icon ion-md-star"></i>
+									<i class="icon ion-md-star"></i>
+									<i class="icon ion-md-star"></i>
+									<i class="icon ion-md-star"></i>
+									<i class="icon ion-md-star-outline empty"></i>
+								</div>
+								<div class="align-bottom ml-2" >
+									<p class="mb-0 mt-1"">(152)</p>
+								</div>
+							</div>
+							<button class="btn secundary-btn" type="button" data-toggle="collapse" data-target="#addassessments" aria-expanded="false" aria-controls="addassessments">
+							    Avaliar
+							</button>
+						</div>
+						<div class="collapse" id="addassessments">
+							<div class="card card-body">
+								<form class="review-form">
+									<div class="form-group">
+										<label class="text-uppercase" for="coment">Título:</label>
+										<input type="text" class="input form-control" maxlength="50" name="coment" placeholder="Título" />
+									</div>
+									<div class="form-group">
+										<label class="text-uppercase" for="coment">Comentário:</label>
+										<textarea class="input form-control" name="coment" rows="10" placeholder="Comentário"></textarea>
+									</div>
+									<div class="form-group d-flex justify-content-between align-items-center">
+										<div class="input-rating">
+											<strong class="text-uppercase">Avaliação: </strong>
+											<div class="stars">
+												<input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
+												<input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
+												<input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
+												<input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
+												<input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+											</div>
+										</div>
+										<button class="primary-btn">Confimar</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="card card-body rounded-0 mt-4 py-3">
+							<div class="d-flex justify-content-between">
+								<h6>UAAUUUU!!</h6>
+								<h6>25/05/2005</h6>
+							</div><!-- Title and Date -->
+							<div class="product-rating" style="font-size: 15px">
+								<i class="icon ion-md-star"></i>
+								<i class="icon ion-md-star"></i>
+								<i class="icon ion-md-star"></i>
+								<i class="icon ion-md-star"></i>
+								<i class="icon ion-md-star-outline empty"></i>
+							</div><!-- Rate -->
+							<p>Nossa que livro maravilhoso quero mais desse genero vende pra mim.</p>
+						</div><!-- Comments -->
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- /ASSESSMENTS  -->
+	
+	<!-- FOOTER -->
+			<footer id="footer" class="section section-grey p-0">
+				<!-- container -->
+				<div class="container-fluid">
+					<!-- row -->
+					<div class="row">
+						<!-- footer widget -->
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="footer">
+								<!-- footer logo -->
+								<div class="footer-logo text-center">
+									<a class="logo" href="#">
+						            	<img src="logo_scrolls.png" class="img-fluid w-75" alt="">
+						        	</a>
+								</div>
+								<!-- /footer logo -->
+
+								<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+
+								<!-- footer social -->
+								<ul class="footer-social">
+									<li><a href="#"><i class="icon ion-logo-facebook"></i></a></li>
+									<li><a href="#"><i class="icon ion-logo-twitter"></i></a></li>
+									<li><a href="#"><i class="icon ion-logo-instagram"></i></a></li>
+								</ul>
+								<!-- /footer social -->
+							</div>
+						</div>
+						<!-- /footer widget -->
+
+						<!-- footer widget -->
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-header">Conta</h3>
+								<ul class="list-links">
+									<li><a href="#">Minha Conta</a></li>
+									<li><a href="#">Lista de Desejos</a></li>
+									<li><a href="#">Login</a></li>
+									<li><a href="#">Criar Conta</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /footer widget -->
+
+						<div class="clearfix visible-sm visible-xs"></div>
+
+						<!-- footer widget -->
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-header">Serviço do Clinte</h3>
+								<ul class="list-links">
+									<li><a href="#">Sobre Nós</a></li>
+									<li><a href="#">Envio e Devolução</a></li>
+									<li><a href="#">Guia de envio</a></li>
+									<li><a href="#">FAQ</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /footer widget -->
+
+						<!-- footer subscribe -->
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="footer text-justify">
+								<h3 class="footer-header">Permaneça conectado</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+								<form>
+									<div class="form-group">
+										<input class="input p-2 rounded" placeholder="Insira o endereço de e-mail">
+									</div>
+									<button class="primary-btn">Receber Novidades</button>
+								</form>
+							</div>
+						</div>
+						<!-- /footer subscribe -->
+					</div>
+					<!-- /row -->
+					<hr class="mt-3 mb-2">
+					<!-- row -->
+					<div class="row justify-content-center">
+						<div class="col-md-8 text-white text-center my-2">
+							<!-- footer copyright -->
+							<div class="footer-copyright">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos os Direitos Reservados a <a href="#" target="_blank">Puzzle</a>
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</div>
+							<!-- /footer copyright -->
+						</div>
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</footer>
+	<!-- /FOOTER -->
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="jquery.nicescroll.js"></script>
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+	<script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+	<script type="text/javascript" src="Script.js"></script>
+	<script>
+		
+
+	</script>
+
+</body>
+
+</html>
