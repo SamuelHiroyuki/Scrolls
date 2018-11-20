@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#30323A</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaryDark">#F8C141</color>
     <color name="colorAccent">#F8C141</color>
-    <color name="AmareloPrincipal">#F8C141</color>
+    <color name="AmareloPrincipal">#FFF8C141</color>
     <color name="AzulPrincipal">#0d7694</color>
     <color name="PretoPrincipal">#30323A</color>
     <color name="AmareloPrincipalT">#EEF8C141</color>
