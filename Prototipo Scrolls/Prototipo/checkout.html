@@ -13,8 +13,8 @@
 		<link href="https://unpkg.com/ionicons@4.4.4/dist/css/ionicons.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-		<link rel="stylesheet" href="owl-carousel/owl-carousel.css">
-		<link rel="stylesheet" href="owl-carousel/owl-carousel.css">
+		<link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+		<link rel="stylesheet" href="owl-carousel/owl.theme.default.css">
 		<link rel="stylesheet" href="Style.css">
 		<link rel="shortcut icon" href="icone_scrolls.ico">
 	</head>
@@ -232,98 +232,167 @@
 						<div class="container">
 							<!-- row -->
 							<div class="row">
-								<form id="checkout-form" class="clearfix col-md-12">
-									<div class="col-md-12">
-										<div class="order-summary clearfix">
-											<div class="section-title">
-												<h3 class="title">Meu Carrinho</h3>
-											</div>
-											<table class="shopping-cart-table table">
-												<thead>
-													<tr>
-														<th>Produto</th>
-														<th></th>
-														<th class="text-center">Preço</th>
-														<th class="text-center">Quantidade</th>
-														<th class="text-center">Total</th>
-														<th class="text-right"></th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td class="thumb"><img src="product-img/product-2.jpg" alt=""></td>
-														<td class="details">
-															<a href="#">Nome do produto vai aqui</a>
-														</td>
-														<td class="price text-center"><strong>$32.50</strong><br><del class="font-weak"><small>$40.00</small></del></td>
-														<td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
-														<td class="total text-center"><strong class="primary-color">$32.50</strong></td>
-														<td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
-													</tr>
-													<tr>
-														<td class="thumb"><img src="product-img/product-2.jpg" alt=""></td>
-														<td class="details">
-															<a href="#">Nome do produto vai aqui</a>
-														</td>
-														<td class="price text-center"><strong>$32.50</strong><br><del class="font-weak"><small></small></del></td>
-														<td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
-														<td class="total text-center"><strong class="primary-color">$32.50</strong></td>
-														<td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
-													</tr>
-													<tr>
-														<td class="thumb"><img src="product-img/product-2.jpg" alt=""></td>
-														<td class="details">
-															<a href="#">Nome do produto vai aqui</a>
-														</td>
-														<td class="price text-center"><strong>$32.50</strong><br><del class="font-weak"><small></small></del></td>
-														<td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
-														<td class="total text-center"><strong class="primary-color">$32.50</strong></td>
-														<td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<th class="empty" colspan="3"></th>
-														<th>SUBTOTAL</th>
-														<th colspan="2" class="sub-total">$97.50</th>
-													</tr>
-													<tr>
-														<th class="empty" colspan="3"></th>
-														<th>FRETE</th>
-														<td colspan="2" >--</td>
-													</tr>
-													<tr>
-														<th class="empty" colspan="3"></th>
-														<th>TOTAL</th>
-														<th colspan="2" class="total">$97.50</th>
-													</tr>
-												</tfoot>
-											</table>
-											<div class="float-right">
-												<button class="primary-btn">Continuar</button>
-											</div>
-										</div>
-									</div>
-								</form>
-								<div class="col-md-5 px-5 ml-auto">
-									<form action="" class="form-group w-100">											
-										<label for="inputCEP" class="font-weight-bold">Calcular frete e prazo</label>
-										<div class="form-group d-flex">
-											<input type="text" class="form-control col-sm-5 mr-2" placeholder="CEP" id="inputCEP">
-											<button type="submit" data-toggle="collapse" data-target="#frete" aria-expanded="false" aria-controls="frete" class="btn btn-primary">Calcular</button>
-										</div>
-									</form>
-									<div class="collapse my-2" id="frete">
-										<strong>7 á 10 dias uteis - R$ 3,50</strong>
-									</div>
-									<a href="#" class="" style="color: #00A6FF;">Não sei meu CEP?</a>
-								</div>
+								<div class="col-md-12">
+									<form class="form-group">
+					                    <div class="wizard">
+					                        <div class="wizard-inner">
+					                            <div class="connecting-line"></div>
+					                            <ul class="nav nav-tabs justify-content-between" role="tablist">
+					                                <li role="presentation" class="nav-item">
+					                                    <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Carrinho" class="nav-link active">
+							                                <span class="round-tab">
+							                                    <i class="icon ion-md-cart"></i>
+							                                </span>
+							                            </a>
+					                                </li>
+
+					                                <li role="presentation" class="nav-item">
+					                                    <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Identificação" class="nav-link disabled">
+							                                <span class="round-tab">
+							                                    <i class="icon ion-md-person"></i>
+							                                </span>
+							                            </a>
+					                                </li>
+
+					                                <li role="presentation" class="nav-item">
+					                                    <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Pagamento" class="nav-link disabled">
+							                                <span class="round-tab">
+							                                    <i class="icon ion-md-card"></i>
+							                                </span>
+							                            </a>
+					                                </li>
+
+					                                <li role="presentation" class="nav-item">
+					                                    <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab" title="Obrigado" class="nav-link disabled">
+							                                <span class="round-tab">
+							                                    <i class="icon ion-md-checkmark"></i>
+							                                </span>
+							                            </a>
+					                                </li>
+					                            </ul>
+					                        </div>
+
+					                        <div class="tab-content">
+					                            <div class="tab-pane active text-center" role="tabpanel" id="step1">
+					                                <div class="order-summary clearfix">											
+														<table class="shopping-cart-table table">
+															<thead>
+																<tr>
+																	<th>Produto</th>
+																	<th></th>
+																	<th class="text-center">Preço</th>
+																	<th class="text-center">Quantidade</th>
+																	<th class="text-center">Total</th>
+																	<th class="text-right"></th>
+																</tr>
+															</thead>
+
+															<tbody>
+																<tr>
+																	<td class="thumb"><img src="product-img/product-2.jpg" alt=""></td>
+																	<td class="details">
+																		<a href="#">Nome do produto vai aqui</a>
+																	</td>
+																	<td class="price text-center"><strong>$32.50</strong><br><del class="font-weak"><small>$40.00</small></del></td>
+																	<td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
+																	<td class="total text-center"><strong class="primary-color">$32.50</strong></td>
+																	<td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
+																</tr>
+																<tr>
+																	<td class="thumb"><img src="product-img/product-2.jpg" alt=""></td>
+																	<td class="details">
+																		<a href="#">Nome do produto vai aqui</a>
+																	</td>
+																	<td class="price text-center"><strong>$32.50</strong><br><del class="font-weak"><small></small></del></td>
+																	<td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
+																	<td class="total text-center"><strong class="primary-color">$32.50</strong></td>
+																	<td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
+																</tr>
+																<tr>
+																	<td class="thumb"><img src="product-img/product-2.jpg" alt=""></td>
+																	<td class="details">
+																		<a href="#">Nome do produto vai aqui</a>
+																	</td>
+																	<td class="price text-center"><strong>$32.50</strong><br><del class="font-weak"><small></small></del></td>
+																	<td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
+																	<td class="total text-center"><strong class="primary-color">$32.50</strong></td>
+																	<td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
+																</tr>
+															</tbody>
+
+															<tfoot>
+																<tr>
+																<th class="empty" colspan="2"></th>														
+																	<th>FRETE E PRAZO</th>
+																	
+																	<th>SUBTOTAL</th>
+																	<th colspan="2" class="sub-total">$97.50</th>
+																</tr>
+																<tr>
+																	<th class="empty" colspan="2"></th>
+																	<th>
+																		<form action="" class="form-group w-100">											
+																			<div class="form-group d-flex align-items-center">
+																				<input type="text" class="form-control col-sm-5 mr-2" placeholder="CEP" id="inputCEP">
+																				<button type="submit" data-toggle="collapse" data-target="#frete" aria-expanded="false" aria-controls="frete" class="btn btn-primary mr-3" style="width: 100px">Calcular</button>
+																				<a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" class="" style="color: #00A6FF;">Não sei meu CEP?</a>
+																			</div>
+																		</form>
+																	</th>
+																	<th>FRETE</th>
+																	<td colspan="2" >--</td>
+																</tr>
+																<tr>
+																	<th class="empty" colspan="2"></th>
+																	<th>7 á 10 dias uteis - R$ 3,50</th>
+																	<th>TOTAL</th>
+																	<th colspan="2" class="total">$97.50</th>
+																</tr>
+															</tfoot>
+														</table>
+														<button type="button" class="btn primary-btn next-step next-button float-right">Continuar</button>
+													</div>
+					                            </div>
+
+					                            <div class="tab-pane" role="tabpanel" id="step2">
+					                            <h5 class="text-md-center">Identificação</h5>
+					                            <div class="row">
+					                            </div>
+						                           	<button type="button" class="btn primary-btn prev-step next-button float-left">Voltar</button>
+						                            <button type="button" class="btn primary-btn next-step next-button float-right">Continuar</button>
+					                            </div>
+
+					                            <div class="tab-pane" role="tabpanel" id="step3">
+					                                <h5 class="text-md-center">Step 3</h5>
+					                                <div class="row">
+					                                    
+					                                </div>
+					                                <button type="button" class="btn primary-btn prev-step next-button float-left">Voltar</button>
+						                            <button type="button" class="btn primary-btn next-step next-button float-right">Continuar</button>
+					                            </div>
+
+					                            <div class="tab-pane" role="tabpanel" id="step4">
+					                                <h5 class="text-md-center">Step 4</h5>
+					                                <div class="row">
+					                                   
+					                                </div>
+						                            <a class="btn primary-btn text-white">Continuar</a>
+					                            </div>
+					                            <div class="clearfix"></div>
+					                        </div>
+					                    </div>
+					                </form>	
+								</div>									
 							</div>
 							<!-- /row -->
 						</div>
 						<!-- /container -->
 					</section>
 				<!-- /CHECKOUT -->
+			
+			<!--
+				
+			-->
 
 			</main>
 		<!-- /MAIN -->
@@ -428,8 +497,11 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 		<script src="jquery.nicescroll.js"></script>
 		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-		<script type="text/javascript" src="slick/slick.js"></script>
+		<script type="text/javascript" src="slick/slick.min.js"></script>
 		<script type="text/javascript" src="Script.js"></script>
+		<<script >
+
+		</script>
 
 	</body>
 </html>

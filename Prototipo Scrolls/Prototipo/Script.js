@@ -14,9 +14,9 @@
   menuToggle.on('click', function() {
     catList.removeClass('open');
     menuList.toggleClass('open');
-  });
+});
 
-  $(document).click(function(event) {
+$(document).click(function(event) {
     if (!$(event.target).closest(responsiveNav).length) {
       if (responsiveNav.hasClass('open')) {
         responsiveNav.removeClass('open');
@@ -31,7 +31,7 @@
         }
       }
     }
-  });
+});
         
 //HOME SLICK
 $('#home-slick').slick({
@@ -160,5 +160,38 @@ cartbtn2.on('click', function () {
     cartWrapper.removeClass(cartOn);
 });
 
+/*-------------------
+    Form Wizard
+--------------------*/
+
+//Initialize tooltips
+ $('.nav-tabs > li a[title]').tooltip();
+
+ //Wizard
+ $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+
+     var $target = $(e.target);
+
+     if ($target.hasClass('disabled')) {
+         return false;
+     }
+ });
+
+ $(".next-step").click(function (e) {
+     var $active = $('.wizard .nav-tabs .nav-item .active');
+     var $activeli = $active.parent("li");
+
+     $($activeli).next().find('a[data-toggle="tab"]').removeClass("disabled");
+     $($activeli).next().find('a[data-toggle="tab"]').click();
+ });
 
 
+ $(".prev-step").click(function (e) {
+
+     var $active = $('.wizard .nav-tabs .nav-item .active');
+     var $activeli = $active.parent("li");
+
+     $($activeli).prev().find('a[data-toggle="tab"]').removeClass("disabled");
+     $($activeli).prev().find('a[data-toggle="tab"]').click();
+
+ });
