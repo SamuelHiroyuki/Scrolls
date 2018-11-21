@@ -26,10 +26,7 @@ namespace Scrolls.Entities
 
         [Required]
         public string Imagem { get; set; }
-
-        [Required(ErrorMessage = "O campo nome de usuário não pode estar vazio."), MaxLength(15, ErrorMessage = "O nome deve conter apenas 15 caracteres.")]
-        public string User { get; set; }
-
+        
         [Required(ErrorMessage = "O campo nome não pode estar vazio."), MinLength(8, ErrorMessage = "A senha deve conter no mínimo 8 caracteres."), MaxLength(128, ErrorMessage = "A senha deve ter no máximo 128 caracteres.")]
         public string Senha { get; set; }
 

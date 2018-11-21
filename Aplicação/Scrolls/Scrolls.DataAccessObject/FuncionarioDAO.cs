@@ -17,10 +17,10 @@ namespace Scrolls.DataAccessObject
             context = new EntitiesContext();
         }
 
-        public Funcionario Login(string pass, string emnome )
+        public Funcionario Login(string pass, string e )
         {
 
-            Funcionario funcionario = context.Funcionarios.FirstOrDefault(f => (f.User.Equals(emnome) || f.Email.Equals(emnome)) && f.Senha.Equals(pass));
+            Funcionario funcionario = context.Funcionarios.FirstOrDefault(f => f.Email.Equals(e) && f.Senha.Equals(pass));
             if (funcionario != null)
             {
                 return funcionario;

@@ -13,7 +13,9 @@ namespace Scrolls.Manager.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            ViewBag.Nome = string.Empty;
+            ViewBag.LoginE = string.Empty;
+            ViewBag.V = string.Empty;
+            ViewBag.Date = DateTime.Now.Day + " de " + DateTime.Now.ToString("MMMM, yyyy");
             return View();
         }
 
@@ -23,36 +25,43 @@ namespace Scrolls.Manager.Controllers
         }
 
         [HttpPostAttribute]
-        public ActionResult Login(string s, string n) {
+        public ActionResult Login(string s, string n)
+        {
             Funcionario f = new FuncionarioDAO().Login(s, n);
             if (f != null)
             {
                 Session["_Id"] = f.Id;
                 Session["_Nome"] = f.Nome;
-                Session["_Imagem"] = f.Imagem;
+                //Session["_Imagem"] = f.Imagem;
                 if (f.Gerente == true)
                 {
-                    Session["Tipo"] = "Administrador";
+                    Session["_Tipo"] = "Administrador";
                 }
                 else
                 {
-                    Session["Tipo"] = "Funcionário";
+                    Session["_Tipo"] = "Funcionário";
                 }
+
+                ViewBag.LoginE = string.Empty;
+                ViewBag.V = string.Empty;
                 return RedirectToAction("Index");
             }
-            else {
-                ModelState.AddModelError("funcionario.LoginError", "Nome e/ou Senha incorretos");
-                ViewBag.Nome = n;
-                Session["Tipo"] = string.Empty;
+            else
+            {
+                ViewBag.V = "validate-has-error";
+                ViewBag.LoginE = "display: block; !important";
                 return View("LoginPage");
             }
         }
 
         public ActionResult Logout()
         {
+            ViewBag.LoginE = string.Empty;
+            ViewBag.V = string.Empty;
             Session["_Id"] = 0;
             Session["_Nome"] = string.Empty;
-            Session["_Imagem"] = string.Empty;
+            Session["_Tipo"] = string.Empty;
+            //Session["_Imagem"] = string.Empty;
             return RedirectToAction("LoginPage");
         }
     }

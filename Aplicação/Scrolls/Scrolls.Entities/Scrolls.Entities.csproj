@@ -74,6 +74,7 @@
     <Compile Include="Endereco.cs" />
     <Compile Include="Funcionario.cs" />
     <Compile Include="Genero.cs" />
+    <Compile Include="Imagem.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="ProdutoVenda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

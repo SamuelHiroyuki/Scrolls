@@ -15,5 +15,6 @@ namespace Scrolls.Entities
         public string Nome { get; set; }
 
         public virtual IList<Produto> Produtos { get; set; }
+        public virtual IList<Genero> Generos{ get; set; }
     }
 }

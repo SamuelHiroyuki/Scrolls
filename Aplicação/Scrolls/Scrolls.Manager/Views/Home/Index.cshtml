@@ -1,73 +1,134 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Home";
 }
 
-<div class="row">
-    <div class="col-9">
-        <canvas id="line-chart" width="600"></canvas>
-    </div>
 
-    <div class="col-2" style="padding-top: 64px;">
-        <div class="demo-card-square mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title mdl-card--expand">
-                <h2 class="mdl-card__title-text">Falta em estoque</h2>
-            </div>
-            <div class="mdl-card__actions mdl-card--border"">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    Ver todos
+<div class="sidebar-menu">
+
+    <div class="sidebar-menu-inner" style="position: fixed !important;">
+
+
+
+        <div class="sidebar-user-info" id="id">
+            <div class="sui-normal">
+                <a href="profile.html" class="user-link">
+                    <img src="~/Assets/images/thumb-1@2x.png" width="55" alt="" class="img-circle">
                 </a>
             </div>
         </div>
-        
-        <br />
-        <br />
 
-        <div class="demo-card-square mdl-card mdl-shadow--2dp" style="margin-top: 5px;">
-            <div class="mdl-card__title mdl-card--expand">
-                <h2 class="mdl-card__title-text">Banners ativos</h2>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    Ver todos
+        <ul id="main-menu" class="main-menu">
+            <li>
+                <a href="#">
+                    <i class="entypo-home" style="padding-left: 4px;"></i>
+                    <i style="font-size: 8px; padding-left: 6px;">Loja</i>
                 </a>
-            </div>
-        </div>
+            </li>
+        </ul>
 
     </div>
 
 </div>
 
-<script type="text/javascript">
-    new Chart(document.getElementById("line-chart"), {
-        type: 'line',
-        data: {
-            labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
-            datasets: [{
-                data: [100, 114, 106, 106, 107, 111, 133, 221, 783, 600],
-                label: "Livros",
-                borderColor: "#3e95cd"
-            }, {
-                data: [90, 350, 411, 502, 635, 809, 947, 1402, 300, 267],
-                label: "Mangás",
-                borderColor: "#8e5ea2"
-            }, {
-                data: [12, 170, 178, 190, 203, 276, 408, 547, 675, 734],
-                label: "DvDs",
-                borderColor: "#3cba9f"
-            }, {
-                data: [80, 20, 10, 16, 24, 38, 74, 167, 508, 784],
-                label: "Acessórios",
-                borderColor: "#e8c3b9"
-            }
-            ]
-        },
-        options: {
-            title: {
-                display: true,
-                text: 'Produtos mais vendidos (por categoria)',
-                responsive: false,
-                maintainAspectRatio: false
-            }
-        }
-    });
-</script>
+<div class="main-content" style="background-color: #efebe9;">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="well" style="background-color: #fff !important;">
+                <h1>@ViewBag.Date</h1>
+                <h3>Bem-vindo novamente <strong>@Session["_Nome"]</strong></h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="panel panel-primary panel-table">
+                <div class="panel-heading">
+                    <div class="panel-title" style="padding-bottom: 15px;">
+                        <h3>Mais vendidos</h3>
+                        <br />
+                        <span>Estatísticas mensais da Scrolls</span>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-responsive no-margin">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Vendas</th>
+                                <th class="text-center">Posição mensal</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Hari Boder</td>
+                                <td>600</td>
+                                <td class="text-center"><span class="top-apps">4,3,5,4,5,6,3,2,5,3</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Game of Tronos</td>
+                                <td>540</td>
+                                <td class="text-center"><span class="top-apps">3,2,5,4,3,6,7,5,7,9</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>HTML para idiotas</td>
+                                <td>300</td>
+                                <td class="text-center"><span class="top-apps">1,3,4,3,5,4,3,6,9,8</span></td>
+                            </tr>
+
+
+                            <tr>
+                                <td>Camisa - Naruto to Boruto</td>
+                                <td>200</td>
+                                <td class="text-center"><span class="top-apps">9,2,5,7,2,4,6,7,2,6</span></td>
+                            </tr>
+
+
+                            <tr>
+                                <td>FUNKO POP! VINYL - LEAGUE OF LEGENDS - JINX</td>
+                                <td>190</td>
+                                <td class="text-center"><span class="top-apps">1,4,5,4,4,3,2,5,4,3</span></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="tile-stats tile-primary" style="background: #287fb8;">
+                <div class="icon"><i class="entypo-users"></i></div>
+                <div class="num" data-start="0" data-end="213" data-postfix="" data-duration="1400" data-delay="0">0</div>
+
+                <h3>Novos Clientes</h3>
+                <p>Estatística mensal de cadastros da Scrolls</p>
+            </div>
+
+            <br />
+
+            <div class="tile-progress tile-red" style="background-color: #f79d1e;">
+                <div class="tile-header">
+                    <h3>Vendas</h3>
+                    <span>5.000 vendas realizadas até o momento</span>
+                </div>
+
+                <div class="tile-progressbar">
+                    <span data-fill="35.5%"></span>
+                </div>
+
+                <div class="tile-footer">
+                    <h4>
+                        <span class="pct-counter">0</span>% de acréscimo
+                    </h4>
+
+                    <span>% em relação as vendas do mês anterior</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

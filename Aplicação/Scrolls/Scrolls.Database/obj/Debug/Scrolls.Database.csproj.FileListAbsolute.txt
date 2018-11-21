@@ -13,5 +13,6 @@ C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Database\obj\Debug\Scrolls.Database.cs
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Database\obj\Debug\Scrolls.Database.csproj.CopyComplete
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Database\obj\Debug\Scrolls.Database.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Database\obj\Debug\Scrolls.Database.pdb
-C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Database\obj\Debug\Scrolls.Database.Migrations.FirstMigration.resources
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Database\obj\Debug\Scrolls.Database.Migrations.First.resources
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Database\obj\Debug\Scrolls.Database.csproj.GenerateResource.cache
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Database\obj\Debug\Scrolls.Database.Migrations.Second.resources
