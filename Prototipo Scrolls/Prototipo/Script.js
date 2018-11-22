@@ -165,7 +165,7 @@ cartbtn2.on('click', function () {
 --------------------*/
 
 //Initialize tooltips
- $('.nav-tabs > li a[title]').tooltip();
+ /*$('.nav-tabs > li a[title]').tooltip();
 
  //Wizard
  $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
@@ -194,4 +194,4 @@ cartbtn2.on('click', function () {
      $($activeli).prev().find('a[data-toggle="tab"]').removeClass("disabled");
      $($activeli).prev().find('a[data-toggle="tab"]').click();
 
- });
+ });*/

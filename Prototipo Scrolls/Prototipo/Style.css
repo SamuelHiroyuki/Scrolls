@@ -55,6 +55,14 @@ hr {
 	border-color: #DADADA;
 }
 
+.card-body p{
+	margin: 0;
+}
+
+div.card + div.card{
+	margin-top: 1rem;
+}
+
 /*----------------------------*\
 		   Buttons
 \*----------------------------*/
@@ -87,6 +95,19 @@ hr {
 
 .main-btn:hover, .main-btn:focus {
 	color: #30323A;
+}
+
+.btn-new{
+	background-color: transparent;
+	border: 5px dashed;
+	border-color: rgba(31, 31, 255, .3);
+	color: #30323A;
+	font-size: 50px;
+	line-height: 3;
+}
+
+.btn-new:hover{
+	background-color: rgba(73, 73, 252, 0.2)
 }
 			
 .primary-btn {
@@ -2020,7 +2041,7 @@ del>small:empty{
     background: #fff;
 }
 
-.wizard .nav-tabs {
+.wizard-inner .nav-tabs {
     position: relative;
     margin: 40px auto;
     margin-bottom: 0;
@@ -2043,9 +2064,9 @@ del>small:empty{
     z-index: 1;
 }
 
-.wizard .nav-tabs > li.active > a,
-.wizard .nav-tabs > li.active > a:hover,
-.wizard .nav-tabs > li.active > a:focus {
+.wizard-inner .nav-tabs > li.active > a,
+.wizard-inner .nav-tabs > li.active > a:hover,
+.wizard-inner .nav-tabs > li.active > a:focus {
     color: #555555;
     cursor: default;
     border: 0;
@@ -2071,13 +2092,13 @@ span.round-tab i {
     color: #555555;
 }
 
-.wizard li a.active span.round-tab {
+.wizard-inner li a.active span.round-tab {
     background: #fff;
     border: 4px solid #0D7694 ;
 
 }
 
-.wizard li a.active span.round-tab i {
+.wizard-inner li a.active span.round-tab i {
     color: #0D7694 ;
 }
 
@@ -2086,11 +2107,11 @@ span.round-tab:hover {
     border: 3px solid #F8C141;
 }
 
-.wizard .nav-tabs > li {
+.wizard-inner .nav-tabs > li {
     width: 19%;
 }
 
-.wizard li a:after {
+.wizard-inner li a:after {
     content: " ";
     position: relative;
     left: 46%;
@@ -2103,7 +2124,7 @@ span.round-tab:hover {
     transition: 0.1s ease-in-out;
 }
 
-.wizard li.active.nav-item:after {
+.wizard-inner li.active.nav-item:after {
     content: " ";
     position: relative;
     left: 46%;
@@ -2115,7 +2136,7 @@ span.round-tab:hover {
     border-bottom-color: #0D7694;
 }
 
-.wizard .nav-tabs > li a {
+.wizard-inner .nav-tabs > li a {
     width: 70px;
     height: 70px;
     margin: 20px auto;
@@ -2124,22 +2145,22 @@ span.round-tab:hover {
     position: relative;
 }
 
-.wizard .nav-tabs > li a:hover {
+.wizard-inner .nav-tabs > li a:hover {
     background: transparent;
 }
 
-.wizard .tab-pane {
+.wizard-inner .tab-pane {
     position: relative;
     padding-top: 50px;
 }
 
-.wizard h3 {
+.wizard-inner h3 {
     margin-top: 0;
 }
 
 @media( max-width: 585px) {
 
-    .wizard {
+    .wizard-inner {
         width: 90%;
         height: auto !important;
     }
@@ -2151,17 +2172,42 @@ span.round-tab:hover {
         line-height: 50px;
     }
 
-    .wizard .nav-tabs > li a {
+    .wizard-inner .nav-tabs > li a {
         width: 50px;
         height: 50px;
         line-height: 50px;
     }
 
-    .wizard li.active:after {
+    .wizard-inner li.active:after {
         content: " ";
         position: absolute;
         left: 35%;
     }
+}
+
+.pagamento .nav-tabs > li a{
+	width: 150px;
+	color: #30323A;
+	font-size: 75px;
+	text-align: center;
+}
+
+.pagamento .nav-tabs > li a p{
+	font-size: 50%;
+	color: #30323A;
+	font-weight: bold;
+}
+
+.pagamento .nav-tabs .nav-item.show .nav-link, 
+.pagamento .nav-tabs .nav-link.active{
+	color: #0D7694;
+	border-color: #0D7694 #0D7694 #FFF;
+	background-color: #fff;
+}
+
+.pagamento .nav-tabs .nav-item.show .nav-link p, 
+.pagamento .nav-tabs .nav-link.active p{
+	color: #0D7694;
 }
 
 /*=========================================================

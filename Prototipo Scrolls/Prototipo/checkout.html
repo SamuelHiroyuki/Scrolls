@@ -237,43 +237,43 @@
 					                    <div class="wizard">
 					                        <div class="wizard-inner">
 					                            <div class="connecting-line"></div>
-					                            <ul class="nav nav-tabs justify-content-between" role="tablist">
-					                                <li role="presentation" class="nav-item">
-					                                    <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Carrinho" class="nav-link active">
-							                                <span class="round-tab">
-							                                    <i class="icon ion-md-cart"></i>
-							                                </span>
-							                            </a>
-					                                </li>
+						                            <ul class="nav nav-tabs justify-content-between" role="tablist">
+						                                <li role="presentation" class="nav-item">
+						                                    <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Carrinho" class="nav-link">
+								                                <span class="round-tab">
+								                                    <i class="icon ion-md-cart"></i>
+								                                </span>
+								                            </a>
+						                                </li>
 
-					                                <li role="presentation" class="nav-item">
-					                                    <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Identificação" class="nav-link disabled">
-							                                <span class="round-tab">
-							                                    <i class="icon ion-md-person"></i>
-							                                </span>
-							                            </a>
-					                                </li>
+						                                <li role="presentation" class="nav-item">
+						                                    <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Identificação" class="nav-link ">
+								                                <span class="round-tab">
+								                                    <i class="icon ion-md-map"></i>
+								                                </span>
+								                            </a>
+						                                </li>
 
-					                                <li role="presentation" class="nav-item">
-					                                    <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Pagamento" class="nav-link disabled">
-							                                <span class="round-tab">
-							                                    <i class="icon ion-md-card"></i>
-							                                </span>
-							                            </a>
-					                                </li>
+						                                <li role="presentation" class="nav-item">
+						                                    <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Pagamento" class="nav-link active">
+								                                <span class="round-tab">
+								                                    <i class="icon ion-md-card"></i>
+								                                </span>
+								                            </a>
+						                                </li>
 
-					                                <li role="presentation" class="nav-item">
-					                                    <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab" title="Obrigado" class="nav-link disabled">
-							                                <span class="round-tab">
-							                                    <i class="icon ion-md-checkmark"></i>
-							                                </span>
-							                            </a>
-					                                </li>
-					                            </ul>
-					                        </div>
+						                                <li role="presentation" class="nav-item">
+						                                    <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab" title="Obrigado" class="nav-link ">
+								                                <span class="round-tab">
+								                                    <i class="icon ion-md-checkmark"></i>
+								                                </span>
+								                            </a>
+						                                </li>
+						                            </ul>
+						                        </div>
 
 					                        <div class="tab-content">
-					                            <div class="tab-pane active text-center" role="tabpanel" id="step1">
+					                            <div class="tab-pane text-center" role="tabpanel" id="step1">
 					                                <div class="order-summary clearfix">											
 														<table class="shopping-cart-table table">
 															<thead>
@@ -355,20 +355,138 @@
 					                            </div>
 
 					                            <div class="tab-pane" role="tabpanel" id="step2">
-					                            <h5 class="text-md-center">Identificação</h5>
-					                            <div class="row">
-					                            </div>
-						                           	<button type="button" class="btn primary-btn prev-step next-button float-left">Voltar</button>
-						                            <button type="button" class="btn primary-btn next-step next-button float-right">Continuar</button>
+						                            <h5 class="text-md-center">Endereço</h5>
+						                            <div class="row">
+														<div class="col-md-6">
+															<h6 class="text-center">Novo Endereço</h6>
+															<div class=" d-flex justify-content-center">
+																<button type="button" class="btn btn-new text-center" style="width: 50%; " data-toggle="modal" data-target="#modalExemplo">
+																  <i class="icon ion-md-add-circle"></i>
+																</button>
+															</div>
+														</div>
+														
+														<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+														  <div class="modal-dialog" role="document">
+														    <form action="" class="modal-content">
+														    	<div class="modal-header">
+															    	<h5 class="modal-title" id="exampleModalLabel">Cadastrar Novo Endereço</h5>
+															    	<button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+															        	<span aria-hidden="true">&times;</span>
+															        </button>
+														    	</div>
+																<div class="modal-body">
+														    		<fieldset class="form-group">
+														    			<div class="form-group">
+																		    <label for="cep">CEP</label>
+																		    <input type="text" class="form-control"  id="cep" aria-describedby="cep" placeholder="CEP">
+																		</div>
+																		<div class="form-group">
+																			<label for="endereco">Endereço</label>
+																		    <input type="text" class="form-control" disabled id="endereco" placeholder="Endereço">
+																		</div>
+																		<div class="form-group">
+																		    <label for="num">Número</label>
+																		    <input type="text" class="form-control"  id="num" aria-describedby="num" placeholder="Número">
+																		</div>
+																		<div class="form-group">
+																		    <label for="comp">Complemento</label>
+																		    <input type="text" class="form-control"  id="comp" aria-describedby="comp" placeholder="Complemento">
+																		</div>
+																		<div class="form-group">
+																		    <label for="bar">Bairro</label>
+																		    <input type="text" class="form-control" disabled  id="bar" aria-describedby="bar" placeholder="Bairro">
+																		</div>
+																		<div class="form-group">
+																		    <label for="cid">Cidade</label>
+																		    <input type="text" class="form-control" disabled  id="cid" aria-describedby="cid" placeholder="Cidade">
+																		</div>
+																		<div class="form-group">
+																		    <label for="uf">Estado</label>
+																		    <input type="text" class="form-control" disabled  id="uf" aria-describedby="uf" placeholder="Estado">
+																		</div>
+														    		</fieldset>
+														    	</div>
+														    	<div class="modal-footer">
+														        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+														        	<button type="submit" class="btn btn-primary">Salvar mudanças</button>
+														    	</div>
+														    </form>
+														  </div>
+														</div>
+
+														<div class="col-md-6 mb-3">
+															<h6 class="text-center">Endereço de Envio</h6>
+															<div class="card py-0">
+																<div class="card-body py-2">
+																    <p>Estrada Coronel José Gladiador, <span> 2688</span></p>
+																	<p>05267-000 - <span>Jardim Anhangüera</span></p>
+																	<p>São Paulo/ <span>SP</span></p>
+																</div>
+																<div class="card-footer py-2 d-flex justify-content-center">
+																	<div class="custom-control custom-radio">
+																		<input type="radio" id="edereço1" name="endereço1" class="custom-control-input">
+																		<label class="custom-control-label" for="edereço1">Eviar para este endereço</label>
+																	</div>
+																</div>
+															</div><!-- Card Endereço -->
+
+															<div class="card py-0">
+																<div class="card-body py-2">
+																    <p>Estrada Coronel José Gladiador, <span> 2688</span></p>
+																	<p>05267-000 - <span>Jardim Anhangüera</span></p>
+																	<p>São Paulo/ <span>SP</span></p>
+																</div>
+																<div class="card-footer py-2 d-flex justify-content-center">
+																	<div class="custom-control custom-radio">
+																		<input type="radio" id="edereço1" name="endereço1" class="custom-control-input">
+																		<label class="custom-control-label" for="edereço1">Eviar para este endereço</label>
+																	</div>
+																</div>
+															</div><!-- Card Endereço -->
+
+														</div>
+
+						                            </div>
+							                           	<button type="button" class="btn primary-btn prev-step next-button float-left">Voltar</button>
+							                            <button type="button" class="btn primary-btn next-step next-button float-right">Continuar</button>
 					                            </div>
 
-					                            <div class="tab-pane" role="tabpanel" id="step3">
-					                                <h5 class="text-md-center">Step 3</h5>
-					                                <div class="row">
-					                                    
-					                                </div>
-					                                <button type="button" class="btn primary-btn prev-step next-button float-left">Voltar</button>
-						                            <button type="button" class="btn primary-btn next-step next-button float-right">Continuar</button>
+					                            <div class="tab-pane active" role="tabpanel" id="step3">
+					                                <h5 class="text-md-center">Forma de Pagamento</h5>
+					                                <div class="row justify-content-center">
+					                                	<div class="col-md-12 pagamento">
+					                                		<ul class="nav nav-tabs justify-content-center" role="tablist">
+																<li role="presentation" class="nav-item">
+										                            <a href="#card" data-toggle="tab" aria-controls="card" role="tab" title="Carrinho" class="nav-link active">
+												                        <span>
+												                            <i class="icon ion-md-card"></i>
+												                            <p>Cartão</p>
+												                        </span>												                        
+												                    </a>
+									                           	</li>
+																<li role="presentation" class="nav-item">
+										                            <a href="#boelto" data-toggle="tab" aria-controls="boelto" role="tab" title="Carrinho" class="nav-link">
+												                        <span>
+												                            <i class="icon ion-md-print"></i>
+												                            <p>Boleto</p>
+												                        </span>												                        
+												                    </a>
+									                            </li>
+															</ul>
+		
+															<div class="tab-content mt-2">
+																<div class="tab-pane active" role="tabpanel" id="card">
+																	<button type="button" class="btn primary-btn prev-step next-button float-left">Voltar</button>
+						                            				<button type="button" class="btn primary-btn next-step next-button float-right">Finalizar</button>
+																</div>
+																<div class="tab-pane" role="tabpanel" id="boleto">
+																	<button type="button" class="btn primary-btn prev-step next-button float-left">Voltar</button>
+						                            				<button type="button" class="btn primary-btn next-step next-button float-right">Finalizar</button>
+																</div>
+															</div>
+					                                	</div>
+					                                </div>					                                
 					                            </div>
 
 					                            <div class="tab-pane" role="tabpanel" id="step4">
