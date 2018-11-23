@@ -7,7 +7,6 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     tools:context=".PrincipalActivity"
-    android:background="@color/AmareloPrincipal"
     >
 
         <LinearLayout
@@ -76,14 +75,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="?attr/actionBarSize"
-                        android:background="@color/AzulPrincipal"
+
                         />
 
                     <in.goodiebag.carouselpicker.CarouselPicker
                         android:id="@+id/Carrsky"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:background="@color/AzulPrincipal"
+
                         app:items_visible="three">
 
                     </in.goodiebag.carouselpicker.CarouselPicker>
@@ -102,7 +101,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
-                        android:background="@color/AzulPrincipal"
+
                         />
 
                     <TextView
@@ -119,7 +118,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
-                    android:background="@color/AzulPrincipal"
+
                         />
                 </LinearLayout>
     </ScrollView>
