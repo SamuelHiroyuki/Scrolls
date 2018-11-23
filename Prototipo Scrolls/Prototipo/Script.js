@@ -125,6 +125,13 @@ $('#product-slick-3').slick({
         },
     ]
 });
+ $('#abri_card').on('click', function(){
+    $('#cartao').removeClass('d-none');
+});
+
+  $('#abri_boleto').on('click', function(){
+    $('#pag_bolet').removeClass('d-none');
+});
 })(jQuery);
 
 $(document).ready(function () {
@@ -165,7 +172,7 @@ cartbtn2.on('click', function () {
 --------------------*/
 
 //Initialize tooltips
- /*$('.nav-tabs > li a[title]').tooltip();
+$('.nav-tabs > li a[title]').tooltip();
 
  //Wizard
  $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
@@ -194,4 +201,16 @@ cartbtn2.on('click', function () {
      $($activeli).prev().find('a[data-toggle="tab"]').removeClass("disabled");
      $($activeli).prev().find('a[data-toggle="tab"]').click();
 
- });*/
+ });
+
+ $("#abri_card").click(function (e) {
+     $('#tabs-form').addClass("disabled");
+     $('#tabs2-form').addClass("disabled");
+     $('#tabs3-form').addClass("disabled");
+ });
+
+ $("#abri_boleto").click(function (e) {
+     $('#tabs-form').addClass("disabled");
+     $('#tabs2-form').addClass("disabled");
+     $('#tabs3-form').addClass("disabled");
+ });

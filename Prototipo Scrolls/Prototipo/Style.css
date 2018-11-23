@@ -59,7 +59,7 @@ hr {
 	margin: 0;
 }
 
-div.card + div.card{
+#step2 > div.card + div.card{
 	margin-top: 1rem;
 }
 
@@ -2188,12 +2188,12 @@ span.round-tab:hover {
 .pagamento .nav-tabs > li a{
 	width: 150px;
 	color: #30323A;
-	font-size: 75px;
+	font-size: 50px;
 	text-align: center;
 }
 
 .pagamento .nav-tabs > li a p{
-	font-size: 50%;
+	font-size: 35%;
 	color: #30323A;
 	font-weight: bold;
 }
@@ -2208,6 +2208,19 @@ span.round-tab:hover {
 .pagamento .nav-tabs .nav-item.show .nav-link p, 
 .pagamento .nav-tabs .nav-link.active p{
 	color: #0D7694;
+}
+
+select.mes + select.ano{
+	margin-left: 1rem;
+}
+
+h6 i{
+	vertical-align: middle;
+}
+
+h6 >i.icon{
+	font-size: 30px;
+	margin-right: 0.5rem;
 }
 
 /*=========================================================
