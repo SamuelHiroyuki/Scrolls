@@ -242,23 +242,232 @@
 			    			</div>	
 			    		</div>
 			    		<div class="col-md-12 mt-2 ">
-			    			<ul class="nav nav-tabs">
+			    			<ul class="nav nav-tabs" role="tablist">
 								<li class="nav-item">
-									<a class="nav-link active" role="tab" href="#">Pedidos</a>
+									<a class="nav-link active" data-toggle="tab" role="tab" href="#ped">Pedidos</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" role="tab" href="#">Cartões</a>
+									<a class="nav-link" data-toggle="tab" role="tab" href="#card">Cartões</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" role="tab" href="#">Cadastro</a>
+									<a class="nav-link" data-toggle="tab" role="tab" href="#cadas">Cadastro</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" role="tab" href="#">Endereços</a>
+									<a class="nav-link" data-toggle="tab" role="tab" href="#ende">Endereços</a>
 								</li>
 							</ul>
 
 							<div class="tab-content">
-								div.tab
+								<div class="tab-pane active py-3" role="tabpanel" id="ped">
+									<div class="row px-4">
+										<div class="col-md-8 text-center">
+											<!-- Product Single -->
+								            <div class="product-takealong product-single-2 d-flex align-items-center">
+								            	<div class="product-thumb">
+								                	<div class="product-label">
+									                	<span>New</span>
+									                	<span class="sale"></span>
+									                </div>
+								                	<img src="product-img/product-3.jpg" alt="">
+								            	</div>
+								              	<div class="product-body">								                	
+								                	<p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+								                	<div class="product-rating">
+								                  		<i class="icon ion-md-star"></i>
+								                  		<i class="icon ion-md-star"></i>
+								                  		<i class="icon ion-md-star"></i>
+								                 		<i class="icon ion-md-star"></i>
+								                  		<i class="icon ion-md-star-outline empty"></i>
+								                	</div>
+								                	<h5 class="product-price">R$ 32.50 <del class="product-old-price"></del></h5>
+								              	</div>
+								            </div>
+								            <!-- /Product Single -->
+								            <hr>
+								            <!-- Product Single -->
+								            <div class="product-takealong product-single-2 d-flex align-items-center">
+								            	<div class="product-thumb">
+								                	<div class="product-label">
+									                	<span>New</span>
+									                	<span class="sale"></span>
+									                </div>
+								                	<img src="product-img/product-3.jpg" alt="">
+								            	</div>
+								              	<div class="product-body">								                	
+								                	<p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+								                	<div class="product-rating">
+								                  		<i class="icon ion-md-star"></i>
+								                  		<i class="icon ion-md-star"></i>
+								                  		<i class="icon ion-md-star"></i>
+								                 		<i class="icon ion-md-star"></i>
+								                  		<i class="icon ion-md-star-outline empty"></i>
+								                	</div>
+								                	<h5 class="product-price">R$ 32.50 <del class="product-old-price"></del></h5>
+								              	</div>
+								            </div>
+								            <!-- /Product Single -->
+										</div>
+									</div>
+								</div><!-- Lista de Pedidos -->
+
+								<div class="tab-pane py-3" role="tabpanel" id="card">
+									<div class="col-md-12 d-md-flex">
+										<div class="col-md-6">
+											<form action="">
+												<div class="form-group">
+													<label for="num_card">Número do Cartão</label>
+													<div class="d-flex align-items-center">
+														<input type="text" class="form-control mr-2" id="num_card" placeholder="Digite o número do seu cartão de crédito">
+														<img src="visa_band.ico" style="width: 40px;height: 40px;" alt="">
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="num_card">Validade</label>
+													<div class="d-flex">
+														<select class="custom-select mes">
+															<option value="0">Mês</option>
+															<option value="01">01</option>
+															<option value="02">02</option>
+															<option value="03">03</option>
+															<option value="04">04</option>
+															<option value="05">05</option>
+															<option value="06">06</option>
+															<option value="07">07</option>
+															<option value="08">08</option>
+															<option value="09">09</option>
+															<option value="10">10</option>
+															<option value="11">11</option>
+															<option value="12">12</option>
+														</select>
+														<select class="custom-select ano">
+															<option value="0">Ano</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group col-sm-5 px-0">
+													<label for="cvv_card">Código de segurança</label>
+													<div class="d-flex align-items-center">
+														<input type="text" class="form-control mr-2" id="cvv_card" placeholder="3 n° atrás do cartão">
+														<img src="cvv_card.png" style="width: 40px;" alt="">
+													</div>
+												</div>
+												<button type="button" class="btn primary-btn">Limpar</button>
+								                <button type="submit" class="btn primary-btn">Cadastrar</button>
+											</form>
+										</div>
+										<!-- Cadstrar cartão  -->
+										<div class="col-md-6 list-card">
+											<div class="card">
+												<div class="card-body">
+													<h5 class="text-uppercase">4520-xxxx-xxxx-3526</h5>
+												</div>
+											</div>
+											<div class="card">
+												<div class="card-body">
+													<h5 class="text-uppercase">4520-xxxx-xxxx-3526</h5>
+												</div>
+											</div>
+										</div>
+										<!-- lista de cartões  -->
+									</div>
+								</div><!-- Area de Cartões -->
+
+								<div class="tab-pane py-3" role="tabpanel" id="cadas">
+									<div class="row justify-content-center">
+										<div class="col-md-8">
+											<form action="">
+												<div class="form-group">
+													<label for="nome" class="col-sm-12 col-form-label col-form-label-lg">Nome</label>
+												    <input type="text" class="form-control form-control-lg" id="nome">
+												</div>
+												<div class="form-group">
+												    <label for="sobrenome" class="col-sm-12 col-form-label col-form-label-lg">Sobrenome</label>
+												    <input type="text" class=" form-control form-control-lg" id="sobrenome" >
+												</div>
+												<div class="form-group">
+												    <label for="cpf" class="col-sm-12 col-form-label col-form-label-lg">CPF</label>
+												    <input type="text" disabled class=" form-control form-control-lg" id="cpf">
+												</div>
+												<div class="form-group">
+												    <label for="email" class="col-sm-12 col-form-label col-form-label-lg">Seu Email</label>
+												    <input type="email" disabled class=" form-control form-control-lg" id="email">
+												</div>
+												<div class="w-100 text-center">
+													<button type="submit" class="btn primary-btn">Salvar alterações</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div><!-- Area de Cadastro -->
+
+								<div class="tab-pane py-3" role="tabpanel" id="ende">
+									<div class="col-md-12 d-md-flex">
+										<div class="col-md-6">
+											<form action="" class="mt-2">
+												<fieldset class="form-group">
+													<div class="form-group">
+													    <label for="cep">CEP</label>
+													    <input type="text" class="form-control"  id="cep" aria-describedby="cep" placeholder="CEP">
+													</div>
+													<div class="form-group">
+														<label for="endereco">Endereço</label>
+													    <input type="text" class="form-control" disabled id="endereco" placeholder="Endereço">
+													</div>
+													<div class="form-group">
+													    <label for="num">Número</label>
+													    <input type="text" class="form-control"  id="num" aria-describedby="num" placeholder="Número">
+													</div>
+													<div class="form-group">
+													    <label for="comp">Complemento</label>
+													    <input type="text" class="form-control"  id="comp" aria-describedby="comp" placeholder="Complemento">
+													</div>
+													<div class="form-group">
+													    <label for="bar">Bairro</label>
+													    <input type="text" class="form-control" disabled  id="bar" aria-describedby="bar" placeholder="Bairro">
+													</div>
+													<div class="form-group">
+													    <label for="cid">Cidade</label>
+													    <input type="text" class="form-control" disabled  id="cid" aria-describedby="id" placeholder="Cidade">
+													</div>
+													<div class="form-group">
+														<label for="uf">Estado</label>
+													    <input type="text" class="form-control" disabled  id="uf" aria-describedby="uf" placeholder="Estado">
+													</div>
+												</fieldset>
+												<button type="submit" class="btn primary-btn">Cadastrar</button>
+											</form>
+										</div><!-- Cadastrar Endereço-->
+										<div class="col-md-6 litas-end">
+											<div class="card py-0">
+												<div class="card-body py-2">
+												    <p>Estrada Coronel José Gladiador, <span> 2688</span></p>
+													<p>05267-000 - <span>Jardim Anhangüera</span></p>
+													<p>São Paulo/ <span>SP</span></p>
+												</div>
+												<div class="card-footer py-2 d-flex justify-content-center">
+													<div class="custom-control custom-radio">
+														<input type="radio" id="edereço1" name="endereço1" class="custom-control-input">
+														<label class="custom-control-label" for="edereço1">Eviar para este endereço</label>
+													</div>
+												</div>
+											</div><!-- Card Endereço -->
+
+											<div class="card py-0">
+												<div class="card-body py-2">
+												    <p>Estrada Coronel José Gladiador, <span> 2688</span></p>
+													<p>05267-000 - <span>Jardim Anhangüera</span></p>
+													<p>São Paulo/ <span>SP</span></p>
+												</div>
+												<div class="card-footer py-2 d-flex justify-content-center">
+													<div class="custom-control custom-radio">
+														<input type="radio" id="edereço1" name="endereço1" class="custom-control-input">
+														<label class="custom-control-label" for="edereço1">Eviar para este endereço</label>
+													</div>
+												</div>
+											</div><!-- Card Endereço -->
+										</div><!-- lista de endereços -->
+									</div>
+								</div><!-- Area de Endereços-->
 							</div>
 			    		</div>
 			    	</div>			    	
@@ -367,8 +576,20 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 		<script src="jquery.nicescroll.js"></script>
 		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-		<script type="text/javascript" src="slick/slick.js"></script>
-		<script type="text/javascript" src="Script.js"></script>
+		<script src="slick/slick.js"></script>
+		<script src="Script.js"></script>
+		<script>
+			$(document).ready(function() {
+        		var data = new Date();
+        		var ano = data.getFullYear();
+        		$('.ano').append('<option value="'+ano+'">' + ano + '</option>');
+        		for (var i = 0; i < 12; i++) {
+         			ano = ano + 1;
+          			$('.ano').append('<option value="'+ano+'">' + ano + '</option>');
+        		}
+      		});
 
+
+		</script>
 	</body>
 </html>

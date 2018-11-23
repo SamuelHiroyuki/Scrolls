@@ -356,7 +356,7 @@
 					                            </form>
 					                        </div><!-- Carrinho -->
 
-					                        <div class="tab-pane" role="tabpanel" id="step2">
+					                        <div class="tab-pane py-3" role="tabpanel" id="step2">
 						                        <h5 class="text-md-center">Endereço</h5>
 						                        <div class="row">
 													<div class="col-md-6">
@@ -417,7 +417,7 @@
 														</div>
 													</div>
 
-													<form class="col-md-6 mb-3">
+													<form class="col-md-6 mb-3 litas-end">
 														<h6 class="text-center">Endereço de Envio</h6>
 														<div class="card py-0">
 															<div class="card-body py-2">
@@ -447,14 +447,14 @@
 															</div>
 														</div><!-- Card Endereço -->
 
-													</form>
+													</form><!-- Lista de Endereço -->
 
 						                        </div>
 							                    <button type="button" class="btn primary-btn prev-step next-button float-left">Voltar</button>
 							                    <button type="button" class="btn primary-btn next-step next-button float-right">Continuar</button>
 					                        </div><!-- Endereço -->
 
-					                        <div class="tab-pane" role="tabpanel" id="step3">
+					                        <div class="tab-pane py-3" role="tabpanel" id="step3">
 					                            <h5 class="text-md-center">Forma de Pagamento</h5>
 					                            <div class="row justify-content-center">
 					                              	<div class="col-md-12 pagamento">
@@ -493,7 +493,7 @@
 																				<label for="num_card">Validade</label>
 																				<div class="d-flex">
 																					<select class="custom-select mes">
-																						<option selected>Mês</option>
+																						<option value="0">Mês</option>
 																						<option value="1">01</option>
 																						<option value="2">02</option>
 																						<option value="3">03</option>
@@ -508,26 +508,14 @@
 																						<option value="12">12</option>
 																					</select>
 																					<select class="custom-select ano">
-																						<option selected>Ano</option>
-																						<option value="1">01</option>
-																						<option value="2">02</option>
-																						<option value="3">03</option>
-																						<option value="4">04</option>
-																						<option value="5">05</option>
-																						<option value="6">06</option>
-																						<option value="7">07</option>
-																						<option value="8">08</option>
-																						<option value="9">09</option>
-																						<option value="10">10</option>
-																						<option value="11">11</option>
-																						<option value="12">12</option>
+																						<option value="0">Ano</option>
 																					</select>
 																				</div>
 																			</div>
 																			<div class="form-group col-sm-5 px-0">
 																				<label for="cvv_card">Código de segurança</label>
 																				<div class="d-flex align-items-center">
-																					<input type="text" class="form-control mr-2" id="cvv_card" placeholder="3 n° atrás do cartão">
+																					<input type="text" class="form-control mr-2" maxlength="3" id="cvv_card" placeholder="3 n° atrás do cartão">
 																					<img src="cvv_card.png" style="width: 40px;" alt="">
 																				</div>
 																			</div>
@@ -556,7 +544,7 @@
 					                            </div>					                                
 					                        </div><!-- Pagamento -->
 
-					                        <div class="tab-pane" role="tabpanel" id="step4">
+					                        <div class="tab-pane py-3" role="tabpanel" id="step4">
 					                            <h5 class="text-md-center">Obrigado pela sua Compra!!</h5>
 					                            <div class="row d-md-flex mb-3">
 					                        		<div class="col-md-6 col-sm-12">
@@ -712,7 +700,17 @@
 		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 		<script type="text/javascript" src="slick/slick.min.js"></script>
 		<script type="text/javascript" src="Script.js"></script>
-		<<script >
+		<script>
+			$(document).ready(function() {
+        		var data = new Date();
+        		var ano = data.getFullYear();
+        		$('.ano').append('<option value="'+ano+'">' + ano + '</option>');
+        		for (var i = 0; i < 12; i++) {
+         			ano = ano + 1;
+          			$('.ano').append('<option value="'+ano+'">' + ano + '</option>');
+        		}
+      		});
+
 
 		</script>
 

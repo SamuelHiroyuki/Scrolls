@@ -59,7 +59,8 @@ hr {
 	margin: 0;
 }
 
-#step2 > div.card + div.card{
+.litas-end > div.card + div.card, 
+.list-card>div.card + div.card{
 	margin-top: 1rem;
 }
 
