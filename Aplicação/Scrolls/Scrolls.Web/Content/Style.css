@@ -1066,25 +1066,9 @@ textarea.input {
         margin-bottom: 15px;
     }
 
-        .banner.banner-1 .banner-caption {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-
-        .banner.banner-2 .banner-caption {
-            position: absolute;
-            left: 10%;
-            right: 10%;
-            bottom: 10%;
-        }
-
-        .banner h1 {
-            font-size: 46px;
-            text-transform: uppercase;
+        .banner> img {
+            width: auto;
+            height: 385px;
         }
 /*=========================================================
 					HOME SLIDER

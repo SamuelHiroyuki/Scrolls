@@ -2224,6 +2224,22 @@ h6 >i.icon{
 }
 
 /*=========================================================
+        			Profile
+===========================================================*/
+
+.img-profile{
+	width: 150px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	align-items: center;
+	border-radius: 100%;
+	background-color: #f2d2d2;
+}
+
+
+/*=========================================================
         			RESPONSIVE
 ===========================================================*/
 
