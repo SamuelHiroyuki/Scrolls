@@ -19,8 +19,12 @@ namespace Scrolls.DataAccessObject
 
         public void Cadastrar(Imagem i)
         {
-            context.Imagnes.Add(i);
+            context.Imagens.Add(i);
             context.SaveChanges();
+        }
+
+        public IList<Imagem> Listar() {
+            return context.Imagens.ToList();
         }
     }
 }

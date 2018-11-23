@@ -6,7 +6,7 @@
 
 <style>
     .fbg {
-        border-color: #f2f2f2;
+        border-color: #efebe9;
     }
 
     .btn-blue:hover {
@@ -77,7 +77,7 @@
         </div>
         <div class="row">
             <div class="col-sm-12" style="padding-left: 0px;">
-                <button type="button" class="btn btn-danger fbg" onclick="mst(); window.location.href='#'" style="border-radius: 50%;  height: 48px; border-width: 4px;">
+                <button type="button" class="btn btn-danger fbg" onclick="mst(); window.location.href='/Home/Index'" style="border-radius: 50%;  height: 48px; border-width: 4px;">
                     <i class="entypo-cancel-squared "></i>
                 </button>
             </div>
@@ -201,8 +201,9 @@
                             <br />
                             <br />
                             <div class="form-group">
-                                <label class="form-label">Nome</label>
-                                <input type="text" class="form-control" name="n" data-validate="required" data-message-required="O campo é requerido" placeholder="Nome" />
+                                <label class="form-label">Nome*</label>
+                                <input type="text" class="form-control" name="n" id="name" data-validate="required" maxlength="100" data-message-required="O campo é requerido" placeholder="Nome" />
+                                <span id="mn" style="color: #cc2424;" hidden>Esse campo é obrigatório!</span>
                             </div>
                         </div>
 
@@ -247,14 +248,15 @@
                             <label class="control-label" style="padding-left: 20px;">Preço</label>
                             <div class="input-group">
                                 <span class="input-group-addon" style="color: #0fbd71">R$</span>
-                                <input type="number" class="form-control" value="2.00" min="2.00" name="prec" max="any" step=".1">
+                                <input type="number" class="form-control" id="pre" value="2.00" min="2.00" name="prec" max="any" step=".1">
                             </div>
                         </div>
 
                         <div class="col-sm-8">
                             <div class="form-group">
-                                <label for="field-ta" class="control-label">Descrição</label>
+                                <label for="field-ta" class="control-label">Descrição*</label>
                                 <textarea class="form-control" name="desc" style="resize: none;" id="field-ta" placeholder="Descrição" rows="8" cols="2"></textarea>
+                                <span id="md" style="color: #cc2424;" hidden>Esse campo é obrigatório!</span>
                             </div>
                         </div>
                     </div>
@@ -296,7 +298,6 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="inserttb">Botão</button>
                     <textarea class="itb" hidden name="comp"></textarea>
                 </form>
             </div>
@@ -351,6 +352,7 @@
 <!-- Demo Settings -->
 <script src="~/Assets/js/neon-demo.js"></script>
 <link href="~/Assets/style.css" rel="stylesheet" />
+<script src="~/Assets/js/toastr.js"></script>
 <script>
     $(window).resize(function () {
 
@@ -387,12 +389,60 @@
     });
 </script>
 
+<style>
+    .bc-r {
+        border-color: #cc2424;
+    }
+</style>
+
 <script>
     $('.inserttb').on('click', mst)
     function mst() {
         var elementHtml = document.getElementById('products-table');
         var tb = elementHtml.outerHTML;
         $('.itb').text(tb);
-        $('#form1').each(function () { this.submit(); });
+
+
+        var d = $('#field-ta');
+        var n = $('#name');
+        var p = $('#pre');
+
+        if (n.val().trim() != "" && d.val().trim() != "" && p.val() >= 2.00) {
+            $('#form1').each(function () { this.submit(); });
+        }
+
+        if (!(p.val() >= 2.00) || p.val() < 0) {
+            toastr.warning('Preencha todos os campos corretamente para finalizar!', 'Atenção!')
+            p.addClass('bc-r');
+        } else {
+            p.removeClass('bc-r');
+        }
+
+        if (n.val().trim() == "") {
+            $('#mn').attr('hidden', false);
+            n.addClass('bc-r');
+        } else {
+            $('#mn').attr('hidden', true);
+            n.removeClass('bc-r');
+        }
+
+        if (d.val().trim() == "") {
+            $('#md').attr('hidden', false);
+            d.addClass('bc-r');
+        } else {
+            $('#md').attr('hidden', true);
+            d.removeClass('bc-r');
+        }
+
+        if (n.val().trim() == "" || d.val().trim() == "") {
+            toastr.error('Preencha todos os campos corretamente para finalizar!', 'Atenção!')
+        }
     }
 </script>
+
+@if (TempData["Sucesso"] != null)
+{
+    <script>
+        $(document).ready(toastr.success('Produto cadastrado com sucesso!', 'Sucesso!'));
+    </script>
+}

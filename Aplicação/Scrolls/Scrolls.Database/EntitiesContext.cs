@@ -22,7 +22,7 @@ namespace Scrolls.Database {
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Funcionario> Funcionarios { get; set; }
         public DbSet<Genero> Generos { get; set; }
-        public DbSet<Imagem> Imagnes { get; set; }
+        public DbSet<Imagem> Imagens { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<ProdutoVenda> ProdutosVenda { get; set; }
         public DbSet<Venda> Vendas { get; set; }

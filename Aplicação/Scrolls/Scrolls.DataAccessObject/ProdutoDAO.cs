@@ -22,5 +22,9 @@ namespace Scrolls.DataAccessObject
             context.Produtos.Add(p);
             context.SaveChanges();
         }
+
+        public IList<Produto> Listar() {
+            return context.Produtos.ToList();
+        }
     }
 }

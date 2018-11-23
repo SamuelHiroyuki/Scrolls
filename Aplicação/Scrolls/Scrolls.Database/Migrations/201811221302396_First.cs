@@ -68,15 +68,12 @@ namespace Scrolls.Database.Migrations
                         Quantidade = c.Int(nullable: false),
                         Promocao = c.Double(),
                         Complemento = c.String(),
-                        Reposto = c.DateTime(nullable: false),
+                        Reposto = c.DateTime(),
                         GeneroId = c.Int(nullable: false),
-                        Categoria_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Categoria", t => t.Categoria_Id)
                 .ForeignKey("dbo.Genero", t => t.GeneroId, cascadeDelete: true)
-                .Index(t => t.GeneroId)
-                .Index(t => t.Categoria_Id);
+                .Index(t => t.GeneroId);
             
             CreateTable(
                 "dbo.Genero",
@@ -181,11 +178,14 @@ namespace Scrolls.Database.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Ativo = c.Boolean(nullable: false),
-                        EnderecoId = c.Int(nullable: false),
+                        Latitude = c.String(),
+                        Longitude = c.String(),
+                        Imagem = c.String(),
+                        Endereco_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Endereco", t => t.EnderecoId, cascadeDelete: true)
-                .Index(t => t.EnderecoId);
+                .ForeignKey("dbo.Endereco", t => t.Endereco_Id)
+                .Index(t => t.Endereco_Id);
             
             CreateTable(
                 "dbo.Funcionario",
@@ -233,14 +233,13 @@ namespace Scrolls.Database.Migrations
             DropForeignKey("dbo.Venda", "EnderecoId", "dbo.Endereco");
             DropForeignKey("dbo.Funcionario", "EnderecoId", "dbo.Endereco");
             DropForeignKey("dbo.Endereco", "ClienteId", "dbo.Cliente");
-            DropForeignKey("dbo.Banner", "EnderecoId", "dbo.Endereco");
+            DropForeignKey("dbo.Banner", "Endereco_Id", "dbo.Endereco");
             DropForeignKey("dbo.Venda", "ClienteId", "dbo.Cliente");
             DropForeignKey("dbo.Venda", "CartaoId", "dbo.Cartao");
             DropForeignKey("dbo.Cliente", "Cartao_Id", "dbo.Cartao");
             DropForeignKey("dbo.ProdutoVenda", "ProdutoId", "dbo.Produto");
             DropForeignKey("dbo.Imagem", "ProdutoId", "dbo.Produto");
             DropForeignKey("dbo.Produto", "GeneroId", "dbo.Genero");
-            DropForeignKey("dbo.Produto", "Categoria_Id", "dbo.Categoria");
             DropForeignKey("dbo.Genero", "CategoriaId", "dbo.Categoria");
             DropForeignKey("dbo.Carrinho", "ClienteId", "dbo.Cliente");
             DropIndex("dbo.ClienteCartao", new[] { "CartaoId" });
@@ -248,7 +247,7 @@ namespace Scrolls.Database.Migrations
             DropIndex("dbo.Funcionario", new[] { "EnderecoId" });
             DropIndex("dbo.Funcionario", new[] { "Email" });
             DropIndex("dbo.Funcionario", new[] { "CPF" });
-            DropIndex("dbo.Banner", new[] { "EnderecoId" });
+            DropIndex("dbo.Banner", new[] { "Endereco_Id" });
             DropIndex("dbo.Endereco", new[] { "ClienteId" });
             DropIndex("dbo.Cartao", new[] { "Numero" });
             DropIndex("dbo.Venda", new[] { "EnderecoId" });
@@ -258,7 +257,6 @@ namespace Scrolls.Database.Migrations
             DropIndex("dbo.ProdutoVenda", new[] { "ProdutoId" });
             DropIndex("dbo.Imagem", new[] { "ProdutoId" });
             DropIndex("dbo.Genero", new[] { "CategoriaId" });
-            DropIndex("dbo.Produto", new[] { "Categoria_Id" });
             DropIndex("dbo.Produto", new[] { "GeneroId" });
             DropIndex("dbo.Carrinho", new[] { "ProdutoId" });
             DropIndex("dbo.Carrinho", new[] { "ClienteId" });

@@ -13,8 +13,7 @@ namespace Scrolls.Entities
 
         [Required(ErrorMessage = "O campo nome não pode estar vazio."), MaxLength(50, ErrorMessage = "O nome deve conter apenas 50 caracteres.")]
         public string Nome { get; set; }
-
-        public virtual IList<Produto> Produtos { get; set; }
+        
         public virtual IList<Genero> Generos{ get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace Scrolls.Manager.Controllers
             ViewBag.Date = DateTime.Now.Day + " de " + DateTime.Now.ToString("MMMM, yyyy");
             return View();
         }
-
+        
         public ActionResult LoginPage()
         {
             return View();

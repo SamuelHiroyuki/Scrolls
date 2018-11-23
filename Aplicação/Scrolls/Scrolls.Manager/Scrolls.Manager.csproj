@@ -1736,6 +1736,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\LoginPage.cshtml" />
     <Content Include="Views\Produto\CProduto.cshtml" />
+    <Content Include="Views\Produto\QProduto.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1756,6 +1757,7 @@
     <Folder Include="Assets\js\aci-tree\php\tree\Item 7\Item 4\Item 3\" />
     <Folder Include="Assets\js\aci-tree\php\tree\Item 7\Item 4\Item 4\" />
     <Folder Include="Assets\js\selectboxit\css\" />
+    <Folder Include="Imagens\Banners\" />
     <Folder Include="Imagens\Funcionarios\" />
     <Folder Include="Imagens\Produtos\" />
     <Folder Include="Models\" />

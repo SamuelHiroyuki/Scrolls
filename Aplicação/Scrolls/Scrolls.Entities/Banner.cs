@@ -14,8 +14,10 @@ namespace Scrolls.Entities
         [Required(ErrorMessage ="É necessário informar a situação do banner.")]
         public bool Ativo { get; set; }
 
-        public virtual Endereco Endereco { get; set; }
-        [Required(ErrorMessage = "É necessário vincular um endereço ao banner.")]
-        public int EnderecoId { get; set; }
+        public string Latitude { get; set; }
+
+        public string Longitude { get; set; }
+
+        public string Imagem { get; set; }
     }
 }

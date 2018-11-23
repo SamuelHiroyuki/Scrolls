@@ -17,10 +17,18 @@ namespace Scrolls.Manager.Controllers
         {
             return View();
         }
-
+        
         public ActionResult CProduto() {
             ViewBag.Categorias = new CategoriaDAO().Listar();
             ViewBag.Generos = new GeneroDAO().Listar();
+            return View();
+        }
+        
+        public ActionResult QProduto() {
+            ViewBag.Categorias = new CategoriaDAO().Listar();
+            ViewBag.Generos = new GeneroDAO().Listar();
+            ViewBag.Produtos = new ProdutoDAO().Listar();
+            ViewBag.Imagens = new ImagemDAO().Listar();
             return View();
         }
 
@@ -35,110 +43,159 @@ namespace Scrolls.Manager.Controllers
             {
                 string ex = Path.GetExtension(i1.FileName);
                 string fn = p.Id + ex;
+                Imagem i = new Imagem() { Caminho = "/Imagens/Produtos/" + fn, ProdutoId = p.Id };
                 fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
                 i1.SaveAs(fn);
-                Imagem i = new Imagem() { Caminho = fn, ProdutoId = p.Id };
                 idao.Cadastrar(i);
-            }
-            if (i2 != null)
-            {
-                if (i1 == null)
+                if (i2 != null)
                 {
-                    string ex = Path.GetExtension(i2.FileName);
-                    string fn = p.Id + ex;
+                    ex = Path.GetExtension(i2.FileName);
+                    fn = p.Id + "_2" + ex;
+                    i = new Imagem() { Caminho = "/Imagens/Produtos/" + fn, ProdutoId = p.Id };
                     fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
                     i2.SaveAs(fn);
-                    Imagem i = new Imagem() { Caminho = fn, ProdutoId = p.Id };
                     idao.Cadastrar(i);
-                }
-                else
-                {
-                    string ex = Path.GetExtension(i2.FileName);
-                    string fn = p.Id + "_2" + ex;
-                    fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
-                    i2.SaveAs(fn);
-                    Imagem i = new Imagem() { Caminho = fn, ProdutoId = p.Id };
-                    idao.Cadastrar(i);
-                }
-            }
-            if (i3 != null)
-            {
-                if (i1 == null && i2 == null)
-                {
-                    string ex = Path.GetExtension(i3.FileName);
-                    string fn = p.Id + ex;
-                    fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
-                    i3.SaveAs(fn);
-                    Imagem i = new Imagem() { Caminho = fn, ProdutoId = p.Id };
-                    idao.Cadastrar(i);
-                }
-                else
-                {
-                    if (i1 == null && i2 != null)
+                    if (i3 != null)
                     {
-                        string ex = Path.GetExtension(i3.FileName);
-                        string fn = p.Id + "_2" + ex;
+                        ex = Path.GetExtension(i3.FileName);
+                        fn = p.Id + "_3" + ex;
+                        i = new Imagem() { Caminho = "/Imagens/Produtos/" + fn, ProdutoId = p.Id };
                         fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
                         i3.SaveAs(fn);
-                        Imagem i = new Imagem() { Caminho = fn, ProdutoId = p.Id };
                         idao.Cadastrar(i);
-                    }
-                    else
-                    {
-                        string ex = Path.GetExtension(i3.FileName);
-                        string fn = p.Id + "_3" + ex;
-                        fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
-                        i3.SaveAs(fn);
-                        Imagem i = new Imagem() { Caminho = fn, ProdutoId = p.Id };
-                        idao.Cadastrar(i);
-                    }
-                }
-            }
-            if (i4 != null)
-            {
-                if (i1 == null && i2 == null && i3 == null)
-                {
-                    string ex = Path.GetExtension(i4.FileName);
-                    string fn = p.Id + ex;
-                    fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
-                    i4.SaveAs(fn);
-                    Imagem i = new Imagem() { Caminho = fn, ProdutoId = p.Id };
-                    idao.Cadastrar(i);
-                }
-                else
-                {
-                    if (i1 == null && i2 == null && i3 != null)
-                    {
-                        string ex = Path.GetExtension(i4.FileName);
-                        string fn = p.Id + "_2" + ex;
-                        fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
-                        i4.SaveAs(fn);
-                        Imagem i = new Imagem() { Caminho = fn, ProdutoId = p.Id };
-                        idao.Cadastrar(i);
-                    }
-                    else
-                    {
-                        if (i1 == null && i2 != null && i3 != null)
+                        if (i4 != null)
                         {
-                            string ex = Path.GetExtension(i4.FileName);
-                            string fn = p.Id + "_3" + ex;
+                            ex = Path.GetExtension(i4.FileName);
+                            fn = p.Id + "_4" + ex;
+                            i = new Imagem() { Caminho = "/Imagens/Produtos/" + fn, ProdutoId = p.Id };
                             fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
                             i4.SaveAs(fn);
-                            Imagem i = new Imagem() { Caminho = fn, ProdutoId = p.Id };
                             idao.Cadastrar(i);
                         }
-                        else
+                    }
+                    else
+                    {
+                        if (i4 != null)
                         {
-                            string ex = Path.GetExtension(i4.FileName);
-                            string fn = p.Id + "_4" + ex;
+                            ex = Path.GetExtension(i4.FileName);
+                            fn = p.Id + "_3" + ex;
+                            i = new Imagem() { Caminho = "/Imagens/Produtos/" + fn, ProdutoId = p.Id };
                             fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
                             i4.SaveAs(fn);
-                            Imagem i = new Imagem() { Caminho = fn, ProdutoId = p.Id };
+                            idao.Cadastrar(i);
+                        }
+                    }
+                }
+                else
+                {
+                    if (i3 != null)
+                    {
+                        ex = Path.GetExtension(i3.FileName);
+                        fn = p.Id + "_2" + ex;
+                        i = new Imagem() { Caminho = "/Imagens/Produtos/" + fn, ProdutoId = p.Id };
+                        fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
+                        i3.SaveAs(fn);
+                        idao.Cadastrar(i);
+                        if (i4 != null)
+                        {
+                            ex = Path.GetExtension(i4.FileName);
+                            fn = p.Id + "_3" + ex;
+                            i = new Imagem() { Caminho = "/Imagens/Produtos/" + fn, ProdutoId = p.Id };
+                            fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
+                            i4.SaveAs(fn);
+                            idao.Cadastrar(i);
+                        }
+                    }
+                    else
+                    {
+                        if (i4 != null)
+                        {
+                            ex = Path.GetExtension(i4.FileName);
+                            fn = p.Id + "_2" + ex;
+                            i = new Imagem() { Caminho = "/Imagens/Produtos/" + fn, ProdutoId = p.Id };
+                            fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
+                            i4.SaveAs(fn);
                             idao.Cadastrar(i);
                         }
                     }
                 }
             }
+            else
+            {
+                if (i2 != null)
+                {
+                    string ex = Path.GetExtension(i2.FileName);
+                    string fn = p.Id + ex;
+                    Imagem i = new Imagem() { Caminho = "/Imagens/Produtos/" + fn, ProdutoId = p.Id };
+                    fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
+                    i2.SaveAs(fn);
+                    idao.Cadastrar(i);
+                    if (i3 != null)
+                    {
+                        ex = Path.GetExtension(i3.FileName);
+                        fn = p.Id + "_2" + ex;
+                        i = new Imagem() { Caminho = "/Imagens/Produtos/" + fn, ProdutoId = p.Id };
+                        fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
+                        i3.SaveAs(fn);
+                        idao.Cadastrar(i);
+                        if (i4 != null)
+                        {
+                            ex = Path.GetExtension(i4.FileName);
+                            fn = p.Id + "_3" + ex;
+                            i = new Imagem() { Caminho = "/Imagens/Produtos/" + fn, ProdutoId = p.Id };
+                            fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
+                            i4.SaveAs(fn);
+                            idao.Cadastrar(i);
+                        }
+                    }
+                    else
+                    {
+                        if (i4 != null)
+                        {
+                            ex = Path.GetExtension(i4.FileName);
+                            fn = p.Id + "_2" + ex;
+                            i = new Imagem() { Caminho = "/Imagens/Produtos/" + fn, ProdutoId = p.Id };
+                            fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
+                            i4.SaveAs(fn);
+                            idao.Cadastrar(i);
+                        }
+                    }
+                }
+                else
+                {
+                    if (i3 != null)
+                    {
+                        string ex = Path.GetExtension(i3.FileName);
+                        string fn = p.Id + ex;
+                        Imagem i = new Imagem() { Caminho = "/Imagens/Produtos/" + fn, ProdutoId = p.Id };
+                        fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
+                        i3.SaveAs(fn);
+                        idao.Cadastrar(i);
+                        if (i4 != null)
+                        {
+                            ex = Path.GetExtension(i4.FileName);
+                            fn = p.Id + "_2" + ex;
+                            i = new Imagem() { Caminho = "/Imagens/Produtos/" + fn, ProdutoId = p.Id };
+                            fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
+                            i4.SaveAs(fn);
+                            idao.Cadastrar(i);
+                        }
+                    }
+                    else
+                    {
+                        if (i4 != null)
+                        {
+                            string ex = Path.GetExtension(i4.FileName);
+                            string fn = p.Id + ex;
+                            Imagem i = new Imagem() { Caminho = "/Imagens/Produtos/" + fn, ProdutoId = p.Id };
+                            fn = Path.Combine(Server.MapPath("~/Imagens/Produtos/"), fn);
+                            i4.SaveAs(fn);
+                            idao.Cadastrar(i);
+                        }
+                    }
+                }
+            }
+            TempData["Sucesso"] = "Sucesso!";
             return RedirectToAction("CProduto");
         }
     }
