@@ -8,13 +8,10 @@
         <item name="colorAccent">@color/AzulPrincipal</item>
 
     </style>
-    <style name="Teste" parent="">
-        <!-- Customize your theme here. -->
+    <style name="Teste" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/AmareloPrincipal</item>
         <item name="colorPrimaryDark">@color/PretoPrincipal</item>
         <item name="colorAccent">@color/AzulPrincipal</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowActionBar">false</item>
     </style>
     <style name="RatingBar" parent="Theme.AppCompat">
         <item name="colorControlNormal">#696969</item>

@@ -88,15 +88,11 @@ public int getItemCount() {
 
     }
 
-    // convenience method for getting data at click position
     public String getItem(int id) {
         return mNomes.get(id);
     }
 
-    // allows clicks events to be caught
 
-
-// parent activity will implement this method to respond to click events
 public interface ItemClickListener {
     void onClick(View view, int position);
 }

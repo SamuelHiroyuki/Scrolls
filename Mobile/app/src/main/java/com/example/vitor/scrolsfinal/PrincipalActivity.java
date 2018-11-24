@@ -1,6 +1,7 @@
 package com.example.vitor.scrolsfinal;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -10,36 +11,67 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
 import in.goodiebag.carouselpicker.CarouselPicker;
 
-public class PrincipalActivity extends AppCompatActivity implements AdapterCat.ItemClickListener, AdapterProd.ItemClickListener {
+public class PrincipalActivity extends AppCompatActivity  {
         CarouselPicker carouselPicker;
         DrawerLayout drawer;
         AdapterCat adapter;
         AdapterProd prodAdapter1, prodAdapter2;
+        LinearLayout HeaderLayput;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        Toolbar mTopToolbar = (Toolbar) findViewById(R.id.toolbarProd);
+        Toolbar mTopToolbar = findViewById(R.id.IncludeToolbarPrincipal);
         setSupportActionBar(mTopToolbar);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setCheckedItem(R.id.itmComprar);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.itmConfig:
+                        Intent intent = new Intent(getApplicationContext(), Principal.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.itmMapa:
+                        Intent intent2 = new Intent(getApplicationContext(), Principal.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.itmMeusPedidos:
+                        Intent intent3 = new Intent(getApplicationContext(), Principal.class);
+                        startActivity(intent3);
+                        break;
+                    case R.id.itmQRCam:
+                        Intent intent4 = new Intent(getApplicationContext(), Principal.class);
+                        startActivity(intent4);
+                        break;
+                }
+                return true;
+            }
+        });
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,mTopToolbar,R.string.Drawer_open,R.string.Drawer_close);
         drawer.addDrawerListener(toggle);
 
         toggle.syncState();
+
+        HeaderLayput = (LinearLayout) findViewById(R.id.HeaderLayout);
 
         List<CarouselPicker.PickerItem> imgsBanner = new ArrayList<>();
         imgsBanner.add(new CarouselPicker.DrawableItem(R.drawable.banner_cyber));
@@ -73,7 +105,7 @@ public class PrincipalActivity extends AppCompatActivity implements AdapterCat.I
         recyclerView.setLayoutManager(horizontalLayoutManager);
 
         adapter = new AdapterCat(this, imagens,nomes);
-        adapter.setClickListener(this);
+
         recyclerView.setAdapter(adapter);
 
 
@@ -106,14 +138,6 @@ public class PrincipalActivity extends AppCompatActivity implements AdapterCat.I
         super.onBackPressed();
     }
 
-    @Override
-    public void onClick(View view, int position) {
-        Intent intent = new Intent(this, ProdutoInfoActivity.class);
-        startActivity(intent);
-    }
 
-    @Override
-    public void onItemClick(View view, int position) {
 
-    }
 }

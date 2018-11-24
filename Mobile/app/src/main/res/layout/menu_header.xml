@@ -3,6 +3,7 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="120dp"
     android:background="#263445"
+    android:id="@+id/HeaderLayout"
     >
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="90dp"
