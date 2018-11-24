@@ -59,7 +59,6 @@
     <Compile Include="CategoriaDAO.cs" />
     <Compile Include="FuncionarioDAO.cs" />
     <Compile Include="GeneroDAO.cs" />
-    <Compile Include="ImagemDAO.cs" />
     <Compile Include="ProdutoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

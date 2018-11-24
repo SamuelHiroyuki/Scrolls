@@ -1,7 +1,32 @@
 ﻿@{
     ViewBag.Title = "Consulta de produtos";
 }
+<div class="sidebar-menu">
 
+    <div class="sidebar-menu-inner" style="position: fixed !important;">
+
+
+
+        <div class="sidebar-user-info" id="id">
+            <div class="sui-normal">
+                <a href="#" class="user-link">
+                    <img src="~/Assets/images/thumb-1@2x.png" width="55" alt="" class="img-circle">
+                </a>
+            </div>
+        </div>
+
+        <ul id="main-menu" class="main-menu">
+            <li>
+                <a href="#">
+                    <i class="entypo-home" style="padding-left: 4px;"></i>
+                    <i style="font-size: 8px; padding-left: 6px;">Loja</i>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+</div>
 
 <div class="main-content" id="pr">
     <h3>Produtos</h3>
@@ -63,7 +88,7 @@
                 <th>Imagem destaque</th>
                 <th>Nome</th>
                 <th>Quantidade</th>
-                <th>Promoção</th>
+                <th>Preço</th>
                 <th>Categoria</th>
                 <th>Gênero</th>
                 <th>Ações</th>
@@ -78,250 +103,154 @@
 
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title">Alteração de produto</h4>
+                                <h4 class="modal-title">Visualização de produto</h4>
                             </div>
 
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
-                                            <div class="fileinput-new thumbnail" style="width: 325px; height:490px;" data-trigger="fileinput">
-                                                @foreach (var img in ViewBag.Imagens)
-                                                {
-                                                    if (img.ProdutoId == i.Id)
-                                                    {
-
-                                                        <img src="@img.Caminho" class="img-rounded" />
-                                                        break;
-                                                    }
-                                                    else
-                                                    {
-                                                        <img src="http://placehold.it/325x490">
-                                                    }
-                                                }
-                                            </div>
+                            <form action="/Produto/Alterar" method="post" id="form1">
+                                <div class="modal-body">
+                                    <div class="row" style="height: 640px;">
+                                        <input type="text" hidden name="id" value="@i.Id" />
+                                        <div class="col-sm-4">
+                                            <label class="form-label">Imagem destaque</label>
+                                            <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
+                                                <div class="fileinput-new thumbnail" style="width: 365px; height:493px;" data-trigger="fileinput">
+                                                    <img src="@i.Imagem1" class="img-rounded" />
+                                                </div>
 
 
-                                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 325px; max-height: 490px; min-width: 325px; min-height: 490px;"></div>
-                                            <br />
-                                            <div style="padding-left: 0px;">
-                                                <span class="btn btn-white btn-file" style="align-items: center; width: 40px; height: 40px; display: flex;">
-                                                    <span class="fileinput-new" style="padding-right: 6px;">
-                                                        <i class="entypo-upload"></i>
-                                                    </span>
-                                                    <i class="entypo-ccw"></i>
-                                                    <input type="file" name="i1" accept="image/*">
-                                                </span>
+                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 365px; max-height: 493px; min-width: 365px; min-height: 493px;"></div>
                                                 <br />
-                                                <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput" style="padding-top: 10px; width: 40px; height: 40px; margin-top: 390px;"><i class="entypo-trash"></i></a>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-sm-2">
-                                        <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
-                                            <div class="fileinput-new thumbnail" style="width: 100px; height:100px;" data-trigger="fileinput">
-                                                @foreach (var img in ViewBag.Imagens)
-                                                {
-                                                    if (img.ProdutoId == i.Id && img.Caminho.Contains(i.Id + "_2"))
-                                                    {
-
-                                                        <img src="@img.Caminho" class="img-rounded" />
-                                                    }
-                                                    else
-                                                    {
-                                                        <img src="http://placehold.it/100x100">
-                                                    }
-                                                }
-                                            </div>
+                                        <div class="col-sm-2" style="padding-left: 60px;">
+                                            <label class="form-label">Outras imagens</label>
+                                            <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
+                                                <div class="fileinput-new thumbnail" style="width: 150px; height:200px;" data-trigger="fileinput">
+                                                    <img src="@i.Imagem2" class="img-rounded" />
+                                                </div>
 
 
-                                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 100px; max-height: 100px; min-width: 100px; min-height: 100px;"></div>
-                                            <br />
-                                            <div style="padding-left: 0px;">
-                                                <span class="btn btn-white btn-file" style="align-items: center; width: 40px; height: 40px; display: flex;">
-                                                    <span class="fileinput-new" style="padding-right: 6px;">
-                                                        <i class="entypo-upload"></i>
-                                                    </span>
-                                                    <i class="entypo-ccw"></i>
-                                                    <input type="file" name="i2" accept="image/*">
-                                                </span>
+                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 150px; max-height: 200px; min-width: 150px; min-height: 200px;"></div>
                                                 <br />
-                                                <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput" style="padding-top: 10px; width: 40px; height: 40px; margin-top: 3px;"><i class="entypo-trash"></i></a>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-sm-2">
-                                        <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
-                                            <div class="fileinput-new thumbnail" style="width: 100px; height:100px;" data-trigger="fileinput">
-                                                @foreach (var img in ViewBag.Imagens)
-                                                {
-                                                    if (img.ProdutoId == i.Id && img.Caminho.Contains(i.Id + "_3"))
-                                                    {
-
-                                                        <img src="@img.Caminho" class="img-rounded" />
-                                                    }
-                                                    else
-                                                    {
-                                                        <img src="http://placehold.it/100x100">
-                                                    }
-                                                }
-                                            </div>
+                                        <div class="col-sm-2" style="padding-left: 129px; margin-top: 25px;">
+                                            <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
+                                                <div class="fileinput-new thumbnail" style="width: 150px; height:200px;" data-trigger="fileinput">
+                                                    <img src="@i.Imagem3" class="img-rounded" />
+                                                </div>
 
 
-                                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 100px; max-height: 100px; min-width: 100px; min-height: 100px;"></div>
-                                            <br />
-                                            <div style="padding-left: 0px;">
-                                                <span class="btn btn-white btn-file" style="align-items: center; width: 40px; height: 40px; display: flex;">
-                                                    <span class="fileinput-new" style="padding-right: 6px;">
-                                                        <i class="entypo-upload"></i>
-                                                    </span>
-                                                    <i class="entypo-ccw"></i>
-                                                    <input type="file" name="i3" accept="image/*">
-                                                </span>
+                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 150px; max-height: 200px; min-width: 150px; min-height: 200px;"></div>
                                                 <br />
-                                                <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput" style="padding-top: 10px; width: 40px; height: 40px; margin-top: 3px;"><i class="entypo-trash"></i></a>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-sm-2">
-                                        <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
-                                            <div class="fileinput-new thumbnail" style="width: 100px; height:100px;" data-trigger="fileinput">
-                                                @foreach (var img in ViewBag.Imagens)
-                                                {
-                                                    if (img.ProdutoId == i.Id && img.Caminho.Contains(i.Id + "_4"))
-                                                    {
-
-                                                        <img src="@img.Caminho" class="img-rounded" />
-                                                    }
-                                                    else
-                                                    {
-                                                        <img src="http://placehold.it/100x100">
-                                                    }
-                                                }
-                                            </div>
+                                        <div class="col-sm-2" style="padding-left: 200px; margin-top: 25px;">
+                                            <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
+                                                <div class="fileinput-new thumbnail" style="width: 150px; height:200px;" data-trigger="fileinput">
+                                                    <img src="@i.Imagem4" class="img-rounded" />
+                                                </div>
 
 
-                                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 100px; max-height: 100px; min-width: 100px; min-height: 100px;"></div>
-                                            <br />
-                                            <div style="padding-left: 0px;">
-                                                <span class="btn btn-white btn-file" style="align-items: center; width: 40px; height: 40px; display: flex;">
-                                                    <span class="fileinput-new" style="padding-right: 6px;">
-                                                        <i class="entypo-upload"></i>
-                                                    </span>
-                                                    <i class="entypo-ccw"></i>
-                                                    <input type="file" name="i4" accept="image/*">
-                                                </span>
+                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 150px; max-height: 200px; min-width: 150px; min-height: 200px;"></div>
                                                 <br />
-                                                <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput" style="padding-top: 10px; width: 40px; height: 40px; margin-top: 3px;"><i class="entypo-trash"></i></a>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-sm-2" id="prec" style="padding-left: unset;">
 
-                                        <label class="control-label" style="padding-left: 20px;">Preço</label>
-                                        <div class="input-group">
-                                            <span class="input-group-addon" style="color: #0fbd71">R$</span>
-                                            <input type="number" class="form-control" id="pre" value="@Convert.ToDouble(i.Preco, new System.Globalization.CultureInfo("sv-SE"))" min="2.00" name="prec" max="any" step=".1">
+                                        <div class="col-sm-8" style="top: -30px;">
+                                            <br />
+                                            <br />
+                                            <div class="form-group">
+                                                <label class="form-label">Nome*</label>
+                                                <input type="text" class="form-control" value="@i.Nome" disabled name="n" id="name" data-validate="required" maxlength="100" data-message-required="O campo é requerido" placeholder="Nome" />
+                                                <span id="mn" style="color: #cc2424;" hidden>Esse campo é obrigatório!</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-8">
-                                        <br />
-                                        <br />
-                                        <div class="form-group">
-                                            <label class="form-label">Nome*</label>
-                                            <input type="text" class="form-control" value="@i.Nome" name="n" id="name" data-validate="required" maxlength="100" data-message-required="O campo é requerido" placeholder="Nome" />
-                                            <span id="mn" style="color: #cc2424;" hidden>Esse campo é obrigatório!</span>
-                                        </div>
-                                    </div>
 
-                                    <div class="col-sm-8">
-                                        <br />
-                                        <br />
-                                        <div class="form-group">
-                                            <label class="control-label">Categoria&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Gênero</label>
+                                        <div class="col-sm-8" style="top: -30px;">
+                                            <br />
+                                            <br />
+                                            <div class="form-group">
+                                                <label class="control-label">Categoria&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Gênero</label>
 
-                                            <select class="form-control" name="gen">
-                                                @foreach (var c in ViewBag.Categorias)
-                                                {
-                                                    foreach (var g in ViewBag.Generos)
+                                                <select class="form-control" name="gen" disabled>
+                                                    @foreach (var c in ViewBag.Categorias)
                                                     {
-                                                        if (c.Id == g.CategoriaId)
+                                                        foreach (var g in ViewBag.Generos)
                                                         {
-                                                            if (i.GeneroId != g.Id)
+                                                            if (c.Id == g.CategoriaId)
                                                             {
-                                                                <option value="@g.Id">
-                                                                    @c.Nome
-                                                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                                                    @g.Nome
-                                                                </option>
-                                                            }
-                                                            else
-                                                            {
-                                                                <option value="@g.Id" selected>
-                                                                    @c.Nome
-                                                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                                                    @g.Nome
-                                                                </option>
+                                                                if (i.GeneroId == g.Id)
+                                                                {
+                                                                    <option value="@g.Id" selected>
+                                                                        @c.Nome
+                                                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                                        @g.Nome
+                                                                    </option>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <option value="@g.Id">
+                                                                        @c.Nome
+                                                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                                        @g.Nome
+                                                                    </option>
+                                                                }
                                                             }
                                                         }
                                                     }
-                                                }
-                                            </select>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-8">
-                                        <div class="form-group">
-                                            <label for="field-ta" class="control-label">Descrição*</label>
-                                            <textarea class="form-control" name="desc" style="resize: none;" id="field-ta" placeholder="Descrição" rows="8" cols="2">@i.Descricao</textarea>
-                                            <span id="md" style="color: #cc2424;" hidden>Esse campo é obrigatório!</span>
+
+                                        <div class="col-sm-8">
+                                            <div class="form-group">
+                                                <label for="field-ta" class="control-label">Descrição*</label>
+                                                <textarea class="form-control" name="desc" style="resize: none;" disabled id="field-ta" placeholder="Descrição" rows="8" cols="2">@i.Descricao</textarea>
+                                                <span id="md" style="color: #cc2424;" hidden>Esse campo é obrigatório!</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2" style="z-index: 2; padding-left: 75px; top: -100px;">
+                                            <label class="control-label">Quantidade</label><br />
+                                            <input class="knob" data-min="@i.Quantidade" data-max="@i.Quantidade" disabled data-width="80" data-height="80" data-thickness=".25" data-fgColor="#0fbd71" data-bgColor="#ebebeb" value="@i.Quantidade">
+                                        </div>
+
+                                        <style>
+                                            canvas {
+                                                pointer-events: none;
+                                            }
+                                        </style>
+
+                                        <div class="col-sm-2" id="prec" style="padding-left: 0px; top: -75px; left: -70px;">
+
+                                            <label class="control-label" style="padding-left: 20px;">Preço</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon" style="color: #0fbd71">R$</span>
+                                                <input type="number" style="background: white;" class="form-control" id="pre" disabled value="@i.Preco.ToString().Replace(",", ".")" min="2.00" name="prec" max="any" step=".01">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-12 in">
-
-                                    </div>
+                                <div class="modal-footer" style="height: 64px;">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                                 </div>
-
-                            </div>
-                            <script>
-                                function addtb(id) {
-                                    $('#modal-'+id+' .in').append('@i.Complemento'.replace(/&amp;/g, "&").replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&quot;/g, '"').replace(/&nbsp;/g, " ").replace(/&#47;/g, "/")); 
-                                }
-                            </script>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-info" onclick="addtb(@i.Id);">Save changes</button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
                 <tr>
                     <td>@i.Id</td>
                     <td>
-                        @foreach (var img in ViewBag.Imagens)
-                        {
-                            if (img.ProdutoId == i.Id)
-                            {
-
-                                <img src="@img.Caminho" class="img-rounded" />
-                                break;
-                            }
-                        }
+                        <img src="@i.Imagem1" class="img-rounded" />
                     </td>
                     <td>@i.Nome</td>
                     <td>@i.Quantidade</td>
-                    @if (i.Promocao != null)
-                    {
-                        <td>Sim</td> }
-                    else
-                    {
-                        <td>Não</td>}
+                    <td>@i.Preco</td>
 
                     <td>
                         @foreach (var gen in ViewBag.Generos)
@@ -348,12 +277,12 @@
                         }
                     </td>
                     <td style="text-align: center;">
-                        <a href="javascript:;" onclick="jQuery('#modal-@i.Id').modal('show', {backdrop: 'static'});" class="btn btn-default btn-sm btn-icon icon-left">
+                        <a href='@Url.Action("AProduto", "Produto", new { id = i.Id})' class="btn btn-default btn-sm btn-icon icon-left">
                             <i class="entypo-pencil"></i>
                             Editar
                         </a>
 
-                        <a href="#" class="btn btn-info btn-sm btn-icon icon-left">
+                        <a class="btn btn-info btn-sm btn-icon icon-left" href="javascript:;" onclick="jQuery('#modal-@i.Id').modal('show', {backdrop: 'static'});">
                             <i class="entypo-info"></i>
                             Visualizar
                         </a>
@@ -412,3 +341,101 @@
 <!-- Demo Settings -->
 <script src="~/Assets/js/neon-demo.js"></script>
 
+<!-- Imported styles on this page -->
+<link rel="stylesheet" href="~/Assets/js/jvectormap/jquery-jvectormap-1.2.2.css">
+<link rel="stylesheet" href="~/Assets/js/rickshaw/rickshaw.min.css">
+
+<!-- Bottom scripts (common) -->
+<script src="~/Assets/js/gsap/TweenMax.min.js"></script>
+<script src="~/Assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+<script src="~/Assets/js/bootstrap.js"></script>
+<script src="~/Assets/js/joinable.js"></script>
+<script src="~/Assets/js/resizeable.js"></script>
+<script src="~/Assets/js/neon-api.js"></script>
+<script src="~/Assets/js/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="~/Assets/js/jvectormap/jquery-jvectormap-europe-merc-en.js"></script>
+<script src="~/Assets/js/jquery.sparkline.min.js"></script>
+<script src="~/Assets/js/rickshaw/vendor/d3.v3.js"></script>
+<script src="~/Assets/js/rickshaw/rickshaw.min.js"></script>
+<script src="~/Assets/js/raphael-min.js"></script>
+<script src="~/Assets/js/morris.min.js"></script>
+<script src="~/Assets/js/toastr.js"></script>
+<script src="~/Assets/js/neon-chat.js"></script>
+
+<script src="~/Assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+<script src="~/Assets/js/jquery.knob.js"></script>
+
+<script src="~/Assets/js/bootstrap-datepicker.js"></script>
+<script src="~/Assets/js/bootstrap-timepicker.min.js"></script>
+
+<script src="~/Assets/js/bootstrap-switch.min.js"></script>
+<script src="~/Assets/js/jquery.inputmask.bundle.js"></script>
+<script src="~/Assets/js/fileinput.js"></script>
+<script type="text/javascript" src="~/Assets/js/neon-calendar.js"></script>
+
+<script src="~/Assets/js/zurb-responsive-tables/responsive-tables.js"></script>
+<!-- JavaScripts initializations and stuff -->
+<script src="~/Assets/js/neon-custom.js"></script>
+
+<script src="~/Assets/js/dropzone/dropzone.js"></script>
+
+<link rel="stylesheet" href="~/Assets/js/dropzone/dropzone.css">
+
+<!-- Demo Settings -->
+<script src="~/Assets/js/neon-demo.js"></script>
+<link href="~/Assets/style.css" rel="stylesheet" />
+<script src="~/Assets/js/toastr.js"></script>
+
+<style>
+    .bc-r {
+        border-color: #cc2424;
+    }
+</style>
+
+<script>
+    $('.inserttb').on('click', mst)
+    function mst() {
+
+        var d = $('#field-ta');
+        var n = $('#name');
+        var p = $('#pre');
+
+        if (n.val().trim() != "" && d.val().trim() != "" && p.val() >= 2.00) {
+            $('#form1').each(function () { this.submit(); });
+        }
+
+        if (!(p.val() >= 2.00) || p.val() < 0) {
+            toastr.warning('Preencha todos os campos corretamente para finalizar!', 'Atenção!')
+            p.addClass('bc-r');
+        } else {
+            p.removeClass('bc-r');
+        }
+
+        if (n.val().trim() == "") {
+            $('#mn').attr('hidden', false);
+            n.addClass('bc-r');
+        } else {
+            $('#mn').attr('hidden', true);
+            n.removeClass('bc-r');
+        }
+
+        if (d.val().trim() == "") {
+            $('#md').attr('hidden', false);
+            d.addClass('bc-r');
+        } else {
+            $('#md').attr('hidden', true);
+            d.removeClass('bc-r');
+        }
+
+        if (n.val().trim() == "" || d.val().trim() == "") {
+            toastr.error('Preencha todos os campos corretamente para finalizar!', 'Atenção!')
+        }
+    }
+</script>
+
+@if (TempData["Sucesso"] != null)
+{
+    <script>
+        $(document).ready(toastr.success('Produto alterado com sucesso!', 'Sucesso!'));
+    </script>
+}

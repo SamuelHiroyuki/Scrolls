@@ -23,8 +23,20 @@ namespace Scrolls.DataAccessObject
             context.SaveChanges();
         }
 
+        public Produto BuscaId(int id) {
+            return context.Produtos.FirstOrDefault(c => c.Id == id);
+        }
+
         public IList<Produto> Listar() {
             return context.Produtos.ToList();
+        }
+
+        public void Atualizar() {
+            context.SaveChanges();
+        }
+
+        public string IsZero() {
+            return context.Produtos.Where(p => p.Quantidade == 0).Count().ToString();
         }
     }
 }

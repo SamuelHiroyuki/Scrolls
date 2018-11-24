@@ -13,9 +13,11 @@ namespace Scrolls.Manager.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            ViewBag.Nome = string.Empty;
             ViewBag.LoginE = string.Empty;
             ViewBag.V = string.Empty;
             ViewBag.Date = DateTime.Now.Day + " de " + DateTime.Now.ToString("MMMM, yyyy");
+            ViewData["Falta"] = new ProdutoDAO().IsZero();
             return View();
         }
         
@@ -50,12 +52,14 @@ namespace Scrolls.Manager.Controllers
             {
                 ViewBag.V = "validate-has-error";
                 ViewBag.LoginE = "display: block; !important";
+                ViewBag.Nome = n;
                 return View("LoginPage");
             }
         }
 
         public ActionResult Logout()
         {
+            ViewBag.Nome = string.Empty;
             ViewBag.LoginE = string.Empty;
             ViewBag.V = string.Empty;
             Session["_Id"] = 0;

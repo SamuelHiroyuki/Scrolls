@@ -70,6 +70,10 @@ namespace Scrolls.Database.Migrations
                         Complemento = c.String(),
                         Reposto = c.DateTime(),
                         GeneroId = c.Int(nullable: false),
+                        Imagem1 = c.String(),
+                        Imagem2 = c.String(),
+                        Imagem3 = c.String(),
+                        Imagem4 = c.String(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Genero", t => t.GeneroId, cascadeDelete: true)
@@ -95,18 +99,6 @@ namespace Scrolls.Database.Migrations
                         Nome = c.String(nullable: false, maxLength: 50),
                     })
                 .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.Imagem",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Caminho = c.String(),
-                        ProdutoId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Produto", t => t.ProdutoId, cascadeDelete: true)
-                .Index(t => t.ProdutoId);
             
             CreateTable(
                 "dbo.ProdutoVenda",
@@ -238,7 +230,6 @@ namespace Scrolls.Database.Migrations
             DropForeignKey("dbo.Venda", "CartaoId", "dbo.Cartao");
             DropForeignKey("dbo.Cliente", "Cartao_Id", "dbo.Cartao");
             DropForeignKey("dbo.ProdutoVenda", "ProdutoId", "dbo.Produto");
-            DropForeignKey("dbo.Imagem", "ProdutoId", "dbo.Produto");
             DropForeignKey("dbo.Produto", "GeneroId", "dbo.Genero");
             DropForeignKey("dbo.Genero", "CategoriaId", "dbo.Categoria");
             DropForeignKey("dbo.Carrinho", "ClienteId", "dbo.Cliente");
@@ -255,7 +246,6 @@ namespace Scrolls.Database.Migrations
             DropIndex("dbo.Venda", new[] { "CartaoId" });
             DropIndex("dbo.ProdutoVenda", new[] { "VendaId" });
             DropIndex("dbo.ProdutoVenda", new[] { "ProdutoId" });
-            DropIndex("dbo.Imagem", new[] { "ProdutoId" });
             DropIndex("dbo.Genero", new[] { "CategoriaId" });
             DropIndex("dbo.Produto", new[] { "GeneroId" });
             DropIndex("dbo.Carrinho", new[] { "ProdutoId" });
@@ -272,7 +262,6 @@ namespace Scrolls.Database.Migrations
             DropTable("dbo.Cartao");
             DropTable("dbo.Venda");
             DropTable("dbo.ProdutoVenda");
-            DropTable("dbo.Imagem");
             DropTable("dbo.Categoria");
             DropTable("dbo.Genero");
             DropTable("dbo.Produto");

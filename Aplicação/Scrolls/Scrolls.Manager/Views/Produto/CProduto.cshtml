@@ -89,17 +89,18 @@
 <div class="main-content" style="background-color: #efebe9;">
     <div class="row">
         <div class="col-sm-12">
-            <div class="well" style="background-color: #fff !important;">
+            <div class="well" style="background-color: #fff !important; padding-top: 35px;">
                 <form role="form" id="form1" method="post" class="validate" enctype="multipart/form-data" action="/Produto/Cadastrar">
                     <div class="row">
                         <div class="col-md-4" style="padding-left: 35px;">
+                            <label class="form-label">Imagem destaque</label>
                             <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
-                                <div class="fileinput-new thumbnail" style="width: 300px; height:300px;" data-trigger="fileinput">
-                                    <img src="http://placehold.it/300x300">
+                                <div class="fileinput-new thumbnail" style="width: 320px; height:450px;" data-trigger="fileinput">
+                                    <img src="http://placehold.it/320x450">
                                 </div>
 
 
-                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 300px; max-height: 300px; min-width: 300px; min-height: 300px;"></div>
+                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 320px; max-height: 450px; min-width: 320px; min-height: 450px;"></div>
                                 <br />
                                 <div style="padding-left: 0px;">
                                     <span class="btn btn-white btn-file" style="align-items: center; width: 40px; height: 40px; display: flex;">
@@ -110,12 +111,13 @@
                                         <input type="file" name="i1" accept="image/*">
                                     </span>
                                     <br />
-                                    <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput" style="padding-top: 10px; width: 40px; height: 40px; margin-top: 200px;"><i class="entypo-trash"></i></a>
+                                    <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput" style="padding-top: 10px; width: 40px; height: 40px; margin-top: 350px;"><i class="entypo-trash"></i></a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-2">
+                        <div class="col-md-2" style="padding-left: 70px;">
+                            <label class="form-label">Outras imagens</label>
                             <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
                                 <div class="fileinput-new thumbnail" style="width: 100px; height: 100px; border-radius: 50%;" data-trigger="fileinput">
                                     <img src="http://placehold.it/200x200" style="border-radius: 50%;">
@@ -142,7 +144,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2" style="padding-left: 160px; margin-top: 23px;">
                             <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
                                 <div class="fileinput-new thumbnail" style="width: 100px; height: 100px; border-radius: 50%;" data-trigger="fileinput">
                                     <img src="http://placehold.it/200x200" style="border-radius: 50%;">
@@ -169,7 +171,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2" style="padding-left: 200px; margin-top: 23px;">
                             <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
                                 <div class="fileinput-new thumbnail" style="width: 100px; height: 100px; border-radius: 50%;" data-trigger="fileinput">
                                     <img src="http://placehold.it/200x200" style="border-radius: 50%;">
@@ -196,7 +198,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-sm-8">
                             <br />
                             <br />
@@ -237,13 +239,13 @@
 
                         <br />
                         <br />
-                        <div class="col-sm-2" style="z-index: 2; padding-left: 35px;">
+                        <div class="col-sm-2" style="z-index: 2; padding-left: 35px; left: 20px; top: 25px;">
                             <label class="control-label">Quantidade</label><br />
                             <input class="knob" name="qtd" data-min="1" data-max="999" data-width="145" data-height="145" data-thickness=".25" data-fgColor="#0fbd71" data-bgColor="#ebebeb" value="1">
                         </div>
 
 
-                        <div class="col-sm-2" id="prec" style="padding-left: 20px;">
+                        <div class="col-sm-2" id="prec" style="padding-left: 20px; left: -30px; top: 83px;">
 
                             <label class="control-label" style="padding-left: 20px;">Preço</label>
                             <div class="input-group">
@@ -252,49 +254,21 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-8">
+                        <div class="col-sm-8" style="top: -130px;">
                             <div class="form-group">
                                 <label for="field-ta" class="control-label">Descrição*</label>
-                                <textarea class="form-control" name="desc" style="resize: none;" id="field-ta" placeholder="Descrição" rows="8" cols="2"></textarea>
+                                <textarea class="form-control" name="desc" style="resize: none;" id="field-ta" placeholder="Descrição" rows="18" cols="2"></textarea>
                                 <span id="md" style="color: #cc2424;" hidden>Esse campo é obrigatório!</span>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <br />
-                        <br />
-                        <div class="col-sm-12" style="padding-left: 40px; padding-right: 40px;">
+                        <div class="col-sm-12" style="padding-left: 40px; padding-right: 40px; top: -80px;">
                             <div class="form-group">
                                 <label class="control-label">
                                     Complemento
-                                    <i class="entypo-info-circled" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="O complemento serve para adiconar informações especificas sobre o produto, como autor, tamanho, peso, material e etc. O campo Titulo é responsavel por identificar o tipo do complemento e o campo Descrição por apresentar os dados." data-original-title="Como funciona"></i>
+                                    <i class="entypo-info-circled" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="O complemento serve para adiconar informações especificas sobre o produto, como autor, tamanho, peso, material, marca e etc. O campo Titulo é responsavel por identificar o tipo do complemento e o campo Descrição por apresentar os dados." data-original-title="Como funciona"></i>
                                 </label>
-                                <table class="table table-bordered responsive" id="products-table">
-                                    <tbody>
-                                        <tr>
-                                            <th>Titulo</th>
-                                            <th>Descrição</th>
-                                            <th>Ações</th>
-                                        </tr>
-                                        <tr>
-                                            <td contenteditable="true" style="vertical-align: middle; max-width: 295px;" width="295">&nbsp;</td>
-                                            <td contenteditable="true" style="vertical-align: middle; max-width: 665px;" width="665">&nbsp;</td>
-                                            <td style="text-align: center; vertical-align: middle; max-width: 157px;" width="157">
-                                                <button type="button" class="btn btn-white" onclick="RemoveTableRow(this)" style="border-radius: 50%;  height: 42px;">
-                                                    <i class="entypo-cancel"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="5" style="text-align: left;">
-                                                <button onclick="AddTableRow()" type="button" style="border-radius: 25%;"><i class="entypo-plus"></i></button>
-                                            </td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+                                <table class="table table-bordered responsive" id="products-table"><tbody><tr><th>Titulo</th><th>Descrição</th><th>Ações</th></tr><tr><td contenteditable="true" style="vertical-align: middle; max-width: 295px;" width="295">&nbsp;</td><td contenteditable="true" style="vertical-align: middle; max-width: 665px;" width="665">&nbsp;</td><td style="text-align: center; vertical-align: middle; max-width: 157px;" width="157"><button type="button" class="btn btn-white" onclick="RemoveTableRow(this)" style="border-radius: 50%;  height: 42px;"><i class="entypo-cancel"></i></button></td></tr></tbody><tfoot><tr><td colspan="5" style="text-align: left;"><button onclick="AddTableRow()" type="button" style="border-radius: 25%;"><i class="entypo-plus"></i></button></td></tr></tfoot></table>
                             </div>
                         </div>
                     </div>
@@ -368,11 +342,7 @@
         AddTableRow = function () {
             var newRow = $("<tr>");
             var cols = "";
-            cols += '<td contenteditable="true" style="vertical-align: middle; max-width: 295px;" width="295">&nbsp;</td>';
-            cols += '<td contenteditable="true" style="vertical-align: middle; max-width: 465px;" width="465">&nbsp;</td>';
-            cols += '<td style="text-align: center; vertical-align: middle;">';
-            cols += '<button type="button" class="btn btn-white" onclick="RemoveTableRow(this)" style="border-radius: 50%;  height: 42px;">' + '<i class="entypo-cancel"></i></button>';
-            cols += '</td>';
+            cols += '<td contenteditable="true" style="vertical-align: middle; max-width: 295px;" width="295">&nbsp;</td><td contenteditable="true" style="vertical-align: middle; max-width: 465px;" width="465">&nbsp;</td><td style="text-align: center; vertical-align: middle;"><button type="button" class="btn btn-white" onclick="RemoveTableRow(this)" style="border-radius: 50%;  height: 42px;">' + '<i class="entypo-cancel"></i></button></td>';
             newRow.append(cols);
             $("#products-table").append(newRow);
             return false;

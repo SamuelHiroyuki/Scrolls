@@ -29,7 +29,14 @@ namespace Scrolls.Entities
         public virtual Genero Genero { get; set; }
         public int GeneroId { get; set; }
 
+        public string Imagem1 { get; set; }
+
+        public string Imagem2 { get; set; }
+
+        public string Imagem3 { get; set; }
+
+        public string Imagem4 { get; set; }
+
         public virtual IList<ProdutoVenda> ProdutoVendas { get; set; }
-        public virtual IList<Imagem> Imagens { get; set; }
     }
 }
