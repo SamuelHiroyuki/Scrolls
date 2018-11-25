@@ -57,11 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntitiesContext.cs" />
-    <Compile Include="Migrations\201811231149247_First.cs" />
-    <Compile Include="Migrations\201811231149247_First.Designer.cs">
-      <DependentUpon>201811231149247_First.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -75,11 +70,6 @@
       <Project>{85c6b71b-a884-4e59-a685-ad548444fd66}</Project>
       <Name>Scrolls.Entities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811231149247_First.resx">
-      <DependentUpon>201811231149247_First.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

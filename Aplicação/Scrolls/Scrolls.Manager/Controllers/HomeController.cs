@@ -18,6 +18,7 @@ namespace Scrolls.Manager.Controllers
             ViewBag.V = string.Empty;
             ViewBag.Date = DateTime.Now.Day + " de " + DateTime.Now.ToString("MMMM, yyyy");
             ViewData["Falta"] = new ProdutoDAO().IsZero();
+            ViewData["Ativo"] = new BannerDAO().IsZero();
             return View();
         }
         

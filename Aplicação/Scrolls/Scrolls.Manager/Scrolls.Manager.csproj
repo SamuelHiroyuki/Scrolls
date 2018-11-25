@@ -1459,12 +1459,12 @@
     <Content Include="Assets\js\zurb-responsive-tables\stylesheets\ui.css" />
     <Content Include="Assets\style.css" />
     <Content Include="Global.asax" />
-    <Content Include="Resources\avatar-01.jpg" />
-    <Content Include="Resources\logo_scrolls.png" />
+    <Content Include="Resources\pin.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BannerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1738,6 +1738,7 @@
     <Content Include="Views\Produto\CProduto.cshtml" />
     <Content Include="Views\Produto\QProduto.cshtml" />
     <Content Include="Views\Produto\AProduto.cshtml" />
+    <Content Include="Views\Banner\CBanner.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

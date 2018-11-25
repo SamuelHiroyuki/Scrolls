@@ -6,7 +6,7 @@ use dbScrolls
 
 exec sp_help Produto
 
-select * from Imagem
+select * from Banner
 
 select * from Produto
 

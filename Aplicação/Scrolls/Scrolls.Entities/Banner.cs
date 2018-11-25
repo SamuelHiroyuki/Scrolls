@@ -10,13 +10,14 @@ namespace Scrolls.Entities
     public class Banner
     {
         public int Id { get; set; }
-
-        [Required(ErrorMessage ="É necessário informar a situação do banner.")]
+        
         public bool Ativo { get; set; }
 
         public string Latitude { get; set; }
 
         public string Longitude { get; set; }
+
+        public string Endereco { get; set; }
 
         public string Imagem { get; set; }
     }

@@ -89,8 +89,8 @@
                 <th>Nome</th>
                 <th>Quantidade</th>
                 <th>Preço</th>
-                <th>Categoria</th>
                 <th>Gênero</th>
+                <th>Categoria</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -166,7 +166,7 @@
                                             <br />
                                             <div class="form-group">
                                                 <label class="form-label">Nome*</label>
-                                                <input type="text" class="form-control" value="@i.Nome" disabled name="n" id="name" data-validate="required" maxlength="100" data-message-required="O campo é requerido" placeholder="Nome" />
+                                                <input type="text" class="form-control" value="@i.Nome" readonly="readonly" name="n" id="name" data-validate="required" maxlength="100" data-message-required="O campo é requerido" placeholder="Nome" />
                                                 <span id="mn" style="color: #cc2424;" hidden>Esse campo é obrigatório!</span>
                                             </div>
                                         </div>
@@ -177,7 +177,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">Categoria&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Gênero</label>
 
-                                                <select class="form-control" name="gen" disabled>
+                                                <select class="form-control" name="gen" readonly="readonly">
                                                     @foreach (var c in ViewBag.Categorias)
                                                     {
                                                         foreach (var g in ViewBag.Generos)
@@ -210,13 +210,13 @@
                                         <div class="col-sm-8">
                                             <div class="form-group">
                                                 <label for="field-ta" class="control-label">Descrição*</label>
-                                                <textarea class="form-control" name="desc" style="resize: none;" disabled id="field-ta" placeholder="Descrição" rows="8" cols="2">@i.Descricao</textarea>
+                                                <textarea class="form-control" name="desc" style="resize: none;" readonly="readonly" id="field-ta" placeholder="Descrição" rows="8" cols="2">@i.Descricao</textarea>
                                                 <span id="md" style="color: #cc2424;" hidden>Esse campo é obrigatório!</span>
                                             </div>
                                         </div>
                                         <div class="col-sm-2" style="z-index: 2; padding-left: 75px; top: -100px;">
                                             <label class="control-label">Quantidade</label><br />
-                                            <input class="knob" data-min="@i.Quantidade" data-max="@i.Quantidade" disabled data-width="80" data-height="80" data-thickness=".25" data-fgColor="#0fbd71" data-bgColor="#ebebeb" value="@i.Quantidade">
+                                            <input class="knob" data-min="@i.Quantidade" data-max="@i.Quantidade" readonly="readonly" data-width="80" data-height="80" data-thickness=".25" data-fgColor="#0fbd71" data-bgColor="#ebebeb" value="@i.Quantidade">
                                         </div>
 
                                         <style>
@@ -230,7 +230,7 @@
                                             <label class="control-label" style="padding-left: 20px;">Preço</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon" style="color: #0fbd71">R$</span>
-                                                <input type="number" style="background: white;" class="form-control" id="pre" disabled value="@i.Preco.ToString().Replace(",", ".")" min="2.00" name="prec" max="any" step=".01">
+                                                <input type="number" style="background: white;" class="form-control" id="pre" readonly="readonly" value="@i.Preco.ToString().Replace(",", ".")" min="2.00" name="prec" max="any" step=".01">
                                             </div>
                                         </div>
                                     </div>
