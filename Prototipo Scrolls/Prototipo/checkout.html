@@ -334,7 +334,7 @@
 																	<th>
 																		<div class="form-group w-100">											
 																			<div class="form-group d-flex align-items-center">
-																				<input type="text" class="form-control col-sm-5 mr-2" placeholder="CEP" id="inputCEP">
+																				<input type="text" class="form-control col-sm-5 mr-2"  placeholder="CEP" id="inputCEP">
 																				<button type="button" data-toggle="collapse" data-target="#frete" aria-expanded="false" aria-controls="frete" class="btn btn-primary mr-3" style="width: 100px">Calcular</button>
 																				<a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" class="" style="color: #00A6FF;">Não sei meu CEP?</a>
 																			</div>
@@ -389,7 +389,7 @@
 																		</div>
 																		<div class="form-group">
 																		    <label for="num">Número</label>
-																		    <input type="text" class="form-control"  id="num" aria-describedby="num" placeholder="Número">
+																		    <input type="text" class="form-control"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="num" aria-describedby="num" placeholder="Número">
 																		</div>
 																		<div class="form-group">
 																		    <label for="comp">Complemento</label>
@@ -480,48 +480,64 @@
 														<div class="tab-content mt-2">
 															<div class="tab-pane" id="card">
 																<div class="row justify-content-center">
-																	<div class="col-md-6 px-4 py-3">
-																		<form action="">
-																			<div class="form-group">
-																				<label for="num_card">Número do Cartão</label>
-																				<div class="d-flex align-items-center">
-																					<input type="text" class="form-control mr-2" id="num_card" placeholder="Digite o número do seu cartão de crédito">
-																					<img src="visa_band.ico" style="width: 40px;height: 40px;" alt="">
+																	<div class="col-md-12 d-md-flex">
+																		<div class="col-md-6">
+																			<form action="">
+																				<div class="form-group">
+																					<label for="num_card">Número do Cartão</label>
+																					<div class="d-flex align-items-center">
+																						<input type="text" class="form-control mr-2" id="num_card" placeholder="Digite o número do seu cartão de crédito">
+																						<img src="visa_band.ico" style="width: 40px;height: 40px;" alt="">
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="num_card">Validade</label>
+																					<div class="d-flex">
+																						<select class="custom-select mes">
+																							<option value="0">Mês</option>
+																							<option value="01">01</option>
+																							<option value="02">02</option>
+																							<option value="03">03</option>
+																							<option value="04">04</option>
+																							<option value="05">05</option>
+																							<option value="06">06</option>
+																							<option value="07">07</option>
+																							<option value="08">08</option>
+																							<option value="09">09</option>
+																							<option value="10">10</option>
+																							<option value="11">11</option>
+																							<option value="12">12</option>
+																						</select>
+																						<select class="custom-select ano">
+																							<option value="0">Ano</option>
+																						</select>
+																					</div>
+																				</div>
+																				<div class="form-group col-sm-5 px-0">
+																					<label for="cvv_card">Código de segurança</label>
+																					<div class="d-flex align-items-center">
+																						<input type="text" class="form-control mr-2" id="cvv_card" placeholder="3 n° atrás do cartão">
+																						<img src="cvv_card.png" style="width: 40px;" alt="">
+																					</div>
+																				</div>
+																				<button type="button" class="btn primary-btn">Limpar</button>
+																                <button type="submit" class="btn primary-btn">Cadastrar</button>
+																			</form>
+																		</div>
+																		<!-- Cadstrar cartão  -->
+																		<div class="col-md-6 mt-sm-3 list-card">
+																			<div class="card">
+																				<div class="card-body">
+																					<h5 class="text-uppercase">4520-xxxx-xxxx-3526</h5>
 																				</div>
 																			</div>
-																			<div class="form-group">
-																				<label for="num_card">Validade</label>
-																				<div class="d-flex">
-																					<select class="custom-select mes">
-																						<option value="0">Mês</option>
-																						<option value="1">01</option>
-																						<option value="2">02</option>
-																						<option value="3">03</option>
-																						<option value="4">04</option>
-																						<option value="5">05</option>
-																						<option value="6">06</option>
-																						<option value="7">07</option>
-																						<option value="8">08</option>
-																						<option value="9">09</option>
-																						<option value="10">10</option>
-																						<option value="11">11</option>
-																						<option value="12">12</option>
-																					</select>
-																					<select class="custom-select ano">
-																						<option value="0">Ano</option>
-																					</select>
+																			<div class="card">
+																				<div class="card-body">
+																					<h5 class="text-uppercase">4520-xxxx-xxxx-3526</h5>
 																				</div>
 																			</div>
-																			<div class="form-group col-sm-5 px-0">
-																				<label for="cvv_card">Código de segurança</label>
-																				<div class="d-flex align-items-center">
-																					<input type="text" class="form-control mr-2" maxlength="3" id="cvv_card" placeholder="3 n° atrás do cartão">
-																					<img src="cvv_card.png" style="width: 40px;" alt="">
-																				</div>
-																			</div>
-																			<button type="button" class="btn primary-btn prev-step next-button float-left">Voltar</button>
-						                           							<button type="button" id="abri_card" class="btn primary-btn next-step next-button float-right">Finalizar</button>
-																		</form>
+																		</div>
+																		<!-- lista de cartões  -->
 																	</div>
 																</div>																
 															</div>
@@ -699,6 +715,7 @@
 		<script src="jquery.nicescroll.js"></script>
 		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 		<script type="text/javascript" src="slick/slick.min.js"></script>
+		<script src="jquery.inputmask.bundle.js"></script>
 		<script type="text/javascript" src="Script.js"></script>
 		<script>
 			$(document).ready(function() {
@@ -709,8 +726,15 @@
          			ano = ano + 1;
           			$('.ano').append('<option value="'+ano+'">' + ano + '</option>');
         		}
-      		});
+      		});/* Gerados de anos no campo de validade */
 
+			$(document).ready(function() {
+				$('#num_card').inputmask("9999 9999 9999 9999");
+				$('#cvv_card').inputmask("999");
+				$('#cep').inputmask("99999-999");
+				$('#inputCEP').inputmask("99999-999")
+				$('#num').inputmask({regex: "[0-9]*"});
+			});/* mascara de input */
 
 		</script>
 

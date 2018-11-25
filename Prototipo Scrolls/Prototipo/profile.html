@@ -356,7 +356,7 @@
 											</form>
 										</div>
 										<!-- Cadstrar cartão  -->
-										<div class="col-md-6 list-card">
+										<div class="col-md-6 mt-sm-3 list-card">
 											<div class="card">
 												<div class="card-body">
 													<h5 class="text-uppercase">4520-xxxx-xxxx-3526</h5>
@@ -415,7 +415,7 @@
 													</div>
 													<div class="form-group">
 													    <label for="num">Número</label>
-													    <input type="text" class="form-control"  id="num" aria-describedby="num" placeholder="Número">
+													    <input type="text" class="form-control"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"  id="num" aria-describedby="num" placeholder="Número">
 													</div>
 													<div class="form-group">
 													    <label for="comp">Complemento</label>
@@ -437,7 +437,7 @@
 												<button type="submit" class="btn primary-btn">Cadastrar</button>
 											</form>
 										</div><!-- Cadastrar Endereço-->
-										<div class="col-md-6 litas-end">
+										<div class="col-md-6 mt-sm-3 litas-end">
 											<div class="card py-0">
 												<div class="card-body py-2">
 												    <p>Estrada Coronel José Gladiador, <span> 2688</span></p>
@@ -576,7 +576,7 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 		<script src="jquery.nicescroll.js"></script>
 		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-		<script src="slick/slick.js"></script>
+		<script src="jquery.inputmask.bundle.js"></script>
 		<script src="Script.js"></script>
 		<script>
 			$(document).ready(function() {
@@ -588,7 +588,13 @@
           			$('.ano').append('<option value="'+ano+'">' + ano + '</option>');
         		}
       		});
-
+			$(document).ready(function() {
+				$('#num_card').inputmask("9999 9999 9999 9999");
+				$('#cvv_card').inputmask("999");
+				$('#cep').inputmask("99999-999");
+				$('#inputCEP').inputmask("99999-999")
+				$('#num').inputmask({regex: "[0-9]*"});
+			});/* mascara de input */
 
 		</script>
 	</body>
