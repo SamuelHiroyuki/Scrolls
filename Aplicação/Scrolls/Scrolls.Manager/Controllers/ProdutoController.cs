@@ -19,19 +19,26 @@ namespace Scrolls.Manager.Controllers
         }
         
         public ActionResult CProduto() {
-            ViewData["Falta"] = new ProdutoDAO().IsZero();
-            ViewData["Ativo"] = new BannerDAO().IsZero();
+            ViewData["Falta"] = new ProdutoDAO().CountIsZero();
+            ViewData["Ativo"] = new BannerDAO().CountAtivo();
             ViewBag.Categorias = new CategoriaDAO().Listar();
             ViewBag.Generos = new GeneroDAO().Listar();
             return View();
         }
         
         public ActionResult QProduto() {
-            ViewData["Falta"] = new ProdutoDAO().IsZero();
-            ViewData["Ativo"] = new BannerDAO().IsZero();
+            ViewData["Falta"] = new ProdutoDAO().CountIsZero();
+            ViewData["Ativo"] = new BannerDAO().CountAtivo();
             ViewBag.Categorias = new CategoriaDAO().Listar();
             ViewBag.Generos = new GeneroDAO().Listar();
             ViewBag.Produtos = new ProdutoDAO().Listar();
+            return View();
+        }
+
+        public ActionResult RProduto() {
+            ViewData["Falta"] = new ProdutoDAO().CountIsZero();
+            ViewData["Ativo"] = new BannerDAO().CountAtivo();
+            ViewBag.Produtos = new ProdutoDAO().IsZero();
             return View();
         }
 
@@ -43,12 +50,19 @@ namespace Scrolls.Manager.Controllers
             }
             else
             {
-                ViewData["Falta"] = new ProdutoDAO().IsZero();
-                ViewData["Ativo"] = new BannerDAO().IsZero();
-                ViewBag.Categorias = new CategoriaDAO().Listar();
-                ViewBag.Generos = new GeneroDAO().Listar();
-                ViewBag.P = new ProdutoDAO().BuscaId((int)id);
-                return View();
+                if (Session["_Id"] == null)
+                {
+                    return RedirectToAction("LoginPage", "Home");
+                }
+                else
+                {
+                    ViewData["Falta"] = new ProdutoDAO().CountIsZero();
+                    ViewData["Ativo"] = new BannerDAO().CountAtivo();
+                    ViewBag.Categorias = new CategoriaDAO().Listar();
+                    ViewBag.Generos = new GeneroDAO().Listar();
+                    ViewBag.P = new ProdutoDAO().BuscaId((int)id);
+                    return View();
+                }
             }
         }
 

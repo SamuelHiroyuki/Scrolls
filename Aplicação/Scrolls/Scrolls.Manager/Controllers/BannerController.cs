@@ -19,9 +19,35 @@ namespace Scrolls.Manager.Controllers
 
         public ActionResult CBanner()
         {
-            ViewData["Falta"] = new ProdutoDAO().IsZero();
-            ViewData["Ativo"] = new BannerDAO().IsZero();
+            ViewData["Falta"] = new ProdutoDAO().CountIsZero();
+            ViewData["Ativo"] = new BannerDAO().CountAtivo();
             return View();
+        }
+
+        public ActionResult QBanner()
+        {
+            ViewData["Falta"] = new ProdutoDAO().CountIsZero();
+            ViewData["Ativo"] = new BannerDAO().CountAtivo();
+            ViewBag.Banners = new BannerDAO().Listar();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Atualizar(string id)
+        {
+            BannerDAO bdao = new BannerDAO();
+            Banner b = bdao.BuscaId(Convert.ToInt32(id));
+            if (b.Ativo == true)
+            {
+                b.Ativo = false;
+            }
+            else
+            {
+                b.Ativo = true;
+            }
+            bdao.Atualizar();
+            ViewBag.Banners = new BannerDAO().Listar();
+            return RedirectToAction("QBanner");
         }
 
         [HttpPost]

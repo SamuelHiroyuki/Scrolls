@@ -17,8 +17,8 @@ namespace Scrolls.Manager.Controllers
             ViewBag.LoginE = string.Empty;
             ViewBag.V = string.Empty;
             ViewBag.Date = DateTime.Now.Day + " de " + DateTime.Now.ToString("MMMM, yyyy");
-            ViewData["Falta"] = new ProdutoDAO().IsZero();
-            ViewData["Ativo"] = new BannerDAO().IsZero();
+            ViewData["Falta"] = new ProdutoDAO().CountIsZero();
+            ViewData["Ativo"] = new BannerDAO().CountAtivo();
             return View();
         }
         

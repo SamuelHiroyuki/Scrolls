@@ -1739,6 +1739,8 @@
     <Content Include="Views\Produto\QProduto.cshtml" />
     <Content Include="Views\Produto\AProduto.cshtml" />
     <Content Include="Views\Banner\CBanner.cshtml" />
+    <Content Include="Views\Banner\QBanner.cshtml" />
+    <Content Include="Views\Produto\RProduto.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

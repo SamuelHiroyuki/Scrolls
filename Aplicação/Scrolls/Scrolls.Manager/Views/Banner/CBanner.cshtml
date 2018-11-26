@@ -209,12 +209,12 @@
                 <br />
                 <div class="input-group">
                     <label for="field-ta" class="control-label">Latitude</label><br />
-                    <input type="text" class="form-control search_latitude" readonly="readonly" name="lat" value="-23.5209253" style="width: 400px;">
+                    <input type="text" class="form-control search_latitude" readonly="readonly" name="lat" id="lat" value="-23.5209253" style="width: 400px;">
                 </div>
                 <br />
                 <div class="input-group">
                     <label for="field-ta" class="control-label">Longitude</label><br />
-                    <input type="text" class="form-control search_longitude" readonly="readonly" name="lon" value="-46.72785809999999" style="width: 400px;">
+                    <input type="text" class="form-control search_longitude" readonly="readonly" name="lon" id="lon" value="-46.72785809999999" style="width: 400px;">
                 </div>
                 <br />
                 <div class="form-group">
@@ -304,6 +304,7 @@
         }
     }
 </script>
+
 
 @if (TempData["Sucesso"] != null)
 {

@@ -21,7 +21,7 @@
 
     <script src="~/Assets/js/jquery-1.11.3.min.js"></script>
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5hq0RH-i_7iVt6N0qLC1cBGevn4IP_oo&libraries=places"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa_PkMRovTPOd_c3HyOPvX6Vkhyh_uMpQ&libraries=places"></script>
 </head>
 <body class="page-body">
 
@@ -80,7 +80,7 @@
                         <li>
                             <a href="#">
                                 <span class="title">Repor</span>
-                                <span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="" data-original-title="Em falta">@ViewData["Falta"]</span>
+                                <span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="" data-original-title="Em falta" id="falta">@ViewData["Falta"]</span>
                             </a>
                         </li>
                         <li>
@@ -107,7 +107,7 @@
                 </li>
 
                 <li class="has-sub">
-                    <a href="#">
+                    <a href="/Banner/QBanner">
                         <i class="entypo-compass"></i>
                         <span class="title">Mapa</span>
                         <span class="badge badge-success" data-toggle="tooltip" data-placement="right" title="" data-original-title="Banners ativos">@ViewData["Ativo"]</span>
@@ -120,7 +120,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/Banner/QBanner">
                                 <span class="title">Visão geral</span>
                             </a>
                         </li>

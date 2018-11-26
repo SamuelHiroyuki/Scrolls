@@ -28,7 +28,15 @@ namespace Scrolls.DataAccessObject
             context.SaveChanges();
         }
 
-        public string IsZero()
+        public IList<Banner> Listar() {
+            return context.Banners.ToList();
+        }
+
+        public Banner BuscaId(int id) {
+            return context.Banners.FirstOrDefault(b => b.Id == id);
+        }
+
+        public string CountAtivo()
         {
             return context.Banners.Where(b => b.Ativo == true).Count().ToString();
         }

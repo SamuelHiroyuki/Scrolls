@@ -35,8 +35,13 @@ namespace Scrolls.DataAccessObject
             context.SaveChanges();
         }
 
-        public string IsZero() {
+        public string CountIsZero() {
             return context.Produtos.Where(p => p.Quantidade == 0).Count().ToString();
+        }
+
+        public IList<Produto> IsZero()
+        {
+            return context.Produtos.Where(p => p.Quantidade == 0).ToList();
         }
     }
 }
