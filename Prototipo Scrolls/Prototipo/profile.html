@@ -15,6 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 		<link rel="stylesheet" href="owl-carousel/owl-carousel.css">
 		<link rel="stylesheet" href="owl-carousel/owl-carousel.css">
+		<link rel="stylesheet" type="text/css" href="cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js">
 		<link rel="stylesheet" href="Style.css">
 		<link rel="shortcut icon" href="icone_scrolls.ico">
 	</head>
@@ -313,11 +314,11 @@
 								<div class="tab-pane py-3" role="tabpanel" id="card">
 									<div class="col-md-12 d-md-flex">
 										<div class="col-md-6">
-											<form action="">
+											<form action="" id="cadacard">
 												<div class="form-group">
 													<label for="num_card">Número do Cartão</label>
 													<div class="d-flex align-items-center">
-														<input type="text" class="form-control mr-2" id="num_card" placeholder="Digite o número do seu cartão de crédito">
+														<input type="text" class="form-control mr-2" required id="num_card" placeholder="Digite o número do seu cartão de crédito">
 														<img src="visa_band.ico" style="width: 40px;height: 40px;" alt="">
 													</div>
 												</div>
@@ -347,7 +348,7 @@
 												<div class="form-group col-sm-5 px-0">
 													<label for="cvv_card">Código de segurança</label>
 													<div class="d-flex align-items-center">
-														<input type="text" class="form-control mr-2" id="cvv_card" placeholder="3 n° atrás do cartão">
+														<input type="text" class="form-control mr-2" required id="cvv_card" placeholder="3 n° atrás do cartão">
 														<img src="cvv_card.png" style="width: 40px;" alt="">
 													</div>
 												</div>
@@ -378,11 +379,11 @@
 											<form action="">
 												<div class="form-group">
 													<label for="nome" class="col-sm-12 col-form-label col-form-label-lg">Nome</label>
-												    <input type="text" class="form-control form-control-lg" id="nome">
+												    <input type="text" class="form-control form-control-lg" required id="nome">
 												</div>
 												<div class="form-group">
 												    <label for="sobrenome" class="col-sm-12 col-form-label col-form-label-lg">Sobrenome</label>
-												    <input type="text" class=" form-control form-control-lg" id="sobrenome" >
+												    <input type="text" class=" form-control form-control-lg" required id="sobrenome" >
 												</div>
 												<div class="form-group">
 												    <label for="cpf" class="col-sm-12 col-form-label col-form-label-lg">CPF</label>
@@ -403,11 +404,11 @@
 								<div class="tab-pane py-3" role="tabpanel" id="ende">
 									<div class="col-md-12 d-md-flex">
 										<div class="col-md-6">
-											<form action="" class="mt-2">
+											<form action="" id="cadastrarEnd" class="mt-2">
 												<fieldset class="form-group">
 													<div class="form-group">
 													    <label for="cep">CEP</label>
-													    <input type="text" class="form-control"  id="cep" aria-describedby="cep" placeholder="CEP">
+													    <input type="text" class="form-control" required  id="cep" aria-describedby="cep" placeholder="CEP">
 													</div>
 													<div class="form-group">
 														<label for="endereco">Endereço</label>
@@ -415,11 +416,11 @@
 													</div>
 													<div class="form-group">
 													    <label for="num">Número</label>
-													    <input type="text" class="form-control"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"  id="num" aria-describedby="num" placeholder="Número">
+													    <input type="text" class="form-control" required  onkeypress="return event.charCode >= 48 && event.charCode <= 57"  id="num" aria-describedby="num" placeholder="Número">
 													</div>
 													<div class="form-group">
 													    <label for="comp">Complemento</label>
-													    <input type="text" class="form-control"  id="comp" aria-describedby="comp" placeholder="Complemento">
+													    <input type="text" class="form-control" required  id="comp" aria-describedby="comp" placeholder="Complemento">
 													</div>
 													<div class="form-group">
 													    <label for="bar">Bairro</label>
@@ -434,7 +435,7 @@
 													    <input type="text" class="form-control" disabled  id="uf" aria-describedby="uf" placeholder="Estado">
 													</div>
 												</fieldset>
-												<button type="submit" class="btn primary-btn">Cadastrar</button>
+												<button type="submit" id="cadend" class="btn primary-btn">Cadastrar</button>
 											</form>
 										</div><!-- Cadastrar Endereço-->
 										<div class="col-md-6 mt-sm-3 litas-end">
@@ -444,12 +445,6 @@
 													<p>05267-000 - <span>Jardim Anhangüera</span></p>
 													<p>São Paulo/ <span>SP</span></p>
 												</div>
-												<div class="card-footer py-2 d-flex justify-content-center">
-													<div class="custom-control custom-radio">
-														<input type="radio" id="edereço1" name="endereço1" class="custom-control-input">
-														<label class="custom-control-label" for="edereço1">Eviar para este endereço</label>
-													</div>
-												</div>
 											</div><!-- Card Endereço -->
 
 											<div class="card py-0">
@@ -457,12 +452,6 @@
 												    <p>Estrada Coronel José Gladiador, <span> 2688</span></p>
 													<p>05267-000 - <span>Jardim Anhangüera</span></p>
 													<p>São Paulo/ <span>SP</span></p>
-												</div>
-												<div class="card-footer py-2 d-flex justify-content-center">
-													<div class="custom-control custom-radio">
-														<input type="radio" id="edereço1" name="endereço1" class="custom-control-input">
-														<label class="custom-control-label" for="edereço1">Eviar para este endereço</label>
-													</div>
 												</div>
 											</div><!-- Card Endereço -->
 										</div><!-- lista de endereços -->
@@ -577,6 +566,7 @@
 		<script src="jquery.nicescroll.js"></script>
 		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 		<script src="jquery.inputmask.bundle.js"></script>
+		<script src="cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"></script>
 		<script src="Script.js"></script>
 		<script>
 			$(document).ready(function() {
@@ -595,7 +585,6 @@
 				$('#inputCEP').inputmask("99999-999")
 				$('#num').inputmask({regex: "[0-9]*"});
 			});/* mascara de input */
-
 		</script>
 	</body>
 </html>
