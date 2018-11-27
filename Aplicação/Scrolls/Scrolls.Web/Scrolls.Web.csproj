@@ -90,6 +90,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\login-style.css" />
     <Content Include="Content\owl-carousel\owl.carousel.css" />
     <Content Include="Content\owl-carousel\owl.theme.default.css" />
     <Content Include="Content\slick\slick-theme.css" />
@@ -129,10 +130,6 @@
     <Content Include="img\product-img\product-3.jpg" />
     <Content Include="img\product-img\product-4.jpg" />
     <Content Include="img\qrcode.png" />
-    <Content Include="MaterialDesignLite\material.css" />
-    <Content Include="MaterialDesignLite\material.js" />
-    <Content Include="MaterialDesignLite\material.min.css" />
-    <Content Include="MaterialDesignLite\material.min.js" />
     <Content Include="Scripts\active.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -239,11 +236,6 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
-    <Content Include="MaterialDesignLite\bower.json" />
-    <Content Include="MaterialDesignLite\LICENSE" />
-    <Content Include="MaterialDesignLite\material.min.css.map" />
-    <Content Include="MaterialDesignLite\material.min.js.map" />
-    <Content Include="MaterialDesignLite\package.json" />
     <Content Include="fonts\slick.eot" />
     <Content Include="fonts\slick.ttf" />
     <Content Include="fonts\slick.woff" />
@@ -278,6 +270,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -291,7 +284,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Lancamentos.cshtml" />
+    <Content Include="Views\Home\LoginPage.cshtml" />
+    <Content Include="Views\Cliente\JoinPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -308,6 +302,16 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Scrolls.DataAccessObject\Scrolls.DataAccessObject.csproj">
+      <Project>{801B0B3F-0824-4DE7-A14B-8F664FFD6E32}</Project>
+      <Name>Scrolls.DataAccessObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Scrolls.Entities\Scrolls.Entities.csproj">
+      <Project>{85C6B71B-A884-4E59-A685-AD548444FD66}</Project>
+      <Name>Scrolls.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

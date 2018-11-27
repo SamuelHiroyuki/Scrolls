@@ -70,3 +70,14 @@ C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\obj\Debug\Scrolls.Web.csproj.CoreC
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\obj\Debug\Scrolls.Web.csproj.CopyComplete
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\obj\Debug\Scrolls.Web.pdb
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\obj\Debug\Scrolls.Web.csprojAssemblyReference.cache
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Scrolls.DataAccessObject.dll
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Scrolls.Entities.dll
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Scrolls.Database.dll
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\EntityFramework.dll
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Scrolls.DataAccessObject.pdb
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Scrolls.DataAccessObject.dll.config
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Scrolls.Entities.pdb
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Scrolls.Entities.dll.config
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Scrolls.Database.pdb
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Scrolls.Database.dll.config
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\EntityFramework.xml
