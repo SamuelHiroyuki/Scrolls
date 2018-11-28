@@ -4,18 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer_layoutPedidos"
+    android:id="@+id/drawer_layoutFinalizarCompra"
     android:fitsSystemWindows="true"
     tools:context=".PrincipalActivity"
     >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <include
-        android:id="@+id/IncludeToolbarCompras"
-        layout="@layout/toolbar_secundario"
-        android:visibility="visible"/>
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:id="@+id/NavViewPedidos"
+        app:headerLayout="@layout/menu_header"
+        app:menu="@menu/menu_principal"
+        android:background="@color/PretoPrincipal"
+        />
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,10 +27,12 @@
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/ComprasList"
+            android:id="@+id/MeusPedidosList"
             android:layout_marginTop="100dp"
             />
+
+
     </ScrollView>
-    </RelativeLayout>
+
 
 </android.support.v4.widget.DrawerLayout>

@@ -19,8 +19,7 @@ public class MeusPedidosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meus_pedidos);
 
-        Toolbar mTopToolbar = findViewById(R.id.IncludeToolbarPedidos);
-        setSupportActionBar(mTopToolbar);
+
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.NavViewPedidos);
         navigationView.setCheckedItem(R.id.itmMeusPedidos);
@@ -50,7 +49,7 @@ public class MeusPedidosActivity extends AppCompatActivity {
         });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layoutPedidos);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,mTopToolbar,R.string.Drawer_open,R.string.Drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,R.string.Drawer_open,R.string.Drawer_close);
         drawer.addDrawerListener(toggle);
 
         toggle.syncState();
