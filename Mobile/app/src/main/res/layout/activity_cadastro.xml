@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CadastroActivity"
-    android:background="@drawable/bookbg"
+    android:background="@drawable/main_bg"
     >
     <ScrollView
         android:layout_width="match_parent"
@@ -15,7 +15,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:orientation="vertical"
         >
 
@@ -51,7 +50,6 @@
             android:hint="Confirmar senha"
             android:inputType="textPassword"
             android:textColorHint="@color/PretoPrincipal"
-
             android:layout_marginTop="10dp"
           />
 

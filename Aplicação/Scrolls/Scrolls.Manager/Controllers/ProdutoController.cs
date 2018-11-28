@@ -39,7 +39,91 @@ namespace Scrolls.Manager.Controllers
             ViewData["Falta"] = new ProdutoDAO().CountIsZero();
             ViewData["Ativo"] = new BannerDAO().CountAtivo();
             ViewBag.Produtos = new ProdutoDAO().IsZero();
+            ViewBag.Categorias = new CategoriaDAO().Listar();
+            ViewBag.Generos = new GeneroDAO().Listar();
             return View();
+        }
+
+        public ActionResult PProduto()
+        {
+            ViewData["Falta"] = new ProdutoDAO().CountIsZero();
+            ViewData["Ativo"] = new BannerDAO().CountAtivo();
+            ViewBag.HasPromo = new ProdutoDAO().HasPromo();
+            ViewBag.NoPromo = new ProdutoDAO().NoPromo();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SetPromo(string id, string pro) {
+            if (id == null || pro == null)
+            {
+                return RedirectToAction("LoginPage", "Home");
+            }
+            else
+            {
+                if (Session["_Id"] == null)
+                {
+                    return RedirectToAction("LoginPage", "Home");
+                }
+                else
+                {
+                    ProdutoDAO pdao = new ProdutoDAO();
+                    Produto p = pdao.BuscaId(Convert.ToInt32(id));
+                    p.Promocao = Convert.ToDouble(pro, new System.Globalization.CultureInfo("en-US"));
+                    pdao.Atualizar();
+                    TempData["SucessoA"] = "Sucesso!";
+                    return RedirectToAction("PProduto");
+                }
+            }
+        }
+
+        public ActionResult RemovePromo(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("LoginPage", "Home");
+            }
+            else
+            {
+                if (Session["_Id"] == null)
+                {
+                    return RedirectToAction("LoginPage", "Home");
+                }
+                else
+                {
+                    ProdutoDAO pdao = new ProdutoDAO();
+                    Produto p = pdao.BuscaId((int)id);
+                    p.Promocao = null;
+                    pdao.Atualizar();
+                    TempData["SucessoR"] = "Sucesso!";
+                    return RedirectToAction("PProduto");
+                }
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Repor(string id, int? qt)
+        {
+            if (id == null || qt == null)
+            {
+                return RedirectToAction("LoginPage", "Home");
+            }
+            else
+            {
+                if (Session["_Id"] == null)
+                {
+                    return RedirectToAction("LoginPage", "Home");
+                }
+                else
+                {
+                    ProdutoDAO pdao = new ProdutoDAO();
+                    Produto p = pdao.BuscaId(Convert.ToInt32(id));
+                    p.Quantidade = Convert.ToInt32(qt);
+                    pdao.Atualizar();
+                    TempData["Sucesso"] = "Sucesso!";
+                    return RedirectToAction("RProduto");
+                }
+            }
         }
 
         public ActionResult AProduto(int? id)

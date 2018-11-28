@@ -22,7 +22,7 @@ public class ProdutoInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produto_info);
 
-        Toolbar mTopToolbar = (Toolbar) findViewById(R.id.toolbarProd);
+        Toolbar mTopToolbar = (Toolbar) findViewById(R.id.IncludeToolbarProduto);
         setSupportActionBar(mTopToolbar);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_viewProd);

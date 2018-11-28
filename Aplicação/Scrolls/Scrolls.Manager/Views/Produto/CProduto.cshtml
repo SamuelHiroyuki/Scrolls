@@ -416,3 +416,19 @@
         $(document).ready(toastr.success('Produto cadastrado com sucesso!', 'Sucesso!'));
     </script>
 }
+
+@*<script>
+    $(document).ready(function () {
+        $("#ct").change(function () {
+            $("#ct option[value='ii']").remove();
+            var val = $(this).val();
+            var aaa = @Html.Raw(Json.Encode(@ViewBag.Generos));
+            for (var i = 0; i < gen.length; i++) {
+                if (val == gen[i].CategoriaId) {
+                    $("#gn").html("<option value=" + gen[i].Id + ">" + gen[i].Nome + "</option>");
+                }
+            }
+        });
+    });
+
+</script>*@
