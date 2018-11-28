@@ -1,0 +1,60 @@
+1. INTRODUÇÃO
+
+	A Livraria Scrolls gerenciava em sua loja física todos os produtos vendidos e os funcionários que lá trabalhavam. Porém manipulações de dados em papel não estava mais dando conta da demanda atual da loja. Com isso os donos resolveram ampliar a loja de modo que ela pudesse atender mais clientes atrávez de uma plataforma digital. Antes os produtos vendidos eram apenas livros, agora para se adequar ao mercado foram adicionados ao catálago: Blu Rays, Jogos, colecionáveis e vestuários. Alem disso foi desenvolvido campanhas de marketing para alavancar o investimento. Com isso coube a nossa empresa, a Puzzle, o desenvolvimento dos softwares que seriam implantados e reestruturar o escritório da loja para dar suporte ao servidor destinado a esse projeto.
+	
+1.1 JUSTICATIVA
+
+	Baseado nas linguagens e tecnologias que foram trabalhadas durante o curso, optamos por fazer o sistema web com a linguagem  Asp.NET para que o sistema funcione em qualquer navegador idependente da versão do navegador ou do Sistema Operacional. Também optamos por desenvolver um aplicativo para celulares Android para que os usuários possam ter escolha entre utilizar o navegador do celular ou instalar o aplicativo. Como diferencial do app, temos a relação entre o celular e as propagandas da loja espalhadas. Ao scanear uma dessas, o cliente terá acesso a uma promoção exclusiva, podendo já comprar direto pelo aplicativo.
+
+1.2 OBJETIVO
+	
+	O presente trabalho tem como objetivo o desenvolvimente se um software para gestão e vendas de uma livraria, do aplicativo Mobile que também possa realizar vendas, a diagramação das diversas etapas do desenvolvimento do projeto e a reestruturação do atual escritório para atender a nova área de tecnologia da empresa.
+
+2. DESENVOLVIMENTO
+
+2.1 FASE DE ABERTURA
+	[Dados da empresa]
+
+2.1.1 HISTORIA DA EMPRESA
+
+	A Puzzle foi fundada em 2017 por 7 alunos do curso técnico de Informática para que juntos pudessem iniciar o desenvolvimento de projetos durante o ensino médio, assim poderiam ganhar esperiência para o mercado de trabalho e ganhar dinheiro para ajudar a financiar estudos futuros. O nome da empresa é refente aos jogos eletrônicos de resolução de quebra-cabeças que nos introduziu à resolução de desafios lógicos. Quanto a nossa identidade visual, ela é baseada nas telas de fósforo verde que são símbolo do inicio da programação.
+
+2.1.2 MISSÂO
+
+	Na Puzzle, nos valorizamos muito aqueles que dedicam suas vidas a criação de novas criações que possibilitam mais pessoas a terem acesso a tecnologia. promovendo maior faciçidade na vida das pessoas e colaborando com a introdução das pessoas a informática. Sendo assim nossa empresa busca trazer mais tecnologia para o dia a dia das pessoas. 
+
+2.1.3 VISÂO
+
+	Focando sempre na satisfação e no aprendisado nosso e do nosso cliente, nos temos como visão sermos uma empresa que proporciona o crescimento dos que confiam em nosso trabalho. Conhecendo novos parceiros e ganhando conhecimento e experiências a cada dia para melhorar nossas capacidades e nossos projetos.
+
+2.1.4 VALORES
+
+	Nos da Puzzle acreditamos que em uma empresa o bem estar dos funcionários nunca deve ser sacrificado em função de algum trabalho, sendo assim valorizamos muito o respeito, o trabalho em equipe e o compromisso nas nossas relações.
+
+2.1.5 CLIENTE
+
+	A Livraria Scrolls é uma empresa dedicada a venda de livros em São Paulo, recentemente com a troca da gestão foi discutido a necessidade de se transformar a loja em um e-commercy. Para promover essa mudança foi realizado um investimento na criação de dois novos setores na empresa. Um deles destinado ao Marketing para alavancar o novo projeto São Paulo a fora e para a criação de um novo acervo de produtos. O outro setor é destinado a manutenção dos sistemas e que foram encomendados a Puzzle. As metas desse investiemnto são: alcançar um maior números de clientes principalmente fora do estado de São Paulo, ganhar uma fatia de mercado ao competir com as gigantes do mercado de lojas online e aumentar a margem de lucros da empresa.
+
+2.2 FASE DE VIABILIDADE
+
+[não vamos colocar a entrevista] 
+2.2.1 PROPOSTA DO SISTEMA
+	[contrato]
+
+2.2.2 CRONOGRAMA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
