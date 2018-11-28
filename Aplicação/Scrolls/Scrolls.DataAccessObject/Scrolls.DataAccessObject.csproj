@@ -57,8 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BannerDAO.cs" />
+    <Compile Include="CartaoDAO.cs" />
     <Compile Include="CategoriaDAO.cs" />
     <Compile Include="ClienteDAO.cs" />
+    <Compile Include="EnderecoDAO.cs" />
     <Compile Include="FuncionarioDAO.cs" />
     <Compile Include="GeneroDAO.cs" />
     <Compile Include="ProdutoDAO.cs" />

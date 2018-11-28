@@ -18,8 +18,41 @@ namespace Scrolls.Web.Controllers
 
         public ActionResult JoinPage(Cliente cliente)
         {
+            return View();
+        }
+
+        public ActionResult CadaCli(Cliente cliente)
+        {
             ClienteDAO cdao = new ClienteDAO();
             cdao.Cadastrar(cliente);
+            return RedirectToAction("LoginPage", "Home");
+        }
+
+        public ActionResult AtuaCli(Cliente cliente)
+        {
+            ClienteDAO cdao = new ClienteDAO();
+            Cliente cli = cdao.BuscarId(Convert.ToInt32(Session["_Id"]));
+            cdao.Atualizar();
+            return View();
+        }
+
+        public ActionResult ClientePage()
+        {
+            if (Session["_Id"] != null)
+            {
+                ClienteDAO cdao = new ClienteDAO();
+                Cliente cli = cdao.BuscarId(Convert.ToInt32(Session["_Id"]));
+                ViewBag.cliente = cli;                
+            }
+            else
+            {
+                return RedirectToAction("LoginPage","Home");
+            }
+            return View();
+        }
+
+        public ActionResult AtualizarCli()
+        {
             return View();
         }
     }

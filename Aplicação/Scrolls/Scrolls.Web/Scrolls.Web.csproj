@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -108,6 +114,7 @@
     <Content Include="img\appgoogle.png" />
     <Content Include="img\appmaca.png" />
     <Content Include="img\avatar.png" />
+    <Content Include="img\background-login.jpg" />
     <Content Include="img\carousel-img\Banner1.PNG" />
     <Content Include="img\carousel-img\Banner2.PNG" />
     <Content Include="img\carousel-img\Banner3.PNG" />
@@ -244,6 +251,7 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery.inputmask.bundle.js" />
     <Content Include="Scripts\jquery.nicescroll.js" />
     <Content Include="Scripts\owl-carousel\owl.carousel.js" />
     <Content Include="Scripts\popper-utils.js" />
@@ -286,6 +294,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\LoginPage.cshtml" />
     <Content Include="Views\Cliente\JoinPage.cshtml" />
+    <Content Include="Views\Cliente\ClientePage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

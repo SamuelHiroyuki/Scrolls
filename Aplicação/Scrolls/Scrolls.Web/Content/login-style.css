@@ -1,10 +1,10 @@
-body{
-	background: url('background-login.jpg');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-	background-position: center;
-	font-family: 'Hind', sans-serif;
+body {
+    background-image: url('../img/background-login.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-position: center;
+    font-family: 'Hind', sans-serif;
 }
 
 hr{

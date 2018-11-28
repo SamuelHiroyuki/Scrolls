@@ -81,3 +81,5 @@ C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Scrolls.Entities.dll.config
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Scrolls.Database.pdb
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\Scrolls.Database.dll.config
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\EntityFramework.xml
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\EntityFramework.SqlServer.dll
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Web\bin\EntityFramework.SqlServer.xml
