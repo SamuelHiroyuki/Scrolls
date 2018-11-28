@@ -126,6 +126,10 @@ hr {
 	background-color: #0D7694 ;
 }
 
+.bnt-trash{
+	background-color: transparent;
+}
+
 .secundary-btn:hover, .secundary-btn:focus {
 	color: #FFF;
 	background-color: #30323A;

@@ -417,29 +417,24 @@
 													<form class="col-md-6 mb-3 litas-end">
 														<h6 class="text-center">Endereço de Envio</h6>
 														<div class="card py-0">
-															<div class="card-body py-2">
-															    <p>Estrada Coronel José Gladiador, <span> 2688</span></p>
-																<p>05267-000 - <span>Jardim Anhangüera</span></p>
-																<p>São Paulo/ <span>SP</span></p>
-															</div>
-															<div class="card-footer py-2 d-flex justify-content-center">
-																<div class="custom-control custom-radio">
-																	<input type="radio" id="edereço1" name="endereço1" class="custom-control-input">
-																	<label class="custom-control-label" for="edereço1">Eviar para este endereço</label>
-																</div>
-															</div>
+															<div class="card-body d-flex justify-content-between align-items-center py-2">
+															    <div>
+															    	<p>Estrada Coronel José Gladiador, <span> 2688</span></p>
+																	<p>05267-000 - <span>Jardim Anhangüera</span></p>
+																	<p>São Paulo/ <span>SP</span></p>
+															    </div>
+																<button type="button" class="btn primary-btn next-step next-button float-right"><i class="icon ion-md-navigate"></i></button>
+															</div>															
 														</div><!-- Card Endereço -->
 													</form><!-- Lista de Endereço -->
-
 						                        </div>
-							                    <button type="button" class="btn primary-btn prev-step next-button float-left">Voltar</button>
-							                    <button type="button" class="btn primary-btn next-step next-button float-right">Continuar</button>
+							                    <button type="button" class="btn primary-btn prev-step prev-button float-left">Voltar</button>
 					                        </div><!-- Endereço -->
 
 					                        <div class="tab-pane py-3" role="tabpanel" id="step3">
 					                            <h5 class="text-md-center">Forma de Pagamento</h5>
 					                            <div class="row justify-content-center">
-					                              	<div class="col-md-12 pagamento">
+					                              	<div class="col-md-12 mb-2 pagamento">
 					                               		<ul class="nav nav-tabs justify-content-center" role="tablist">
 															<li role="presentation" class="nav-item">
 										                           <a href="#card" data-toggle="tab" aria-controls="card" role="tab" title="Carrinho" class="nav-link">
@@ -502,17 +497,20 @@
 																						<img src="cvv_card.png" style="width: 40px;" alt="">
 																					</div>
 																				</div>
-																				<button type="button" class="btn primary-btn">Limpar</button>
-																                <button type="submit" class="btn primary-btn next-step next-button float-right ">Finalizar</button>
+																				<div class="d-flex justify-content-between">
+																					<button type="button" class="btn primary-btn prev-step prev-button">Voltar</button>
+																					<button type="button" class="btn primary-btn">Limpar</button>
+																	                <button type="button"  class="btn primary-btn next-step next-button">Finalizar</button>
+																				</div>
 																			</form>
 																		</div>
 																		<!-- Cadstrar cartão  -->
 																		<div class="col-md-6 mt-sm-3 list-card">
 																			<form action="">
 																			<div class="card">
-																				<div class="card-body d-flex justify-content-between align-items-center">
-																					<h5 class="text-uppercase">4520-xxxx-xxxx-3526</h5>
-																					<button type="submit" class="btn primary-btn next-step next-button float-right "><i class="icon ion-md-card"></i></button>
+																				<div class="card-body py-1 d-flex justify-content-between align-items-center">
+																					<strong class="text-uppercase">4520-xxxx-xxxx-3526</strong>
+																					<button type="button"  class="btn primary-btn next-step next-button float-right "><i class="icon ion-md-card"></i></button>
 																				</div>
 																			</div>																			
 																			</form>
@@ -536,7 +534,7 @@
 																</div>
 															</div>
 														</div>														
-					                               	</div>
+					                               	</div>					                              
 					                            </div>					                                
 					                        </div><!-- Pagamento -->
 
@@ -567,7 +565,7 @@
 					                        					<p>Obrigado pela preferencia, sempre que precisar sabe onde nos encontrar!!</p>
 					                        				</div>
 					                        			</div>
-					                        			<div class="card d-none" id="pag_bolet">
+					                        			<div class="card" id="pag_bolet">
 					                        				<div class="card-body py2">
 					                        					<h6 class="card-title">Dados de Pagamento</h6>
 					                        					<p class="text-center font-weight-bold">Seu Compra foi efetuada.</p>
