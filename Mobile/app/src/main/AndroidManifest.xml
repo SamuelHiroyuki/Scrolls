@@ -35,7 +35,16 @@
         <activity
             android:name=".ProdutoInfoActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".PerfilActivity"></activity>
+        <activity android:name=".PerfilActivity" />
+        <activity
+            android:name=".CadastroEnderecoActivity"
+            android:label="Cadastrar Endereço" />
+        <activity
+            android:name=".CadastroCartaoActivity"
+            android:label="Cadastrar cartão" />
+        <activity android:name=".MeusPedidosActivity"
+            android:label="Meus Pedidos"
+            />
     </application>
 
 </manifest>

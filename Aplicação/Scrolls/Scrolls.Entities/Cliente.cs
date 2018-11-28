@@ -25,7 +25,7 @@ namespace Scrolls.Entities
 
         [Required(ErrorMessage = "O campo CPF não pode estar vazio."), RegularExpression(@"(^\d{3}\x2E\d{3}\x2E\d{3}\x2D\d{2}$)", ErrorMessage = "Somente números são aceitos."), MaxLength(14)]
         public string CPF { get; set; }
-
+        
         [Required(ErrorMessage = "O campo nome não pode estar vazio."), MinLength(8, ErrorMessage = "A senha deve conter no mínimo 8 caracteres."), MaxLength(128, ErrorMessage = "A senha deve ter no máximo 128 caracteres.")]
         public string Senha { get; set; }
 

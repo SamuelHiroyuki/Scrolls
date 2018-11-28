@@ -1255,6 +1255,7 @@ textarea.input {
     display: inline-block;
     padding: 5px 15px;
     font-weight: 700;
+    text-align: center;
     color: #FFF;
     background-color: #30323A;
     z-index: 22;
@@ -1266,6 +1267,10 @@ textarea.input {
 
 .product .product-label > span.sale {
     background-color: #F8C141;
+}
+
+.product .product-label > span.replace {
+    background-color: #F21729;
 }
 
 
@@ -1387,6 +1392,12 @@ textarea.input {
     border: 0.5px solid #F8C141;
 }
 
+.product.product-single.product-replace {
+    border: 0.5px solid #F21729;
+    opacity: .5;
+
+}
+
 .product.product-single.product-hot .product-btns {            
     opacity: 1;         
 }
@@ -1449,6 +1460,7 @@ textarea.input {
     display: inline-block;
     padding: 5px 15px;
     font-weight: 700;
+    text-align: center;
     color: #FFF;
     background-color: #30323A;
     z-index: 22;
@@ -1462,6 +1474,9 @@ textarea.input {
 	background-color: #F8C141;
 }
 
+.product-page .product-label > span.replace {
+    background-color: #F21729;
+}
 
 
 /*----------------------------*\
@@ -1581,6 +1596,12 @@ textarea.input {
     border: 0.5px solid #F8C141;
 }
 
+.product-page.product-single.product-replace {
+    border: 0.5px solid #F21729;
+    opacity: .5;
+
+}
+
 .product-page.product-single.product-hot .product-btns {
     opacity: 1;
 }
@@ -1642,6 +1663,10 @@ del.product-old-price:empty {
 
  .product-label>span.sale {
   background-color: #F8C141;
+}
+
+.product-label > span.replace {
+    background-color: #F21729;
 }
 
  .product-label>span:empty{
@@ -1835,6 +1860,9 @@ del.product-old-price:empty {
 
 .product-takealong .product-label > span.sale {
     background-color: #F8C141;
+}
+.product-takealong .product-label > span.replace {
+    background-color: #F21729;
 }
 
 

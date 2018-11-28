@@ -1,0 +1,46 @@
+body {
+    background-image: url('../img/background-login.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-position: center;
+    font-family: 'Hind', sans-serif;
+}
+
+hr{
+	color: #DADADA;
+}
+
+p>a{
+	color: #00A6FF;
+}
+
+p>a:hover{
+	text-decoration: none;
+	color: #00A6FF;
+}
+
+.btn{
+	font-size: 25px;
+}
+
+.btn-confirmar{
+	background-color:  #60D956;
+	color: #FFF;
+}
+
+.btn-confirmar:hover{
+	opacity: .8;
+}
+
+.btn-google{
+	background-color: #FFFFFF;
+	border: 1px solid #DADADA;
+}
+
+.btn-google:hover{
+	opacity: 0.8;
+	box-shadow: 1px 1px rgba(174, 174, 174,0.5);
+	transition: 0.3s all;
+}
+

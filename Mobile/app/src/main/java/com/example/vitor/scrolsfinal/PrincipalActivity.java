@@ -12,11 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.security.Principal;
 import java.util.ArrayList;
@@ -24,7 +20,7 @@ import java.util.List;
 
 import in.goodiebag.carouselpicker.CarouselPicker;
 
-public class PrincipalActivity extends AppCompatActivity  {
+public class PrincipalActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
         CarouselPicker carouselPicker;
         DrawerLayout drawer;
         AdapterCat adapter;
@@ -40,30 +36,8 @@ public class PrincipalActivity extends AppCompatActivity  {
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setCheckedItem(R.id.itmComprar);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
-                    case R.id.itmConfig:
-                        Intent intent = new Intent(getApplicationContext(), Principal.class);
-                        startActivity(intent);
-                        break;
-                    case R.id.itmMapa:
-                        Intent intent2 = new Intent(getApplicationContext(), Principal.class);
-                        startActivity(intent2);
-                        break;
-                    case R.id.itmMeusPedidos:
-                        Intent intent3 = new Intent(getApplicationContext(), Principal.class);
-                        startActivity(intent3);
-                        break;
-                    case R.id.itmQRCam:
-                        Intent intent4 = new Intent(getApplicationContext(), Principal.class);
-                        startActivity(intent4);
-                        break;
-                }
-                return true;
-            }
-        });
+        navigationView.setNavigationItemSelectedListener(this );
+
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,mTopToolbar,R.string.Drawer_open,R.string.Drawer_close);
@@ -74,9 +48,9 @@ public class PrincipalActivity extends AppCompatActivity  {
         HeaderLayput = (LinearLayout) findViewById(R.id.HeaderLayout);
 
         List<CarouselPicker.PickerItem> imgsBanner = new ArrayList<>();
-        imgsBanner.add(new CarouselPicker.DrawableItem(R.drawable.banner_cyber));
-        imgsBanner.add(new CarouselPicker.DrawableItem(R.drawable.bookbg));
-        imgsBanner.add(new CarouselPicker.DrawableItem(R.drawable.book_true_icon));
+        imgsBanner.add(new CarouselPicker.DrawableItem(R.drawable.cyber_banner));
+        imgsBanner.add(new CarouselPicker.DrawableItem(R.drawable.dragon_banner));
+        imgsBanner.add(new CarouselPicker.DrawableItem(R.drawable.lovecraft_banner));
         CarouselPicker.CarouselViewAdapter imgAdapter = new CarouselPicker.CarouselViewAdapter(this,imgsBanner,0);
         CarouselPicker crr = (CarouselPicker) findViewById(R.id.Carrsky);
         crr.setAdapter(imgAdapter);
@@ -137,6 +111,32 @@ public class PrincipalActivity extends AppCompatActivity  {
         else
         super.onBackPressed();
     }
+
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        int id = menuItem.getItemId();
+        Intent intent;
+        switch (id){
+            case R.id.itmMeusPedidos:
+                 intent = new Intent(this, MeusPedidosActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.itmMapa:
+                intent = new Intent(this, MeusPedidosActivity.class);
+                startActivity(intent);
+                break;
+                default:
+                    intent = new Intent(this,Principal.class);
+                    startActivity(intent);
+                    break;
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+
+
+    }
+
 
 
 

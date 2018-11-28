@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastroEnderecoActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="Endereço (Ex:Rua,avenida)"
+           android:textColorHint="@color/PretoPrincipal"
+           android:layout_marginTop="80dp"
+           android:background="@drawable/teste_edit_shape"
+           android:id="@+id/EnderecoNomeForm"
+           />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Numero"
+            android:textColorHint="@color/PretoPrincipal"
+            android:layout_marginTop="30dp"
+            android:inputType="number"
+            android:background="@drawable/teste_edit_shape"
+            android:id="@+id/EnderecoNumeroForm"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cep"
+            android:textColorHint="@color/PretoPrincipal"
+            android:layout_marginTop="30dp"
+            android:inputType="number"
+            android:background="@drawable/teste_edit_shape"
+            android:id="@+id/EnderecoCepForm"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bairro"
+            android:textColorHint="@color/PretoPrincipal"
+            android:layout_marginTop="30dp"
+            android:id="@+id/EnderecoBairroForm"
+            android:background="@drawable/teste_edit_shape"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            >
+
+            <EditText
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:hint="Cidade"
+                android:textColorHint="@color/PretoPrincipal"
+                android:background="@drawable/teste_edit_shape"
+                android:id="@+id/EnderecoCidadeForm"
+
+                />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="40dp"
+                android:id="@+id/SpinnerUf"
+                />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_carrinho"
+            android:textColor="#FFF"
+            android:text="Cadastrar"
+            android:layout_marginTop="50dp"
+            android:textSize="22sp"
+            android:onClick="CadastroClick"
+            />
+
+    </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

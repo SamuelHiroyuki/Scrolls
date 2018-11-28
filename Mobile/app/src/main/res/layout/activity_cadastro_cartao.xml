@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastroCartaoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do titular do cartão"
+        android:textColorHint="@color/PretoPrincipal"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/teste_edit_shape"
+        android:id="@+id/NomeCartãoForm"
+        />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Numero do cartão"
+            android:textColorHint="@color/PretoPrincipal"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/teste_edit_shape"
+            android:id="@+id/NumeroCartãoForm"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_carrinho"
+            android:textColor="#FFF"
+            android:text="Cadastrar"
+            android:layout_marginTop="50dp"
+            android:textSize="22sp"
+            android:onClick="CadastroCardClick"
+            />
+    </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
