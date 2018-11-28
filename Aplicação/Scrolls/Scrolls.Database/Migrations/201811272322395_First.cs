@@ -3,7 +3,7 @@ namespace Scrolls.Database.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Firts : DbMigration
+    public partial class First : DbMigration
     {
         public override void Up()
         {
@@ -33,7 +33,6 @@ namespace Scrolls.Database.Migrations
                         Email = c.String(maxLength: 320),
                         Imagem = c.String(),
                         CPF = c.String(nullable: false, maxLength: 14),
-                        User = c.String(nullable: false, maxLength: 15),
                         Senha = c.String(nullable: false, maxLength: 128),
                         Cartao_Id = c.Int(),
                     })
@@ -172,17 +171,19 @@ namespace Scrolls.Database.Migrations
                         Nome = c.String(nullable: false, maxLength: 15),
                         Sobrenome = c.String(nullable: false, maxLength: 50),
                         CPF = c.String(nullable: false, maxLength: 14),
+                        RG = c.String(),
                         Email = c.String(nullable: false, maxLength: 320),
                         Imagem = c.String(nullable: false),
+                        Nascimento = c.DateTime(nullable: false),
                         Senha = c.String(nullable: false, maxLength: 128),
                         Gerente = c.Boolean(nullable: false),
-                        EnderecoId = c.Int(nullable: false),
+                        Endereco_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Endereco", t => t.EnderecoId, cascadeDelete: true)
+                .ForeignKey("dbo.Endereco", t => t.Endereco_Id)
                 .Index(t => t.CPF, unique: true)
                 .Index(t => t.Email, unique: true)
-                .Index(t => t.EnderecoId);
+                .Index(t => t.Endereco_Id);
             
             CreateTable(
                 "dbo.ClienteCartao",
@@ -221,7 +222,7 @@ namespace Scrolls.Database.Migrations
             DropForeignKey("dbo.Carrinho", "ProdutoId", "dbo.Produto");
             DropForeignKey("dbo.ProdutoVenda", "VendaId", "dbo.Venda");
             DropForeignKey("dbo.Venda", "EnderecoId", "dbo.Endereco");
-            DropForeignKey("dbo.Funcionario", "EnderecoId", "dbo.Endereco");
+            DropForeignKey("dbo.Funcionario", "Endereco_Id", "dbo.Endereco");
             DropForeignKey("dbo.Endereco", "ClienteId", "dbo.Cliente");
             DropForeignKey("dbo.Venda", "ClienteId", "dbo.Cliente");
             DropForeignKey("dbo.Venda", "CartaoId", "dbo.Cartao");
@@ -232,7 +233,7 @@ namespace Scrolls.Database.Migrations
             DropForeignKey("dbo.Carrinho", "ClienteId", "dbo.Cliente");
             DropIndex("dbo.ClienteCartao", new[] { "CartaoId" });
             DropIndex("dbo.ClienteCartao", new[] { "ClienteId" });
-            DropIndex("dbo.Funcionario", new[] { "EnderecoId" });
+            DropIndex("dbo.Funcionario", new[] { "Endereco_Id" });
             DropIndex("dbo.Funcionario", new[] { "Email" });
             DropIndex("dbo.Funcionario", new[] { "CPF" });
             DropIndex("dbo.Endereco", new[] { "ClienteId" });

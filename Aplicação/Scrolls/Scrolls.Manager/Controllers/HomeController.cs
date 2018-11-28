@@ -21,6 +21,16 @@ namespace Scrolls.Manager.Controllers
             ViewData["Ativo"] = new BannerDAO().CountAtivo();
             return View();
         }
+
+        public JsonResult ConsultaCEP(string cep) {
+            return Json(null, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Perfil() {
+            ViewData["Falta"] = new ProdutoDAO().CountIsZero();
+            ViewData["Ativo"] = new BannerDAO().CountAtivo();
+            return View();
+        }
         
         public ActionResult LoginPage()
         {
@@ -35,7 +45,7 @@ namespace Scrolls.Manager.Controllers
             {
                 Session["_Id"] = f.Id;
                 Session["_Nome"] = f.Nome;
-                //Session["_Imagem"] = f.Imagem;
+                Session["_Imagem"] = f.Imagem;
                 if (f.Gerente == true)
                 {
                     Session["_Tipo"] = "Administrador";
@@ -66,7 +76,7 @@ namespace Scrolls.Manager.Controllers
             Session["_Id"] = 0;
             Session["_Nome"] = string.Empty;
             Session["_Tipo"] = string.Empty;
-            //Session["_Imagem"] = string.Empty;
+            Session["_Imagem"] = string.Empty;
             return RedirectToAction("LoginPage");
         }
     }

@@ -29,6 +29,7 @@ namespace Scrolls.Manager.Controllers
             ViewData["Falta"] = new ProdutoDAO().CountIsZero();
             ViewData["Ativo"] = new BannerDAO().CountAtivo();
             ViewBag.Banners = new BannerDAO().Listar();
+            ViewBag.G = new GeneroDAO().Listar();
             return View();
         }
 

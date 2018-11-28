@@ -43,5 +43,15 @@ namespace Scrolls.DataAccessObject
         {
             return context.Produtos.Where(p => p.Quantidade == 0).ToList();
         }
+
+        public IList<Produto> HasPromo()
+        {
+            return context.Produtos.Where(p => !(p.Promocao == null || p.Promocao == 0)).ToList();
+        }
+
+        public IList<Produto> NoPromo()
+        {
+            return context.Produtos.Where(p => p.Promocao == null || p.Promocao == 0).ToList();
+        }
     }
 }
