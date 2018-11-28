@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/AmareloPrincipal</item>
+        <item name="colorPrimaryDark">@color/PretoPrincipal</item>
+        <item name="colorAccent">@color/AzulPrincipal</item>
+
+    </style>
+    <style name="Teste" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/AmareloPrincipal</item>
+        <item name="colorPrimaryDark">@color/PretoPrincipal</item>
+        <item name="colorAccent">@color/AzulPrincipal</item>
+    </style>
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#696969</item>
+        <item name="colorControlActivated">@color/AmareloPrincipal</item>
+    </style>
+
+
+</resources>

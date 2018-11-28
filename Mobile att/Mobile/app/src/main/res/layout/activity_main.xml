@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    tools:context=".MainActivity"
+    android:background="@drawable/bookbg"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="140dp"
+            android:src="@drawable/book_true_icon" />
+
+        <Button
+            android:id="@+id/btnCad"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="110dp"
+            android:background="@drawable/button_shape"
+            android:onClick="CadastroClique"
+            android:text="        Inscreva-se grátis        "
+            android:textColor="#ffffff"
+
+            android:textSize="16dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#3270EC"
+            android:textSize="16dp"
+            android:text="Ja possui conta na Scrolls?"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center"
+            />
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_login_shape"
+            android:textSize="16dp"
+            android:text="                     Entrar                       "
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="80dp"
+            android:onClick="LoginClique"
+            android:textColor="#fff"
+            />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

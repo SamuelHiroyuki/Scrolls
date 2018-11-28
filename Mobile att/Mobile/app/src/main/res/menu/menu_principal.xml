@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+
+    >
+        <group android:checkableBehavior="single"
+
+            >
+            <item android:id="@+id/itmComprar"
+                android:title="Principal"/>
+            <item android:id="@+id/itmMeusPedidos"
+                android:title="Meus Pedidos"/>
+            <item android:id="@+id/itmMapa"
+                android:title="Mapa"/>
+            <item android:id="@+id/itmQRCam"
+                android:title="QR Camera"
+                />
+
+        </group>
+    <item android:id="@+id/Menu2"
+        android:title="">
+
+        <menu>
+            <item android:id="@+id/itmConfig"
+                android:title="Configurações"/>
+            <item android:id="@+id/itmRate"
+                android:title="Avalie-nos"/>
+        </menu>
+    </item>
+</menu>
