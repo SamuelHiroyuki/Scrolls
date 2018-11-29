@@ -11,7 +11,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Page Title</title>
+    <title>Login</title>
 
     <!-- Bootstrap CSS -->
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
@@ -24,7 +24,7 @@
     <div class="row justify-content-end">
         <div class="col-md-5 bg-light px-5 py-4 rounded">
             <h3>Login</h3>
-            <form>
+            <form action="/Home/Logar" method="post">
                 <div class="form-group @ViewBag.V">
                     <label for="email" class="col-sm-12 col-form-label col-form-label-lg">Endereço de email</label>
                     <input type="email" class="form-control form-control-lg" nome="n" value="@ViewBag.Nome" id="email" aria-describedby="emailHelp" placeholder="Seu email">

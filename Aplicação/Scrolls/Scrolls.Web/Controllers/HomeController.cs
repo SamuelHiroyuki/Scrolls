@@ -22,7 +22,7 @@ namespace Scrolls.Web.Controllers
         }
 
         [HttpPostAttribute]
-        public ActionResult Login(string s, string n)
+        public ActionResult Logar(string s, string n)
         {
             Cliente c = new ClienteDAO().Login(s, n);
             if (c != null)
@@ -32,7 +32,7 @@ namespace Scrolls.Web.Controllers
                 //Session["_Imagem"] = c.Imagem;
                 ViewBag.LoginE = string.Empty;
                 ViewBag.V = string.Empty;
-                return View("Index");
+                return RedirectToAction("Index","Home");
             }
             else
             {
