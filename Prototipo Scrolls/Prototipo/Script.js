@@ -147,6 +147,7 @@ $(document).ready(function () {
     });
 });
 
+
 var cartbtn1 = $('#essenceCartBtn');
 var cartOverlay = $(".cart-bg-overlay");
 var cartWrapper = $(".right-side-cart-area");
@@ -214,3 +215,5 @@ $('.nav-tabs > li a[title]').tooltip();
      $('#tabs2-form').addClass("disabled");
      $('#tabs3-form').addClass("disabled");
  });
+
+

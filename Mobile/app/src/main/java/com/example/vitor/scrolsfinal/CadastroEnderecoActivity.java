@@ -3,6 +3,7 @@ package com.example.vitor.scrolsfinal;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -20,6 +21,9 @@ public class CadastroEnderecoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_endereco);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         txtBairro = (EditText) findViewById(R.id.EnderecoBairroForm);
         txtCep = (EditText) findViewById(R.id.EnderecoCepForm);
@@ -50,5 +54,14 @@ public class CadastroEnderecoActivity extends AppCompatActivity {
         else{
             Toast.makeText(this,"Algum campo esta vazio", Toast.LENGTH_LONG);
         }
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // handle arrow click here
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // close this activity and return to preview activity (if there is any)
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

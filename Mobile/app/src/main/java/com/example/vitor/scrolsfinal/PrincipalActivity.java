@@ -12,6 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import java.security.Principal;
@@ -19,6 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import in.goodiebag.carouselpicker.CarouselPicker;
+import technolifestyle.com.imageslider.FlipperLayout;
+import technolifestyle.com.imageslider.FlipperView;
 
 public class PrincipalActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
         CarouselPicker carouselPicker;
@@ -47,25 +50,44 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
 
         HeaderLayput = (LinearLayout) findViewById(R.id.HeaderLayout);
 
-        List<CarouselPicker.PickerItem> imgsBanner = new ArrayList<>();
-        imgsBanner.add(new CarouselPicker.DrawableItem(R.drawable.cyber_banner));
-        imgsBanner.add(new CarouselPicker.DrawableItem(R.drawable.dragon_banner));
-        imgsBanner.add(new CarouselPicker.DrawableItem(R.drawable.lovecraft_banner));
-        CarouselPicker.CarouselViewAdapter imgAdapter = new CarouselPicker.CarouselViewAdapter(this,imgsBanner,0);
-        CarouselPicker crr = (CarouselPicker) findViewById(R.id.Carrsky);
-        crr.setAdapter(imgAdapter);
+        FlipperLayout fliper = (FlipperLayout) findViewById(R.id.FliperLyt);
+
+        FlipperView fv = new FlipperView(getBaseContext());
+        fv.setImageDrawable(R.drawable.cyber_banner);
+        fliper.addFlipperView(fv);
+
+        fv = new FlipperView(getBaseContext());
+        fv.setImageDrawable(R.drawable.dragon_banner);
+        fliper.addFlipperView(fv);
+
+        fv = new FlipperView(getBaseContext());
+        fv.setImageDrawable(R.drawable.lovecraft_banner);
+        fliper.addFlipperView(fv);
+
+        fv = new FlipperView(getBaseContext());
+        fv.setImageDrawable(R.drawable.program_banner);
+        fliper.addFlipperView(fv);
+
+
 
         ArrayList<Integer> imagens = new ArrayList<>();
-        imagens.add(R.drawable.banner_cyber);
-        imagens.add(R.drawable.book_true_icon);
-        imagens.add(R.drawable.bookbg);
-        imagens.add(R.drawable.bookicon);
+        imagens.add(R.drawable.magic_wand);
+        imagens.add(R.drawable.pumpkin);
+        imagens.add(R.drawable.solar_system);
+        imagens.add(R.drawable.feather);
+        imagens.add(R.drawable.brazil);
+        imagens.add(R.drawable.joystick);
+        imagens.add(R.drawable.rainbow);
+
 
         ArrayList<String> nomes = new ArrayList<>();
         nomes.add("Fantasia");
-        nomes.add("Suspense");
+        nomes.add("Horror");
         nomes.add("Ficção");
-        nomes.add("Guias");
+        nomes.add("Classicos");
+        nomes.add("Nacionais");
+        nomes.add("Jogos");
+        nomes.add("Infantis");
 
         ArrayList<String> precos = new ArrayList<>();
         precos.add("15");
@@ -119,7 +141,7 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         Intent intent;
         switch (id){
             case R.id.itmMeusPedidos:
-                 intent = new Intent(this, MeusPedidosActivity.class);
+                 intent = new Intent(getApplicationContext()  , MeusPedidosActivity.class);
                 startActivity(intent);
                 break;
             case R.id.itmMapa:
@@ -135,6 +157,11 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         return true;
 
 
+    }
+
+    public void PerfilActivity(View v){
+        Intent intent = new Intent(this, PerfilActivity.class);
+        startActivity(intent);
     }
 
 

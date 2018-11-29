@@ -9,20 +9,11 @@
     tools:context=".PrincipalActivity"
     >
 
-    <android.support.design.widget.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:id="@+id/NavViewPedidos"
-        app:headerLayout="@layout/menu_header"
-        app:menu="@menu/menu_principal"
-        android:background="@color/PretoPrincipal"
-        />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <include
-        android:id="@+id/IncludeToolbarPedidos"
+        android:id="@+id/IncludeToolbarCompras"
         layout="@layout/toolbar_secundario"
         android:visibility="visible"/>
 
@@ -33,12 +24,10 @@
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/MeusPedidosList"
+            android:id="@+id/ComprasList"
             android:layout_marginTop="100dp"
             />
-
-
     </ScrollView>
-</RelativeLayout>
+    </RelativeLayout>
 
 </android.support.v4.widget.DrawerLayout>

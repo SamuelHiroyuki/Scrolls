@@ -34,17 +34,25 @@
             android:theme="@style/Teste" />
         <activity
             android:name=".ProdutoInfoActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".PerfilActivity" />
+            android:parentActivityName=".PrincipalActivity"
+            android:theme="@style/Teste" />
+        <activity
+            android:name=".PerfilActivity"
+            android:parentActivityName=".PrincipalActivity" />
         <activity
             android:name=".CadastroEnderecoActivity"
-            android:label="Cadastrar Endereço" />
+            android:label="Cadastrar Endereço"
+            android:parentActivityName=".PerfilActivity" />
         <activity
             android:name=".CadastroCartaoActivity"
-            android:label="Cadastrar cartão" />
-        <activity android:name=".MeusPedidosActivity"
-            android:label="Meus Pedidos"
-            />
+            android:label="Cadastrar cartão"
+            android:parentActivityName=".PerfilActivity" />
+        <activity
+            android:name=".MeusPedidosActivity"
+            android:label="Meus Pedidos" />
+        <activity android:name=".PesquisaActivity" />
+        <activity android:name=".CarrinhoActivity" />
+        <activity android:name=".FinalizarCompraActivity"></activity>
     </application>
 
 </manifest>

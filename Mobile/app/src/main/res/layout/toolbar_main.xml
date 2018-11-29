@@ -25,6 +25,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        android:textColor="@color/PretoPrincipal"
         />
         <ImageView
             android:layout_width="55dp"

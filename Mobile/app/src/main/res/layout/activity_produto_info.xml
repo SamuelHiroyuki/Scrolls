@@ -5,19 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layoutProd"
-    android:fitsSystemWindows="true"
     tools:context=".PrincipalActivity"
     >
 
-    <android.support.design.widget.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:id="@+id/nav_viewProd"
-        app:headerLayout="@layout/menu_header"
-        app:menu="@menu/menu_principal"
-        android:background="@color/PretoPrincipal"
-        />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,7 +15,6 @@
     <include
         android:id="@+id/IncludeToolbarProduto"
         layout="@layout/toolbar_produto"
-
         android:visibility="visible"/>
     <ScrollView
         android:layout_width="match_parent"
@@ -37,14 +26,11 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <in.goodiebag.carouselpicker.CarouselPicker
-                        android:id="@+id/CarrskyProd"
+                    <technolifestyle.com.imageslider.FlipperLayout
                         android:layout_width="match_parent"
-                        android:layout_height="20dp"
-                        android:layout_marginTop="90dp"
-                        android:background="@android:color/transparent"
-                        app:items_visible="three"
-
+                        android:layout_height="280dp"
+                        android:id="@+id/FliperProd"
+                        android:layout_marginTop="?attr/actionBarSize"
                         />
 
                         <LinearLayout
