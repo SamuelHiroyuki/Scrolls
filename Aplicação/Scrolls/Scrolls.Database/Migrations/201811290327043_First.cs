@@ -28,12 +28,12 @@ namespace Scrolls.Database.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Nome = c.String(nullable: false, maxLength: 15),
-                        Sobrenome = c.String(nullable: false, maxLength: 50),
+                        Nome = c.String(),
+                        Sobrenome = c.String(),
                         Email = c.String(maxLength: 320),
                         Imagem = c.String(),
                         CPF = c.String(nullable: false, maxLength: 14),
-                        Senha = c.String(nullable: false, maxLength: 128),
+                        Senha = c.String(),
                         Cartao_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)

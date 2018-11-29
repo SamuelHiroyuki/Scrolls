@@ -21,8 +21,18 @@ namespace Scrolls.Web.Controllers
             return View();
         }
 
-        public ActionResult CadaCli(Cliente cliente)
+        public ActionResult CadaCli(string nome, string sobrenome, string email, string cpf, string senha)
         {
+            cpf.Replace(".", "");
+            cpf.Replace("-", "");
+            Cliente cliente = new Cliente()
+            {
+                Nome = nome,
+                Sobrenome = sobrenome,
+                CPF = cpf,
+                Email = email,
+                Senha = senha
+            };
             ClienteDAO cdao = new ClienteDAO();
             cdao.Cadastrar(cliente);
             return RedirectToAction("LoginPage", "Home");

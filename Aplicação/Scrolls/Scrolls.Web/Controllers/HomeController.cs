@@ -32,7 +32,7 @@ namespace Scrolls.Web.Controllers
                 //Session["_Imagem"] = c.Imagem;
                 ViewBag.LoginE = string.Empty;
                 ViewBag.V = string.Empty;
-                return RedirectToAction("Index");
+                return View("Index");
             }
             else
             {

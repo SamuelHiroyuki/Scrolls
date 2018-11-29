@@ -13,7 +13,7 @@ namespace Scrolls.Database.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201811272322395_First"; }
+            get { return "201811290327043_First"; }
         }
         
         string IMigrationMetadata.Source
