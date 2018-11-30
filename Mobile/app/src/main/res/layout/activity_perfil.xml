@@ -83,7 +83,9 @@
                 android:layout_height="wrap_content"
                 android:text="Meus Pedidos"
                 android:background="@drawable/button_carrinho"
-                android:textColor="#fff"/>
+                android:textColor="#fff"
+
+                />
             <Button
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
@@ -126,6 +128,7 @@
         android:text="Cadastrar Cartão"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
+            android:onClick="CadCartClik"
         />
 
         <TextView
@@ -152,8 +155,8 @@
             android:text="Cadastrar Endereço"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="20dp"
+            android:onClick="CadEndeClik"
             />
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

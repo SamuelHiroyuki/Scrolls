@@ -31,7 +31,14 @@ public class PerfilActivity extends AppCompatActivity {
 
         toggle.syncState();
 
-
+    }
+    public void CadCartClik(View v) {
+        Intent intent = new Intent(this, CadastroCartaoActivity.class);
+        startActivity(intent);
+    }
+    public void CadEndeClik(View v) {
+        Intent intent = new Intent(this, CadastroEnderecoActivity.class);
+        startActivity(intent);
     }
 
 

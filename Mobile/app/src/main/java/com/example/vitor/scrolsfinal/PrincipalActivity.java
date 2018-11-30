@@ -43,7 +43,7 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setCheckedItem(R.id.itmComprar);
-        navigationView.setNavigationItemSelectedListener(this );
+        navigationView.setNavigationItemSelectedListener(this);
 
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -152,10 +152,7 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
                 intent = new Intent(this, MeusPedidosActivity.class);
                 startActivity(intent);
                 break;
-                default:
-                    intent = new Intent(this,Principal.class);
-                    startActivity(intent);
-                    break;
+
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;

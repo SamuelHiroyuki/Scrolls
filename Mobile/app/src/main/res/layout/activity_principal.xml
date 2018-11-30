@@ -7,6 +7,7 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     tools:context=".PrincipalActivity">
+
     <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -23,7 +24,8 @@
     <include
         android:id="@+id/IncludeToolbarPrincipal"
         layout="@layout/toolbar_main"
-        android:visibility="visible"/>
+        android:visibility="invisible"/>
+        x
 
     <ScrollView
         android:layout_width="match_parent"
