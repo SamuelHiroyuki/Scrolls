@@ -1,6 +1,8 @@
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.DataAccessObject\bin\Debug\Scrolls.DataAccessObject.dll.config
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.DataAccessObject\bin\Debug\Scrolls.DataAccessObject.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.DataAccessObject\bin\Debug\Scrolls.DataAccessObject.pdb
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.DataAccessObject\bin\Debug\Scrolls.DataAccessObject.dll.CodeAnalysisLog.xml
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.DataAccessObject\bin\Debug\Scrolls.DataAccessObject.dll.lastcodeanalysissucceeded
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.DataAccessObject\bin\Debug\EntityFramework.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.DataAccessObject\bin\Debug\EntityFramework.SqlServer.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.DataAccessObject\bin\Debug\Scrolls.Database.dll

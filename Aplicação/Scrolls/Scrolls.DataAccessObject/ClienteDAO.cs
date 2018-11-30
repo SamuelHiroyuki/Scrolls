@@ -32,10 +32,10 @@ namespace Scrolls.DataAccessObject
             context.SaveChanges();
         }
 
-        public Cliente Login(string pass, string ema)
+        public Cliente Login(string pass, string e)
         {
 
-            Cliente cliente = context.Clientes.FirstOrDefault(c => c.Email.Equals(ema) && c.Senha.Equals(pass));
+            Cliente cliente = context.Clientes.FirstOrDefault(c => c.Email.Equals(e) && c.Senha.Equals(pass));
             if (cliente != null)
             {
                 return cliente;

@@ -2,9 +2,6 @@
 @{
     Layout = null;
 }
-
-<!DOCTYPE html>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,18 +21,17 @@
     <div class="row justify-content-end">
         <div class="col-md-5 bg-light px-5 py-4 rounded">
             <h3>Login</h3>
-            <form action="/Home/Logar" method="post">
+            <form method="post" action="/Home/Logar">
                 <div class="form-group @ViewBag.V">
                     <label for="email" class="col-sm-12 col-form-label col-form-label-lg">Endereço de email</label>
-                    <input type="email" class="form-control form-control-lg" nome="n" value="@ViewBag.Nome" id="email" aria-describedby="emailHelp" placeholder="Seu email">
+                    <input type="text" class="form-control form-control-lg" nome="nr" value="@ViewBag.Nome" id="email" aria-describedby="emailHelp" placeholder="Seu email">
                 </div>
                 <div class="form-group @ViewBag.V">
                     <div class="d-flex justify-content-between align-items-center">
                         <label for="password" class="col-sm-2 col-form-label col-form-label-lg">Senha</label>
                         <p class="m-0"><a href="#">Esqueceu senha senha?</a></p>
                     </div>
-                    <input type="password" class=" form-control form-control-lg" name="s
-                    " id="password" placeholder="Senha">
+                    <input type="password" class=" form-control form-control-lg" name="s" id="password" placeholder="Senha">
                 </div>
                 <div class="bg-danger p-2 d-none text-center rounded text-light" style='@ViewBag.LoginE'>
                     <Strong>Login inválido</strong>
@@ -45,7 +41,7 @@
                 <button type="submit" class="btn btn-confirmar w-100 mt-5">Logar</button>
             </form>            
             <div class="col-sm-12 d-flex justify-content-center mt-2">
-                <p>Não tem uma conta ainda? <a href="join-page.html">Crie uma aqui</a></p>
+                <p>Não tem uma conta ainda? <a href="/Cliente/JoinPage">Crie uma aqui</a></p>
             </div>
         </div>
     </div>

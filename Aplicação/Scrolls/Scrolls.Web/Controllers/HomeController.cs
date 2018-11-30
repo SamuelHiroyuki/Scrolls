@@ -21,15 +21,13 @@ namespace Scrolls.Web.Controllers
             return View();
         }
 
-        [HttpPostAttribute]
-        public ActionResult Logar(string s, string n)
+        public ActionResult Logar(string s, string nr)
         {
-            Cliente c = new ClienteDAO().Login(s, n);
+            Cliente c = new ClienteDAO().Login(s, nr);
             if (c != null)
             {
                 Session["_Id"] = c.Id;
                 Session["_Nome"] = c.Nome;
-                //Session["_Imagem"] = c.Imagem;
                 ViewBag.LoginE = string.Empty;
                 ViewBag.V = string.Empty;
                 return RedirectToAction("Index","Home");
@@ -38,7 +36,7 @@ namespace Scrolls.Web.Controllers
             {
                 ViewBag.V = "border-danger";
                 ViewBag.LoginE = "display: block; !important";
-                ViewBag.Nome = n;
+                ViewBag.Nome = nr;
                 return View("LoginPage");
             }
         }
@@ -50,8 +48,7 @@ namespace Scrolls.Web.Controllers
             ViewBag.V = string.Empty;
             Session["_Id"] = 0;
             Session["_Nome"] = string.Empty;
-            //Session["_Imagem"] = string.Empty;
-            return RedirectToAction("LoginPage");
+            return RedirectToAction("Index");
         }
     }
 }

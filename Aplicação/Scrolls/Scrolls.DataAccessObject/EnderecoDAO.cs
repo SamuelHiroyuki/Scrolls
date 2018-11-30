@@ -21,5 +21,16 @@ namespace Scrolls.DataAccessObject
             context.Enderecos.Add(e);
             context.SaveChanges();
         }
+        
+        public Endereco Listar (Cliente c)
+        {
+            return context.Enderecos.FirstOrDefault(e => e.ClienteId == c.Id);
+        }
+
+        public void Deletar(Endereco e)
+        {
+            context.Enderecos.Remove(e);
+            context.SaveChanges();
+        }
     }
 }

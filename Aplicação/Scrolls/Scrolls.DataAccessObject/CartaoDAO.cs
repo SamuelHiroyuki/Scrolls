@@ -21,5 +21,11 @@ namespace Scrolls.DataAccessObject
             context.Cartoes.Add(card);
             context.SaveChanges();
         }
+
+        public void Deletar(Endereco e)
+        {
+            context.Enderecos.Remove(e);
+            context.SaveChanges();
+        }
     }
 }
