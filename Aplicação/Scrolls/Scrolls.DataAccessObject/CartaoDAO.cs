@@ -22,10 +22,26 @@ namespace Scrolls.DataAccessObject
             context.SaveChanges();
         }
 
-        public void Deletar(Endereco e)
+        public IList<Cartao> Listar()
         {
-            context.Enderecos.Remove(e);
+            return context.Cartoes.ToList();
+        }
+
+		
+		public void Deletar(Cartao e)
+        {
+            context.Cartoes.Remove(e);
             context.SaveChanges();
+        }
+		
+        public Cartao BuscarId(int id)
+        {
+            return context.Cartoes.FirstOrDefault(c => c.Id == id);
+        }
+
+        public Cartao BuscaByCli(int id)
+        {
+            return context.Cartoes.FirstOrDefault(c => c.ClienteId == id);
         }
     }
 }

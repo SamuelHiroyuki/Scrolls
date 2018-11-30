@@ -17,8 +17,6 @@ C:\TCCScrolls\Aplicação\Aplicação\Scrolls\Scrolls.Entities\obj\Debug\Scrolls
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\bin\Debug\Scrolls.Entities.dll.config
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\bin\Debug\Scrolls.Entities.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\bin\Debug\Scrolls.Entities.pdb
-C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\bin\Debug\Scrolls.Entities.dll.CodeAnalysisLog.xml
-C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\bin\Debug\Scrolls.Entities.dll.lastcodeanalysissucceeded
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\bin\Debug\EntityFramework.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\bin\Debug\EntityFramework.SqlServer.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\bin\Debug\Google.Protobuf.dll
@@ -29,8 +27,8 @@ C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\bin\Debug\EntityFramework.Sql
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\bin\Debug\Google.Protobuf.xml
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\bin\Debug\MySql.Data.xml
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\bin\Debug\MySql.Data.EntityFramework.xml
-C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\obj\Debug\Scrolls.Entities.csprojAssemblyReference.cache
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\obj\Debug\Scrolls.Entities.csproj.CoreCompileInputs.cache
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\obj\Debug\Scrolls.Entities.csproj.CopyComplete
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\obj\Debug\Scrolls.Entities.dll
 C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\obj\Debug\Scrolls.Entities.pdb
+C:\TCCScrolls\Aplicação\Scrolls\Scrolls.Entities\obj\Debug\Scrolls.Entities.csprojAssemblyReference.cache

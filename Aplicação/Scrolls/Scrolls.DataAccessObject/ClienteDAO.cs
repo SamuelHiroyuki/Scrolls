@@ -32,10 +32,28 @@ namespace Scrolls.DataAccessObject
             context.SaveChanges();
         }
 
-        public Cliente Login(string pass, string e)
+
+        public IList<Cliente> Listar()
+        {
+            return context.Clientes.ToList();
+        }
+
+        public Cliente BuscarEmail(string e) {
+            Cliente cliente = context.Clientes.FirstOrDefault(c => c.Email.Equals(e));
+            if (cliente != null)
+            {
+                return cliente;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public Cliente Login(string pass, string ema)
         {
 
-            Cliente cliente = context.Clientes.FirstOrDefault(c => c.Email.Equals(e) && c.Senha.Equals(pass));
+            Cliente cliente = context.Clientes.FirstOrDefault(c => c.Email.Equals(ema) && c.Senha.Equals(pass));
             if (cliente != null)
             {
                 return cliente;

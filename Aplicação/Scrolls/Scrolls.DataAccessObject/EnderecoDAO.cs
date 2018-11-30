@@ -21,16 +21,27 @@ namespace Scrolls.DataAccessObject
             context.Enderecos.Add(e);
             context.SaveChanges();
         }
-        
-        public Endereco Listar (Cliente c)
+
+        public IList<Endereco> Listar()
         {
-            return context.Enderecos.FirstOrDefault(e => e.ClienteId == c.Id);
+            return context.Enderecos.ToList();
         }
 
-        public void Deletar(Endereco e)
+		
+		public void Deletar(Endereco e)
         {
             context.Enderecos.Remove(e);
             context.SaveChanges();
+        }
+		
+        public Endereco BuscarId(int id)
+        {
+            return context.Enderecos.FirstOrDefault(e => e.Id == id);
+        }
+
+        public Endereco BuscaByCli(int id)
+        {
+            return context.Enderecos.FirstOrDefault(c => c.ClienteId == id);
         }
     }
 }

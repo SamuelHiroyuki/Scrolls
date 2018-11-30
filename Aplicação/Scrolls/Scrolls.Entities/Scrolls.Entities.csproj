@@ -70,7 +70,6 @@
     <Compile Include="Cartao.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
-    <Compile Include="ClienteCartao.cs" />
     <Compile Include="Endereco.cs" />
     <Compile Include="Funcionario.cs" />
     <Compile Include="Genero.cs" />

@@ -21,6 +21,7 @@ namespace Scrolls.Entities
         [Required(ErrorMessage = "O campo validade não pode estar vazio."), RegularExpression(@"^\d{1,2}\/\d{1,2}\$", ErrorMessage = "Somente números são aceitos.")]
         public string Validade { get; set; }
 
-        public virtual IList<Cliente> Clientes { get; set; }
+        public virtual Cliente Cliente { get; set; }
+        public int? ClienteId { get; set; }
     }
 }

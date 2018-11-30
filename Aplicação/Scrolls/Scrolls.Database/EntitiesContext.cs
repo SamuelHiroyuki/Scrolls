@@ -18,7 +18,6 @@ namespace Scrolls.Database {
         public DbSet<Cartao> Cartoes { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<ClienteCartao> ClienteCartoes { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Funcionario> Funcionarios { get; set; }
         public DbSet<Genero> Generos { get; set; }
@@ -31,9 +30,7 @@ namespace Scrolls.Database {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             modelBuilder.Entity<Carrinho>().HasKey(c => new { c.ClienteId, c.ProdutoId });
-
-            modelBuilder.Entity<ClienteCartao>().HasKey(cc => new { cc.ClienteId, cc.CartaoId});
-
+            
             modelBuilder.Entity<Avaliacao>().HasKey(a => new { a.ClienteId, a.ProdutoId});
 
             modelBuilder.Entity<ProdutoVenda>().HasKey(pv => new { pv.ProdutoId, pv.VendaId });
@@ -41,12 +38,7 @@ namespace Scrolls.Database {
             modelBuilder.Entity<Cliente>().HasIndex(u => u.CPF).IsUnique();
 
             modelBuilder.Entity<Cliente>().HasIndex(u => u.Email).IsUnique();
-
-            modelBuilder.Entity<Funcionario>().HasIndex(u => u.CPF).IsUnique();
-
-            modelBuilder.Entity<Funcionario>().HasIndex(u => u.Email).IsUnique();
-
-            modelBuilder.Entity<Cartao>().HasIndex(u => u.Numero).IsUnique();
+                     
 
             base.OnModelCreating(modelBuilder);
         }

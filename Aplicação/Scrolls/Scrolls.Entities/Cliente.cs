@@ -25,7 +25,7 @@ namespace Scrolls.Entities
                 
         public string Senha { get; set; }
 
-        public virtual IList<ClienteCartao> Cartoes { get; set; }
+        public virtual IList<Cartao> Cartoes { get; set; }
         public virtual IList<Endereco> Enderecos { get; set; }
         public virtual IList<Venda> Compras { get; set; }
         public virtual IList<Carrinho> Carrinho { get; set; }

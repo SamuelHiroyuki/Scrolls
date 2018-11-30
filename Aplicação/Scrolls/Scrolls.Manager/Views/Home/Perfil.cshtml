@@ -11,7 +11,7 @@
 
             <div class="col-sm-2">
 
-                <a href="#" class="profile-picture">
+                <a href="/Home/CFuncionario" class="profile-picture">
                     <img src="~/Assets/images/profile-picture.png" class="img-responsive img-circle" />
                 </a>
 
@@ -23,9 +23,9 @@
                     <li>
                         <div class="profile-name">
                             <strong>
-                                <a href="#">@Session["_Nome"]</a>
+                                <a href="#">@Session["_Nome"] @ViewBag.Func.Sobrenome</a>
                             </strong>
-                            <span><a href="#">Email</a></span>
+                            <span><a href="#">@ViewBag.Func.Email</a></span>
                         </div>
                     </li>
 
@@ -44,7 +44,7 @@
                         <li>
                             <a href="#">
                                 <i class="entypo-location"></i>
-                                Brasil, São Paulo
+                                @ViewBag.Func.CPF
                             </a>
                         </li>
 
@@ -58,7 +58,7 @@
                         <li>
                             <a href="#">
                                 <i class="entypo-calendar"></i>
-                                rola/no/seuco
+                                @ViewBag.Func.Nascimento.ToString("dd MMMM, yyyy")
                             </a>
                         </li>
                     </ul>
@@ -68,8 +68,6 @@
                     <ul class="nav nav-tabs">
                         <li><a href="#end" data-toggle="tab">Endereços</a></li>
                         <li><a href="#card" data-toggle="tab">Cartões</a></li>
-                        <li><a href="#com" data-toggle="tab">Avaliações</a></li>
-                        <li><a href="#edt" data-toggle="tab">Editar perfil</a></li>
                     </ul>
                 </div>
             </div>
@@ -121,14 +119,20 @@
                             </thead>
                             <tbody></tbody>
                             <tfoot>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
+                                @if (ViewBag.End != null)
+                                {
+                                    foreach (var e in ViewBag.End)
+                                    {
+                                        <tr>
+                                            <th>@e.CEP</th>
+                                            <th>@e.Estado</th>
+                                            <th>@e.Cidade</th>
+                                            <th>@e.Bairro</th>
+                                            <th>@e.Logradouro</th>
+                                            <th>@e.Numero</th>
+                                        </tr>
+                                    }
+                                }
                             </tfoot>
                         </table>
                     </div>
@@ -172,65 +176,19 @@
                             </thead>
                             <tbody></tbody>
                             <tfoot>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
+                                @if (ViewBag.Card != null)
+                                {
+                                    foreach (var c in ViewBag.Card)
+                                    {
+                                        <tr>
+                                            <th>@c.Numero</th>
+                                            <th>@c.Nome</th>
+                                            <th>@c.Validade</th>
+                                        </tr>
+                                    }
+                                }
                             </tfoot>
                         </table>
-                    </div>
-                    <div class="tab-pane" id="com">
-                        <script type="text/javascript">
-                            jQuery(document).ready(function ($) {
-                                var $tablea = jQuery("#table-a");
-
-                                var tablea = $tablea.DataTable({
-                                    "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]]
-                                });
-
-                                // Initalize Select Dropdown after DataTables is created
-                                $tablea.closest('.dataTables_wrapper').find('select').select2({
-                                    minimumResultsForSearch: -1
-                                });
-
-                                // Apply the search
-                                tablea.columns().every(function () {
-                                    var that = this;
-
-                                    $('input', this.footer()).on('keyup change', function () {
-                                        if (that.search() !== this.value) {
-                                            that
-                                                .search(this.value)
-                                                .draw();
-                                        }
-                                    });
-                                });
-                            });
-                        </script>
-
-
-                        <table class="table table-bordered datatable" id="table-a">
-                            <thead>
-                                <tr class="replace-inputs">
-                                    <th>Produto</th>
-                                    <th>Nota</th>
-                                    <th>Comentário</th>
-                                    <th>Data</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                            <tfoot>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                    <div class="tab-pane" id="edt">
                     </div>
                 </div>
             </div>

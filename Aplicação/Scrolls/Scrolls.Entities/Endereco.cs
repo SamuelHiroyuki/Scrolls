@@ -38,7 +38,6 @@ namespace Scrolls.Entities
         public virtual Cliente Cliente { get; set; }
         public int? ClienteId { get; set; }
 
-        public virtual IList<Funcionario> Funcionarios { get; set; }
         public virtual IList<Venda> Vendas { get; set; }
     }
 }
