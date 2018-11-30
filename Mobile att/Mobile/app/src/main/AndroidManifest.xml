@@ -38,7 +38,15 @@
         <activity
             android:name=".ProdutoInfoActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".PerfilActivity"></activity>
+        <activity
+            android:name=".PerfilActivity"
+           />
+        <activity
+            android:name=".MeusPedidosActivity"
+            android:label="Meus Pedidos" />
+        <activity android:name=".PesquisaActivity" />
+        <activity android:name=".CarrinhoActivity" />
+        <activity android:name=".FinalizarCompraActivity"></activity>
     </application>
 
 </manifest>

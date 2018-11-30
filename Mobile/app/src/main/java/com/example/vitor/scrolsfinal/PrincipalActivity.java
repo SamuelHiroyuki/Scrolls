@@ -2,6 +2,7 @@ package com.example.vitor.scrolsfinal;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,6 +15,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import java.security.Principal;
 import java.util.ArrayList;
@@ -163,8 +167,33 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         Intent intent = new Intent(this, PerfilActivity.class);
         startActivity(intent);
     }
+    public void MapaCLick(View v){
+        Intent intent = new Intent(this, MapaActivity.class);
+        startActivity(intent);
+    }
+    public void CameraClick(View v){
 
+        IntentIntegrator integrator = new IntentIntegrator(this);
+        integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+        integrator.setCameraId(0);
+        integrator.initiateScan();
 
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode, data);
+
+        if(result!=null) {
+
+            if (result.getContents() != null) {
+                Intent intent = new Intent(getApplicationContext(), ProdutoInfoActivity.class);
+                startActivity(intent);
+            } else
+                super.onActivityResult(requestCode, resultCode, data);
+        }
+
+    }
 
 }

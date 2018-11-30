@@ -88,6 +88,18 @@
                         android:onClick="PerfilActivity"
                         android:text="Perfil"
                         />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="MapaCLick"
+                        android:text="Mapa"
+                        />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="CameraClick"
+                        android:text="Camera"
+                        />
                 </LinearLayout>
     </ScrollView>
     </RelativeLayout>
