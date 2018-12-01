@@ -18,6 +18,13 @@
     <link rel="stylesheet" href="~/Assets/css/neon-theme.css">
     <link rel="stylesheet" href="~/Assets/css/neon-forms.css">
     <link rel="stylesheet" href="~/Assets/css/custom.css">
+    <link href="~/Assets/style.css" rel="stylesheet" />
+
+    <style>
+        .esconde {
+            display: none;
+        }
+    </style>
 
     <script src="~/Assets/js/jquery-1.11.3.min.js"></script>
 
@@ -205,14 +212,18 @@
     <script>
         $(window).resize(function(){
 
-           if ($(window).width() <= 768) {  
-                var el = document.getElementById( 'id' );
-                el.parentNode.removeChild( el );
-            }    
+           if ($(window).width() <= 992) {  
+               var el = document.getElementById( 'side_perfil' );
+               el.classList.add("esconde");
+           }
+           else {
+               var el = document.getElementById('side_perfil');
+               el.classList.remove("esconde");
+            } 
         });
         
     </script>
     <script src="~/Assets/js/neon-demo.js"></script>
-    <link href="~/Assets/style.css" rel="stylesheet" />
+    
 </body>
 </html>
