@@ -3,6 +3,8 @@ package com.example.vitor.scrolsfinal;
 import android.Manifest;
 import android.app.Dialog;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -10,6 +12,13 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -21,18 +30,28 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MapaActivity extends AppCompatActivity {
 
     private static final String FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
     private static final String COARSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
+
+
     private Boolean mLocationPermissionsGranted = false;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1234;
     private GoogleMap mMap;
     private FusedLocationProviderClient mFusedLocationProviderCLient;
     private final static float DEFAULT_ZOOM = 15f;
+
+    private EditText mEdtSearch;
+    private ImageView mImgback;
 
 
     @Override
@@ -40,8 +59,53 @@ public class MapaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapa);
 
-        getLocationPermission();
+        mEdtSearch = (EditText) findViewById(R.id.edtSearch);
+        mImgback= (ImageView) findViewById(R.id.imgGps);
 
+    getLocationPermission();
+
+    }
+    private void Init(){
+        mEdtSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                if(i == EditorInfo.IME_ACTION_DONE
+                        || i == EditorInfo.IME_ACTION_SEARCH
+                        || keyEvent.getAction() == KeyEvent.ACTION_DOWN
+                        || keyEvent.getAction() == KeyEvent.KEYCODE_ENTER){
+                    geoLocate();
+                }
+
+                return false;
+            }
+        });
+        HideSoftKeyBoard();
+        mImgback .setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getDeviceLocation();
+            }
+        });
+    }
+    private void geoLocate(){
+        String respSearch = mEdtSearch.getText().toString();
+
+        Geocoder geocoder = new Geocoder(getApplicationContext());
+
+        List<Address> list =  new ArrayList<>();
+        try{
+            list = geocoder.getFromLocationName(respSearch, 1);
+
+        }catch (IOException e){
+            Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
+        }
+        if (list.size()>0){
+            Address address = list.get(0);
+            Toast.makeText(getApplicationContext(), address.toString(), Toast.LENGTH_LONG).show();
+
+            moveCamera(new LatLng(address.getLatitude(), address.getLongitude()), DEFAULT_ZOOM, address.getAddressLine(0));
+
+        }
     }
 
     private void getDeviceLocation() {
@@ -55,20 +119,25 @@ public class MapaActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             Location currentLocation = (Location) task.getResult();
-                            moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()), DEFAULT_ZOOM);
+                            moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()), DEFAULT_ZOOM, "My Location");
                         } else {
-                            Toast.makeText(getApplicationContext(), "Não deu pra pegar localização", Toast.LENGTH_LONG);
+                            Toast.makeText(getApplicationContext(), "Não deu pra pegar localização", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
             }
         } catch (SecurityException e) {
-            Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG);
+            Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
         }
     }
 
-    private void moveCamera(LatLng latLng, float zoom) {
+    private void moveCamera(LatLng latLng, float zoom, String title) {
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
+
+        MarkerOptions option = new MarkerOptions().position(latLng).title(title);
+        mMap.addMarker(option);
+
+        HideSoftKeyBoard();
     }
 
     private void initMap() {
@@ -87,6 +156,9 @@ public class MapaActivity extends AppCompatActivity {
                         return;
                     }
                     mMap.setMyLocationEnabled(true);
+                    mMap.getUiSettings().setMyLocationButtonEnabled(false);
+
+                    Init();
                 }
             }
         });
@@ -124,7 +196,9 @@ public class MapaActivity extends AppCompatActivity {
             }
         }
 
-
+    }
+    private void HideSoftKeyBoard(){
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
 
