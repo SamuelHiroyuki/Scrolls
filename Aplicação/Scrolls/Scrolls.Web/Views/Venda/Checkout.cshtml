@@ -1,0 +1,372 @@
+﻿
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- CHECKOUT -->
+<section class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="wizard">
+                    <div class="wizard-inner">
+                        <div class="connecting-line">
+                        </div>
+                        <ul class="nav nav-tabs justify-content-between" role="tablist">
+                            <li role="presentation" class="nav-item">
+                                <a href="#step1" id="tabs-form" data-toggle="tab" aria-controls="step1" role="tab" title="Carrinho" class="nav-link active">
+                                    <span class="round-tab">
+                                        <i class="icon ion-md-cart"></i>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li role="presentation" class="nav-item">
+                                <a href="#step2" id="tabs2-form" data-toggle="tab" aria-controls="step2" role="tab" title="Identificação" class="nav-link disabled">
+                                    <span class="round-tab">
+                                        <i class="icon ion-md-map"></i>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li role="presentation" class="nav-item">
+                                <a href="#step3" id="tabs3-form" data-toggle="tab" aria-controls="step3" role="tab" title="Pagamento" class="nav-link disabled">
+                                    <span class="round-tab">
+                                        <i class="icon ion-md-card"></i>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li role="presentation" class="nav-item">
+                                <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab" title="Obrigado" class="nav-link disabled">
+                                    <span class="round-tab">
+                                        <i class="icon ion-md-checkmark"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active text-center" role="tabpanel" id="step1">
+                            <form action="">
+                                <div class="order-summary clearfix">
+                                    <table class="shopping-cart-table table">
+                                        <thead>
+                                            <tr>
+                                                <th>Produto</th>
+                                                <th></th>
+                                                <th class="text-center">Preço</th>
+                                                <th class="text-center">Quantidade</th>
+                                                <th class="text-center">Total</th>
+                                                <th class="text-right"></th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td class="thumb"><img src="product-img/product-1.png" alt=""></td>
+                                                <td class="details">
+                                                    <a href="#">Harry Potter</a>
+                                                </td>
+                                                <td class="price text-center"><strong>R$ 32,50</strong><br><del class="font-weak"><small></small></del></td>
+                                                <td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
+                                                <td class="total text-center"><strong class="primary-color">R$ 32,50</strong></td>
+                                                <td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="thumb"><img src="product-img/product-2.jpg" alt=""></td>
+                                                <td class="details">
+                                                    <a href="#">Nanastu no Taizai</a>
+                                                </td>
+                                                <td class="price text-center"><strong>R$ 32,50</strong><br><del class="font-weak"><small>R$ 45,00</small></del></td>
+                                                <td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
+                                                <td class="total text-center"><strong class="primary-color">R$ 32,50</strong></td>
+                                                <td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="thumb"><img src="product-img/product-3.jpg" alt=""></td>
+                                                <td class="details">
+                                                    <a href="#">HOTD</a>
+                                                </td>
+                                                <td class="price text-center"><strong>R$ 32,50</strong><br><del class="font-weak"><small></small></del></td>
+                                                <td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
+                                                <td class="total text-center"><strong class="primary-color">R$ 32,50</strong></td>
+                                                <td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
+                                            </tr>
+                                        </tbody>
+
+                                        <tfoot>
+                                            <tr>
+                                                <th class="empty" colspan="2"></th>
+                                                <th>FRETE E PRAZO</th>
+
+                                                <th>SUBTOTAL</th>
+                                                <th colspan="2" class="sub-total">R$ 97,50</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="empty" colspan="2"></th>
+                                                <th>
+                                                    <div class="form-group w-100">
+                                                        <div class="form-group d-flex align-items-center">
+                                                            <input type="text" class="form-control col-sm-5 mr-2" placeholder="CEP" value="" id="inputCEP">
+                                                            <button type="button" data-toggle="collapse" data-target="#frete" aria-expanded="false" aria-controls="frete" class="btn btn-primary mr-3" style="width: 100px">Calcular</button>
+                                                            <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" class="" style="color: #00A6FF;">Não sei meu CEP?</a>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th>FRETE</th>
+                                                <td colspan="2" class="sub-total font-weight-bold">R$ 3,50</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="empty" colspan="2"></th>
+                                                <th>7 á 10 dias uteis - R$ 3,50</th>
+                                                <th>TOTAL</th>
+                                                <th colspan="2" class="total">R$ 101,00</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                    <button type="button" class="btn primary-btn next-step next-button float-right">Continuar</button>
+                                </div>
+                            </form>
+                        </div><!-- Carrinho -->
+
+                        <div class="tab-pane py-3" role="tabpanel" id="step2">
+                            <h5 class="text-md-center">Endereço</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6 class="text-center">Novo Endereço</h6>
+                                    <div class=" d-flex justify-content-center">
+                                        <button type="button" class="btn btn-new text-center" style="width: 50%; " data-toggle="modal" data-target="#modalExemplo">
+                                            <i class="icon ion-md-add-circle"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <form action="" class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Cadastrar Novo Endereço</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <fieldset class="form-group">
+                                                    <div class="form-group">
+                                                        <label for="cep">CEP</label>
+                                                        <input type="text" class="form-control" id="cep" aria-describedby="cep" placeholder="CEP">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="endereco">Endereço</label>
+                                                        <input type="text" class="form-control" disabled id="endereco" placeholder="Endereço">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="num">Número</label>
+                                                        <input type="text" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="num" aria-describedby="num" placeholder="Número">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="comp">Complemento</label>
+                                                        <input type="text" class="form-control" id="comp" aria-describedby="comp" placeholder="Complemento">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="bar">Bairro</label>
+                                                        <input type="text" class="form-control" disabled id="bar" aria-describedby="bar" placeholder="Bairro">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="cid">Cidade</label>
+                                                        <input type="text" class="form-control" disabled id="cid" aria-describedby="cid" placeholder="Cidade">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="uf">Estado</label>
+                                                        <input type="text" class="form-control" disabled id="uf" aria-describedby="uf" placeholder="Estado">
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                <button type="submit" class="btn btn-primary">Salvar mudanças</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <form class="col-md-6 mb-3 litas-end">
+                                    <h6 class="text-center">Endereço de Envio</h6>
+                                    <div class="card py-0">
+                                        <div class="card-body d-flex justify-content-between align-items-center py-2">
+                                            <div>
+                                                <p>Estrada Coronel José Gladiador, <span> 2688</span></p>
+                                                <p>05267-000 - <span>Jardim Anhangüera</span></p>
+                                                <p>São Paulo/ <span>SP</span></p>
+                                            </div>
+                                            <button type="button" class="btn primary-btn next-step next-button float-right"><i class="icon ion-md-navigate"></i></button>
+                                        </div>
+                                    </div><!-- Card Endereço -->
+                                </form><!-- Lista de Endereço -->
+                            </div>
+                            <button type="button" class="btn primary-btn prev-step prev-button float-left">Voltar</button>
+                        </div><!-- Endereço -->
+
+                        <div class="tab-pane py-3" role="tabpanel" id="step3">
+                            <h5 class="text-md-center">Forma de Pagamento</h5>
+                            <div class="row justify-content-center">
+                                <div class="col-md-12 mb-2 pagamento">
+                                    <ul class="nav nav-tabs justify-content-center" role="tablist">
+                                        <li role="presentation" class="nav-item">
+                                            <a href="#card" data-toggle="tab" aria-controls="card" role="tab" title="Carrinho" class="nav-link">
+                                                <span>
+                                                    <i class="icon ion-md-card"></i>
+                                                    <p>Cartão</p>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li role="presentation" class="nav-item">
+                                            <a href="#boleto" data-toggle="tab" aria-controls="boelto" role="tab" title="Carrinho" class="nav-link">
+                                                <span>
+                                                    <i class="icon ion-md-print"></i>
+                                                    <p>Boleto</p>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="tab-content mt-2">
+                                        <div class="tab-pane" id="card">
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-12 d-md-flex">
+                                                    <div class="col-md-6">
+                                                        <form action="">
+                                                            <div class="form-group">
+                                                                <label for="num_card">Número do Cartão</label>
+                                                                <div class="d-flex align-items-center">
+                                                                    <input type="text" class="form-control mr-2" id="num_card" placeholder="Digite o número do seu cartão de crédito">
+                                                                    <img src="visa_band.ico" style="width: 40px;height: 40px;" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="num_card">Validade</label>
+                                                                <div class="d-flex">
+                                                                    <select class="custom-select mes">
+                                                                        <option value="0">Mês</option>
+                                                                        <option value="01">01</option>
+                                                                        <option value="02">02</option>
+                                                                        <option value="03">03</option>
+                                                                        <option value="04">04</option>
+                                                                        <option value="05">05</option>
+                                                                        <option value="06">06</option>
+                                                                        <option value="07">07</option>
+                                                                        <option value="08">08</option>
+                                                                        <option value="09">09</option>
+                                                                        <option value="10">10</option>
+                                                                        <option value="11">11</option>
+                                                                        <option value="12">12</option>
+                                                                    </select>
+                                                                    <select class="custom-select ano">
+                                                                        <option value="0">Ano</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group col-sm-5 px-0">
+                                                                <label for="cvv_card">Código de segurança</label>
+                                                                <div class="d-flex align-items-center">
+                                                                    <input type="text" class="form-control mr-2" id="cvv_card" placeholder="3 n° atrás do cartão">
+                                                                    <img src="cvv_card.png" style="width: 40px;" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <button type="button" class="btn primary-btn prev-step prev-button">Voltar</button>
+                                                                <button type="button" class="btn primary-btn">Limpar</button>
+                                                                <button type="button" class="btn primary-btn next-step next-button">Finalizar</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <!-- Cadstrar cartão  -->
+                                                    <div class="col-md-6 mt-sm-3 list-card">
+                                                        <form action="">
+                                                            <div class="card">
+                                                                <div class="card-body py-1 d-flex justify-content-between align-items-center">
+                                                                    <strong class="text-uppercase">4520-xxxx-xxxx-3526</strong>
+                                                                    <button type="button" class="btn primary-btn next-step next-button float-right "><i class="icon ion-md-card"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <!-- lista de cartões  -->
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="boleto">
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-6 px-4 py-3">
+                                                    <form action="">
+                                                        <h6><i class="icon ion-md-print"></i>Imprima o boleto e pague no banco</h6>
+                                                        <h6><i class="icon ion-md-barcode"></i>ou pague pela internet utilizando o código de barras do boleto</h6>
+                                                        <h6><i class="icon ion-md-calendar"></i>o prazo de validade do boleto é de 1 dia útil</h6>
+                                                        <button type="button" class="btn primary-btn prev-step next-button float-left">Voltar</button>
+                                                        <button type="button" id="abri_boleto" class="btn primary-btn next-step next-button float-right">Finalizar</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- Pagamento -->
+
+                        <div class="tab-pane py-3" role="tabpanel" id="step4">
+                            <h5 class="text-md-center">Obrigado pela sua Compra!!</h5>
+                            <div class="row d-md-flex mb-3">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="card ">
+                                        <div class="card-body py-2">
+                                            <h6 class="card-title">Endereço de envio e Total</h6>
+                                            <p>Estrada Coronel José Gladiador, <span> 2688</span></p>
+                                            <p>05267-000 - <span>Jardim Anhangüera</span></p>
+                                            <p>São Paulo/ <span>SP</span></p>
+                                            <hr>
+                                            <div class="d-flex justify-content-between">
+                                                <strong>Total</strong>
+                                                <strong>R$ 101,00</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="card d-none" id="cartao">
+                                        <div class="card-body py-2">
+                                            <h6 class="card-title">Dados de Pagamento</h6>
+                                            <p class="text-uppercase">4520-xxxx-xxxx-3526</p>
+                                            <p>Compra finalizada com pagamento no cartão de crédito, agora é so esperar chegar</p>
+                                            <p>Obrigado pela preferencia, sempre que precisar sabe onde nos encontrar!!</p>
+                                        </div>
+                                    </div>
+                                    <div class="card" id="pag_bolet">
+                                        <div class="card-body py2">
+                                            <h6 class="card-title">Dados de Pagamento</h6>
+                                            <p class="text-center font-weight-bold">Seu Compra foi efetuada.</p>
+                                            <p> Mas você ainda precisa efetuar o pagamento do boleto. Caso o boleto não seja pago até o vencimento, o pedido sera cancelado.</p>
+                                            <a href="#" class="btn" style="background-color: #60D956;color: #FFF;">Imprimir Boleto</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 d-flex justify-content-center mt-3">
+                                    <a href="#" class="btn primary-btn text-white">Continuar</a>
+                                </div>
+                            </div>
+                        </div><!-- Agradecimento -->
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</section>
+<!-- /CHECKOUT -->

@@ -1905,6 +1905,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
+    <Compile Include="Controllers\VendaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1923,6 +1924,8 @@
     <Content Include="Views\Cliente\JoinPage.cshtml" />
     <Content Include="Views\Cliente\ClientePage.cshtml" />
     <Content Include="Views\Produto\VProduto.cshtml" />
+    <Content Include="Views\Venda\Checkout.cshtml" />
+    <Content Include="Views\Produto\LProduto.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1954,6 +1957,10 @@
     <ProjectReference Include="..\Scrolls.DataAccessObject\Scrolls.DataAccessObject.csproj">
       <Project>{801B0B3F-0824-4DE7-A14B-8F664FFD6E32}</Project>
       <Name>Scrolls.DataAccessObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Scrolls.Database\Scrolls.Database.csproj">
+      <Project>{F9A7842F-4B25-4049-9847-1E3A93B3909F}</Project>
+      <Name>Scrolls.Database</Name>
     </ProjectReference>
     <ProjectReference Include="..\Scrolls.Entities\Scrolls.Entities.csproj">
       <Project>{85C6B71B-A884-4E59-A685-AD548444FD66}</Project>
