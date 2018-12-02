@@ -7,15 +7,8 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     tools:context=".PrincipalActivity">
-    <android.support.design.widget.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:id="@+id/nav_view"
-        app:headerLayout="@layout/menu_header"
-        app:menu="@menu/menu_principal"
-        android:background="@color/PretoPrincipal"
-        />
+
+
 
     <RelativeLayout
     android:layout_width="match_parent"
@@ -24,6 +17,15 @@
         android:id="@+id/IncludeToolbarPrincipal"
         layout="@layout/toolbar_main"
         android:visibility="visible"/>
+        <android.support.design.widget.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:id="@+id/nav_view"
+            app:headerLayout="@layout/menu_header"
+            app:menu="@menu/menu_principal"
+            android:background="@color/PretoPrincipal"
+            />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -80,25 +82,6 @@
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
 
-                        />
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:onClick="PerfilActivity"
-                        android:text="Perfil"
-                        />
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:onClick="MapaCLick"
-                        android:text="Mapa"
-                        />
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:onClick="CameraClick"
-                        android:text="Camera"
                         />
                 </LinearLayout>
     </ScrollView>

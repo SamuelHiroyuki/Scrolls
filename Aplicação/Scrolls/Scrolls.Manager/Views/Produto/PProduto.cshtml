@@ -10,10 +10,10 @@
 
 
 
-        <div class="sidebar-user-info" id="id">
+        <div class="sidebar-user-info" id="side_perfil">
             <div class="sui-normal">
                 <a href="/Home/CFuncionario" class="user-link">
-                    <img src="~/Assets/images/thumb-1@2x.png" width="55" alt="" class="img-circle">
+                    <img src="@Session["_Imagem"]" width="55" alt="" class="img-circle">
                 </a>
             </div>
         </div>
@@ -112,6 +112,7 @@
         #table-prod tr img {
             width: 50px;
         }
+
     </style>
 
     <script>
@@ -136,19 +137,15 @@
         }
     </script>
 
-    <div class="row">
+    <div class="tabs-vertical-env">
 
-        <div class="col-md-12">
+        <ul class="nav tabs-vertical">
+            <li class="active"><a href="#v-home" data-toggle="tab">Produtos em promoção</a></li>
+            <li><a href="#v-settings" data-toggle="tab">Iniciar promoção</a></li>
+        </ul>
 
-            <div class="tabs-vertical-env">
-
-                <ul class="nav tabs-vertical">
-                    <li class="active"><a href="#v-home" data-toggle="tab">Produtos em promoção</a></li>
-                    <li><a href="#v-settings" data-toggle="tab">Iniciar promoção</a></li>
-                </ul>
-
-                <div class="tab-content">
-                    <div class="tab-pane active" id="v-home">
+        <div class="tab-content">
+                    <div class="tab-pane active" style="position:relative;" id="v-home">
                         <table class="table table-bordered datatable" id="table-3">
                             <thead>
                                 <tr class="replace-inputs">
@@ -261,15 +258,9 @@
                             </tfoot>
                         </table>
                     </div>
-                </div>
-
-            </div>
-
         </div>
 
     </div>
-
-    
 </div>
 
 <script>

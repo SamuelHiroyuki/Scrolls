@@ -2,7 +2,10 @@ package com.example.vitor.scrolsfinal;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Button;
 
 public class CarrinhoActivity extends AppCompatActivity {
@@ -15,6 +18,13 @@ public class CarrinhoActivity extends AppCompatActivity {
         Toolbar mTopToolbar = (Toolbar) findViewById(R.id.IncludeToolbarCarrinho);
         setSupportActionBar(mTopToolbar);
 
+        RecyclerView rvCarrinho = (RecyclerView) findViewById(R.id.CarrinhoList);
+        LinearLayoutManager VerticalLayoutManager
+                = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        rvCarrinho.setLayoutManager(VerticalLayoutManager);
+
+
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -23,5 +33,12 @@ public class CarrinhoActivity extends AppCompatActivity {
 
         Button btn2 = (Button) mTopToolbar.findViewById(R.id.btnBlue);
         btn2.setText("Finalizar Comprar");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 }

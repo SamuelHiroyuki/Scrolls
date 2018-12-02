@@ -1,6 +1,7 @@
 package com.example.vitor.scrolsfinal;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -16,12 +17,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.example.vitor.scrolsfinal.Classes.DAO;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import in.goodiebag.carouselpicker.CarouselPicker;
 import technolifestyle.com.imageslider.FlipperLayout;
@@ -43,7 +46,7 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setCheckedItem(R.id.itmComprar);
-        navigationView.setNavigationItemSelectedListener(this );
+        navigationView.setNavigationItemSelectedListener(this);
 
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -93,11 +96,7 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         nomes.add("Jogos");
         nomes.add("Infantis");
 
-        ArrayList<String> precos = new ArrayList<>();
-        precos.add("15");
-        precos.add("69");
-        precos.add("21");
-        precos.add("02");
+
 
         RecyclerView recyclerView = findViewById(R.id.rvCategorias);
         LinearLayoutManager horizontalLayoutManager
@@ -108,12 +107,25 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
 
         recyclerView.setAdapter(adapter);
 
+        DAO dao = new DAO(getApplicationContext());
+
+      Cursor produtos = dao.ListarProd();
+      produtos.moveToFirst();
+        ArrayList<String> Nomes1 = new ArrayList<>();
+        ArrayList<Integer> imagens1 = new ArrayList<>();
+        ArrayList<Integer> precos1 = new ArrayList<>();
+
+        for(int i =0; i<= 5;i++){
+            Nomes1.add(produtos.getString(produtos.getColumnIndex("NameProd")));
+            imagens1.add(produtos.getInt(produtos.getColumnIndex("ImagemProd")));
+            precos1.add(produtos.getInt(produtos.getColumnIndex("PrecoProd")));
+        }
 
         RecyclerView rv1 = findViewById(R.id.rvNovo);
         LinearLayoutManager VerticalLayoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         rv1.setLayoutManager(VerticalLayoutManager);
-        prodAdapter1 = new AdapterProd(this,imagens,nomes,precos);
+        prodAdapter1 = new AdapterProd(this,imagens1,Nomes1,precos1);
 
         rv1.setAdapter(prodAdapter1);
 
@@ -123,7 +135,7 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         rv2.setLayoutManager(verticalLayoutManager);
 
 
-        prodAdapter2 = new AdapterProd(this,imagens,nomes,precos);
+        prodAdapter2 = new AdapterProd(this,imagens1,Nomes1,precos1);
 
         rv2.setAdapter(prodAdapter2);
 
@@ -149,15 +161,18 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
                 startActivity(intent);
                 break;
             case R.id.itmMapa:
-                intent = new Intent(this, MeusPedidosActivity.class);
+                intent = new Intent(getApplicationContext(), MapaActivity.class);
                 startActivity(intent);
                 break;
-                default:
-                    intent = new Intent(this,Principal.class);
-                    startActivity(intent);
-                    break;
+            case R.id.itmQRCam:
+                IntentIntegrator integrator = new IntentIntegrator(this);
+                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+                integrator.setCameraId(0);
+                integrator.initiateScan();
+                break;
+
         }
-        drawer.closeDrawer(GravityCompat.START);
+        //drawer.closeDrawer(GravityCompat.START); linha com erro
         return true;
 
 
@@ -177,7 +192,6 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
         integrator.setCameraId(0);
         integrator.initiateScan();
-
     }
 
     @Override

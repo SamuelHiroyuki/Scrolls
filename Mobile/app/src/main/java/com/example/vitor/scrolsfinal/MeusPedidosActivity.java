@@ -28,19 +28,19 @@ public class MeusPedidosActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.itmConfig:
-                        Intent intent = new Intent(getApplicationContext(), Principal.class);
+                        Intent intent = new Intent(getApplicationContext(), PrincipalActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.itmMapa:
-                        Intent intent2 = new Intent(getApplicationContext(), Principal.class);
+                        Intent intent2 = new Intent(getApplicationContext(), PrincipalActivity.class);
                         startActivity(intent2);
                         break;
                     case R.id.itmComprar:
-                        Intent intent3 = new Intent(getApplicationContext(), Principal.class);
+                        Intent intent3 = new Intent(getApplicationContext(), PrincipalActivity.class);
                         startActivity(intent3);
                         break;
                     case R.id.itmQRCam:
-                        Intent intent4 = new Intent(getApplicationContext(), Principal.class);
+                        Intent intent4 = new Intent(getApplicationContext(), PrincipalActivity.class);
                         startActivity(intent4);
                         break;
                 }

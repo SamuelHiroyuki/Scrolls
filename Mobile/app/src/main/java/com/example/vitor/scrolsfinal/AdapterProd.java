@@ -16,12 +16,12 @@ public class AdapterProd extends RecyclerView.Adapter<AdapterProd.ViewHolder> {
 
 private List<Integer> mImgs;
 private List<String> mNomes;
-private List<String> mPreco;
+private List<Integer> mPreco;
 private LayoutInflater mInflater;
 private Context mContect;
 
         // data is passed into the constructor
-        AdapterProd(Context context, List<Integer> Img, List<String> NomeProd, List<String> PrecoProd) {
+        AdapterProd(Context context, List<Integer> Img, List<String> NomeProd, List<Integer> PrecoProd) {
             this.mContect = context;
         this.mInflater = LayoutInflater.from(context);
         this.mImgs = Img;
@@ -40,8 +40,8 @@ public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 @Override
 public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         int img = mImgs.get(position);
-        String nome = mNomes.get(position);
-        String preco = mPreco.get(position);
+        final String nome = mNomes.get(position);
+        String preco = mPreco.get(position).toString();
         holder.ImgPrd.setImageResource(img);
         holder.NomeProd.setText(nome);
         holder.PrecoProd.setText(preco);
@@ -49,6 +49,7 @@ public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
             @Override
             public void onClick(View view, int position) {
                 Intent intent = new Intent(mContect, ProdutoInfoActivity.class);
+                intent.putExtra("NomeProd",nome);
                 mContect.startActivity(intent);
             }
 
