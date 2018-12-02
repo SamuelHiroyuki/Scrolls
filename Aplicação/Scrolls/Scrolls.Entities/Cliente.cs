@@ -16,11 +16,11 @@ namespace Scrolls.Entities
         public string Nome { get; set; }
 
         public string Sobrenome { get; set; }
-        [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "Formato de email inválido."), MaxLength(320)]
+        
         public string Email { get; set; } 
 
         public string Imagem { get; set; }
-        [Required(ErrorMessage = "O campo CPF não pode estar vazio."), RegularExpression(@"(^\d{3}\x2E\d{3}\x2E\d{3}\x2D\d{2}$)", ErrorMessage = "Somente números são aceitos."), MaxLength(14)]
+        
         public string CPF { get; set; }
                 
         public string Senha { get; set; }

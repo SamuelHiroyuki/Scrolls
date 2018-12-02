@@ -53,5 +53,15 @@ namespace Scrolls.DataAccessObject
         {
             return context.Produtos.Where(p => p.Promocao == null || p.Promocao == 0).ToList();
         }
+
+        public IList<Produto> IsNew()
+        {
+            return context.Produtos.OrderByDescending(p => p.Id).Take(12).ToList();
+        }
+
+        public IList<Produto> IsRep()
+        {
+            return context.Produtos.Where(p => p.Reposto != null).OrderByDescending(p => p.Id).Take(12).ToList();
+        }
     }
 }

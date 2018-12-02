@@ -19,29 +19,29 @@
 </head>
 <body class="container py-5">
     <div class="row justify-content-end">
-        <div class="col-md-5 bg-light px-5 py-4 rounded">
-            <h3>Login</h3>
+        <div class="col-md-5 bg-light px-5 py-4 rounded" style="background-color: rgba(55, 57, 78, 0.8) !important;">
+            <h3 style="color: #fff;padding-bottom: 20px;padding-top: 10px;">Login</h3>
             <form method="post" action="/Home/Logar">
                 <div class="form-group @ViewBag.V">
-                    <label for="email" class="col-sm-12 col-form-label col-form-label-lg">Endereço de email</label>
-                    <input type="text" class="form-control form-control-lg" nome="nr" value="@ViewBag.Nome" id="email" aria-describedby="emailHelp" placeholder="Seu email">
+                    <label for="email" class="col-sm-12 col-form-label col-form-label-lg" style="color: #fff;padding-left: 0px;">Endereço de email</label>
+                    <input type="text" class="form-control form-control-lg" style="font-size: 14px !important" name="nr" value="@ViewBag.Nome" id="email" aria-describedby="emailHelp" placeholder="Seu email">
                 </div>
                 <div class="form-group @ViewBag.V">
                     <div class="d-flex justify-content-between align-items-center">
-                        <label for="password" class="col-sm-2 col-form-label col-form-label-lg">Senha</label>
-                        <p class="m-0"><a href="#">Esqueceu senha senha?</a></p>
+                        <label for="password" class="col-sm-2 col-form-label col-form-label-lg" style="color: #fff;padding-left: 0px;">Senha</label>
+                        <p class="m-0"><a href="#" style="font-size: 12px;">Esqueceu senha senha?</a></p>
                     </div>
-                    <input type="password" class=" form-control form-control-lg" name="s" id="password" placeholder="Senha">
+                    <input type="password" class=" form-control form-control-lg" style="font-size: 14px !important" name="s" value="@ViewBag.S" id="password" placeholder="Senha">
                 </div>
                 <div class="bg-danger p-2 d-none text-center rounded text-light" style='@ViewBag.LoginE'>
                     <Strong>Login inválido</strong>
                         <br>
                     <small>Email e/ou Senha incorretos</small>
                 </div>
-                <button type="submit" class="btn btn-confirmar w-100 mt-5">Logar</button>
+                <button type="submit" class="btn btn-confirmar w-100 mt-5" style="font-size: 22px;margin-top: 30px !important;">Logar</button>
             </form>            
             <div class="col-sm-12 d-flex justify-content-center mt-2">
-                <p>Não tem uma conta ainda? <a href="/Cliente/JoinPage">Crie uma aqui</a></p>
+                <p style="color: #fff;font-size: 14px;">Não tem uma conta ainda? <a href="/Cliente/JoinPage">Crie uma aqui</a></p>
             </div>
         </div>
     </div>

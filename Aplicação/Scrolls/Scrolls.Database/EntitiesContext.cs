@@ -34,10 +34,6 @@ namespace Scrolls.Database {
             modelBuilder.Entity<Avaliacao>().HasKey(a => new { a.ClienteId, a.ProdutoId});
 
             modelBuilder.Entity<ProdutoVenda>().HasKey(pv => new { pv.ProdutoId, pv.VendaId });
-
-            modelBuilder.Entity<Cliente>().HasIndex(u => u.CPF).IsUnique();
-
-            modelBuilder.Entity<Cliente>().HasIndex(u => u.Email).IsUnique();
                      
 
             base.OnModelCreating(modelBuilder);

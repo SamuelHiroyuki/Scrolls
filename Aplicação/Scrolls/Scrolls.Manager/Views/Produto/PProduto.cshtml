@@ -176,7 +176,7 @@
                                         <td>@i.Promocao%</td>
 
                                         <td>
-                                            @Math.Round(Convert.ToDouble((i.Preco * i.Promocao) / 100), 2)
+                                            @Math.Round(Convert.ToDouble(((i.Preco * i.Promocao) / 100) - i.Preco), 2)
                                         </td>
                                         <td>
                                             <form method="post" action="/Produto/SetPromo" name="@i.Id">

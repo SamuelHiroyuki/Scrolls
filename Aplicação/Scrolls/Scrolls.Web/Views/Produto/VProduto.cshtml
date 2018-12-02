@@ -1,0 +1,414 @@
+﻿
+@{
+    ViewBag.Title = ViewBag.P.Nome;
+
+    ViewBag.Active = "show-on-click";
+}
+
+<!-- PRODUCT VIEW -->
+<section class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!--  Product Details -->
+            <div class="product product-details col-md-12 d-md-flex justify-content-md-between align-items-md-center">
+                <div class="col-md-5 col-12">
+                    <div id="product-main-view" class="owl-carousel owl-theme">
+                        <div class="product-view item">
+                            <img src="@ViewBag.P.Imagem1" alt="">
+                        </div>
+                        <div class="product-view item">
+                            <img src="@ViewBag.P.Imagem2" alt="">
+                        </div>
+                        <div class="product-view item">
+                            <img src="@ViewBag.P.Imagem3" alt="">
+                        </div>
+                        <div class="product-view item">
+                            <img src="@ViewBag.P.Imagem4" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="product-body ">
+                        <div class="product-label">
+                            @if (ViewBag.P.Promocao != null)
+                            {
+                                <span class="sale">-@ViewBag.P.Promocao%</span>
+                            }
+                            @if (ViewBag.P.Quantidade <= 0)
+                            {
+
+                                <span class="replace">Esgotado</span>
+                            }
+                        </div>
+                        <h4 class="product-name">@ViewBag.P.Nome</h4>
+                        @if (ViewBag.P.Promocao != null)
+                        {
+                            <h5 class="product-price">R$ @Math.Round(Convert.ToDouble(((ViewBag.P.Preco * ViewBag.P.Promocao) / 100) - ViewBag.P.Preco), 2) <del class="product-old-price">R$ @ViewBag.P.Preco</del></h5>
+                        }
+                        else
+                        {
+                            <h5 class="product-price">R$ @ViewBag.P.Preco</h5>
+                        }
+                        <div class="d-flex">
+                            <p class="mr-2">CÓD.:(@ViewBag.P.Id)</p>
+                            <div class="product-rating">
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star-outline empty"></i>
+                            </div>
+                            <p>(12)</p>
+                        </div>
+                        <p><strong>Disponibilidade:</strong>(@ViewBag.P.Quantidade)</p>
+                        <form class="input-group col-sm-6 my-2 d-flex p-0">
+                            <span class="text-uppercase input-group-text p-0 font-weight-bold" for="cep">CEP: </span>
+                            <input class="form-control mx-2" id="calccep" type="text">
+                            <button class="text-uppercase btn btn-primary">Calcular</button>
+                        </form>
+                        <div class="product-btns d-sm-flex">
+                            <form action="" class="mb-2">
+                                <button class="secundary-btn add-to-cart">Comprar Agora</button>
+                            </form>
+                            <form action="">
+                                <button class="primary-btn add-to-cart teste" type="button"><i class="icon ion-md-cart"></i> Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Product Details -->
+    </div>
+    <!-- /row -->
+    <!-- /container -->
+</section>
+<!-- /PRODUCT VIEW -->
+<!-- DISCRETION -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title">Descrição</h4>
+                </div>
+            </div>
+            <div class="col-md-12 text-justify">
+                <p>@ViewBag.P.Descricao</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /DISCRETION  -->
+<!-- BUY TOGETHER-->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title">Leve Junto</h4>
+                </div>
+            </div>
+            <div class="col-md-12 d-md-flex align-items-md-center">
+                <div class="col-md-4 fp">
+                    <!-- Product Single -->
+                    <div class="product-takealong product-single">
+                        <div class="product-thumb">
+                            <div class="product-label">
+                                <span>New</span>
+                                <span class="sale"></span>
+                                <span class="replace"></span>
+                            </div>
+                            <img src="product-img/product-2.jpg" alt="">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-price">R$ 32.50 <del class="product-old-price"></del></h5>
+                            <p class="product-name"><a href="#">Nanatsu no Taizai</a></p>
+                            <div class="product-rating">
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star-outline empty"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Product Single -->
+                </div>
+                <div class="col-md-5 d-inline-block py-md-5 dp">
+                    <!-- Product Single -->
+                    <div class="product-takealong product-single-2 d-flex">
+                        <div class="product-thumb">
+                            <div class="product-label">
+                                <span>New</span>
+                                <span class="sale"></span>
+                                <span class="replace"></span>
+                            </div>
+                            <img src="product-img/product-3.jpg" alt="">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-price">R$ 32.50 <del class="product-old-price"></del></h5>
+                            <p class="product-name"><a href="#">HOTD</a></p>
+                            <div class="product-rating">
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star-outline empty"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Product Single -->
+                    <hr>
+                    <!-- Product Single -->
+                    <div class="product-takealong product-single-2 d-flex">
+                        <div class="product-thumb">
+                            <div class="product-label">
+                                <span>New</span>
+                                <span class="sale"></span>
+                                <span class="replace"></span>
+                            </div>
+                            <img src="product-img/product-4.jpg" alt="">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-price">R$ 32.50 <del class="product-old-price"></del></h5>
+                            <p class="product-name"><a href="#">Akame Ga Kill</a></p>
+                            <div class="product-rating">
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star-outline empty"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Product Single -->
+                </div>
+                <div class="col-md-3 d-flex justify-content-center align-items-center buy-to">
+                    <form action="">
+                        <button type="submit" class="btn primary-btn">Compre Junto</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /BUY TOGETHER  -->
+<!-- DATASHEET -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title">Ficha Técnica</h4>
+                </div>
+            </div>
+            <div class="col-md-12" id="tabela">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /DATASHEET  -->
+<!-- SEE TOO -->
+<section id="st">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title">Veja Também</h4>
+                    <div class="float-right">
+                        <div class="product-slick-dots-3 custom-dots"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Title -->
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="product-slick-3" class="product-slick">
+                    <!-- Product Single -->
+                    <div class="product product-single">
+                        <div class="product-thumb">
+                            <div class="product-label">
+                                <span>New</span>
+                                <span class="sale"></span>
+                                <span class="replace"></span>
+                            </div>
+                            <img src="product-img/product-1.png" alt="">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-price">R$ 32.50 <del class="product-old-price"></del></h5>
+                            <p class="product-name"><a href="#">Harry Potter</a></p>
+                            <div class="product-rating">
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star-outline empty"></i>
+                            </div>
+                            <form action="" class="product-btns d-flex justify-content-center">
+                                <button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /Product Single -->
+                    <!-- Product Single -->
+                    <div class="product product-single">
+                        <div class="product-thumb">
+                            <div class="product-label">
+                                <span>New</span>
+                                <span class="sale"></span>
+                                <span class="replace"></span>
+                            </div>
+                            <img src="product-img/product-2.jpg" alt="">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
+                            <p class="product-name"><a href="#">Nanatsu no Taizai</a></p>
+                            <div class="product-rating">
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star-outline empty"></i>
+                            </div>
+                            <form action="" class="product-btns d-flex justify-content-center">
+                                <button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /Product Single -->
+                    <!-- Product Single -->
+                    <div class="product product-single">
+                        <div class="product-thumb">
+                            <div class="product-label">
+                                <span>New</span>
+                                <span class="sale"></span>
+                                <span class="replace"></span>
+                            </div>
+                            <img src="product-img/product-3.jpg" alt="">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
+                            <p class="product-name"><a href="#">HOTD</a></p>
+                            <div class="product-rating">
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star-outline empty"></i>
+                            </div>
+                            <form action="" class="product-btns d-flex justify-content-center">
+                                <button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /Product Single -->
+                    <!-- Product Single -->
+                    <div class="product product-single">
+                        <div class="product-thumb">
+                            <div class="product-label">
+                                <span>New</span>
+                                <span class="sale"></span>
+                                <span class="replace"></span>
+                            </div>
+                            <img src="product-img/product-4.jpg" alt="">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-price">R$ 32.50 <del class="product-old-price">R$ 45.00</del></h5>
+                            <p class="product-name"><a href="#">Akame ga KIll</a></p>
+                            <div class="product-rating">
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star"></i>
+                                <i class="icon ion-md-star-outline empty"></i>
+                            </div>
+                            <form action="" class="product-btns d-flex justify-content-center">
+                                <button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /Product Single -->
+
+                </div><!-- Product-Slick -->
+            </div><!-- grid -->
+        </div><!-- row -->
+    </div><!-- container -->
+</section>
+<!-- /SEE TOO -->
+<!-- ASSESSMENTS -->
+<section class="mb-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title">Avaliações</h4>
+                </div>
+                <div class="col-md-12 py-2 d-flex justify-content-between align-items-center">
+                    <div class="d-flex">
+                        <h4 class="mr-2 mb-0">4.7</h4>
+                        <div class="product-rating" style="font-size: 25px">
+                            <i class="icon ion-md-star"></i>
+                            <i class="icon ion-md-star"></i>
+                            <i class="icon ion-md-star"></i>
+                            <i class="icon ion-md-star"></i>
+                            <i class="icon ion-md-star-outline empty"></i>
+                        </div>
+                        <div class="align-bottom ml-2">
+                            <p class="mb-0 mt-1">(152)</p>
+                        </div>
+                    </div>
+                    <button class="btn secundary-btn" type="button" data-toggle="collapse" data-target="#addassessments" aria-expanded="false" aria-controls="addassessments">
+                        Avaliar
+                    </button>
+                </div>
+                <div class="collapse" id="addassessments">
+                    <div class="card card-body">
+                        <form class="review-form">
+                            <div class="form-group">
+                                <label class="text-uppercase" for="coment">Título:</label>
+                                <input type="text" class="input form-control" maxlength="50" name="coment" placeholder="Título" />
+                            </div>
+                            <div class="form-group">
+                                <label class="text-uppercase" for="coment">Comentário:</label>
+                                <textarea class="input form-control" name="coment" rows="10" placeholder="Comentário"></textarea>
+                            </div>
+                            <div class="form-group d-flex justify-content-between align-items-center">
+                                <div class="input-rating">
+                                    <strong class="text-uppercase">Avaliação: </strong>
+                                    <div class="stars">
+                                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
+                                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
+                                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
+                                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
+                                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                                    </div>
+                                </div>
+                                <button class="primary-btn">Confimar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card card-body rounded-0 mt-4 py-3">
+                    <div class="d-flex justify-content-between">
+                        <h6>UAAUUUU!!</h6>
+                        <h6>25/05/2005</h6>
+                    </div><!-- Title and Date -->
+                    <div class="product-rating" style="font-size: 15px">
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star"></i>
+                        <i class="icon ion-md-star-outline empty"></i>
+                    </div><!-- Rate -->
+                    <p>Nossa que livro maravilhoso quero mais desse genero vende pra mim.</p>
+                </div><!-- Comments -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /ASSESSMENTS  -->

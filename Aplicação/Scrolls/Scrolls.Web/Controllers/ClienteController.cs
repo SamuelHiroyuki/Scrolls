@@ -23,8 +23,7 @@ namespace Scrolls.Web.Controllers
 
         public ActionResult CadaCli(string nome, string sobrenome, string email, string cpf, string senha)
         {
-            cpf.Replace(".", "");
-            cpf.Replace("-", "");
+            cpf.Replace(".", "").Replace("-", "");
             Cliente cliente = new Cliente()
             {
                 Nome = nome,
@@ -35,7 +34,7 @@ namespace Scrolls.Web.Controllers
             };
             ClienteDAO cdao = new ClienteDAO();
             cdao.Cadastrar(cliente);
-            return RedirectToAction("LoginPage", "Home");
+            return RedirectToAction("LoginPage", "Home", new { email = email, senha = senha });
         }
 
         public ActionResult AtuaCli(Cliente cliente)
@@ -64,6 +63,38 @@ namespace Scrolls.Web.Controllers
         public ActionResult AtualizarCli()
         {
             return View();
+        }
+
+        public JsonResult Verificar(string email, string cpf)
+        {
+            bool[] result = new bool[3];
+            if (cpf.Replace("_", "").Replace(".", "").Replace("-", "").Length == 11)
+            {
+                result[0] = true;
+            }
+            else
+            {
+                result[0] = false;
+            }
+
+            if (new ClienteDAO().BuscarEmail(email) == null)
+            {
+                result[1] = false;
+            }
+            else
+            {
+                result[1] = true;
+            }
+
+            if (!email.Contains('.'))
+            {
+                result[2] = false;
+            }
+            else
+            {
+                result[2] = true;
+            }
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
 }
