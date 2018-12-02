@@ -1,0 +1,241 @@
+﻿
+@{
+    ViewBag.Title = "ClientePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="container mt-3 mb-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <div class="img-profile">
+                        <img src="avatar.png" alt="">
+                    </div>
+                    <div class="ml-3">
+                        <h4>@ViewBag.cliente.Nome @ViewBag.cliente.Sobrenome</h4>
+                        <strong>@ViewBag.cliente.Email</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 mt-2 ">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" role="tab" href="#ped">Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" role="tab" href="#card">Cartões</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" role="tab" href="#cadas">Cadastro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" role="tab" href="#ende">Endereços</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active py-3" role="tabpanel" id="ped">
+                    <div class="row px-4">
+                        <div class="col-md-8 text-center">
+                            <!-- Product Single -->
+                            <div class="product-takealong product-single-2 d-flex align-items-center">
+                                <div class="product-thumb">
+                                    <div class="product-label">
+                                        <span>New</span>
+                                        <span class="sale"></span>
+                                    </div>
+                                    <img src="product-img/product-3.jpg" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+                                    <div class="product-rating">
+                                        <i class="icon ion-md-star"></i>
+                                        <i class="icon ion-md-star"></i>
+                                        <i class="icon ion-md-star"></i>
+                                        <i class="icon ion-md-star"></i>
+                                        <i class="icon ion-md-star-outline empty"></i>
+                                    </div>
+                                    <h5 class="product-price">R$ 32.50 <del class="product-old-price"></del></h5>
+                                </div>
+                            </div>
+                            <!-- /Product Single -->
+                            <hr>
+                            <!-- Product Single -->
+                            <div class="product-takealong product-single-2 d-flex align-items-center">
+                                <div class="product-thumb">
+                                    <div class="product-label">
+                                        <span>New</span>
+                                        <span class="sale"></span>
+                                    </div>
+                                    <img src="product-img/product-3.jpg" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-name"><a href="#">Nome do Produto vai aqui</a></p>
+                                    <div class="product-rating">
+                                        <i class="icon ion-md-star"></i>
+                                        <i class="icon ion-md-star"></i>
+                                        <i class="icon ion-md-star"></i>
+                                        <i class="icon ion-md-star"></i>
+                                        <i class="icon ion-md-star-outline empty"></i>
+                                    </div>
+                                    <h5 class="product-price">R$ 32.50 <del class="product-old-price"></del></h5>
+                                </div>
+                            </div>
+                            <!-- /Product Single -->
+                        </div>
+                    </div>
+                </div><!-- Lista de Pedidos -->
+
+                <div class="tab-pane py-3" role="tabpanel" id="card">
+                    <div class="col-md-12 d-md-flex">
+                        <div class="col-md-6">
+                            <form action="" id="cadacard">
+                                <div class="form-group">
+                                    <label for="num_card">Número do Cartão</label>
+                                    <div class="d-flex align-items-center">
+                                        <input type="text" class="form-control mr-2" required id="num_card" placeholder="Digite o número do seu cartão de crédito">
+                                        <img src="visa_band.ico" style="width: 40px;height: 40px;" alt="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="num_card">Validade</label>
+                                    <div class="d-flex">
+                                        <select class="custom-select mes">
+                                            <option value="0">Mês</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <select class="custom-select ano">
+                                            <option value="0">Ano</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-5 px-0">
+                                    <label for="cvv_card">Código de segurança</label>
+                                    <div class="d-flex align-items-center">
+                                        <input type="text" class="form-control mr-2" required id="cvv_card" placeholder="3 n° atrás do cartão">
+                                        <img src="cvv_card.png" style="width: 40px;" alt="">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn primary-btn">Limpar</button>
+                                <button type="submit" class="btn primary-btn">Cadastrar</button>
+                            </form>
+                        </div>
+                        <!-- Cadstrar cartão  -->
+                        <div class="col-md-6 mt-sm-3 list-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="text-uppercase">4520-xxxx-xxxx-3526</h5>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="text-uppercase">4520-xxxx-xxxx-3526</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- lista de cartões  -->
+                    </div>
+                </div><!-- Area de Cartões -->
+
+                <div class="tab-pane py-3" role="tabpanel" id="cadas">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <form method="post" action="/Cliente/AtuaCli">
+                                <div class="form-group">
+                                    <label for="nome" class="col-sm-12 col-form-label col-form-label-lg">Nome</label>
+                                    <input type="text" class="form-control form-control-lg" name="cli.Nome" value="@ViewBag.cliente.Nome" required id="nome">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sobrenome" class="col-sm-12 col-form-label col-form-label-lg">Sobrenome</label>
+                                    <input type="text" class=" form-control form-control-lg" name="cli.Sobrenome" value="@ViewBag.cliente.Sobrenome" required id="sobrenome">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cpf" class="col-sm-12 col-form-label col-form-label-lg">CPF</label>
+                                    <input type="text" readonly="readonly" class=" form-control  form-control-lg" name="cli.CPF" value="@ViewBag.cliente.CPF" id="cpf">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-12 col-form-label col-form-label-lg">Seu Email</label>
+                                    <input type="email" readonly="readonly" class=" form-control form-control-lg" name="cli.Email" value="@ViewBag.cliente.Email" id="email">
+                                </div>
+                                <div class="w-100 text-center">
+                                    <button type="submit" class="btn primary-btn">Salvar alterações</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div><!-- Area de Cadastro -->
+
+                <div class="tab-pane py-3" role="tabpanel" id="ende">
+                    <div class="col-md-12 d-md-flex">
+                        <div class="col-md-6">
+                            <form action="" id="cadastrarEnd" class="mt-2">
+                                <fieldset class="form-group">
+                                    <div class="form-group">
+                                        <label for="cep">CEP</label>
+                                        <input type="text" class="form-control" required id="cep" aria-describedby="cep" placeholder="CEP">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="endereco">Endereço</label>
+                                        <input type="text" class="form-control" disabled id="endereco" placeholder="Endereço">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="num">Número</label>
+                                        <input type="text" class="form-control" required onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="num" aria-describedby="num" placeholder="Número">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="comp">Complemento</label>
+                                        <input type="text" class="form-control" required id="comp" aria-describedby="comp" placeholder="Complemento">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="bar">Bairro</label>
+                                        <input type="text" class="form-control" disabled id="bar" aria-describedby="bar" placeholder="Bairro">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cid">Cidade</label>
+                                        <input type="text" class="form-control" disabled id="cid" aria-describedby="id" placeholder="Cidade">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="uf">Estado</label>
+                                        <input type="text" class="form-control" disabled id="uf" aria-describedby="uf" placeholder="Estado">
+                                    </div>
+                                </fieldset>
+                                <button type="submit" id="cadend" class="btn primary-btn">Cadastrar</button>
+                            </form>
+                        </div><!-- Cadastrar Endereço-->
+                        <div class="col-md-6 mt-sm-3 litas-end">
+                            <div class="card py-0">
+                                <div class="card-body py-2">
+                                    <p>Estrada Coronel José Gladiador, <span> 2688</span></p>
+                                    <p>05267-000 - <span>Jardim Anhangüera</span></p>
+                                    <p>São Paulo/ <span>SP</span></p>
+                                </div>
+                            </div><!-- Card Endereço -->
+
+                            <div class="card py-0">
+                                <div class="card-body py-2">
+                                    <p>Estrada Coronel José Gladiador, <span> 2688</span></p>
+                                    <p>05267-000 - <span>Jardim Anhangüera</span></p>
+                                    <p>São Paulo/ <span>SP</span></p>
+                                </div>
+                            </div><!-- Card Endereço -->
+                        </div><!-- lista de endereços -->
+                    </div>
+                </div><!-- Area de Endereços-->
+            </div>
+        </div>
+    </div>
+</section>
+

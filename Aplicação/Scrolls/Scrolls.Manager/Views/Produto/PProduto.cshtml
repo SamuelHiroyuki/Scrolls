@@ -1,0 +1,413 @@
+﻿
+@{
+    ViewBag.Title = "Gerenciar promoção";
+}
+
+
+<div class="sidebar-menu">
+
+    <div class="sidebar-menu-inner" style="position: fixed !important;">
+
+
+
+        <div class="sidebar-user-info" id="side_perfil">
+            <div class="sui-normal">
+                <a href="/Home/CFuncionario" class="user-link">
+                    <img src="@Session["_Imagem"]" width="55" alt="" class="img-circle">
+                </a>
+            </div>
+        </div>
+
+        <ul id="main-menu" class="main-menu">
+            <li>
+                <a href="#">
+                    <i class="entypo-home" style="padding-left: 4px;"></i>
+                    <i style="font-size: 8px; padding-left: 6px;">Loja</i>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+</div>
+
+<div class="main-content" id="pr">
+    <h3>Gerenciar promoções</h3>
+    <br />
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            var $table3 = jQuery("#table-3");
+
+            var table3 = $table3.DataTable({
+                "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]]
+            });
+
+            // Initalize Select Dropdown after DataTables is created
+            $table3.closest('.dataTables_wrapper').find('select').select2({
+                minimumResultsForSearch: -1
+            });
+
+            // Setup - add a text input to each footer cell
+            $('#table-3 tfoot .src').each(function () {
+                var title = $('#table-3 thead th').eq($(this).index()).text();
+                $(this).html('<input type="text"  style="font-size: 8px;" class="form-control" placeholder="' + title + '" />');
+            });
+
+            // Apply the search
+            table3.columns().every(function () {
+                var that = this;
+
+                $('input', this.footer()).on('keyup change', function () {
+                    if (that.search() !== this.value) {
+                        that
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
+        });
+
+        jQuery(document).ready(function ($) {
+            var $table3 = jQuery("#table-prod");
+
+            var table3 = $table3.DataTable({
+                "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]]
+            });
+
+            // Initalize Select Dropdown after DataTables is created
+            $table3.closest('.dataTables_wrapper').find('select').select2({
+                minimumResultsForSearch: -1
+            });
+
+            // Apply the search
+            table3.columns().every(function () {
+                var that = this;
+
+                $('input', this.footer()).on('keyup change', function () {
+                    if (that.search() !== this.value) {
+                        that
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
+        });
+    </script>
+
+    <style>
+        #table-3 td {
+            vertical-align: middle;
+            padding: 3px 8px;
+        }
+
+        a.btn + a.btn {
+            margin-left: 3rem;
+        }
+
+        #table-3 tr img {
+            width: 50px;
+        }
+
+        #table-prod tr img {
+            width: 50px;
+        }
+
+    </style>
+
+    <script>
+        function n(x) {
+            var p = $('form[name=' + x + '] input');
+
+            if (p.val() > 99) {
+                toastr.warning('Não é permitido alterar o valor da promoção para um valor maior que 99%!', 'Atenção!')
+                p.removeClass('bc-r').addClass('bc-y');
+                $('form[name=' + x + '] .fa').removeClass('bc-r').addClass('bc-y');
+            } else {
+                if (p.val() <= 0) {
+                    toastr.error('O valor não pode ser negativo!', 'Atenção!')
+                    p.addClass('bc-r');
+                    $('form[name=' + x + '] .fa').addClass('bc-r');
+                } else {
+                    p.removeClass('bc-r');
+                    $('form[name=' + x + '] .fa').removeClass('bc-r');
+                    $('form[name=' + x + ']').submit();
+                }
+            }
+        }
+    </script>
+
+    <div class="tabs-vertical-env">
+
+        <ul class="nav tabs-vertical">
+            <li class="active"><a href="#v-home" data-toggle="tab">Produtos em promoção</a></li>
+            <li><a href="#v-settings" data-toggle="tab">Iniciar promoção</a></li>
+        </ul>
+
+        <div class="tab-content">
+                    <div class="tab-pane active" style="position:relative;" id="v-home">
+                        <table class="table table-bordered datatable" id="table-3">
+                            <thead>
+                                <tr class="replace-inputs">
+                                    <th>Código</th>
+                                    <th>Imagem destaque</th>
+                                    <th>Nome</th>
+                                    <th>Preço original</th>
+                                    <th>Promoção</th>
+                                    <th>Preço com promoção</th>
+                                    <th>Alterar valor de promoção</th>
+                                    <th>Encerrar promoção</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var i in ViewBag.HasPromo)
+                                {
+
+                                    <tr>
+                                        <td>@i.Id</td>
+                                        <td>
+                                            <img src="@i.Imagem1" class="img-rounded" />
+                                        </td>
+                                        <td>@i.Nome</td>
+                                        <td>@i.Preco</td>
+                                        <td>@i.Promocao%</td>
+
+                                        <td>
+                                            @Math.Round(Convert.ToDouble(((i.Preco * i.Promocao) / 100) - i.Preco), 2)
+                                        </td>
+                                        <td>
+                                            <form method="post" action="/Produto/SetPromo" name="@i.Id">
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default fa" type="button" onclick="m('@i.Id');"><i class="entypo-plus-circled"></i></button>
+                                                    </span>
+                                                    <input type="number" class="form-control" min="5" max="95" name="pro">
+                                                    <span class="input-group-addon fa">%</span>
+                                                    <textarea name="id" hidden>@i.Id</textarea>
+                                                    <textarea name="@i.Id" hidden>@i.Promocao</textarea>
+                                                </div>
+                                            </form>
+                                        </td>
+
+                                        <td style="text-align: center;">
+                                            <a href='@Url.Action("RemovePromo", "Produto", new { id = i.Id})' class="btn btn-danger btn-sm btn-icon icon-left">
+                                                <i class="entypo-cancel"></i>
+                                                Remover promoção
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th class="src"></th>
+                                    <th></th>
+                                    <th class="src"></th>
+                                    <th class="src"></th>
+                                    <th class="src"></th>
+                                    <th class="src"></th>
+                                    <th class="src"></th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane" id="v-settings">
+                        <table class="table table-bordered datatable" id="table-prod">
+                            <thead>
+                                <tr class="replace-inputs">
+                                    <th>Id</th>
+                                    <th>Imagem</th>
+                                    <th>Nome</th>
+                                    <th>Descrição</th>
+                                    <th>Adicionar promoção</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var p in ViewBag.NoPromo)
+                                {
+                                    <tr>
+                                        <td style="width: 10%;">@p.Id</td>
+                                        <td style="width: 15%;"><img src="@p.Imagem1" class="img-rounded" /></td>
+                                        <td>@p.Nome</td>
+                                        <td>@p.Descricao</td>
+                                        <td style="width: 15%;">
+                                            <form method="post" action="/Produto/SetPromo" name="@p.Id">
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default fa" type="button" onclick="n('@p.Id');"><i class="entypo-plus-circled"></i></button>
+                                                    </span>
+                                                    <input type="number" class="form-control" min="5" max="95" name="pro">
+                                                    <span class="input-group-addon fa">%</span>
+                                                    <textarea name="id" hidden>@p.Id</textarea>
+                                                    <textarea name="@p.Id" hidden>@p.Promocao</textarea>
+                                                </div>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function m(x) {
+        var p = $('form[name=' + x + '] input');
+
+        if (p.val() == $('form[name=' + x + '] textarea[name=' + x + ']').val()) {
+            toastr.warning('Não é possivel alterar o valor da promoção colocando o valor atual!', 'Atenção!')
+            p.removeClass('bc-r').addClass('bc-y');
+            $('form[name=' + x + '] .fa').removeClass('bc-r').addClass('bc-y');
+        } else {
+            if (p.val() > 99) {
+                toastr.warning('Não é permitido alterar o valor da promoção para um valor maior que 99%!', 'Atenção!')
+                p.removeClass('bc-r').addClass('bc-y');
+                $('form[name=' + x + '] .fa').removeClass('bc-r').addClass('bc-y');
+            } else {
+                if (p.val() <= 0) {
+                    toastr.error('O valor não pode ser negativo!', 'Atenção!')
+                    p.addClass('bc-r').removeClass('bc-y');
+                    $('form[name=' + x + '] .fa').addClass('bc-r').removeClass('bc-y');
+                } else {
+                    p.removeClass('bc-r').removeClass('bc-y');
+                    $('form[name=' + x + '] .fa').removeClass('bc-r').removeClass('bc-y');
+                    $('form[name=' + x + ']').submit();
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .bc-r {
+        border-color: #cc2424;
+    }
+
+    .bc-r:focus {
+        border-color: #cc2424;
+    }
+
+    .bc-y {
+        border-color: #fbc404;
+    }
+
+    .bc-y:focus {
+        border-color: #fbc404;
+    }
+</style>
+
+
+<link rel="stylesheet" href="~/Assets/js/jvectormap/jquery-jvectormap-1.2.2.css">
+<link rel="stylesheet" href="~/Assets/js/rickshaw/rickshaw.min.css">
+
+<!-- Bottom scripts (common) -->
+<script src="~/Assets/js/gsap/TweenMax.min.js"></script>
+<script src="~/Assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+<script src="~/Assets/js/bootstrap.js"></script>
+<script src="~/Assets/js/joinable.js"></script>
+<script src="~/Assets/js/resizeable.js"></script>
+<script src="~/Assets/js/neon-api.js"></script>
+<script src="~/Assets/js/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="~/Assets/js/jvectormap/jquery-jvectormap-europe-merc-en.js"></script>
+<script src="~/Assets/js/jquery.sparkline.min.js"></script>
+<script src="~/Assets/js/rickshaw/vendor/d3.v3.js"></script>
+<script src="~/Assets/js/rickshaw/rickshaw.min.js"></script>
+<script src="~/Assets/js/raphael-min.js"></script>
+<script src="~/Assets/js/morris.min.js"></script>
+<script src="~/Assets/js/toastr.js"></script>
+<script src="~/Assets/js/neon-chat.js"></script>
+
+<link rel="stylesheet" href="~/Assets/js/datatables/datatables.css">
+<link rel="stylesheet" href="~/Assets/js/select2/select2-bootstrap.css">
+<link rel="stylesheet" href="~/Assets/js/select2/select2.css">
+
+
+<script src="~/Assets/js/datatables/datatables.js"></script>
+<script src="~/Assets/js/select2/select2.min.js"></script>
+
+<!-- JavaScripts initializations and stuff -->
+<script src="~/Assets/js/neon-custom.js"></script>
+
+
+<!-- Demo Settings -->
+<script src="~/Assets/js/neon-demo.js"></script>
+
+<!-- Imported styles on this page -->
+<link rel="stylesheet" href="~/Assets/js/jvectormap/jquery-jvectormap-1.2.2.css">
+<link rel="stylesheet" href="~/Assets/js/rickshaw/rickshaw.min.css">
+
+<!-- Bottom scripts (common) -->
+<script src="~/Assets/js/gsap/TweenMax.min.js"></script>
+<script src="~/Assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+<script src="~/Assets/js/bootstrap.js"></script>
+<script src="~/Assets/js/joinable.js"></script>
+<script src="~/Assets/js/resizeable.js"></script>
+<script src="~/Assets/js/neon-api.js"></script>
+<script src="~/Assets/js/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="~/Assets/js/jvectormap/jquery-jvectormap-europe-merc-en.js"></script>
+<script src="~/Assets/js/jquery.sparkline.min.js"></script>
+<script src="~/Assets/js/rickshaw/vendor/d3.v3.js"></script>
+<script src="~/Assets/js/rickshaw/rickshaw.min.js"></script>
+<script src="~/Assets/js/raphael-min.js"></script>
+<script src="~/Assets/js/morris.min.js"></script>
+<script src="~/Assets/js/toastr.js"></script>
+<script src="~/Assets/js/neon-chat.js"></script>
+
+<script src="~/Assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+<script src="~/Assets/js/jquery.knob.js"></script>
+
+<script src="~/Assets/js/bootstrap-datepicker.js"></script>
+<script src="~/Assets/js/bootstrap-timepicker.min.js"></script>
+
+<script src="~/Assets/js/bootstrap-switch.min.js"></script>
+<script src="~/Assets/js/jquery.inputmask.bundle.js"></script>
+<script src="~/Assets/js/fileinput.js"></script>
+<script type="text/javascript" src="~/Assets/js/neon-calendar.js"></script>
+
+<script src="~/Assets/js/zurb-responsive-tables/responsive-tables.js"></script>
+<!-- JavaScripts initializations and stuff -->
+<script src="~/Assets/js/neon-custom.js"></script>
+
+<script src="~/Assets/js/dropzone/dropzone.js"></script>
+
+<link rel="stylesheet" href="~/Assets/js/dropzone/dropzone.css">
+
+<!-- Demo Settings -->
+<script src="~/Assets/js/neon-demo.js"></script>
+<link href="~/Assets/style.css" rel="stylesheet" />
+<script src="~/Assets/js/toastr.js"></script>
+
+
+@if (TempData["SucessoR"] != null)
+{
+    <script>
+        $(document).ready(toastr.success('Promoção cancelada com sucesso!', 'Sucesso!'));
+    </script>
+}
+
+@if (TempData["SucessoA"] != null)
+{
+    <script>
+        $(document).ready(toastr.success('Promoção alterada com sucesso!', 'Sucesso!'));
+    </script>
+}
+

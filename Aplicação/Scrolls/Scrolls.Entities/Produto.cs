@@ -37,10 +37,6 @@ namespace Scrolls.Entities
 
         public string Imagem4 { get; set; }
 
-        public string Avaliacao { get; set; }
-
-        public string NumeroAvaliacao { get; set; }
-
         public virtual IList<ProdutoVenda> ProdutoVendas { get; set; }
     }
 }

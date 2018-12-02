@@ -1,0 +1,241 @@
+﻿
+@{
+    ViewBag.Title = "Perfil";
+}
+
+<div class="main-content">
+
+    <div class="profile-env">
+
+        <header class="row">
+
+            <div class="col-sm-2">
+
+                <a href="/Home/CFuncionario" class="profile-picture">
+                    <img src="@Session["_Imagem"]" class="img-responsive img-circle" />
+                </a>
+
+            </div>
+
+            <div class="col-sm-7" style="padding-top: 10px;">
+
+                <ul class="profile-info-sections">
+                    <li>
+                        <div class="profile-name">
+                            <strong>
+                                <a href="#">@Session["_Nome"] @ViewBag.Func.Sobrenome</a>
+                            </strong>
+                            <span><a href="#">@ViewBag.Func.Email</a></span>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </header>
+
+        <section class="profile-info-tabs">
+
+            <div class="row">
+
+                <div class="col-sm-offset-2 col-sm-10">
+
+                    <ul class="user-details">
+                        <li>
+                            <a href="#">
+                                <i class="entypo-location"></i>
+                                @ViewBag.Func.CPF
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="entypo-suitcase"></i>
+                                Trabalha como <span>@Session["_Tipo"]</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="entypo-calendar"></i>
+                                @ViewBag.Func.Nascimento.ToString("dd MMMM, yyyy")
+                            </a>
+                        </li>
+                    </ul>
+
+
+                    <!-- tabs for the profile links -->
+                    <ul class="nav nav-tabs">
+                        <li><a href="#end" data-toggle="tab">Endereços</a></li>
+                        <li><a href="#card" data-toggle="tab">Cartões</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="tab-content">
+                    <div class="tab-pane" id="end">
+                        <script type="text/javascript">
+                            jQuery(document).ready(function ($) {
+                                var $tablee = jQuery("#table-e");
+
+                                var tablee = $tablee.DataTable({
+                                    "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]]
+                                });
+
+                                // Initalize Select Dropdown after DataTables is created
+                                $tablee.closest('.dataTables_wrapper').find('select').select2({
+                                    minimumResultsForSearch: -1
+                                });
+
+                                // Apply the search
+                                tablee.columns().every(function () {
+                                    var that = this;
+
+                                    $('input', this.footer()).on('keyup change', function () {
+                                        if (that.search() !== this.value) {
+                                            that
+                                                .search(this.value)
+                                                .draw();
+                                        }
+                                    });
+                                });
+                            });
+                        </script>
+
+
+                        <table class="table table-bordered datatable" id="table-e">
+                            <thead>
+                                <tr class="replace-inputs">
+                                    <th>CEP</th>
+                                    <th>País</th>
+                                    <th>Estado</th>
+                                    <th>Cidade</th>
+                                    <th>Logradouro</th>
+                                    <th>Número</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                            <tfoot>
+                                @if (ViewBag.End != null)
+                                {
+                                    foreach (var e in ViewBag.End)
+                                    {
+                                        <tr>
+                                            <th>@e.CEP</th>
+                                            <th>@e.Estado</th>
+                                            <th>@e.Cidade</th>
+                                            <th>@e.Bairro</th>
+                                            <th>@e.Logradouro</th>
+                                            <th>@e.Numero</th>
+                                        </tr>
+                                    }
+                                }
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="card">
+                        <script type="text/javascript">
+                            jQuery(document).ready(function ($) {
+                                var $tablec = jQuery("#table-c");
+
+                                var tablec = $tablec.DataTable({
+                                    "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]]
+                                });
+
+                                // Initalize Select Dropdown after DataTables is created
+                                $tablec.closest('.dataTables_wrapper').find('select').select2({
+                                    minimumResultsForSearch: -1
+                                });
+
+                                // Apply the search
+                                tablec.columns().every(function () {
+                                    var that = this;
+
+                                    $('input', this.footer()).on('keyup change', function () {
+                                        if (that.search() !== this.value) {
+                                            that
+                                                .search(this.value)
+                                                .draw();
+                                        }
+                                    });
+                                });
+                            });
+                        </script>
+
+
+                        <table class="table table-bordered datatable" id="table-c">
+                            <thead>
+                                <tr class="replace-inputs">
+                                    <th>Número</th>
+                                    <th>Nome</th>
+                                    <th>Validade</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                            <tfoot>
+                                @if (ViewBag.Card != null)
+                                {
+                                    foreach (var c in ViewBag.Card)
+                                    {
+                                        <tr>
+                                            <th>@c.Numero</th>
+                                            <th>@c.Nome</th>
+                                            <th>@c.Validade</th>
+                                        </tr>
+                                    }
+                                }
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Imported styles on this page -->
+<link rel="stylesheet" href="~/Assets/js/jvectormap/jquery-jvectormap-1.2.2.css">
+<link rel="stylesheet" href="~/Assets/js/rickshaw/rickshaw.min.css">
+
+
+<script src="~/Assets/js/bootstrap-datepicker.js"></script>
+
+<script src="~/Assets/js/bootstrap-switch.min.js"></script>
+<script src="~/Assets/js/jquery.inputmask.bundle.js"></script>
+<script src="~/Assets/js/fileinput.js"></script>
+
+<!-- Bottom scripts (common) -->
+<script src="~/Assets/js/gsap/TweenMax.min.js"></script>
+<script src="~/Assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+<script src="~/Assets/js/bootstrap.js"></script>
+<script src="~/Assets/js/joinable.js"></script>
+<script src="~/Assets/js/resizeable.js"></script>
+<script src="~/Assets/js/neon-api.js"></script>
+<script src="~/Assets/js/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="~/Assets/js/jvectormap/jquery-jvectormap-europe-merc-en.js"></script>
+<script src="~/Assets/js/jquery.sparkline.min.js"></script>
+<script src="~/Assets/js/rickshaw/vendor/d3.v3.js"></script>
+<script src="~/Assets/js/rickshaw/rickshaw.min.js"></script>
+<script src="~/Assets/js/raphael-min.js"></script>
+<script src="~/Assets/js/morris.min.js"></script>
+<script src="~/Assets/js/toastr.js"></script>
+<script src="~/Assets/js/neon-chat.js"></script>
+
+<link rel="stylesheet" href="~/Assets/js/datatables/datatables.css">
+<link rel="stylesheet" href="~/Assets/js/select2/select2-bootstrap.css">
+<link rel="stylesheet" href="~/Assets/js/select2/select2.css">
+
+
+<script src="~/Assets/js/datatables/datatables.js"></script>
+<script src="~/Assets/js/select2/select2.min.js"></script>
+
+<!-- JavaScripts initializations and stuff -->
+<script src="~/Assets/js/neon-custom.js"></script>
+
+
+<!-- Demo Settings -->
+<script src="~/Assets/js/neon-demo.js"></script>
