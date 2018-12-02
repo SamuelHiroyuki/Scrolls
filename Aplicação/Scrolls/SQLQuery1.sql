@@ -12,7 +12,7 @@ select * from Produto
 
 select * from Funcionario
 
-select * from Cliente
+select * from Cliente Order By Id desc
 
 select * from Categoria
 
