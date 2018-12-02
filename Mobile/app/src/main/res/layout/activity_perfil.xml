@@ -38,12 +38,12 @@
             >
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgPerfil"
                 android:layout_width="125dp"
                 android:layout_height="125dp"
-                android:src="@drawable/banner_cyber"
-                android:layout_marginTop="35dp"
                 android:layout_marginLeft="20dp"
-                />
+                android:layout_marginTop="35dp"
+                android:src="@drawable/banner_cyber" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -52,22 +52,23 @@
                 >
 
                 <TextView
+                    android:id="@+id/txtPerfil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fulano Ciclano Beltrano"
-                    android:textSize="22sp"
-                    android:textColor="@color/PretoPrincipal"
                     android:layout_marginTop="60dp"
+                    android:text="Fulano Ciclano Beltrano"
+                    android:textColor="@color/PretoPrincipal"
 
-                    />
+                    android:textSize="22sp" />
+
                 <TextView
+                    android:id="@+id/txtEmailPerfil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:text="emails@email.email"
                     android:textColor="@color/PretoPrincipal"
-                    android:layout_marginTop="20dp"
-                    android:textSize="16sp"
-                    />
+                    android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
 

@@ -34,6 +34,15 @@
             android:id="@+id/EnderecoNumeroForm"
             />
         <EditText
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:hint="Complemento"
+        android:textColorHint="@color/PretoPrincipal"
+        android:background="@drawable/teste_edit_shape"
+        android:id="@+id/EnderecoComp"
+
+        />
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Cep"

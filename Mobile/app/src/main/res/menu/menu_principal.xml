@@ -16,6 +16,8 @@
             <item android:id="@+id/itmQRCam"
                 android:title="QR Camera"
                 />
+            <item android:id="@+id/itmPerfil"
+                android:title="Perfil"/>
 
         </group>
     <item android:id="@+id/Menu2"

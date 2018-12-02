@@ -12,15 +12,22 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.example.vitor.scrolsfinal.CadastroActivity;
+import com.example.vitor.scrolsfinal.Classes.User;
 import com.example.vitor.scrolsfinal.Database.DatabaseHelper;
+import com.example.vitor.scrolsfinal.PrincipalActivity;
+import com.example.vitor.scrolsfinal.R;
 
 public class LooginActivity extends AppCompatActivity {
-
-    EditText txtEmail, txtPass;
-    String chkEmail, chkPass;
-    Button mEmailSignInButton ;
+    public static final String PREFS_NAME = "MyPrefsFile";
+    private static final String PREF_USERNAME = "username";
+    private static final String PREF_PASSWORD = "password";
+    private EditText txtEmail, txtPass;
+    private String chkEmail, chkPass;
+    private Button mEmailSignInButton ;
     private UserLoginTask mAuthTask = null;
 
 
@@ -40,6 +47,8 @@ public class LooginActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+
         mEmailSignInButton = (Button) findViewById(R.id.sign_in);
         mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +56,7 @@ public class LooginActivity extends AppCompatActivity {
                 attemptLogin();
             }
         });
+
     }
 
 
@@ -59,9 +69,11 @@ public class LooginActivity extends AppCompatActivity {
         txtEmail.setError(null);
         txtPass.setError(null);
 
+
         // Store values at the time of the login attempt.
         String email = txtEmail.getText().toString();
         String password = txtPass.getText().toString();
+        chkPass = password;
 
         boolean cancel = false;
         View focusView = null;
@@ -105,6 +117,7 @@ public class LooginActivity extends AppCompatActivity {
     private boolean isEmailValid(String email) {
 
         email = txtEmail.getText().toString() ;
+        chkEmail= email;
         DatabaseHelper helper = new DatabaseHelper(this);
         SQLiteDatabase db = helper.getReadableDatabase();
         String query = "SELECT * FROM User WHERE EmailUser = "+" '"+email+"'";
@@ -123,18 +136,28 @@ public class LooginActivity extends AppCompatActivity {
         SQLiteDatabase db = helper.getReadableDatabase();
         String email = txtEmail.getText().toString();
         String pass = txtPass.getText().toString();
-        String query = "SELECT * FROM User WHERE EmailUser =" + " '" + email + "'" + "AND" + " '" + pass + "'";
+        getSharedPreferences(PREFS_NAME,MODE_PRIVATE)
+                .edit()
+                .putString(PREF_USERNAME, email)
+                .putString(PREF_PASSWORD, pass)
+                .commit();
+        String query = "SELECT * FROM User WHERE EmailUser =" + " '" + chkEmail + "'" + "AND PassUser =" + " '" + chkPass + "'";
         Cursor cursor = db.rawQuery(query, null);
+
         cursor.moveToFirst();
+        User usuario = new User ();
         for(int i = 0; i < cursor.getCount(); i++){
             int id = cursor.getInt(0);
             String password = cursor.getString(1);
             String name = cursor.getString(2);
             String emailStr = cursor.getString(3);
+            usuario = new User(id,password, name, emailStr);
 
         }
         Intent i = new Intent(this, PrincipalActivity.class);
+        i.putExtra("LoggedUser",usuario);
         startActivity(i);
+
 
     }
 
