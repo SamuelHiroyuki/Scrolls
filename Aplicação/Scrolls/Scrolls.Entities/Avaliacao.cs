@@ -15,7 +15,9 @@ namespace Scrolls.Entities
 
         [Range(0, 5)]
         public int Nota { get; set; }
-    
+
+        public string Titulo { get; set; }
+
         public string Comentario { get; set; }
 
         public virtual Cliente Cliente { get; set; }
