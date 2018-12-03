@@ -2,6 +2,7 @@
 using Scrolls.Database;
 using Scrolls.Entities;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -51,8 +52,39 @@ namespace Scrolls.Web.Controllers
             return View();
         }
 
-        public ActionResult LProduto()
+        public ActionResult LProduto(int? categoriaId)
         {
+            EntitiesContext context = new EntitiesContext();
+            ViewBag.Prod = new ProdutoDAO().Listar();
+            IList<Produto> produtcat = new List<Produto>();
+            IList<Avaliacao> avaliprod = new List<Avaliacao>();
+            if (categoriaId != 0)
+            {
+                foreach (var g in context.Generos)
+                {
+                    if (g.CategoriaId == categoriaId)
+                    {
+                        foreach (var pp in ViewBag.Prod)
+                        {
+                            if (g.Id == pp.GeneroId)
+                            {
+                                var avp = new AvaliacaoDAO().BuscaByProd(pp.Id);
+                                avaliprod.Add(avp);
+                                produtcat.Add(pp);
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                var produtall = ViewBag.Prod;
+                var allavp = new AvaliacaoDAO().BuscaByProd(produtall.Id);
+                avaliprod.Add(allavp);
+                produtcat.Add(produtall);
+            }
+            ViewBag.ListProd = produtcat;
+            ViewBag.Listavp = avaliprod;
             return View();
         }
     }
