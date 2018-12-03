@@ -140,6 +140,7 @@
         <!-- container -->
     </header>
     <!-- /HEADER -->
+
     <!-- CART AREA -->
     <div class="cart-bg-overlay"></div>
 
@@ -204,6 +205,7 @@
         </div>
     </div>
     <!-- /CART AREA -->
+
     <!-- MAIN -->
     <main>
         <!-- NAVIGATION -->
@@ -215,13 +217,13 @@
                     <div id="category-nav" class="category-nav @ViewBag.Active">
                         <span class="category-header" style="padding-bottom: 10px;">Categorias <i class="icon ion-md-menu" style="font-size: 20px;"></i></span>
                         <ul class="category-list ">
-                            <li><a href="#" style="padding-top: 20px;">Livros</a></li>
-                            <li><a href="#" style="padding-top: 20px;">Mangas</a></li>
-                            <li><a href="#">Blusas</a></li>
-                            <li><a href="#">Action's Figures</a></li>
-                            <li><a href="#">Canecas</a></li>
-                            <li><a href="#" style="padding-top: 20px;">Chaveiros</a></li>
-                            <li><a href="#" style="padding-top: 20px; padding-bottom: 16px;">Ver Todos</a></li>
+                            <li><a href="@Url.Action("LProduto","Produto",new { categoriaId = 1 })" style="padding-top: 20px;">Livros</a></li>
+                            <li><a href="@Url.Action("LProduto","Produto",new { categoriaId = 2 })" style="padding-top: 20px;">Filmes e Séries</a></li>
+                            <li><a href="@Url.Action("LProduto","Produto",new { categoriaId = 3 })">Jogos</a></li>
+                            <li><a href="@Url.Action("LProduto","Produto",new { categoriaId = 4 })">Vestuários</a></li>
+                            <li><a href="@Url.Action("LProduto","Produto",new { categoriaId = 5 })">Acessórios</a></li>
+                            <li><a href="@Url.Action("LProduto","Produto",new { categoriaId = 6 })" style="padding-top: 20px;">Colecionáveis</a></li>
+                            <li><a href="@Url.Action("LProduto","Produto",new { categoriaId = 0 })" style="padding-top: 20px; padding-bottom: 16px;">Ver Todos</a></li>
                         </ul>
                     </div>
                     <!-- /category nav -->
