@@ -163,7 +163,7 @@
                             <!-- Cart Item Desc -->
                             <div class="cart-item-desc">
                                 <form action="">
-                                    <button class="product-remove"><i class="icon ion-md-close" aria-hidden="true"></i></button>
+                                    <button class="product-remove" type="button" onclick="window.location.href='@Url.Action("RemoveCart", "Home", new { id = n.Id })'"><i class="icon ion-md-close" aria-hidden="true"></i></button>
                                 </form>
                                 <span class="badge">@c.Nome</span>
                                 @if (c.Promocao != null)

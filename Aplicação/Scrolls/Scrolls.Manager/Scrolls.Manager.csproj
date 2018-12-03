@@ -1898,6 +1898,7 @@
     <Content Include="Views\Home\CFuncionario.cshtml" />
     <Content Include="Views\Home\QVenda.cshtml" />
     <Content Include="Views\Home\QFuncionario.cshtml" />
+    <None Include="Properties\PublishProfiles\ScrollsManager20181202110350 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -75,5 +75,19 @@ namespace Scrolls.Web.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult RemoveCart(int id)
+        {
+            Produto p = new ProdutoDAO().BuscaId(id);
+            foreach (var c in Scrolls.Web.Models.MeuCarrinho.Cesta)
+            {
+                if (c.Id == id)
+                {
+                    Scrolls.Web.Models.MeuCarrinho.Cesta.Remove(c);
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }
