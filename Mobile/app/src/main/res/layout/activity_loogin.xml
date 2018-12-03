@@ -51,17 +51,26 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Senha"
+            android:hint="@string/password_field"
             android:layout_marginTop="20dp"
             android:inputType="textPassword"
             android:textSize="18dp"
             android:textColorHint="@color/PretoPrincipal"
             android:id="@+id/Pass"
             />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chkRemember"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lembrar de mim"
+       />
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="CONTINUAR"
+            android:text="@string/login_btn"
             android:layout_marginTop="50dp"
             android:background="@drawable/button_login_shape"
             android:textColor="#ffffff"

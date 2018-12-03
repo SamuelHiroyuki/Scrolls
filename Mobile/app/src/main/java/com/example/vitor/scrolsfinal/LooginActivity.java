@@ -1,6 +1,7 @@
 package com.example.vitor.scrolsfinal;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -11,6 +12,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -21,14 +23,17 @@ import com.example.vitor.scrolsfinal.Database.DatabaseHelper;
 import com.example.vitor.scrolsfinal.PrincipalActivity;
 import com.example.vitor.scrolsfinal.R;
 
+import static com.example.vitor.scrolsfinal.CadastroActivity.PREF_PASSWORD;
+import static com.example.vitor.scrolsfinal.CadastroActivity.PREF_USERNAME;
+
 public class LooginActivity extends AppCompatActivity {
     public static final String PREFS_NAME = "MyPrefsFile";
-    private static final String PREF_USERNAME = "username";
-    private static final String PREF_PASSWORD = "password";
+
     private EditText txtEmail, txtPass;
     private String chkEmail, chkPass;
     private Button mEmailSignInButton ;
     private UserLoginTask mAuthTask = null;
+    private CheckBox chkBox;
 
 
     @Override
@@ -37,6 +42,18 @@ public class LooginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_loogin);
         txtEmail = (EditText)findViewById(R.id.Email);
         txtPass = (EditText)findViewById(R.id.Pass);
+        chkBox = (CheckBox) findViewById(R.id.chkRemember);
+
+        SharedPreferences pref = getSharedPreferences(PREFS_NAME,MODE_PRIVATE);
+       if(chkBox.hasSelection()){
+           String username = pref.getString(PREF_USERNAME, null);
+           String password = pref.getString(PREF_PASSWORD, null);
+           txtEmail.setText(username);
+           txtPass.setText(password);
+
+       }
+
+
         txtPass.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {

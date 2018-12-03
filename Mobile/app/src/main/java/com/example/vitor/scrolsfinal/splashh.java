@@ -23,6 +23,8 @@ import java.io.File;
 
 public class splashh extends AppCompatActivity {
     public static String PREF_NAME = "Preferencias";
+    private static final String PREF_USERNAME = "username";
+    private static final String PREF_PASSWORD = "password";
     SharedPreferences sp;
     Intent intent,i;
     SQLiteDatabase context;
@@ -53,6 +55,7 @@ public class splashh extends AppCompatActivity {
         String query = "SELECT * FROM User WHERE EmailUser =" + " '"+emailUser+"'";
         Cursor cursor = db.rawQuery(query,null);
         cursor.moveToFirst();
+
         User usuario = new User();
         for(int i = 0; i < cursor.getCount(); i++){
             int id = cursor.getInt(0);

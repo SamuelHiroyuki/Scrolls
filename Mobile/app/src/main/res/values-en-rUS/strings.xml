@@ -1,70 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Livraria Scrolls</string>
-    <string name="todo">TODO</string>
-    <string name="inscreva_se_gratis">Inscreva-se gratis</string>
+    <string name="app_name">Library Scrolls</string>
+    <string name="todo">All</string>
+    <string name="inscreva_se_gratis">Sign up</string>
     <string name="Drawer_open">Open Drawer</string>
     <string name="Drawer_close">Close Drawer</string>
     <string name="GoogleApiMaps">AIzaSyAcboV_O5OQK2KUo_olVBaIa-xtgh4QRMk</string>
 
-    <string name="error_invalid_name">O nome digitado é inválido</string>
-    <string name="error_invalid_email">O endereço de e-mail digitado é inválido</string>
-    <string name="error_invalid_date">A data informada é inválida</string>
-    <string name="error_invalid_password">A senha informada é muito curta</string>
+    <string name="error_invalid_name">The name typped is invalid</string>
+    <string name="error_invalid_email">The email address typped is invalid</string>
+    <string name="error_invalid_date">The date typped is invalid</string>
+    <string name="error_invalid_password">The password is too short</string>
 
 
-    <string name="error_incorrect_password">A senha está incorreta</string>
-    <string name="error_field_required">O campo é obrigatório</string>
+    <string name="error_incorrect_password">The password is incorrect</string>
+    <string name="error_field_required">Please, fill all fields</string>
     <string name="title_activity_splashh">splashh</string>
     <string name="title_activity_editar_perfil">EditarPerfil</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_settings">Configurações</string>
 
-    <!-- Strings related to fields-->
-    <string name="password_field"> Senha</string>
-    <string name="name_field"> Nome</string>
-    <string name="sign_up_field">Não tem conta? Cadastre-se</string>
-    <string name="login_btn"> Continuar</string>
-    <string name="confirm_password">Confirmar senha</string>
-    <string name="address_field">Endereço(Ex:Rua)</string>
-    <string name="city_field">Cidade</string>
-    <string name="state_field">Estado</string>
+
+    <string name="sign_up_field">Don\'t you have a account? Sign in</string>
+    <string name="login_btn"> Enter</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="address_field">Address(Ex:Rua)</string>
+    <string name="city_field">City</string>
+    <string name="state_field">State</string>
     <string name="number_address">Nº</string>
-    <string name="complemento">Complemento</string>
-    <string name="holder_account">Titular do cartão</string>
-    <string name="number_card">Número do cartão</string>
-    <string name="expirity_date">Data de validade</string>
-    <string name="prod_name">Nome do produto</string>
-    <string name="price">Preço</string>
-    <string name="category">Categoria</string>
-    <string name="language">Idioma</string>
-    <string name="vibration">Vibração</string>
-    <string name="notification">Notificação</string>
-    <string name="configuration">Configuração</string>
-    <string name="main_item">Principal</string>
-    <string name="maps">Mapa</string>
-    <string name="Register_card">Registrar cartão de crédito</string>
-    <string name="Register_address">Registrar endereço</string>
-    <string name="profile">Perfil</string>
-    <string name="rate_us">Avalie-nos</string>
-    <string name="My_requests">Meus pedidos</string>
-    <string name="think_about">O que achou do livro? Avalie</string>
-    <string name="book_author">Autor do livro</string>
+    <string name="complemento">Complement</string>
+    <string name="holder_account">Credit card holder</string>
+    <string name="number_card">Nº</string>
+    <string name="expirity_date">Expirity Date</string>
+    <string name="prod_name">Product name</string>
+    <string name="price">Price</string>
+    <string name="category">Category</string>
+    <string name="language">Language</string>
+    <string name="vibration">Vibration</string>
+    <string name="notification">Notification</string>
+    <string name="configuration">Settings</string>
+    <string name="main_item">Main</string>
+    <string name="maps">Maps</string>
+    <string name="Register_card">Register credit card</string>
+    <string name="Register_address">Register address</string>
+    <string name="profile">Profile</string>
+    <string name="rate_us">Rate us</string>
+    <string name="My_requests">My Requests</string>
+    <string name="think_about">What did you thought about the book?</string>
+    <string name="book_author">Author</string>
 
-    <string name="district">Bairro</string>
+    <string name="district">District</string>
     <string-array name="my_books">
-        <item>Fantasia</item>
-        <item>Horror</item>
-        <item>Ficção</item>
+    <item>Fantasy</item>
+    <item>Horror</item>
+    <item>Fiction</item>
 
-        <item>Clássico</item>
-        <item>Jogos</item>
-        <item>Infantil</item>
+    <item>Classic</item>
+    <item>Games</item>
+    <item>Kids</item>
     </string-array>
 
     <!-- Strings related to register -->
-    <string name="btn_create_account">Criar conta</string>
-    <string name="account_alredy_exists">Já possui uma conta? Clique aqui</string>
+    <string name="btn_create_account">Create account</string>
+    <string name="account_alredy_exists">Alredy posses an account? Click here</string>
+    <!-- Strings related to Settings -->
+    <string name="password_field"> Password</string>
+    <string name="name_field"> Nome</string>
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>
 
@@ -141,14 +143,12 @@
 
     <string-array name="list_languages_preferences">
         <item>English</item>
-        <item>Español</item>
+
         <item>Português</item>
     </string-array>
     <string-array name="list_languages_values">
         <item>en</item>
-        <item>es</item>
+
         <item>pt</item>
     </string-array>
-    <string name="title_activity_settings">Settings</string>
-
 </resources>

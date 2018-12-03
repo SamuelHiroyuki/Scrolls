@@ -2,6 +2,7 @@ package com.example.vitor.scrolsfinal;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -29,6 +30,7 @@ import org.w3c.dom.Text;
 
 import java.security.Principal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -111,14 +113,10 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         imagens.add(R.drawable.rainbow);
 
 
-        ArrayList<String> nomes = new ArrayList<>();
-        nomes.add("Fantasia");
-        nomes.add("Horror");
-        nomes.add("Ficção");
-        nomes.add("Classicos");
-        nomes.add("Nacionais");
-        nomes.add("Jogos");
-        nomes.add("Infantis");
+        Resources res = getResources();
+        String[] myBooks = res.getStringArray(R.array.my_books);
+
+        ArrayList<String> nomes = new ArrayList<>(Arrays.asList((myBooks)));
 
 
 
@@ -200,7 +198,9 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
             case R.id.itmPerfil:
               Intent i = new Intent(this,PerfilActivity.class);
               startActivity(i);
+             break;
 
+            case R.id.itmConfig:
 
         }
         //drawer.closeDrawer(GravityCompat.START); linha com erro
@@ -250,4 +250,5 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
      Intent i = new Intent (this, EditarPerfil.class);
      startActivity(i);
  }
+
 }

@@ -22,12 +22,15 @@ import java.util.Arrays;
 import java.util.List;
 
 import static android.widget.Toast.LENGTH_SHORT;
+import static com.example.vitor.scrolsfinal.LooginActivity.PREFS_NAME;
 
 public class CadastroActivity extends Activity {
 
     DatabaseHelper helper;
     EditText txtName, txtEmail, txtPass, txtPassConfirm;
     Button btnCadastrar1;
+    public static final String PREF_USERNAME = "username";
+    public static final String PREF_PASSWORD = "password";
 
 
     @Override
@@ -77,6 +80,11 @@ public class CadastroActivity extends Activity {
         String password = txtPass.getText().toString();
         String email = txtEmail.getText().toString();
         String password_confirm = txtPassConfirm.getText().toString();
+        getSharedPreferences(PREFS_NAME,MODE_PRIVATE)
+                .edit()
+                .putString(PREF_USERNAME, email)
+                .putString(PREF_PASSWORD, password)
+                .commit();
 
 
         txtEmail.setError(null);
