@@ -91,7 +91,11 @@
                 <div class="tab-pane py-3" role="tabpanel" id="card">
                     <div class="col-md-12 d-md-flex">
                         <div class="col-md-6">
-                            <form action="" id="cadacard">
+                            <form action="/Cliente/CadCard" id="cadacard">
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" class="form-control mr-2" required id="nome" placeholder="Nome Impresso no cartão">
+                                </div>
                                 <div class="form-group">
                                     <label for="num_card">Número do Cartão</label>
                                     <div class="d-flex align-items-center">
@@ -181,35 +185,39 @@
                 <div class="tab-pane py-3" role="tabpanel" id="ende">
                     <div class="col-md-12 d-md-flex">
                         <div class="col-md-6">
-                            <form action="" id="cadastrarEnd" class="mt-2">
+                            <form action="/Cliente/CadEnd" method="post" id="cadastrarEnd" class="mt-2">
                                 <fieldset class="form-group">
                                     <div class="form-group">
                                         <label for="cep">CEP</label>
-                                        <input type="text" class="form-control" required id="cep" aria-describedby="cep" placeholder="CEP">
+                                        <input type="text" class="form-control" name="cep" required id="cep" aria-describedby="cep" placeholder="CEP">
                                     </div>
                                     <div class="form-group">
                                         <label for="endereco">Endereço</label>
-                                        <input type="text" class="form-control" disabled id="endereco" placeholder="Endereço">
+                                        <input type="text" class="form-control" name="endereco" readonly="readonly" id="endereco" placeholder="Endereço">
                                     </div>
                                     <div class="form-group">
                                         <label for="num">Número</label>
-                                        <input type="text" class="form-control" required onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="num" aria-describedby="num" placeholder="Número">
+                                        <input type="text" class="form-control" name="num" required onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="num" aria-describedby="num" placeholder="Número">
                                     </div>
                                     <div class="form-group">
                                         <label for="comp">Complemento</label>
-                                        <input type="text" class="form-control" required id="comp" aria-describedby="comp" placeholder="Complemento">
+                                        <input type="text" class="form-control" name="comp" required id="comp" aria-describedby="comp" placeholder="Complemento">
                                     </div>
                                     <div class="form-group">
                                         <label for="bar">Bairro</label>
-                                        <input type="text" class="form-control" disabled id="bar" aria-describedby="bar" placeholder="Bairro">
+                                        <input type="text" class="form-control" name="bairro" readonly="readonly" id="bar" aria-describedby="bar" placeholder="Bairro">
                                     </div>
                                     <div class="form-group">
                                         <label for="cid">Cidade</label>
-                                        <input type="text" class="form-control" disabled id="cid" aria-describedby="id" placeholder="Cidade">
+                                        <input type="text" class="form-control" name="cidade" readonly="readonly" id="cid" aria-describedby="id" placeholder="Cidade">
                                     </div>
                                     <div class="form-group">
                                         <label for="uf">Estado</label>
-                                        <input type="text" class="form-control" disabled id="uf" aria-describedby="uf" placeholder="Estado">
+                                        <input type="text" class="form-control" name="uf" readonly="readonly" id="uf" aria-describedby="id" placeholder="Estado">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="uf">Estado</label>
+                                        <input type="text" class="form-control" readonly="readonly" id="uf" aria-describedby="uf" placeholder="Estado">
                                     </div>
                                 </fieldset>
                                 <button type="submit" id="cadend" class="btn primary-btn">Cadastrar</button>

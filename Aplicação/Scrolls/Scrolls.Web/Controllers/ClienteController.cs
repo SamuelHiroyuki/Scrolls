@@ -96,5 +96,50 @@ namespace Scrolls.Web.Controllers
             }
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult CadEnd(string cep, string endereco, int num, string comp, string bairro, string cidade, string uf)
+        {
+            if (Session["_Id"] != null)
+            {
+                EnderecoDAO edao = new EnderecoDAO();
+                Endereco ce = new Endereco()
+                {
+                    ClienteId = Convert.ToInt32(Session["_Id"]),
+                    CEP = cep,
+                    Estado = uf,
+                    Cidade = cidade,
+                    Bairro = bairro,
+                    Logradouro = endereco,
+                    Complemento = comp,
+                    Numero = num
+                };
+                edao.Cadastrar(ce);
+            }
+            else
+            {
+                return RedirectToAction("LoginPage", "Home");
+            }
+
+            return View();
+        }
+        
+        public ActionResult CadCard(string numcard, int cvv, string ano, string mes, string nome)
+        {
+            numcard.Replace(" ","");
+            if (Session["_Id"] != null)
+            {
+                Cartao cc = new Cartao()
+                {
+                    ClienteId = Convert.ToInt32(Session["_Id"]),
+                    Numero = numcard,
+                    Validade= mes+"/"+ano,
+                    Nome= nome,
+                    Cvv = cvv
+                };
+                CartaoDAO cadao = new CartaoDAO();
+                cadao.Cadastrar(cc);
+            }
+            return View();
+        }
     }
 }
