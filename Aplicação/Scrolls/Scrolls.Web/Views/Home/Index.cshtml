@@ -148,7 +148,7 @@
                             <div class="product-body">
                                 @if (n.Promocao != null)
                                 {
-                                    <h5 class="product-price">R$ @Math.Round(Convert.ToDouble(((n.Preco * n.Promocao) / 100) - n.Preco), 2) <del class="product-old-price">R$ @n.Preco</del></h5>
+                                    <h5 class="product-price">R$ @Math.Round(Convert.ToDouble(n.Preco -  ((n.Preco * n.Promocao) / 100)), 2) <del class="product-old-price">R$ @n.Preco</del></h5>
                                 }
                                 else
                                 {
@@ -244,12 +244,12 @@
                                     }
                                     <span class="replace"></span>
                                 </div>
-                                <img src="@n.Imagem1" alt="">
+                                <img src='"https://manager-scrolls.azurewebsites.net/Imagens/Produtos/" + "@n.Imagem1"' alt="">
                             </div>
                             <div class="product-body">
                                 @if (n.Promocao != null)
                                 {
-                                    <h5 class="product-price">R$ @Math.Round(Convert.ToDouble(((n.Preco * n.Promocao) / 100) - n.Preco), 2) <del class="product-old-price">R$ @n.Preco</del></h5>
+                                    <h5 class="product-price">R$ @Math.Round(Convert.ToDouble(n.Preco -((n.Preco * n.Promocao) / 100)), 2) <del class="product-old-price">R$ @n.Preco</del></h5>
                                 }
                                 else
                                 {

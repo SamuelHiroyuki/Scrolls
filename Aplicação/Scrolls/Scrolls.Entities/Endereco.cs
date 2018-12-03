@@ -13,6 +13,9 @@ namespace Scrolls.Entities
 
         [Required, RegularExpression(@"^\d{5}(\-)(\d{3})?$")]
         public string CEP { get; set; }
+        
+        [Required]
+        public string Pais { get; set; }
 
         [Required]
         public string Estado { get; set; }

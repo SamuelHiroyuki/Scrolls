@@ -56,8 +56,8 @@ namespace Scrolls.Web.Controllers
         {
             EntitiesContext context = new EntitiesContext();
             ViewBag.Prod = new ProdutoDAO().Listar();
-            IList<Produto> produtcat = new List<Produto>();
-            IList<Avaliacao> avaliprod = new List<Avaliacao>();
+            List<Produto> produtcat = new List<Produto>();
+            List<Avaliacao> avaliprod = new List<Avaliacao>();
             if (categoriaId != 0)
             {
                 foreach (var g in context.Generos)

@@ -18,8 +18,6 @@ namespace Scrolls.Entities
         [Required(ErrorMessage = "O campo nome não pode estar vazio."), MaxLength(50, ErrorMessage = "O nome deve conter apenas 50 caracteres.")]
         public string Nome { get; set; }
 
-        public int Cvv { get; set; }
-
         [Required(ErrorMessage = "O campo validade não pode estar vazio."), RegularExpression(@"^\d{1,2}\/\d{1,2}\$", ErrorMessage = "Somente números são aceitos.")]
         public string Validade { get; set; }
 
