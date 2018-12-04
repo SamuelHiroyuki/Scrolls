@@ -8,26 +8,23 @@
 
             >
             <item android:id="@+id/itmComprar"
-                android:title="Principal"/>
+                android:title="@string/main_item"/>
             <item android:id="@+id/itmMeusPedidos"
-                android:title="Meus Pedidos"/>
+                android:title="@string/My_requests"/>
             <item android:id="@+id/itmMapa"
-                android:title="Mapa"/>
+                android:title="@string/maps"/>
             <item android:id="@+id/itmQRCam"
                 android:title="QR Camera"
                 />
             <item android:id="@+id/itmPerfil"
-                android:title="Perfil"/>
+                android:title="@string/profile"/>
+            <item android:id="@+id/itmLogoOut"
+                android:title="LogOut"/>
 
         </group>
     <item android:id="@+id/Menu2"
         android:title="">
 
-        <menu>
-            <item android:id="@+id/itmConfig"
-                android:title="Configurações"/>
-            <item android:id="@+id/itmRate"
-                android:title="Avalie-nos"/>
-        </menu>
+
     </item>
 </menu>

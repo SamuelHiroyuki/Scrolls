@@ -2,6 +2,7 @@ package com.example.vitor.scrolsfinal;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,12 +15,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.vitor.scrolsfinal.Classes.AppState;
 import com.example.vitor.scrolsfinal.Classes.DAO;
 import com.example.vitor.scrolsfinal.Classes.User;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -27,8 +30,9 @@ import com.google.zxing.integration.android.IntentResult;
 
 import org.w3c.dom.Text;
 
-import java.security.Principal;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -45,7 +49,6 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         AdapterProd prodAdapter1, prodAdapter2;
         LinearLayout HeaderLayput;
         User loggedUser;
-        TextView Perfil;
         NavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,32 +57,33 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Toolbar mTopToolbar = findViewById(R.id.IncludeToolbarPrincipal);
         setSupportActionBar(mTopToolbar);
-
-        NavigationView navigationView1 = (NavigationView)findViewById(R.id.nav_viewPerfil);
-//        navigationView.setNavigationItemSelectedListener(this);
-
-//        View headerView = navigationView.getHeaderView(0);
-
-
-//        navigationView.setCheckedItem(R.id.itmComprar);
-
         loggedUser = (User) getIntent().getSerializableExtra("LoggedUser");
-    //  TextView txtNomeUsu = (TextView)navigationView1.getHeaderView(0).findViewById(R.id.txtPerfil);
-     //  TextView txtEmailUsu = (TextView)navigationView1.getHeaderView(0).findViewById(R.id.txtEmailPerfil);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+        //Perfil.setText(loggedUser.getNameUser());
+        //navigationView.setNavigationItemSelectedListener(this);
+        TextView Perfil = (TextView)navigationView.getHeaderView(0).findViewById(R.id.txtPerfil);
+          Perfil.setText(loggedUser.getNameUser());
+        navigationView.setNavigationItemSelectedListener(this);
 
 
-      //  txtNomeUsu.setText(loggedUser.getNameUser());
-     // txtEmailUsu.setText(loggedUser.getEmailUser());
+
+        navigationView.setCheckedItem(R.id.itmComprar);
+
+
+     // txtEmailUsu.setText(loggedUser.        txtUser.setText(loggedUser.getNameUser()); getEmailUser());
       // navigationView.setNavigationItemSelectedListener(this);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,mTopToolbar,R.string.Drawer_open,R.string.Drawer_close);
         drawer.addDrawerListener(toggle);
 
         toggle.syncState();
 
         HeaderLayput = (LinearLayout) findViewById(R.id.HeaderLayout);
+
+
 
         FlipperLayout fliper = (FlipperLayout) findViewById(R.id.FliperLyt);
 
@@ -111,14 +115,10 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         imagens.add(R.drawable.rainbow);
 
 
-        ArrayList<String> nomes = new ArrayList<>();
-        nomes.add("Fantasia");
-        nomes.add("Horror");
-        nomes.add("Ficção");
-        nomes.add("Classicos");
-        nomes.add("Nacionais");
-        nomes.add("Jogos");
-        nomes.add("Infantis");
+        Resources res = getResources();
+        String[] myBooks = res.getStringArray(R.array.my_books);
+
+        ArrayList<String> nomes = new ArrayList<>(Arrays.asList((myBooks)));
 
 
 
@@ -163,15 +163,7 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
 
         rv2.setAdapter(prodAdapter2);
 */
-    }
-    @Override
-    public void onBackPressed(){
-
-        if(drawer.isDrawerOpen(GravityCompat.START)){
-            drawer.closeDrawer(GravityCompat.START);
-        }
-        else
-        super.onBackPressed();
+        setLoggedUser();
     }
 
 
@@ -199,7 +191,34 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
 
             case R.id.itmPerfil:
               Intent i = new Intent(this,PerfilActivity.class);
+                i.putExtra("ProfileUser",loggedUser);
+
               startActivity(i);
+
+             break;
+
+            case R.id.itmConfig:
+
+                break;
+
+            case R.id.itmLogoOut:
+
+
+                SharedPreferences myPrefs = getSharedPreferences("MY",
+                        MODE_PRIVATE);
+                SharedPreferences.Editor editor = myPrefs.edit();
+                editor.clear();
+                editor.commit();
+                AppState.getSingleInstance().setLoggingOut(true);
+
+                Intent intent1 = new Intent(PrincipalActivity.this,
+                        LooginActivity.class);
+                intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent1);
+                finish();
+
+
+
 
 
         }
@@ -209,7 +228,7 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
 
     }
 
-    public void PerfilActivity(View v){
+    public void PerfilActivity(){
         Intent intent = new Intent(this, PerfilActivity.class);
         startActivity(intent);
     }
@@ -250,4 +269,5 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
      Intent i = new Intent (this, EditarPerfil.class);
      startActivity(i);
  }
+
 }

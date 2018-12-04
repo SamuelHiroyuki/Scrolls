@@ -102,6 +102,18 @@ public class DAO {
         }
         return null;
     }
+    public int updateUser(int id, String name, String Email, String Password) {
+    SQLiteDatabase db = helper.getWritableDatabase();
+
+    // Creating content values
+    ContentValues values = new ContentValues();
+    values.put("NameUser", name);
+    values.put("EmailUser", Email);
+    values.put("PassUser", Password);
+    // update row in students table base on students.is value
+    return db.update("User", values,  id + " = Id_User",
+            new String[]{String.valueOf(id)});
+}
 }
 
 

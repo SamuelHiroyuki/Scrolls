@@ -62,6 +62,15 @@
             android:id="@+id/EnderecoBairroForm"
             android:background="@drawable/teste_edit_shape"
             />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cidade"
+            android:textColorHint="@color/PretoPrincipal"
+            android:layout_marginTop="30dp"
+            android:id="@+id/EnderecoCidadeForm"
+            android:background="@drawable/teste_edit_shape"
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,13 +78,13 @@
             android:layout_marginTop="30dp"
             >
 
-            <EditText
+            <TextView
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
-                android:hint="Cidade"
+                android:hint=""
                 android:textColorHint="@color/PretoPrincipal"
                 android:background="@drawable/teste_edit_shape"
-                android:id="@+id/EnderecoCidadeForm"
+                android:id="@+id/textUF"
 
                 />
             <Spinner
@@ -86,6 +95,8 @@
                 android:layout_marginRight="40dp"
                 android:id="@+id/SpinnerUf"
                 />
+
+
         </LinearLayout>
 
         <Button

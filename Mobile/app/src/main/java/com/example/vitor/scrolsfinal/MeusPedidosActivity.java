@@ -27,10 +27,7 @@ public class MeusPedidosActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
-                    case R.id.itmConfig:
-                        Intent intent = new Intent(getApplicationContext(), PrincipalActivity.class);
-                        startActivity(intent);
-                        break;
+
                     case R.id.itmMapa:
                         Intent intent2 = new Intent(getApplicationContext(), PrincipalActivity.class);
                         startActivity(intent2);

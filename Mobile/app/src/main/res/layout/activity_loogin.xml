@@ -18,16 +18,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_google_shape"
-            android:drawableLeft="@drawable/googleicon"
-            android:text="ACESSE SUA CONTA PELO GOOGLE"
-            android:textSize="18dp"
-            android:textColor="@color/PretoPrincipal"
-            android:layout_marginTop="60dp"
-            />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,22 +42,25 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Senha"
+            android:hint="@string/password_field"
             android:layout_marginTop="20dp"
             android:inputType="textPassword"
             android:textSize="18dp"
             android:textColorHint="@color/PretoPrincipal"
             android:id="@+id/Pass"
             />
+
+
+
         <Button
+            android:id="@+id/log_in"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="CONTINUAR"
             android:layout_marginTop="50dp"
             android:background="@drawable/button_login_shape"
+            android:text="@string/login_btn"
             android:textColor="#ffffff"
             android:textSize="20dp"
-            android:id="@+id/sign_in"
 
             />
         <TextView

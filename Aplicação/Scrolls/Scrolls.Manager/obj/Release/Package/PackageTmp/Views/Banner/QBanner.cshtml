@@ -51,16 +51,19 @@
 
                 <ul class="navbar-nav">
                     <li class="has-sub">
-                        <a href="/Home/CFuncionario">
+                        <a href="/Home/QFuncionario">
                             <i class="entypo-user"></i>
                             <span class="title">Funcionário</span>
                         </a>
                         <ul>
-                            <li>
-                                <a href="/Home/CFuncionario">
-                                    <span class="title">Cadastrar funcionário</span>
-                                </a>
-                            </li>
+                            @if (Session["_Tipo"].Equals("Administrador"))
+                            {
+                                <li>
+                                    <a href="/Home/CFuncionario">
+                                        <span class="title">Cadastrar funcionário</span>
+                                    </a>
+                                </li>
+                            }
                             <li>
                                 <a href="/Home/QFuncionario">
                                     <span class="title">Consulta</span>

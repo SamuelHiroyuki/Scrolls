@@ -55,6 +55,8 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -1461,6 +1463,13 @@
     <Content Include="Assets\js\zurb-responsive-tables\stylesheets\typography.css" />
     <Content Include="Assets\js\zurb-responsive-tables\stylesheets\ui.css" />
     <Content Include="Assets\style.css" />
+    <None Include="Connected Services\CalcCEP\CalcPrecoPrazo.disco" />
+    <None Include="Connected Services\CalcCEP\configuration91.svcinfo" />
+    <None Include="Connected Services\CalcCEP\configuration.svcinfo" />
+    <None Include="Connected Services\CalcCEP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\login-style.css" />
     <Content Include="Content\owl-carousel\owl.carousel.css" />
     <Content Include="Content\owl-carousel\owl.theme.default.css" />
@@ -1480,6 +1489,7 @@
     <Content Include="img\appmaca.png" />
     <Content Include="img\avatar.png" />
     <Content Include="img\background-login.jpg" />
+    <Content Include="img\Banner5.png" />
     <Content Include="img\carousel-img\Banner1.PNG" />
     <Content Include="img\carousel-img\Banner2.PNG" />
     <Content Include="img\carousel-img\Banner3.PNG" />
@@ -1871,6 +1881,16 @@
     <Content Include="Assets\less\skins\red.less" />
     <Content Include="Assets\less\skins\white.less" />
     <Content Include="Assets\less\skins\yellow.less" />
+    <None Include="Connected Services\CalcCEP\CalcPrecoPrazo.wsdl" />
+    <Content Include="Connected Services\CalcCEP\Scrolls.Web.CalcCEP.cResultado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CalcCEP\Scrolls.Web.CalcCEP.cResultadoObjeto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CalcCEP\Scrolls.Web.CalcCEP.cResultadoServicos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1902,6 +1922,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\CalcCEP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
@@ -1966,6 +1991,12 @@
       <Project>{85C6B71B-A884-4E59-A685-AD548444FD66}</Project>
       <Name>Scrolls.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\CalcCEP\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
