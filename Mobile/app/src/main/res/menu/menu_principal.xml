@@ -18,16 +18,13 @@
                 />
             <item android:id="@+id/itmPerfil"
                 android:title="@string/profile"/>
+            <item android:id="@+id/itmLogoOut"
+                android:title="LogOut"/>
 
         </group>
     <item android:id="@+id/Menu2"
         android:title="">
 
-        <menu>
-            <item android:id="@+id/itmConfig"
-                android:title="@string/configuration"/>
-            <item android:id="@+id/itmRate"
-                android:title="Avalie-nos"/>
-        </menu>
+
     </item>
 </menu>

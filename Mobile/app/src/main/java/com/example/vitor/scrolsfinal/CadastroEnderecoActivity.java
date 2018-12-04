@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.vitor.scrolsfinal.Database.DatabaseHelper;
@@ -26,6 +28,7 @@ public class CadastroEnderecoActivity extends AppCompatActivity implements Adapt
     EditText txtNome, txtNum, txtCep, txtBairro, txtCidade, txtComp;
     Spinner spin;
      DatabaseHelper helper;
+     TextView estado;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,20 +46,97 @@ public class CadastroEnderecoActivity extends AppCompatActivity implements Adapt
         txtNum = (EditText) findViewById(R.id.EnderecoNumeroForm);
         txtComp = (EditText) findViewById(R.id.EnderecoComp);
         spin = (Spinner) findViewById(R.id.SpinnerUf);
+        estado = (TextView) findViewById(R.id.textUF);
         spin.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
 
         SimpleMaskFormatter smf = new SimpleMaskFormatter("NNNNN-NNN");
         MaskTextWatcher mkf = new MaskTextWatcher(txtCep, smf);
         txtCep.addTextChangedListener(mkf);
-        List<String> Estados= new ArrayList<>(Arrays.asList("AC - Acre", "AL - Alagoas", "AM - Amazonas", "AP - Amapá","BA - Bahia","CE - Ceará¡","DF - Distrito Federal","ES - Espírito Santos","GO - Goiás","MA - Maranhão","MT - Mato Grosso","MS - Mato Grosso do Sul","MG - Minas Gerais","PA - Pará","PB - Paraíba","PR - Paraná","PE - Pernambuco","PI - Piauí­","RJ - Rio de Janeiro","RN - Rio Grande do Norte","RO - Rondânia","RS - Rio Grande do Sul","RR - Roraima","SC - Santa Catarina","SE - Sergipe","SP - São Paulo","TO - Tocantins"));
+        List<String> Estados = new ArrayList<>(Arrays.asList("AC - Acre", "AL - Alagoas", "AM - Amazonas", "AP - Amapá", "BA - Bahia", "CE - Ceará", "DF - Distrito Federal", "ES - Espírito Santos", "GO - Goiás", "MA - Maranhão", "MT - Mato Grosso", "MS - Mato Grosso do Sul", "MG - Minas Gerais", "PA - Pará", "PB - Paraíba", "PR - Paraná", "PE - Pernambuco", "PI - Piauí­", "RJ - Rio de Janeiro", "RN - Rio Grande do Norte", "RO - Rondânia", "RS - Rio Grande do Sul", "RR - Roraima", "SC - Santa Catarina", "SE - Sergipe", "SP - São Paulo", "TO - Tocantins"));
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, Estados);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(dataAdapter);
+        estado.setText("Estado");
     }
-    public void CadastroClick(View v) {
-        if (txtCep.getTextSize() != 0 && txtNome.getTextSize() != 0 && txtCidade.getTextSize() != 0
-                && txtBairro.getTextSize() != 0 && txtNum.getTextSize() != 0 && spin.getSelectedItemPosition() != 0) {
+    public void CadastroClick(View v){
+        tryCadEnd();
+    }
+    public void tryCadEnd() {
+        String Nome = txtNome.getText().toString();
+        String Cidade = txtCidade.getText().toString();
+        String Uf1 = spin.getSelectedItem().toString();
+        String Numero = txtNum.getText().toString();
+        String cep = txtCep.getText().toString();
+        String Comp = txtComp.getText().toString();
+        String bairro = txtBairro.getText().toString();
+
+
+
+        txtNome.setError(null);
+        txtNum.setError(null);
+        txtComp.setError(null);
+        txtBairro.setError(null);
+        txtCidade.setError(null);
+        estado.setError(null);
+        txtCep.setError(null);
+
+
+
+
+        boolean cancel = false;
+        View focusView = null;
+
+
+        if (TextUtils.isEmpty(Nome)) {
+            txtNome.setError("Você não preencheu o endereço!");
+            cancel = true;
+            focusView = txtNome;
+        }
+        if (TextUtils.isEmpty(Numero)) {
+            txtNum.setError("O campo é obrigatório");
+            cancel = true;
+            focusView = txtNum;
+        }
+              if (TextUtils.isEmpty(Comp)) {
+            txtComp.setError("O campo é obrigatório");
+            cancel = true;
+            focusView = txtComp;
+        }
+        if (TextUtils.isEmpty(Cidade)) {
+            txtCidade.setError("O campo é obrigatório");
+            cancel = true;
+            focusView = txtCidade;
+        }
+        if (TextUtils.isEmpty(bairro)) {
+            txtBairro.setError("O campo é obrigatório");
+            cancel = true;
+            focusView = txtBairro;
+        }
+        if (TextUtils.isEmpty(cep)) {
+            txtCep.setError("O campo é obrigatório");
+            cancel = true;
+            focusView = txtCep;
+        }
+        if (TextUtils.isEmpty(Uf1)) {
+            estado.setError("O campo é obrigatório");
+            cancel = true;
+            focusView = estado;
+        }
+
+        if (cancel) {
+            //Código caso algum campo esteja inválido
+            focusView.requestFocus();
+        } else {
+           tryCad();
+             Intent i = new Intent(this, PerfilActivity.class);
+             startActivity(i);
+        }
+    }
+
+
+    public void tryCad() {
+
             String Bairro = txtBairro.getText().toString();
             String Endereco = txtNome.getText().toString();
             String Cep = txtCep.getText().toString();
@@ -81,14 +161,14 @@ public class CadastroEnderecoActivity extends AppCompatActivity implements Adapt
             if (res != -1) {
 
 
-                Toast.makeText(this, "Sucesso!!", Toast.LENGTH_LONG);
+                Toast.makeText(this, "Sucesso!!", Toast.LENGTH_LONG).show();
             } else {
-                Toast.makeText(this, "Um erro ocorreu", Toast.LENGTH_LONG);
+                Toast.makeText(this, "Um erro ocorreu", Toast.LENGTH_LONG).show();
             }
-            Intent intent = new Intent(this, PerfilActivity.class);
-            startActivity(intent);
+
         }
-    }
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // handle arrow click here
@@ -101,8 +181,11 @@ public class CadastroEnderecoActivity extends AppCompatActivity implements Adapt
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+        if (spin.performClick() == true) {
+            estado.setText((CharSequence) spin.getSelectedItem());
+        }
     }
+
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {

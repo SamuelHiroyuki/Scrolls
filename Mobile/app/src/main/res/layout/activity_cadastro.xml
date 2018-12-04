@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@drawable/button_login_shape"
-            android:onClick="CadProd"
+            android:onClick="Cad"
             android:text="CRIAR CONTA"
             android:textAlignment="center"
             android:textColor="#ffffff"
@@ -80,18 +80,7 @@
             android:textAlignment="center"
             />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_google_shape"
-            android:drawableLeft="@drawable/googleicon"
-            android:text="CRIE SUA CONTA PELO GOOGLE"
-            android:textSize="18dp"
-            android:textColor="@color/PretoPrincipal"
-            android:layout_marginTop="10dp"
-            android:onClick="Cad"
-            ></Button>
-        <TextView
+<TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ja tem uma conta?"

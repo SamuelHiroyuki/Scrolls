@@ -52,7 +52,7 @@
                 >
 
                 <TextView
-                    android:id="@+id/txtPerfil"
+                    android:id="@+id/txtNomeUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="60dp"
@@ -61,14 +61,7 @@
 
                     android:textSize="22sp" />
 
-                <TextView
-                    android:id="@+id/txtEmailPerfil"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="emails@email.email"
-                    android:textColor="@color/PretoPrincipal"
-                    android:textSize="16sp" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -87,14 +80,15 @@
                 android:textColor="#fff"
 
                 />
+
             <Button
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_comprar_agr"
-                android:textColor="#fff"
+                android:onClick="CadEditUser"
                 android:text="Editar"
 
-                />
+                android:textColor="#fff" />
             <Button
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"

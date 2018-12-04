@@ -85,6 +85,9 @@
         <activity
             android:name=".content_settings"
             android:label="@string/title_settings" />
+        <activity
+            android:name=".EditUser"
+            android:label="@string/title_activity_edit_user"></activity>
     </application>
 
 </manifest>

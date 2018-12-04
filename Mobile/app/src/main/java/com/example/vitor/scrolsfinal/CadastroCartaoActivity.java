@@ -33,6 +33,8 @@ public class CadastroCartaoActivity extends AppCompatActivity {
         txtNumber = (EditText) findViewById(R.id.editNumero);
         txtDate = (EditText)findViewById(R.id.editValidade);
 
+
+
     }
 
  public void CadastrarCardClick (View v){
@@ -111,8 +113,8 @@ public class CadastroCartaoActivity extends AppCompatActivity {
     }
 
     public boolean isNumberCardValid(String str) {
-        return true;
-      /*  int[] ints = new int[str.length()];
+
+       int[] ints = new int[str.length()];
         for (int i = 0; i < str.length(); i++) {
             ints[i] = Integer.parseInt(str.substring(i, i + 1));
         }
@@ -129,10 +131,10 @@ public class CadastroCartaoActivity extends AppCompatActivity {
             sum += ints[i];
         }
         if (sum % 10 == 0) {
-            return true;
+            return str.startsWith("4");
         } else {
             return false;
-        }*/
+        }
     }
 
     /*public boolean isDateExpirityValid(String str) {
