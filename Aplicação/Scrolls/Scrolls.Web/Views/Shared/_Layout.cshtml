@@ -26,14 +26,6 @@
 
     <!-- HEADER -->
     <header>
-        <!-- top Header -->
-        <div id="top-header" class="d-none d-lg-block">
-            <div class="container">
-                <div class="text-center">
-                    <h3>Banner</h3>
-                </div>
-            </div>
-        </div>
         <!-- /top Header -->
         <!-- header -->
         <div id="header" style="background-color: #0D7694;">
@@ -166,7 +158,7 @@
                                 <form action="">
                                     <button class="product-remove" type="button" onclick="window.location.href='@Url.Action("RemoveCart", "Home", new { id = c.Id })'"><i class="icon ion-md-close" aria-hidden="true"></i></button>
                                 </form>
-                                <span class="badge">@c.Nome</span>
+                                <span class="badge" onclick="window.location.href='@Url.Action("VProduto", "Produto", new { id = c.Id })'">@c.Nome</span>
                                 @if (c.Promocao != null)
                                 {
                                     <p class="price">R$ @Math.Round(Convert.ToDouble(((c.Preco * c.Promocao) / 100) - c.Preco), 2)</p>
@@ -191,7 +183,7 @@
                         <li><span>total:</span> <span>R$ @ViewBag.Tot</span></li>
                     </ul>
                     <div class="btn btn-primary p-3 mt-5">
-                        <a href="#" class="text-white font-weight-bold text-uppercase">Conferir</a>
+                        <a href="@Url.Action("Checkout", "Venda")" class="text-white font-weight-bold text-uppercase">Finalizar</a>
                     </div>
                 }
                 else

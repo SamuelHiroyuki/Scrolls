@@ -103,7 +103,7 @@
 
         <div class="row">
             <div class="col-md-12 mb-4 border border-light text-center p-0">
-                <img src="~/img/Slide2.png" width="1137" />
+                <img src="~/img/Slide2.png" width="1136" />
             </div>
             <!-- Banner -->
         </div>
@@ -134,14 +134,18 @@
                     {
                         <!-- Product Single -->
                         <div class="product product-single product-hot">
-                            <div class="product-thumb">
+                            <div class="product-thumb"  onclick="window.location.href='@Url.Action("VProduto", "Produto", new { id = n.Id })'">
                                 <div class="product-label">
                                     <span>New</span>
                                     @if (n.Promocao != null)
                                     {
-                                        <span class="sale">@n.Promocao</span>
+                                        <span class="sale">@n.Promocao%</span>
                                     }
-                                    <span class="replace"></span>
+                                    @if (n.Quantidade == 0)
+                                    {
+                                        <span class="replace">Esgotado</span>
+                                    }
+                                    
                                 </div>
                                 <img src="@n.Imagem1" alt="">
                             </div>
@@ -236,15 +240,18 @@
                     {
                         <!-- Product Single -->
                         <div class="product product-single product-hot">
-                            <div class="product-thumb">
+                            <div class="product-thumb" onclick="window.location.href='@Url.Action("VProduto", "Produto", new { id = n.Id })'">
                                 <div class="product-label">
                                     @if (n.Promocao != null)
                                     {
-                                        <span class="sale">@n.Promocao</span>
+                                        <span class="sale">@n.Promocao%</span>
                                     }
-                                    <span class="replace"></span>
+                                    @if (n.Quantidade == 0)
+                                    {
+                                        <span class="replace">Esgotado</span>
+                                    }
                                 </div>
-                                <img src='"https://manager-scrolls.azurewebsites.net/Imagens/Produtos/" + "@n.Imagem1"' alt="">
+                                <img src="@n.Imagem1" alt="">
                             </div>
                             <div class="product-body">
                                 @if (n.Promocao != null)
@@ -264,7 +271,7 @@
                                     <i class="icon ion-md-star-outline empty"></i>
                                 </div>
                                 <form action="" class="product-btns d-flex justify-content-center">
-                                    <button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
+                                    <button class="primary-btn add-to-cart" type="button" onclick="window.location.href='@Url.Action("AddCart", "Home", new { id = n.Id })'"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
                                 </form>
                             </div>
                         </div>

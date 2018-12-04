@@ -36,6 +36,11 @@ namespace Scrolls.Web.Controllers
                 {
                     ViewBag.Tot += p.Preco;
                 }
+                if (!p.Imagem1.Contains("https://manager-scrolls.azurewebsites.net"))
+                {
+
+                    p.Imagem1 = "https://manager-scrolls.azurewebsites.net" + p.Imagem1;
+                }
             }
             return View();
         }
@@ -45,6 +50,11 @@ namespace Scrolls.Web.Controllers
             ViewBag.Nome = email;
             ViewBag.S = senha;
             return View();
+        }
+
+        public ActionResult LimparCart() {
+            Scrolls.Web.Models.MeuCarrinho.Cesta = new List<Produto>();
+            return RedirectToAction("Index");
         }
 
         public ActionResult Logar(string s, string nr)
