@@ -38,6 +38,11 @@ namespace Scrolls.DataAccessObject
             return context.Clientes.ToList();
         }
 
+        public int Count()
+        {
+            return context.Clientes.Count();
+        }
+
         public Cliente BuscarEmail(string e) {
             Cliente cliente = context.Clientes.FirstOrDefault(c => c.Email.Equals(e));
             if (cliente != null)

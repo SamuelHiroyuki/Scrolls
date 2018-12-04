@@ -1536,7 +1536,7 @@
 										"$ref": "AAAAAAFlP8bQRj4Geu4="
 									},
 									"edgePosition": 1,
-									"text": "Mora"
+									"text": "Entrega"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -3993,7 +3993,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFlOsRtczzueSE="
 							},
-							"name": "Mora",
+							"name": "Entrega",
 							"end1": {
 								"_type": "ERDRelationshipEnd",
 								"_id": "AAAAAAFlP8bQRT4DWTE=",

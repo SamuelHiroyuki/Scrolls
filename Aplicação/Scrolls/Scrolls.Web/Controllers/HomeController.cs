@@ -13,8 +13,18 @@ namespace Scrolls.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            ViewBag.New = new ProdutoDAO().IsNew();
-            ViewBag.Rep = new ProdutoDAO().IsRep();
+            var n = new ProdutoDAO().IsNew();
+            var r = new ProdutoDAO().IsRep();
+            foreach (Produto p in n)
+            {
+                p.Imagem1 = "https://manager-scrolls.azurewebsites.net" + p.Imagem1;
+            }
+            ViewBag.New = n;
+            foreach (Produto p in r)
+            {
+                p.Imagem1 = "https://manager-scrolls.azurewebsites.net" + p.Imagem1;
+            }
+            ViewBag.Rep = r;
             ViewBag.Tot = 0;
             foreach (var p in Scrolls.Web.Models.MeuCarrinho.Cesta)
             {
@@ -73,6 +83,26 @@ namespace Scrolls.Web.Controllers
             Produto p = new ProdutoDAO().BuscaId(id);
             Scrolls.Web.Models.MeuCarrinho.Cesta.Add(p);
 
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult RemoveCart(int id)
+        {
+            try
+            {
+                foreach (var c in Scrolls.Web.Models.MeuCarrinho.Cesta)
+                {
+                    if (id == c.Id)
+                    {
+                        Scrolls.Web.Models.MeuCarrinho.Cesta.Remove(c);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                return RedirectToAction("Index");
+            }
             return RedirectToAction("Index");
         }
     }

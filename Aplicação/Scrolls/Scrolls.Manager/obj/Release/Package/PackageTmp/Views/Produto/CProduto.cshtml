@@ -1,0 +1,431 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro de produto";
+}
+
+
+<style>
+    .fbg {
+        border-color: #efebe9;
+    }
+
+    .btn-blue:hover {
+        background-color: #005389;
+        border-color: #005389;
+    }
+
+    .btn-blue:active:hover, .btn-blue.active:hover, .open > .dropdown-toggle.btn-blue:hover, .btn-blue:active:focus, .btn-blue.active:focus, .open > .dropdown-toggle.btn-blue:focus, .btn-blue:active.focus, .btn-blue.active.focus, .open > .dropdown-toggle.btn-blue.focus {
+        background-color: #003d65;
+        border-color: #003d65;
+    }
+
+    .btn-blue:focus, .btn-blue.focus {
+        background-color: #005389;
+        border-color: #005389;
+    }
+
+    .btn-gold:hover {
+        background-color: #fbc404;
+        border-color: #fbc404;
+    }
+
+    .btn-gold:active:hover, .btn-gold.active:hover, .open > .dropdown-toggle.btn-gold:hover, .btn-gold:active:focus, .btn-gold.active:focus, .open > .dropdown-toggle.btn-gold:focus, .btn-gold:active.focus, .btn-gold.active.focus, .open > .dropdown-toggle.btn-gold.focus {
+        background-color: #b08903;
+        border-color: #b08903;
+    }
+
+
+    .btn-gold:focus, .btn-gold.focus {
+        background-color: #fbc404;
+        border-color: #fbc404;
+    }
+
+
+    .btn-danger:hover {
+        background-color: #a11c1c;
+        border-color: #a11c1c;
+    }
+
+    .btn-danger:active:hover, .btn-danger.active:hover, .open > .dropdown-toggle.btn-danger:hover, .btn-danger:active:focus, .btn-danger.active:focus, .open > .dropdown-toggle.btn-danger:focus, .btn-danger:active.focus, .btn-danger.active.focus, .open > .dropdown-toggle.btn-danger.focus {
+        background-color: #821717;
+        border-color: #821717;
+    }
+
+
+    .btn-danger:focus, .btn-danger.focus {
+        background-color: #a11c1c;
+        border-color: #a11c1c;
+    }
+</style>
+
+<div class="sidebar-menu" style="width: 40px;">
+
+    <div class="sidebar-menu-inner" style="position: fixed !important;">
+        <div class="row" style="padding-top: 160px; margin-left: -17px;">
+            <div class="col-sm-12" style="padding-left: 0px;">
+                <button type="button" class="btn btn-blue fbg inserttb" style="border-radius: 50%;  height: 52px; width: 52px; border-width: 5px; padding-bottom: 8px; padding-left: 11px;">
+                    <i class="entypo-plus-squared" style="font-size: 15px;"></i>
+                </button>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 50px; padding-bottom: 50px;">
+            <div class="col-sm-12" style="padding-left: 0px;">
+                <button type="button" class="btn btn-gold fbg" onclick="$('#form1').each (function(){ this.reset(); });" style="border-radius: 50%;  height: 48px; border-width: 4px;">
+                    <i class="entypo-trash"></i>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" style="padding-left: 0px;">
+                <button type="button" class="btn btn-danger fbg" onclick="window.location.href='/Home/Index'" style="border-radius: 50%;  height: 48px; border-width: 4px;">
+                    <i class="entypo-cancel-squared "></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="main-content" style="background-color: #efebe9;">
+            <div class="well" style="background-color: #fff !important; padding-top: 35px; position:relative;">
+                <form role="form" id="form1" method="post" class="validate" enctype="multipart/form-data" action="/Produto/Cadastrar">
+                    <div class="row">
+                        <div class="col-md-4" style="padding-left: 35px;">
+                            <label class="form-label">Imagem destaque</label>
+                            <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
+                                <div class="fileinput-new thumbnail" style="width: 320px; height:450px;" data-trigger="fileinput">
+                                    <img src="http://placehold.it/320x450">
+                                </div>
+
+
+                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 320px; max-height: 450px; min-width: 320px; min-height: 450px;"></div>
+                                <br />
+                                <div style="padding-left: 0px;">
+                                    <span class="btn btn-white btn-file" style="align-items: center; width: 40px; height: 40px; display: flex;">
+                                        <span class="fileinput-new" style="padding-right: 6px;">
+                                            <i class="entypo-upload"></i>
+                                        </span>
+                                        <i class="entypo-ccw"></i>
+                                        <input type="file" name="i1" accept=".jpg">
+                                    </span>
+                                    <br />
+                                    <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput" style="padding-top: 10px; width: 40px; height: 40px; margin-top: 350px;"><i class="entypo-trash"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2" style="padding-left: 70px;">
+                            <label class="form-label">Outras imagens</label>
+                            <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
+                                <div class="fileinput-new thumbnail" style="width: 100px; height: 100px; border-radius: 50%;" data-trigger="fileinput">
+                                    <img src="http://placehold.it/200x200" style="border-radius: 50%;">
+                                </div>
+
+                                <style type="text/css">
+                                    #aa > img {
+                                        border-radius: 50%;
+                                    }
+                                </style>
+
+                                <div class="fileinput-preview fileinput-exists thumbnail" id="aa" style="max-width: 100px; max-height: 100px; min-width: 100px; min-height: 100px; border-radius: 50%;"></div>
+                                <br />
+                                <div style="padding-left: 0px;">
+                                    <span class="btn btn-white btn-file" style="align-items: center; border-radius: 50%; width: 40px; height: 40px; display: flex;">
+                                        <span class="fileinput-new" style="padding-right: 6px;">
+                                            <i class="entypo-upload"></i>
+                                        </span>
+                                        <i class="entypo-ccw"></i>
+                                        <input type="file" name="i2" accept=".jpg">
+                                    </span>
+                                    <br />
+                                    <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput" style="padding-top: 10px;border-radius: 50%; width: 40px; height: 40px; margin-top: 0px;"><i class="entypo-trash"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="padding-left: 160px; margin-top: 23px;">
+                            <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
+                                <div class="fileinput-new thumbnail" style="width: 100px; height: 100px; border-radius: 50%;" data-trigger="fileinput">
+                                    <img src="http://placehold.it/200x200" style="border-radius: 50%;">
+                                </div>
+
+                                <style type="text/css">
+                                    #aa > img {
+                                        border-radius: 50%;
+                                    }
+                                </style>
+
+                                <div class="fileinput-preview fileinput-exists thumbnail" id="aa" style="max-width: 100px; max-height: 100px; min-width: 100px; min-height: 100px; border-radius: 50%;"></div>
+                                <br />
+                                <div style="padding-left: 0px;">
+                                    <span class="btn btn-white btn-file" style="align-items: center; border-radius: 50%; width: 40px; height: 40px; display: flex;">
+                                        <span class="fileinput-new" style="padding-right: 6px;">
+                                            <i class="entypo-upload"></i>
+                                        </span>
+                                        <i class="entypo-ccw"></i>
+                                        <input type="file" name="i3" accept=".jpg">
+                                    </span>
+                                    <br />
+                                    <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput" style="padding-top: 10px;border-radius: 50%; width: 40px; height: 40px; margin-top: 0px;"><i class="entypo-trash"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="padding-left: 200px; margin-top: 23px;">
+                            <div class="fileinput fileinput-new" data-provides="fileinput" style="display: inline-flex;">
+                                <div class="fileinput-new thumbnail" style="width: 100px; height: 100px; border-radius: 50%;" data-trigger="fileinput">
+                                    <img src="http://placehold.it/200x200" style="border-radius: 50%;">
+                                </div>
+
+                                <style type="text/css">
+                                    #aa > img {
+                                        border-radius: 50%;
+                                    }
+                                </style>
+
+                                <div class="fileinput-preview fileinput-exists thumbnail" id="aa" style="max-width: 100px; max-height: 100px; min-width: 100px; min-height: 100px; border-radius: 50%;"></div>
+                                <br />
+                                <div style="padding-left: 0px;">
+                                    <span class="btn btn-white btn-file" style="align-items: center; border-radius: 50%; width: 40px; height: 40px; display: flex;">
+                                        <span class="fileinput-new" style="padding-right: 6px;">
+                                            <i class="entypo-upload"></i>
+                                        </span>
+                                        <i class="entypo-ccw"></i>
+                                        <input type="file" name="i4" accept=".jpg">
+                                    </span>
+                                    <br />
+                                    <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput" style="padding-top: 10px;border-radius: 50%; width: 40px; height: 40px; margin-top: 0px;"><i class="entypo-trash"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-8">
+                            <br />
+                            <br />
+                            <div class="form-group">
+                                <label class="form-label">Nome*</label>
+                                <input type="text" class="form-control" name="n" id="name" data-validate="required" maxlength="100" data-message-required="O campo é requerido" placeholder="Nome" />
+                                <span id="mn" style="color: #cc2424;" hidden>Esse campo é obrigatório!</span>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-8">
+                            <br />
+                            <br />
+                            <div class="form-group">
+                                <label class="control-label">Categoria&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Gênero</label>
+
+                                <select class="form-control" name="gen">
+                                    @foreach (var c in ViewBag.Categorias)
+                                    {
+                                        foreach (var g in ViewBag.Generos)
+                                        {
+                                            if (c.Id == g.CategoriaId)
+                                            {
+                                                <option value="@g.Id">
+                                                    @c.Nome
+                                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                    @g.Nome
+                                                </option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <br />
+                        <br />
+                        <div class="col-sm-2" style="z-index: 2; padding-left: 35px; left: 20px; top: 25px;">
+                            <label class="control-label">Quantidade</label><br />
+                            <input class="knob" name="qtd" data-min="1" data-max="999" data-width="145" data-height="145" data-thickness=".25" data-fgColor="#0fbd71" data-bgColor="#ebebeb" value="1">
+                        </div>
+
+
+                        <div class="col-sm-2" id="prec" style="padding-left: 20px; left: -30px; top: 83px;">
+
+                            <label class="control-label" style="padding-left: 20px;">Preço</label>
+                            <div class="input-group">
+                                <span class="input-group-addon" style="color: #0fbd71">R$</span>
+                                <input type="number" class="form-control" id="pre" value="2.00" min="2.00" name="prec" max="any" step=".1">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-8" style="top: -130px;">
+                            <div class="form-group">
+                                <label for="field-ta" class="control-label">Descrição*</label>
+                                <textarea class="form-control" name="desc" style="resize: none;" id="field-ta" placeholder="Descrição" rows="18" cols="2"></textarea>
+                                <span id="md" style="color: #cc2424;" hidden>Esse campo é obrigatório!</span>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12" style="padding-left: 40px; padding-right: 40px; top: -80px;">
+                            <div class="form-group">
+                                <label class="control-label">
+                                    Complemento
+                                    <i class="entypo-info-circled" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="O complemento serve para adiconar informações especificas sobre o produto, como autor, tamanho, peso, material, marca e etc. O campo Titulo é responsavel por identificar o tipo do complemento e o campo Descrição por apresentar os dados." data-original-title="Como funciona"></i>
+                                </label>
+                                <table class="table table-bordered responsive" id="products-table"><tbody><tr><th>Titulo</th><th>Descrição</th><th>Ações</th></tr><tr><td contenteditable="true" style="vertical-align: middle; max-width: 295px;" width="295">&nbsp;</td><td contenteditable="true" style="vertical-align: middle; max-width: 665px;" width="665">&nbsp;</td><td style="text-align: center; vertical-align: middle; max-width: 157px;" width="157"><button type="button" class="btn btn-white" onclick="RemoveTableRow(this)" style="border-radius: 50%;  height: 42px;"><i class="entypo-cancel"></i></button></td></tr></tbody><tfoot><tr><td colspan="5" style="text-align: left;"><button onclick="AddTableRow()" type="button" style="border-radius: 25%;"><i class="entypo-plus"></i></button></td></tr></tfoot></table>
+                            </div>
+                        </div>
+                    </div>
+                    <textarea class="itb" hidden name="comp"></textarea>
+                </form>
+            </div>
+
+</div>
+
+
+
+
+
+<!-- Imported styles on this page -->
+<link rel="stylesheet" href="~/Assets/js/jvectormap/jquery-jvectormap-1.2.2.css">
+<link rel="stylesheet" href="~/Assets/js/rickshaw/rickshaw.min.css">
+
+<!-- Bottom scripts (common) -->
+<script src="~/Assets/js/gsap/TweenMax.min.js"></script>
+<script src="~/Assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+<script src="~/Assets/js/bootstrap.js"></script>
+<script src="~/Assets/js/joinable.js"></script>
+<script src="~/Assets/js/resizeable.js"></script>
+<script src="~/Assets/js/neon-api.js"></script>
+<script src="~/Assets/js/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="~/Assets/js/jvectormap/jquery-jvectormap-europe-merc-en.js"></script>
+<script src="~/Assets/js/jquery.sparkline.min.js"></script>
+<script src="~/Assets/js/rickshaw/vendor/d3.v3.js"></script>
+<script src="~/Assets/js/rickshaw/rickshaw.min.js"></script>
+<script src="~/Assets/js/raphael-min.js"></script>
+<script src="~/Assets/js/morris.min.js"></script>
+<script src="~/Assets/js/toastr.js"></script>
+<script src="~/Assets/js/neon-chat.js"></script>
+
+<script src="~/Assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+<script src="~/Assets/js/jquery.knob.js"></script>
+
+<script src="~/Assets/js/bootstrap-datepicker.js"></script>
+<script src="~/Assets/js/bootstrap-timepicker.min.js"></script>
+
+<script src="~/Assets/js/bootstrap-switch.min.js"></script>
+<script src="~/Assets/js/jquery.inputmask.bundle.js"></script>
+<script src="~/Assets/js/fileinput.js"></script>
+<script type="text/javascript" src="~/Assets/js/neon-calendar.js"></script>
+
+<script src="~/Assets/js/zurb-responsive-tables/responsive-tables.js"></script>
+<!-- JavaScripts initializations and stuff -->
+<script src="~/Assets/js/neon-custom.js"></script>
+
+<script src="~/Assets/js/dropzone/dropzone.js"></script>
+
+<link rel="stylesheet" href="~/Assets/js/dropzone/dropzone.css">
+
+<!-- Demo Settings -->
+<script src="~/Assets/js/neon-demo.js"></script>
+<link href="~/Assets/style.css" rel="stylesheet" />
+<script src="~/Assets/js/toastr.js"></script>
+<script>
+    $(window).resize(function () {
+
+        if ($(window).width() <= 768) {
+            var el = document.getElementById('id');
+            el.parentNode.removeChild(el);
+        }
+    });
+</script>
+
+<script>
+    $(function ($) {
+        AddTableRow = function () {
+            var newRow = $("<tr>");
+            var cols = "";
+            cols += '<td contenteditable="true" style="vertical-align: middle; max-width: 295px;" width="295">&nbsp;</td><td contenteditable="true" style="vertical-align: middle; max-width: 465px;" width="465">&nbsp;</td><td style="text-align: center; vertical-align: middle;"><button type="button" class="btn btn-white" onclick="RemoveTableRow(this)" style="border-radius: 50%;  height: 42px;">' + '<i class="entypo-cancel"></i></button></td>';
+            newRow.append(cols);
+            $("#products-table").append(newRow);
+            return false;
+        };
+    });
+
+    $(function ($) {
+        RemoveTableRow = function (item) {
+            var tr = $(item).closest('tr');
+            tr.fadeOut(400, function () { tr.RemoveTableRow(); });
+            tr.remove();
+            return false;
+        }
+    });
+</script>
+
+<style>
+    .bc-r {
+        border-color: #cc2424;
+    }
+</style>
+
+<script>
+    $('.inserttb').on('click', mst)
+    function mst() {
+        var elementHtml = document.getElementById('products-table');
+        var tb = elementHtml.outerHTML;
+        $('.itb').text(tb);
+
+
+        var d = $('#field-ta');
+        var n = $('#name');
+        var p = $('#pre');
+
+        if (n.val().trim() != "" && d.val().trim() != "" && p.val() >= 2.00) {
+            $('#form1').each(function () { this.submit(); });
+        }
+
+        if (!(p.val() >= 2.00) || p.val() < 0) {
+            toastr.warning('Preencha todos os campos corretamente para finalizar!', 'Atenção!')
+            p.addClass('bc-r');
+        } else {
+            p.removeClass('bc-r');
+        }
+
+        if (n.val().trim() == "") {
+            $('#mn').attr('hidden', false);
+            n.addClass('bc-r');
+        } else {
+            $('#mn').attr('hidden', true);
+            n.removeClass('bc-r');
+        }
+
+        if (d.val().trim() == "") {
+            $('#md').attr('hidden', false);
+            d.addClass('bc-r');
+        } else {
+            $('#md').attr('hidden', true);
+            d.removeClass('bc-r');
+        }
+
+        if (n.val().trim() == "" || d.val().trim() == "") {
+            toastr.error('Preencha todos os campos corretamente para finalizar!', 'Atenção!')
+        }
+    }
+</script>
+
+@if (TempData["Sucesso"] != null)
+{
+    <script>
+        $(document).ready(toastr.success('Produto cadastrado com sucesso!', 'Sucesso!'));
+    </script>
+}
+
+@*<script>
+    $(document).ready(function () {
+        $("#ct").change(function () {
+            $("#ct option[value='ii']").remove();
+            var val = $(this).val();
+            var aaa = @Html.Raw(Json.Encode(@ViewBag.Generos));
+            for (var i = 0; i < gen.length; i++) {
+                if (val == gen[i].CategoriaId) {
+                    $("#gn").html("<option value=" + gen[i].Id + ">" + gen[i].Nome + "</option>");
+                }
+            }
+        });
+    });
+
+</script>*@

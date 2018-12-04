@@ -1,0 +1,23 @@
+﻿#prec {
+    z-index: 1;
+    top: 58px;
+    left: -48px;
+    padding-left: 0px;
+}
+
+@media only screen and (max-width: 992px ) {
+    #prec {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@media only screen and (max-width: 375px ) {
+
+    #pr {
+        padding-right: 820px;
+    }
+
+    #table-3_wrapper {
+        width: 800px;
+    }
