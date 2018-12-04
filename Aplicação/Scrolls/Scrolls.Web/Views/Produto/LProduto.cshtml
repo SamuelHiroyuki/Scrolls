@@ -2,8 +2,11 @@
 @{
     ViewBag.Title = "LProduto";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Active = "show-on-click";
 }
 
+@using PagedList.Mvc;
+@using PagedList;
 <!-- /FILTER AREA -->
 <section class="mt-5 ">
     <div class="container">
@@ -206,147 +209,13 @@
                                 <h5 class="product-price">R$ @ps.Preco</h5>
                             }
                             <p class="product-name"><a href="#">@ps.Nome</a></p>
-                            @{ if (ps.Id == ViewBag.Listavp.ProdutoId)
-                                {
-                                    if (ViewBag.Listavp.Notas == 0)
-                                    {
-                                        <div class="product-rating" style="font-size: 15px">
+                               <div class="product-rating" style="font-size: 15px">
                                             <i class="icon ion-md-star-outline empty"></i>
                                             <i class="icon ion-md-star-outline empty"></i>
                                             <i class="icon ion-md-star-outline empty"></i>
                                             <i class="icon ion-md-star-outline empty"></i>
                                             <i class="icon ion-md-star-outline empty"></i>
-                                        </div><!-- Rate -->
-                                    }
-                                    else
-                                    {
-                                        if (ViewBag.Listavp.Notas > 0 && ViewBag.Listavp.Notas < 1)
-                                        {
-                                            <div class="product-rating" style="font-size: 15px">
-                                                <i class="icon ion-md-star-half"></i>
-                                                <i class="icon ion-md-star-outline empty"></i>
-                                                <i class="icon ion-md-star-outline empty"></i>
-                                                <i class="icon ion-md-star-outline empty"></i>
-                                                <i class="icon ion-md-star-outline empty"></i>
-                                            </div><!-- Rate -->
-                                        }
-                                        else
-                                        {
-                                            if (ViewBag.Listavp.Notas == 1)
-                                            {
-                                                <div class="product-rating" style="font-size: 15px">
-                                                    <i class="icon ion-md-star"></i>
-                                                    <i class="icon ion-md-star-outline empty"></i>
-                                                    <i class="icon ion-md-star-outline empty"></i>
-                                                    <i class="icon ion-md-star-outline empty"></i>
-                                                    <i class="icon ion-md-star-outline empty"></i>
-                                                </div><!-- Rate -->
-                                            }
-                                            else
-                                            {
-                                                if (ViewBag.Listavp.Notas > 1 && ViewBag.Listavp.Notas < 2)
-                                                {
-                                                    <div class="product-rating" style="font-size: 15px">
-                                                        <i class="icon ion-md-star"></i>
-                                                        <i class="icon ion-md-star-half"></i>
-                                                        <i class="icon ion-md-star-outline empty"></i>
-                                                        <i class="icon ion-md-star-outline empty"></i>
-                                                        <i class="icon ion-md-star-outline empty"></i>
-                                                    </div><!-- Rate -->
-                                                }
-                                                else
-                                                {
-                                                    if (ViewBag.Listavp.Notas == 2)
-                                                    {
-                                                        <div class="product-rating" style="font-size: 15px">
-                                                            <i class="icon ion-md-star"></i>
-                                                            <i class="icon ion-md-star"></i>
-                                                            <i class="icon ion-md-star-outline empty"></i>
-                                                            <i class="icon ion-md-star-outline empty"></i>
-                                                            <i class="icon ion-md-star-outline empty"></i>
-                                                        </div><!-- Rate -->
-                                                    }
-                                                    else
-                                                    {
-                                                        if (ViewBag.Listavp.Notas > 2 && ViewBag.Listavp.Notas < 3)
-                                                        {
-                                                            <div class="product-rating" style="font-size: 15px">
-                                                                <i class="icon ion-md-star"></i>
-                                                                <i class="icon ion-md-star"></i>
-                                                                <i class="icon ion-md-star-half"></i>
-                                                                <i class="icon ion-md-star-outline empty"></i>
-                                                                <i class="icon ion-md-star-outline empty"></i>
-                                                            </div><!-- Rate -->
-                                                        }
-                                                        else
-                                                        {
-                                                            if (ViewBag.Listavp.Notas == 3)
-                                                            {
-                                                                <div class="product-rating" style="font-size: 15px">
-                                                                    <i class="icon ion-md-star"></i>
-                                                                    <i class="icon ion-md-star"></i>
-                                                                    <i class="icon ion-md-star"></i>
-                                                                    <i class="icon ion-md-star-outline empty"></i>
-                                                                    <i class="icon ion-md-star-outline empty"></i>
-                                                                </div><!-- Rate -->
-                                                            }
-                                                            else
-                                                            {
-                                                                if (ViewBag.Listavp.Notas > 3 && ViewBag.Listavp.Notas < 4)
-                                                                {
-                                                                    <div class="product-rating" style="font-size: 15px">
-                                                                        <i class="icon ion-md-star"></i>
-                                                                        <i class="icon ion-md-star"></i>
-                                                                        <i class="icon ion-md-star"></i>
-                                                                        <i class="icon ion-md-star-half"></i>
-                                                                        <i class="icon ion-md-star-outline empty"></i>
-                                                                    </div><!-- Rate -->
-                                                                }
-                                                                else
-                                                                {
-                                                                    if (ViewBag.Listavp.Notas == 4)
-                                                                    {
-                                                                        <div class="product-rating" style="font-size: 15px">
-                                                                            <i class="icon ion-md-star"></i>
-                                                                            <i class="icon ion-md-star"></i>
-                                                                            <i class="icon ion-md-star"></i>
-                                                                            <i class="icon ion-md-star"></i>
-                                                                            <i class="icon ion-md-star-outline empty"></i>
-                                                                        </div><!-- Rate -->
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if (ViewBag.Listavp.Notas > 4 && ViewBag.Listavp.Notas < 5)
-                                                                        {
-                                                                            <div class="product-rating" style="font-size: 15px">
-                                                                                <i class="icon ion-md-star"></i>
-                                                                                <i class="icon ion-md-star"></i>
-                                                                                <i class="icon ion-md-star"></i>
-                                                                                <i class="icon ion-md-star"></i>
-                                                                                <i class="icon ion-md-star-half"></i>
-                                                                            </div><!-- Rate -->
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            <div class="product-rating" style="font-size: 15px">
-                                                                                <i class="icon ion-md-star"></i>
-                                                                                <i class="icon ion-md-star"></i>
-                                                                                <i class="icon ion-md-star"></i>
-                                                                                <i class="icon ion-md-star"></i>
-                                                                                <i class="icon ion-md-star"></i>
-                                                                            </div><!-- Rate -->
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                                </div><!-- Rate -->                                    
                             <form action="" class="product-btns d-flex justify-content-center">
                                 <button class="primary-btn add-to-cart"><i class="icon ion-md-cart mr-1"></i>Add ao Carinho</button>
                             </form>
@@ -365,6 +234,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                @*@Html.PagedListPager((IPagedList)ViewBag.ListProd, page => Url.Action("Index", new { page }), new PagedListRenderOptions
+           { FunctionToTransformEachPageLink = (liTag, aTag) => { aTag.Attributes.Add("class", "page-link".ToString()); return aTag; }, LiElementClasses = new[] { "page-item" }, UlElementClasses = new [] { "pagination pagination-lg justify-content-center" } })*@
                 <nav aria-label="...">
                     <ul class="pagination pagination-lg justify-content-center">
                         <li class="page-item disabled">
