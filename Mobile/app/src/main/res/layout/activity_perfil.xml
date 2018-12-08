@@ -10,15 +10,6 @@
     android:elevation="4dp"
     >
 
-    <android.support.design.widget.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:id="@+id/nav_viewPerfil"
-        app:headerLayout="@layout/menu_header"
-        app:menu="@menu/menu_principal"
-        android:background="@color/PretoPrincipal"
-        />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -38,12 +29,12 @@
             >
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgPerfil"
                 android:layout_width="125dp"
                 android:layout_height="125dp"
-                android:layout_marginLeft="20dp"
+                android:src="@drawable/banner_cyber"
                 android:layout_marginTop="35dp"
-                android:src="@drawable/banner_cyber" />
+                android:layout_marginLeft="20dp"
+                />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -52,61 +43,37 @@
                 >
 
                 <TextView
-                    android:id="@+id/txtNomeUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:text="Fulano Ciclano Beltrano"
+                    android:text="Vitor Fonseca"
+                    android:textSize="22sp"
                     android:textColor="@color/PretoPrincipal"
-
-                    android:textSize="22sp" />
-
-
+                    android:layout_marginTop="60dp"
+                    android:id="@+id/txtNomePerfil"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="vitorhugomarin@gmail.com"
+                    android:textColor="@color/PretoPrincipal"
+                    android:layout_marginTop="20dp"
+                    android:textSize="16sp"
+                    android:id="@+id/txtEmailPerfil"
+                    />
             </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            >
 
             <Button
-                android:layout_width="140dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Meus Pedidos"
                 android:background="@drawable/button_carrinho"
                 android:textColor="#fff"
-
+                android:onClick="MeusPedidosCLick"
                 />
 
-            <Button
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_comprar_agr"
-                android:onClick="CadEditUser"
-                android:text="Editar"
 
-                android:textColor="#fff" />
-            <Button
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:text="Carrinho"
-                android:background="@drawable/button_carrinho"
-                android:textColor="#fff"
-                />
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cartões"
-            android:textAlignment="center"
-            android:layout_marginTop="40dp"
-            android:textColor="@color/PretoPrincipal"
-            android:textSize="22sp"
-            />
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
@@ -126,15 +93,7 @@
             android:onClick="CadCartClik"
         />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Endereços"
-            android:textAlignment="center"
-            android:layout_marginTop="40dp"
-            android:textColor="@color/PretoPrincipal"
-            android:textSize="22sp"
-            />
+
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
@@ -160,7 +119,11 @@
             android:textColor="#fff"
             android:textSize="18sp"
             android:layout_marginTop="40dp"
+            android:id="@+id/btnExit"
             />
+
+
+
 
 
     </LinearLayout>

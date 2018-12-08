@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-
+    tools:context=".MainActivity"
     android:background="@drawable/main_bg"
     >
     <LinearLayout
@@ -19,7 +19,7 @@
             android:layout_height="200dp"
             android:layout_marginTop="70dp"
             android:layout_marginLeft="110dp"
-            android:src="@drawable/logo_scrolls" />
+            android:src="@drawable/logo" />
 
        <Button
            android:layout_width="250dp"

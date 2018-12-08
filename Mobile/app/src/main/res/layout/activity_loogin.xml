@@ -19,15 +19,7 @@
         android:orientation="vertical"
         >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="ou"
-            android:textColor="#000000"
-            android:textSize="23dp"
-            android:textAlignment="center"
-             />
+
 
         <EditText
             android:layout_width="match_parent"
@@ -35,33 +27,29 @@
             android:hint="E-mail"
             android:inputType="textEmailAddress"
             android:textSize="18dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="110dp"
             android:textColorHint="@color/PretoPrincipal"
             android:id="@+id/Email"
             />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/password_field"
-            android:layout_marginTop="20dp"
+            android:hint="Senha"
+            android:layout_marginTop="30dp"
             android:inputType="textPassword"
             android:textSize="18dp"
             android:textColorHint="@color/PretoPrincipal"
             android:id="@+id/Pass"
             />
-
-
-
         <Button
-            android:id="@+id/log_in"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:text="CONTINUAR"
             android:layout_marginTop="50dp"
             android:background="@drawable/button_login_shape"
-            android:text="@string/login_btn"
             android:textColor="#ffffff"
             android:textSize="20dp"
-
+            android:id="@+id/sign_in"
             />
         <TextView
             android:layout_width="wrap_content"

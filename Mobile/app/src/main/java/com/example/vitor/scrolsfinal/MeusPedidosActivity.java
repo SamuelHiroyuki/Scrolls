@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.google.zxing.integration.android.IntentIntegrator;
+
 import java.security.Principal;
 
 public class MeusPedidosActivity extends AppCompatActivity {
@@ -19,36 +21,7 @@ public class MeusPedidosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meus_pedidos);
 
-
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.NavViewPedidos);
-        navigationView.setCheckedItem(R.id.itmMeusPedidos);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
-
-                    case R.id.itmMapa:
-                        Intent intent2 = new Intent(getApplicationContext(), PrincipalActivity.class);
-                        startActivity(intent2);
-                        break;
-                    case R.id.itmComprar:
-                        Intent intent3 = new Intent(getApplicationContext(), PrincipalActivity.class);
-                        startActivity(intent3);
-                        break;
-                    case R.id.itmQRCam:
-                        Intent intent4 = new Intent(getApplicationContext(), PrincipalActivity.class);
-                        startActivity(intent4);
-                        break;
-                }
-                return true;
-            }
-        });
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layoutPedidos);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,R.string.Drawer_open,R.string.Drawer_close);
-        drawer.addDrawerListener(toggle);
-
-        toggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 }

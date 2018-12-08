@@ -40,16 +40,16 @@ import in.goodiebag.carouselpicker.CarouselPicker;
 import technolifestyle.com.imageslider.FlipperLayout;
 import technolifestyle.com.imageslider.FlipperView;
 
-import static com.example.vitor.scrolsfinal.splashh.PREF_NAME;
+import static com.example.vitor.scrolsfinal.MainActivity.PREF_NAME;
 
-public class PrincipalActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-        CarouselPicker carouselPicker;
-        DrawerLayout drawer;
-        AdapterCat adapter;
-        AdapterProd prodAdapter1, prodAdapter2;
-        LinearLayout HeaderLayput;
-        User loggedUser;
-        NavigationView navigationView;
+public class PrincipalActivity extends AppCompatActivity {
+    CarouselPicker carouselPicker;
+    DrawerLayout drawer;
+    AdapterCat adapter;
+    AdapterProd prodAdapter1, prodAdapter2;
+    LinearLayout HeaderLayput;
+    User loggedUser;
+    NavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,30 +58,26 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         Toolbar mTopToolbar = findViewById(R.id.IncludeToolbarPrincipal);
         setSupportActionBar(mTopToolbar);
         loggedUser = (User) getIntent().getSerializableExtra("LoggedUser");
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+        ImageView carrinho = mTopToolbar.findViewById(R.id.imgCarrinho);
+        carrinho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CarrinhoActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
 
         //Perfil.setText(loggedUser.getNameUser());
         //navigationView.setNavigationItemSelectedListener(this);
-        TextView Perfil = (TextView)navigationView.getHeaderView(0).findViewById(R.id.txtPerfil);
-          Perfil.setText(loggedUser.getNameUser());
-        navigationView.setNavigationItemSelectedListener(this);
 
 
 
-        navigationView.setCheckedItem(R.id.itmComprar);
+        // txtEmailUsu.setText(loggedUser.        txtUser.setText(loggedUser.getNameUser()); getEmailUser());
+        // navigationView.setNavigationItemSelectedListener(this);
 
-
-     // txtEmailUsu.setText(loggedUser.        txtUser.setText(loggedUser.getNameUser()); getEmailUser());
-      // navigationView.setNavigationItemSelectedListener(this);
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,mTopToolbar,R.string.Drawer_open,R.string.Drawer_close);
-        drawer.addDrawerListener(toggle);
-
-        toggle.syncState();
-
-        HeaderLayput = (LinearLayout) findViewById(R.id.HeaderLayout);
 
 
 
@@ -130,7 +126,7 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         adapter = new AdapterCat(this, imagens,nomes);
 
         recyclerView.setAdapter(adapter);
-/*
+
        DAO dao = new DAO(getApplicationContext());
 
       Cursor produtos = dao.ListarProd();
@@ -139,19 +135,20 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         ArrayList<Integer> imagens1 = new ArrayList<>();
         ArrayList<Integer> precos1 = new ArrayList<>();
 
-        for(int i =0; i<= 5;i++){
+        for(int i =0; i<= 3;i++){
             Nomes1.add(produtos.getString(produtos.getColumnIndex("NameProd")));
             imagens1.add(produtos.getInt(produtos.getColumnIndex("ImagemProd")));
             precos1.add(produtos.getInt(produtos.getColumnIndex("PrecoProd")));
+            produtos.moveToNext();
         }
 
-       // RecyclerView rv1 = findViewById(R.id.rvNovo);
-       // LinearLayoutManager VerticalLayoutManager
-          //      = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-      //  rv1.setLayoutManager(VerticalLayoutManager);
-        //prodAdapter1 = new AdapterProd(this,imagens1,Nomes1,precos1);
+        RecyclerView rv1 = findViewById(R.id.rvNovo);
+       LinearLayoutManager VerticalLayoutManager
+              = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+       rv1.setLayoutManager(VerticalLayoutManager);
+         prodAdapter1 = new AdapterProd(this,imagens1,Nomes1,precos1);
 
-        //rv1.setAdapter(prodAdapter1);
+        rv1.setAdapter(prodAdapter1);
 
         RecyclerView rv2 = findViewById(R.id.rvAvaliado);
         LinearLayoutManager verticalLayoutManager
@@ -162,74 +159,15 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         prodAdapter2 = new AdapterProd(this,imagens1,Nomes1,precos1);
 
         rv2.setAdapter(prodAdapter2);
-*/
+
         setLoggedUser();
     }
 
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
-        int id = menuItem.getItemId();
-        Intent intent;
-        switch (id){
-            case R.id.itmMeusPedidos:
-                 intent = new Intent(getApplicationContext()  , MeusPedidosActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.itmMapa:
-               // intent = new Intent(getApplicationContext(), MapaActivity.class);
-               // startActivity(intent);
-
-                break;
-            case R.id.itmQRCam:
-                IntentIntegrator integrator = new IntentIntegrator(this);
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
-                integrator.setCameraId(0);
-                integrator.initiateScan();
-                break;
-
-            case R.id.itmPerfil:
-              Intent i = new Intent(this,PerfilActivity.class);
-                i.putExtra("ProfileUser",loggedUser);
-
-              startActivity(i);
-
-             break;
-
-            case R.id.itmConfig:
-
-                break;
-
-            case R.id.itmLogoOut:
 
 
-                SharedPreferences myPrefs = getSharedPreferences("MY",
-                        MODE_PRIVATE);
-                SharedPreferences.Editor editor = myPrefs.edit();
-                editor.clear();
-                editor.commit();
-                AppState.getSingleInstance().setLoggingOut(true);
-
-                Intent intent1 = new Intent(PrincipalActivity.this,
-                        LooginActivity.class);
-                intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent1);
-                finish();
-
-
-
-
-
-        }
-        //drawer.closeDrawer(GravityCompat.START); linha com erro
-        return true;
-
-
-    }
-
-    public void PerfilActivity(){
-        Intent intent = new Intent(this, PerfilActivity.class);
+    public void PerfilActivity(View v){
+        Intent intent = new Intent(getApplicationContext(), PerfilActivity.class);
         startActivity(intent);
     }
     public void MapaCLick(View v){
@@ -246,8 +184,13 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
     private void setLoggedUser(){
         SharedPreferences sp = getSharedPreferences(PREF_NAME, 0);
         SharedPreferences.Editor editor = sp.edit();
-        editor.putString("EmailLoggedUser",loggedUser.getEmailUser());
-        editor.commit();
+        try {
+            editor.putInt("IdLoggedUser", loggedUser.get_IdUser());
+            editor.commit();
+
+        }catch (Exception e){
+
+        }
     }
 
     @Override
@@ -259,15 +202,12 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
 
             if (result.getContents() != null) {
                 Intent intent = new Intent(getApplicationContext(), ProdutoInfoActivity.class);
+                intent.putExtra("NomeProd", result.getContents());
                 startActivity(intent);
             } else
                 super.onActivityResult(requestCode, resultCode, data);
         }
 
     }
- public void Editar (){
-     Intent i = new Intent (this, EditarPerfil.class);
-     startActivity(i);
- }
 
 }

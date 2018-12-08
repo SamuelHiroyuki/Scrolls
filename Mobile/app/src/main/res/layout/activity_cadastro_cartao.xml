@@ -8,55 +8,51 @@
 
     <ScrollView
         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="0dp">
-
-        <LinearLayout
+        android:orientation="vertical"
+        >
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do titular do cartão"
+        android:textColorHint="@color/PretoPrincipal"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/teste_edit_shape"
+        android:id="@+id/NomeCartãoForm"
+        />
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:hint="Numero do cartão"
+            android:textColorHint="@color/PretoPrincipal"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/teste_edit_shape"
+            android:id="@+id/NumeroCartãoForm"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Data de validade"
+            android:textColorHint="@color/PretoPrincipal"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/teste_edit_shape"
+            android:id="@+id/editValidade"
+            />
 
-
-            <EditText
-                android:id="@+id/editNome"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:background="@drawable/teste_edit_shape"
-                android:hint="Nome do titular do cartão"
-                android:textColorHint="@color/PretoPrincipal" />
-
-            <EditText
-                android:id="@+id/editNumero"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/teste_edit_shape"
-                android:hint="Numero do cartão"
-                android:textColorHint="@color/PretoPrincipal" />
-
-            <EditText
-                android:id="@+id/editValidade"
-                android:layout_width="wrap_content"
-                android:layout_height="47dp"
-                android:layout_marginStart="96dp"
-                android:layout_marginTop="23dp"
-                android:ems="10"
-                android:hint="@string/expirity_date"
-                android:inputType="textPersonName"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/button_carrinho"
-                android:onClick="CadastrarCardClick"
-                android:text="Cadastrar"
-                android:textColor="#FFF"
-                android:textSize="22sp" />
-        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_carrinho"
+            android:textColor="#FFF"
+            android:text="Cadastrar"
+            android:layout_marginTop="50dp"
+            android:textSize="22sp"
+            android:onClick="CadastrarCardClick"
+            />
+    </LinearLayout>
     </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

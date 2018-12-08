@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/address_field"
+            android:text="Rua"
             android:textColor="@color/PretoPrincipal"
             android:textSize="26sp"
             android:textAlignment="viewStart"
@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/number_address"
+            android:text="Numero"
             android:textColor="@color/PretoPrincipal"
             android:textSize="26sp"
             android:textAlignment="viewStart"
@@ -58,7 +58,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/district"
+                android:text="Bairro"
                 android:textColor="@color/PretoPrincipal"
                 android:textSize="26sp"
                 android:textAlignment="viewStart"
@@ -68,7 +68,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                 android:text="@string/city_field"
+                 android:text="Cidade"
                 android:textColor="@color/PretoPrincipal"
                 android:textSize="26sp"
                 android:textAlignment="viewStart"

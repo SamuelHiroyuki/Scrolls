@@ -104,40 +104,7 @@
                     />
             </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
-                        android:text="O que você achou deste livro ?"
-                        android:textSize="25dp"
-                        android:textColor="@color/PretoPrincipal"
-                        android:textAlignment="center"
-                        />
 
-                    <android.support.v7.widget.AppCompatRatingBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="60dp"
-                        android:theme="@style/RatingBar"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="O que outras pessoas acharam"
-                        android:textSize="25dp"
-                        android:textColor="@color/PretoPrincipal"
-                        android:textAlignment="center"
-                        />
-
-                    <android.support.v7.widget.AppCompatRatingBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="60dp"
-                        android:theme="@style/RatingBar"
-                        />
                 </LinearLayout>
     </ScrollView>
     </RelativeLayout>

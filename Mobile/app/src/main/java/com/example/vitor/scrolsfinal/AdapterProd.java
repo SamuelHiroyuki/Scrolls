@@ -38,7 +38,7 @@ public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         }
 // binds the data to the view and textview in each row
 @Override
-public void onBindViewHolder(@NonNull ViewHolder holder, int position) {// data dp bancp [e receboda aqio éçps çpsts
+public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         int img = mImgs.get(position);
         final String nome = mNomes.get(position);
         String preco = mPreco.get(position).toString();

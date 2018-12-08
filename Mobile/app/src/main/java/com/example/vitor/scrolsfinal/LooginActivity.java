@@ -73,7 +73,7 @@ public class LooginActivity extends AppCompatActivity {
         });
 
 
-        mEmailSignInButton = (Button) findViewById(R.id.log_in);
+        mEmailSignInButton = (Button) findViewById(R.id.sign_in);
         mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -186,8 +186,8 @@ public class LooginActivity extends AppCompatActivity {
             usuario = new User(id, password, name, emailStr);
 
         }
-       int idUser = usuario.get_IdUser();
-       String ID_USER =  Integer.toString(idUser);
+        int idUser = usuario.get_IdUser();
+        String ID_USER =  Integer.toString(idUser);
         getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
                 .edit()
                 .putString(PREF_USER_ID, ID_USER)
@@ -203,7 +203,7 @@ public class LooginActivity extends AppCompatActivity {
 
 
 
-public void onClick(View view){
+    public void onClick(View view){
         if (view == mEmailSignInButton){
             InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(txtEmail.getWindowToken(),0);
@@ -211,14 +211,14 @@ public void onClick(View view){
             username = txtEmail.getText().toString();
             password = txtPass.getText().toString();
 
-                loginPrefsEditor.putBoolean("saveLogin", true);
-                loginPrefsEditor.putString("username", username);
-                loginPrefsEditor.putString("password", password);
-                loginPrefsEditor.commit();
+            loginPrefsEditor.putBoolean("saveLogin", true);
+            loginPrefsEditor.putString("username", username);
+            loginPrefsEditor.putString("password", password);
+            loginPrefsEditor.commit();
 
 
         }
-}
+    }
 
 
 

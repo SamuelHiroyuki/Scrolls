@@ -1,7 +1,9 @@
 package com.example.vitor.scrolsfinal;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.vitor.scrolsfinal.Classes.User;
 import com.example.vitor.scrolsfinal.Database.DatabaseHelper;
 import com.github.rtoshiro.util.format.SimpleMaskFormatter;
 import com.github.rtoshiro.util.format.text.MaskTextWatcher;
@@ -23,16 +26,23 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CadastroEnderecoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+import static com.example.vitor.scrolsfinal.MainActivity.PREF_NAME;
+
+public class CadastroEnderecoActivity extends AppCompatActivity  {
 
     EditText txtNome, txtNum, txtCep, txtBairro, txtCidade, txtComp;
     Spinner spin;
-     DatabaseHelper helper;
-     TextView estado;
+    DatabaseHelper helper;
+    int id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_endereco);
+
+        SharedPreferences preferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+
+        id = preferences.getInt("IdLoggedUser", 1);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -46,8 +56,8 @@ public class CadastroEnderecoActivity extends AppCompatActivity implements Adapt
         txtNum = (EditText) findViewById(R.id.EnderecoNumeroForm);
         txtComp = (EditText) findViewById(R.id.EnderecoComp);
         spin = (Spinner) findViewById(R.id.SpinnerUf);
-        estado = (TextView) findViewById(R.id.textUF);
-        spin.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+
+
 
         SimpleMaskFormatter smf = new SimpleMaskFormatter("NNNNN-NNN");
         MaskTextWatcher mkf = new MaskTextWatcher(txtCep, smf);
@@ -57,7 +67,7 @@ public class CadastroEnderecoActivity extends AppCompatActivity implements Adapt
                 android.R.layout.simple_spinner_item, Estados);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(dataAdapter);
-        estado.setText("Estado");
+
     }
     public void CadastroClick(View v){
         tryCadEnd();
@@ -78,7 +88,6 @@ public class CadastroEnderecoActivity extends AppCompatActivity implements Adapt
         txtComp.setError(null);
         txtBairro.setError(null);
         txtCidade.setError(null);
-        estado.setError(null);
         txtCep.setError(null);
 
 
@@ -98,7 +107,7 @@ public class CadastroEnderecoActivity extends AppCompatActivity implements Adapt
             cancel = true;
             focusView = txtNum;
         }
-              if (TextUtils.isEmpty(Comp)) {
+        if (TextUtils.isEmpty(Comp)) {
             txtComp.setError("O campo é obrigatório");
             cancel = true;
             focusView = txtComp;
@@ -118,55 +127,48 @@ public class CadastroEnderecoActivity extends AppCompatActivity implements Adapt
             cancel = true;
             focusView = txtCep;
         }
-        if (TextUtils.isEmpty(Uf1)) {
-            estado.setError("O campo é obrigatório");
-            cancel = true;
-            focusView = estado;
-        }
 
         if (cancel) {
             //Código caso algum campo esteja inválido
             focusView.requestFocus();
         } else {
-           tryCad();
-             Intent i = new Intent(this, PerfilActivity.class);
-             startActivity(i);
+            tryCad();
+            Intent i = new Intent(this, PerfilActivity.class);
+            startActivity(i);
         }
     }
 
 
     public void tryCad() {
 
-            String Bairro = txtBairro.getText().toString();
-            String Endereco = txtNome.getText().toString();
-            String Cep = txtCep.getText().toString();
-            String Cidade = txtCidade.getText().toString();
-            String Num = txtNum.getText().toString();
-            String Uf = spin.getSelectedItem().toString();
-            SQLiteDatabase db = helper.getWritableDatabase();
-            ContentValues values = new ContentValues();
+        String Bairro = txtBairro.getText().toString();
+        String Endereco = txtNome.getText().toString();
+        String Cep = txtCep.getText().toString();
+        String Cidade = txtCidade.getText().toString();
+        String Num = txtNum.getText().toString();
+        String Uf = spin.getSelectedItem().toString();
+        SQLiteDatabase db = helper.getWritableDatabase();
+        ContentValues values = new ContentValues();
 
-            values.put("CEP", String.valueOf(txtCep.getText()));
-            values.put("Estado", Uf);
-            values.put("Cidade", String.valueOf(txtCidade.getText()));
-            values.put("Bairro", String.valueOf(txtBairro.getText()));
-            values.put("Logradouro", String.valueOf(txtNome.getText()));
-            values.put("NumeroEnd", String.valueOf(txtNum.getText()));
-            values.put("Complemento", String.valueOf(txtComp));
+        values.put("CEP", String.valueOf(txtCep.getText()));
+        values.put("Estado", Uf);
+        values.put("Cidade", String.valueOf(txtCidade.getText()));
+        values.put("Bairro", String.valueOf(txtBairro.getText()));
+        values.put("Logradouro", String.valueOf(txtNome.getText()));
+        values.put("NumeroEnd", String.valueOf(txtNum.getText()));
+        values.put("Complemento", String.valueOf(txtComp));
+        values.put("_IdUser", id);
 
-
-
-
-            long res = db.insert("Endereco", null, values);
-            if (res != -1) {
+        long res = db.insert("Endereco", null, values);
+        if (res != -1) {
 
 
-                Toast.makeText(this, "Sucesso!!", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(this, "Um erro ocorreu", Toast.LENGTH_LONG).show();
-            }
-
+            Toast.makeText(this, "Sucesso!!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Um erro ocorreu", Toast.LENGTH_LONG).show();
         }
+
+    }
 
 
     @Override
@@ -179,16 +181,7 @@ public class CadastroEnderecoActivity extends AppCompatActivity implements Adapt
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        if (spin.performClick() == true) {
-            estado.setText((CharSequence) spin.getSelectedItem());
-        }
-    }
 
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
 
-    }
 }
