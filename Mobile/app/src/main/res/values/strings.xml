@@ -14,8 +14,15 @@
 
     <string name="error_incorrect_password">A senha está incorreta</string>
     <string name="error_field_required">O campo é obrigatório</string>
-    <string name="title_activity_splashh">splashh</string>
-    <string name="title_activity_editar_perfil">EditarPerfil</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string-array name="my_books">
+        <item>Fantasia</item>
+        <item>Horror</item>
+        <item>Ficção</item>
+        <item>Clássico</item>
+        <item>Nacionais</item>
+        <item>Jogos</item>
+        <item>Infantil</item>
+    </string-array>
+
 </resources>

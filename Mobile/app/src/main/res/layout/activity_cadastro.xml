@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nome"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="80dp"
             android:textColorHint="@color/PretoPrincipal"
             android:id="@+id/edtName"
             />
@@ -56,41 +56,21 @@
             android:textColorHint="@color/PretoPrincipal"
             android:layout_marginTop="10dp"
             android:id="@+id/edtPassConfirm"
+
           />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/button_login_shape"
-            android:onClick="CadProd"
             android:text="CRIAR CONTA"
-            android:textAlignment="center"
+            android:background="@drawable/button_login_shape"
             android:textColor="#ffffff"
-
-            android:textSize="22dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="ou"
-            android:textColor="#000000"
-            android:textSize="26dp"
             android:textAlignment="center"
+            android:textSize="22dp"
+            android:layout_marginTop="30dp"
+            android:onClick="Cad"
             />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_google_shape"
-            android:drawableLeft="@drawable/googleicon"
-            android:text="CRIE SUA CONTA PELO GOOGLE"
-            android:textSize="18dp"
-            android:textColor="@color/PretoPrincipal"
-            android:layout_marginTop="10dp"
-            android:onClick="Cad"
-            ></Button>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -99,6 +79,7 @@
             android:layout_marginLeft="110dp"
             android:textSize="22dp"
             android:textColor="#1870EC"
+            android:onClick="LoginClick"
             />
     </LinearLayout>
 

@@ -5,10 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
-    android:fitsSystemWindows="true"
     tools:context=".PrincipalActivity">
-
-
 
     <RelativeLayout
     android:layout_width="match_parent"
@@ -17,15 +14,6 @@
         android:id="@+id/IncludeToolbarPrincipal"
         layout="@layout/toolbar_main"
         android:visibility="visible"/>
-        <android.support.design.widget.NavigationView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:id="@+id/nav_view"
-            app:headerLayout="@layout/menu_header"
-            app:menu="@menu/menu_principal"
-            android:background="@color/PretoPrincipal"
-            />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -37,12 +25,48 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Perfil"
+                        android:onClick="PerfilActivity"
+                        android:layout_marginTop="?attr/actionBarSize"
+                        android:background="@drawable/button_preto"
+                        android:textColor="#fff"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+
+                        >
+
+                        <Button
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/button_comprar_agr"
+                            android:text="QR Camera"
+                            android:textColor="#fff"
+                            android:id="@+id/btnPreto"
+                            android:onClick="CameraClick"
+                            />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/button_carrinho"
+                            android:text="Mapa"
+                            android:textColor="#fff"
+                            android:id="@+id/btnBlue"
+                            android:onClick="MapaCLick"
+                            />
+                    </LinearLayout>
+
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/rvCategorias"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="?attr/actionBarSize"
-
+                        android:layout_marginTop="10dp"
                         />
 
                    <technolifestyle.com.imageslider.FlipperLayout
@@ -83,6 +107,7 @@
                         android:layout_marginTop="10dp"
 
                         />
+
                 </LinearLayout>
     </ScrollView>
     </RelativeLayout>

@@ -42,7 +42,7 @@ namespace Scrolls.Web.Controllers
             ClienteDAO cdao = new ClienteDAO();
             Cliente cli = cdao.BuscarId(Convert.ToInt32(Session["_Id"]));
             cdao.Atualizar();
-            return View();
+            return RedirectToAction("ClientePage","Cliente");
         }
 
         public ActionResult ClientePage()
@@ -120,10 +120,10 @@ namespace Scrolls.Web.Controllers
                 return RedirectToAction("LoginPage", "Home");
             }
 
-            return View();
+            return RedirectToAction("ClientePage","Cliente");
         }
         
-        public ActionResult CadCard(string numcard, int cvv, string ano, string mes, string nome)
+        public ActionResult CadCard(string numcard, string ano, string mes, string nome)
         {
             numcard.Replace(" ","");
             if (Session["_Id"] != null)
@@ -134,12 +134,11 @@ namespace Scrolls.Web.Controllers
                     Numero = numcard,
                     Validade= mes+"/"+ano,
                     Nome= nome,
-                    Cvv = cvv
                 };
                 CartaoDAO cadao = new CartaoDAO();
                 cadao.Cadastrar(cc);
             }
-            return View();
+            return RedirectToAction("ClientePage","Cliente");
         }
     }
 }

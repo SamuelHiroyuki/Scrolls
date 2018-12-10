@@ -8,31 +8,50 @@
     android:fitsSystemWindows="true"
     tools:context=".PrincipalActivity"
     >
-
-    <android.support.design.widget.NavigationView
-        android:layout_width="wrap_content"
+    <RelativeLayout
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:id="@+id/NavViewPedidos"
-        app:headerLayout="@layout/menu_header"
-        app:menu="@menu/menu_principal"
-        android:background="@color/PretoPrincipal"
-        />
-
+        android:layout_width="match_parent"
+        >
+        <include
+            android:id="@+id/IncludeToolbarFinalizar"
+            layout="@layout/toolbar_produto"
+            android:visibility="visible"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            >
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:id="@+id/SpinnerCartao"
+            />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:id="@+id/SpinnerEnde"
+                />
+
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/MeusPedidosList"
-            android:layout_marginTop="100dp"
+            android:id="@+id/FinalizarList"
+            android:layout_marginTop="30dp"
             />
 
+        </LinearLayout>
 
     </ScrollView>
-
+    </RelativeLayout>
 
 </android.support.v4.widget.DrawerLayout>

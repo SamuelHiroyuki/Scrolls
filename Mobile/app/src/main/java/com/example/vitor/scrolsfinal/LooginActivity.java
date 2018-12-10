@@ -1,6 +1,8 @@
 package com.example.vitor.scrolsfinal;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -10,33 +12,55 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.vitor.scrolsfinal.CadastroActivity;
+import com.example.vitor.scrolsfinal.Classes.AppState;
 import com.example.vitor.scrolsfinal.Classes.User;
 import com.example.vitor.scrolsfinal.Database.DatabaseHelper;
 import com.example.vitor.scrolsfinal.PrincipalActivity;
 import com.example.vitor.scrolsfinal.R;
 
+import static com.example.vitor.scrolsfinal.CadastroActivity.PREF_PASSWORD;
+import static com.example.vitor.scrolsfinal.CadastroActivity.PREF_USERNAME;
+import static com.example.vitor.scrolsfinal.CadastroActivity.PREF_USER_ID;
+
 public class LooginActivity extends AppCompatActivity {
     public static final String PREFS_NAME = "MyPrefsFile";
-    private static final String PREF_USERNAME = "username";
-    private static final String PREF_PASSWORD = "password";
+
+    private static final String PREF_UNAME = "Email";
+    private static final String PREF_PASSWORD = "Password";
+    private final String DefaultUnameValue = "";
+    private String UnameValue;
+    private SharedPreferences loginPreferences;
+    private SharedPreferences.Editor loginPrefsEditor;
+    private Boolean saveLogin;
+
+    private final String DefaultPasswordValue = "";
+    private String PasswordValue;
     private EditText txtEmail, txtPass;
     private String chkEmail, chkPass;
-    private Button mEmailSignInButton ;
+    private Button mEmailSignInButton;
     private UserLoginTask mAuthTask = null;
+    private String username, password;
+    CheckBox chkBox;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loogin);
-        txtEmail = (EditText)findViewById(R.id.Email);
-        txtPass = (EditText)findViewById(R.id.Pass);
+        txtEmail = (EditText) findViewById(R.id.Email);
+        txtPass = (EditText) findViewById(R.id.Pass);
+
+
+
+
         txtPass.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -54,11 +78,21 @@ public class LooginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 attemptLogin();
+
+                loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+                loginPrefsEditor = loginPreferences.edit();
+                saveLogin = loginPreferences.getBoolean("saveLogin", false);
+
+                txtEmail.setText(loginPreferences.getString("username", ""));
+                txtPass.setText(loginPreferences.getString("password", ""));
+
             }
+
+
         });
 
-    }
 
+    }
 
     private void attemptLogin() {
         if (mAuthTask != null) {
@@ -83,7 +117,7 @@ public class LooginActivity extends AppCompatActivity {
             cancel = true;
         }
         //Define a senha como campo obrigatório
-        if(TextUtils.isEmpty(password)){
+        if (TextUtils.isEmpty(password)) {
             txtPass.setError(getString(R.string.error_field_required));
             focusView = txtPass;
             cancel = true;
@@ -116,19 +150,21 @@ public class LooginActivity extends AppCompatActivity {
 
     private boolean isEmailValid(String email) {
 
-        email = txtEmail.getText().toString() ;
-        chkEmail= email;
+        email = txtEmail.getText().toString();
+        chkEmail = email;
         DatabaseHelper helper = new DatabaseHelper(this);
         SQLiteDatabase db = helper.getReadableDatabase();
-        String query = "SELECT * FROM User WHERE EmailUser = "+" '"+email+"'";
-        Cursor cursor = db.rawQuery(query,null);
-        if(cursor.getCount()==1){
+        String query = "SELECT * FROM User WHERE EmailUser = " + " '" + email + "'";
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.getCount() == 1) {
 
 
             helper.close();
             return true;
+        } else {
+            helper.close();
+            return false;
         }
-        else{helper.close();return false;}
     }
 
     public void trocar() {
@@ -136,26 +172,29 @@ public class LooginActivity extends AppCompatActivity {
         SQLiteDatabase db = helper.getReadableDatabase();
         String email = txtEmail.getText().toString();
         String pass = txtPass.getText().toString();
-        getSharedPreferences(PREFS_NAME,MODE_PRIVATE)
-                .edit()
-                .putString(PREF_USERNAME, email)
-                .putString(PREF_PASSWORD, pass)
-                .commit();
+
         String query = "SELECT * FROM User WHERE EmailUser =" + " '" + chkEmail + "'" + "AND PassUser =" + " '" + chkPass + "'";
         Cursor cursor = db.rawQuery(query, null);
 
         cursor.moveToFirst();
-        User usuario = new User ();
-        for(int i = 0; i < cursor.getCount(); i++){
+        User usuario = new User();
+        for (int i = 0; i < cursor.getCount(); i++) {
             int id = cursor.getInt(0);
             String password = cursor.getString(1);
             String name = cursor.getString(2);
             String emailStr = cursor.getString(3);
-            usuario = new User(id,password, name, emailStr);
+            usuario = new User(id, password, name, emailStr);
 
         }
+        int idUser = usuario.get_IdUser();
+        String ID_USER =  Integer.toString(idUser);
+        getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
+                .edit()
+                .putString(PREF_USER_ID, ID_USER)
+
+                .commit();
         Intent i = new Intent(this, PrincipalActivity.class);
-        i.putExtra("LoggedUser",usuario);
+        i.putExtra("LoggedUser", usuario);
         startActivity(i);
 
 
@@ -164,6 +203,22 @@ public class LooginActivity extends AppCompatActivity {
 
 
 
+    public void onClick(View view){
+        if (view == mEmailSignInButton){
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(txtEmail.getWindowToken(),0);
+
+            username = txtEmail.getText().toString();
+            password = txtPass.getText().toString();
+
+            loginPrefsEditor.putBoolean("saveLogin", true);
+            loginPrefsEditor.putString("username", username);
+            loginPrefsEditor.putString("password", password);
+            loginPrefsEditor.commit();
+
+
+        }
+    }
 
 
 
@@ -260,6 +315,43 @@ public class LooginActivity extends AppCompatActivity {
     public void Cad (View v){
         Intent i = new Intent(this, CadastroActivity.class);
         startActivity(i);
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        savePreferences();
+    }
+    public void onResume(){
+        super.onResume();
+        loadPreferences();
+    }
+    private void savePreferences(){
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = settings.edit();
+
+        //Editar e comitar
+        UnameValue = txtEmail.getText().toString();
+        PasswordValue = txtPass.getText().toString();
+        editor.putString(PREF_UNAME, UnameValue);
+        editor.putString(PREF_PASSWORD, PasswordValue);
+        editor.commit();
+    }
+    private void loadPreferences(){
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+
+        //Get value
+        UnameValue = settings.getString(PREF_UNAME, DefaultUnameValue);
+        PasswordValue = settings.getString(PREF_PASSWORD, DefaultPasswordValue);
+        txtEmail.setText(UnameValue);
+        txtPass.setText(PasswordValue);
+    }
+
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+
     }
 }
 

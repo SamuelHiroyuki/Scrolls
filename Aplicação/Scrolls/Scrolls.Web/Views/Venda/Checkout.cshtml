@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "Checkout";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Active = "show-on-click";
 }
 
 <!-- CHECKOUT -->
@@ -25,7 +27,7 @@
                             </li>
 
                             <li role="presentation" class="nav-item">
-                                <a href="#step2" id="tabs2-form" data-toggle="tab" aria-controls="step2" role="tab" title="Identificação" class="nav-link disabled">
+                                <a href="#step2" id="tabs2-form" data-toggle="tab" aria-controls="step2" role="tab" title="Identificação" class="nav-link">
                                     <span class="round-tab">
                                         <i class="icon ion-md-map"></i>
                                     </span>
@@ -33,7 +35,7 @@
                             </li>
 
                             <li role="presentation" class="nav-item">
-                                <a href="#step3" id="tabs3-form" data-toggle="tab" aria-controls="step3" role="tab" title="Pagamento" class="nav-link disabled">
+                                <a href="#step3" id="tabs3-form" data-toggle="tab" aria-controls="step3" role="tab" title="Pagamento" class="nav-link">
                                     <span class="round-tab">
                                         <i class="icon ion-md-card"></i>
                                     </span>
@@ -41,7 +43,7 @@
                             </li>
 
                             <li role="presentation" class="nav-item">
-                                <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab" title="Obrigado" class="nav-link disabled">
+                                <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab" title="Obrigado" class="nav-link">
                                     <span class="round-tab">
                                         <i class="icon ion-md-checkmark"></i>
                                     </span>
@@ -67,72 +69,46 @@
                                         </thead>
 
                                         <tbody>
-                                            <tr>
-                                                <td class="thumb"><img src="product-img/product-1.png" alt=""></td>
-                                                <td class="details">
-                                                    <a href="#">Harry Potter</a>
-                                                </td>
-                                                <td class="price text-center"><strong>R$ 32,50</strong><br><del class="font-weak"><small></small></del></td>
-                                                <td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
-                                                <td class="total text-center"><strong class="primary-color">R$ 32,50</strong></td>
-                                                <td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="thumb"><img src="product-img/product-2.jpg" alt=""></td>
-                                                <td class="details">
-                                                    <a href="#">Nanastu no Taizai</a>
-                                                </td>
-                                                <td class="price text-center"><strong>R$ 32,50</strong><br><del class="font-weak"><small>R$ 45,00</small></del></td>
-                                                <td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
-                                                <td class="total text-center"><strong class="primary-color">R$ 32,50</strong></td>
-                                                <td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="thumb"><img src="product-img/product-3.jpg" alt=""></td>
-                                                <td class="details">
-                                                    <a href="#">HOTD</a>
-                                                </td>
-                                                <td class="price text-center"><strong>R$ 32,50</strong><br><del class="font-weak"><small></small></del></td>
-                                                <td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
-                                                <td class="total text-center"><strong class="primary-color">R$ 32,50</strong></td>
-                                                <td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
-                                            </tr>
+                                            @foreach (var p in Scrolls.Web.Models.MeuCarrinho.Cesta)
+                                            {
+
+                                                <tr>
+                                                    <td class="thumb"><img src="@p.Imagem1" alt=""></td>
+                                                    <td class="details">
+                                                        <a href="#">@p.Nome</a>
+                                                    </td>
+                                                    <td class="price text-center"><strong>R$ @p.Preco</strong><br><del class="font-weak"><small></small></del></td>
+                                                    <td class="qty text-center"><input class="input text-center font-weight-bold" min="1" type="number" value="1"></td>
+                                                    <td class="total text-center"><strong class="primary-color">R$ @p.Preco</strong></td>
+                                                    <td class="text-right"><button class="main-btn icon-btn"><i class="icon ion-md-close"></i></button></td>
+                                                </tr>
+                                            }
                                         </tbody>
 
                                         <tfoot>
                                             <tr>
                                                 <th class="empty" colspan="2"></th>
-                                                <th>FRETE E PRAZO</th>
 
                                                 <th>SUBTOTAL</th>
-                                                <th colspan="2" class="sub-total">R$ 97,50</th>
+                                                <th colspan="2" class="sub-total">R$ @ViewBag.Tot</th>
                                             </tr>
                                             <tr>
                                                 <th class="empty" colspan="2"></th>
-                                                <th>
-                                                    <div class="form-group w-100">
-                                                        <div class="form-group d-flex align-items-center">
-                                                            <input type="text" class="form-control col-sm-5 mr-2" placeholder="CEP" value="" id="inputCEP">
-                                                            <button type="button" data-toggle="collapse" data-target="#frete" aria-expanded="false" aria-controls="frete" class="btn btn-primary mr-3" style="width: 100px">Calcular</button>
-                                                            <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" class="" style="color: #00A6FF;">Não sei meu CEP?</a>
-                                                        </div>
-                                                    </div>
-                                                </th>
                                                 <th>FRETE</th>
                                                 <td colspan="2" class="sub-total font-weight-bold">R$ 3,50</td>
                                             </tr>
                                             <tr>
                                                 <th class="empty" colspan="2"></th>
-                                                <th>7 á 10 dias uteis - R$ 3,50</th>
                                                 <th>TOTAL</th>
-                                                <th colspan="2" class="total">R$ 101,00</th>
+                                                <th colspan="2" class="total">R$ @Convert.ToDouble(ViewBag.Tot + 3.50)</th>
                                             </tr>
                                         </tfoot>
                                     </table>
-                                    <button type="button" class="btn primary-btn next-step next-button float-right">Continuar</button>
+                                    <button type="button" class="btn primary-btn next-step next-button float-right" id="stepini">Continuar</button>
                                 </div>
                             </form>
                         </div><!-- Carrinho -->
+
 
                         <div class="tab-pane py-3" role="tabpanel" id="step2">
                             <h5 class="text-md-center">Endereço</h5>
@@ -204,7 +180,7 @@
                                                 <p>05267-000 - <span>Jardim Anhangüera</span></p>
                                                 <p>São Paulo/ <span>SP</span></p>
                                             </div>
-                                            <button type="button" class="btn primary-btn next-step next-button float-right"><i class="icon ion-md-navigate"></i></button>
+                                            <button type="button" class="btn primary-btn next-step next-button float-right" id="stepend"><i class="icon ion-md-navigate"></i></button>
                                         </div>
                                     </div><!-- Card Endereço -->
                                 </form><!-- Lista de Endereço -->
@@ -281,7 +257,7 @@
                                                             <div class="d-flex justify-content-between">
                                                                 <button type="button" class="btn primary-btn prev-step prev-button">Voltar</button>
                                                                 <button type="button" class="btn primary-btn">Limpar</button>
-                                                                <button type="button" class="btn primary-btn next-step next-button">Finalizar</button>
+                                                                <button type="button" class="btn primary-btn next-step next-button" id="stepcar">Finalizar</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -356,7 +332,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center mt-3">
-                                    <a href="#" class="btn primary-btn text-white">Continuar</a>
+                                    <a href="/Home/LimparCart" class="btn primary-btn text-white">Continuar</a>
                                 </div>
                             </div>
                         </div><!-- Agradecimento -->
@@ -370,3 +346,32 @@
     <!-- /container -->
 </section>
 <!-- /CHECKOUT -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="~/Scripts/jquery.nicescroll.js"></script>
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script type="text/javascript" src="~/Scripts/slick/slick.min.js"></script>
+<script src="~/Scripts/jquery.inputmask.bundle.js"></script>
+<script type="text/javascript" src="~/Scripts/Script.js"></script>
+<script>
+    $(document).ready(function () {
+        var data = new Date();
+        var ano = data.getFullYear();
+        $('.ano').append('<option value="' + ano + '">' + ano + '</option>');
+        for (var i = 0; i < 12; i++) {
+            ano = ano + 1;
+            $('.ano').append('<option value="' + ano + '">' + ano + '</option>');
+        }
+    });/* Gerados de anos no campo de validade */
+
+    $(document).ready(function () {
+        $('#num_card').inputmask("9999 9999 9999 9999");
+        $('#cvv_card').inputmask("999");
+        $('#cep').inputmask("99999-999");
+        $('#inputCEP').inputmask("99999-999")
+        $('#num').inputmask({ regex: "[0-9]*" });
+    });/* mascara de input */
+
+</script>

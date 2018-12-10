@@ -13,8 +13,18 @@ namespace Scrolls.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            ViewBag.New = new ProdutoDAO().IsNew();
-            ViewBag.Rep = new ProdutoDAO().IsRep();
+            var n = new ProdutoDAO().IsNew();
+            var r = new ProdutoDAO().IsRep();
+            foreach (Produto p in n)
+            {
+                p.Imagem1 = "https://manager-scrolls.azurewebsites.net" + p.Imagem1;
+            }
+            ViewBag.New = n;
+            foreach (Produto p in r)
+            {
+                p.Imagem1 = "https://manager-scrolls.azurewebsites.net" + p.Imagem1;
+            }
+            ViewBag.Rep = r;
             ViewBag.Tot = 0;
             foreach (var p in Scrolls.Web.Models.MeuCarrinho.Cesta)
             {
@@ -26,6 +36,11 @@ namespace Scrolls.Web.Controllers
                 {
                     ViewBag.Tot += p.Preco;
                 }
+                if (!p.Imagem1.Contains("https://manager-scrolls.azurewebsites.net"))
+                {
+
+                    p.Imagem1 = "https://manager-scrolls.azurewebsites.net" + p.Imagem1;
+                }
             }
             return View();
         }
@@ -35,6 +50,11 @@ namespace Scrolls.Web.Controllers
             ViewBag.Nome = email;
             ViewBag.S = senha;
             return View();
+        }
+
+        public ActionResult LimparCart() {
+            Scrolls.Web.Models.MeuCarrinho.Cesta = new List<Produto>();
+            return RedirectToAction("Index");
         }
 
         public ActionResult Logar(string s, string nr)
@@ -78,15 +98,21 @@ namespace Scrolls.Web.Controllers
 
         public ActionResult RemoveCart(int id)
         {
-            Produto p = new ProdutoDAO().BuscaId(id);
-            foreach (var c in Scrolls.Web.Models.MeuCarrinho.Cesta)
+            try
             {
-                if (c.Id == id)
+                foreach (var c in Scrolls.Web.Models.MeuCarrinho.Cesta)
                 {
-                    Scrolls.Web.Models.MeuCarrinho.Cesta.Remove(c);
+                    if (id == c.Id)
+                    {
+                        Scrolls.Web.Models.MeuCarrinho.Cesta.Remove(c);
+                    }
                 }
             }
+            catch (Exception)
+            {
 
+                return RedirectToAction("Index");
+            }
             return RedirectToAction("Index");
         }
     }

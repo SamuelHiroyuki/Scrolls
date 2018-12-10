@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿3<!DOCTYPE html>
 
 <html>
 <head>
@@ -26,15 +26,8 @@
 
     <!-- HEADER -->
     <header>
-        <!-- top Header -->
-        <div id="top-header" class="d-none d-lg-block">
-            <div class="container">
-                <div class="text-center">
-                    <h3>Banner</h3>
-                </div>
-            </div>
-        </div>
         <!-- /top Header -->
+
         <!-- header -->
         <div id="header" style="background-color: #0D7694;">
             <div class="container-fluid d-lg-flex justify-content-lg-between">
@@ -88,8 +81,8 @@
                                     </div>
                                     <span class="text-uppercase">@Session["_Nome"]</span>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#"><i class="icon ion-md-person"></i> Minha Conta</a></li>
-                                        <li><a href="#"><i class="icon ion-md-heart"></i> Meus Pedidos</a></li>
+                                        <li><a href="/Cliente/ClientePage"><i class="icon ion-md-person"></i> Minha Conta</a></li>
+                                        <li><a href="/Cliente/ClientePage"><i class="icon ion-md-heart"></i> Meus Pedidos</a></li>
                                         <li><a href="/Home/Logout"><i class="icon ion-md-log-out"></i> Sair</a></li>
                                     </ul>
                                 </li>
@@ -164,9 +157,9 @@
                             <!-- Cart Item Desc -->
                             <div class="cart-item-desc">
                                 <form action="">
-                                    <button class="product-remove" type="button" onclick="window.location.href='@Url.Action("RemoveCart", "Home", new { id = n.Id })'"><i class="icon ion-md-close" aria-hidden="true"></i></button>
+                                    <button class="product-remove" type="button" onclick="window.location.href='@Url.Action("RemoveCart", "Home", new { id = c.Id })'"><i class="icon ion-md-close" aria-hidden="true"></i></button>
                                 </form>
-                                <span class="badge">@c.Nome</span>
+                                <span class="badge" onclick="window.location.href='@Url.Action("VProduto", "Produto", new { id = c.Id })'">@c.Nome</span>
                                 @if (c.Promocao != null)
                                 {
                                     <p class="price">R$ @Math.Round(Convert.ToDouble(((c.Preco * c.Promocao) / 100) - c.Preco), 2)</p>
@@ -191,7 +184,7 @@
                         <li><span>total:</span> <span>R$ @ViewBag.Tot</span></li>
                     </ul>
                     <div class="btn btn-primary p-3 mt-5">
-                        <a href="#" class="text-white font-weight-bold text-uppercase">Conferir</a>
+                        <a href="@Url.Action("Checkout", "Venda")" class="text-white font-weight-bold text-uppercase">Finalizar</a>
                     </div>
                 }
                 else
@@ -232,9 +225,9 @@
                         <span class="menu-header">Menu <i class="icon ion-md-menu" style="font-size: 20px;"></i></span>
                         <ul class="menu-list" style="padding-top: 2px;">
                             <li><a href="/Home/Index" style="font-size: 14px; padding-left: 20px;">Home</a></li>
-                            <li><a href="/Home/Lancamentos" style="font-size: 14px;">Lançamentos</a></li>
-                            <li><a href="#" style="font-size: 14px;">Home</a></li>
-                            <li><a href="#" style="font-size: 14px;">Shop</a></li>
+                            <li><a href="#" style="font-size: 14px;">Lançamentos</a></li>
+                            <li><a href="#" style="font-size: 14px;">Destaque</a></li>
+                            <li><a href="#" style="font-size: 14px;">Promoções</a></li>
                         </ul>
                     </div>
                     <!-- menu nav -->

@@ -50,7 +50,6 @@ public class MapaActivity extends AppCompatActivity {
     private FusedLocationProviderClient mFusedLocationProviderCLient;
     private final static float DEFAULT_ZOOM = 15f;
 
-    private EditText mEdtSearch;
     private ImageView mImgback;
 
 
@@ -59,53 +58,19 @@ public class MapaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapa);
 
-        mEdtSearch = (EditText) findViewById(R.id.edtSearch);
         mImgback= (ImageView) findViewById(R.id.imgGps);
 
     getLocationPermission();
 
     }
     private void Init(){
-        mEdtSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                if(i == EditorInfo.IME_ACTION_DONE
-                        || i == EditorInfo.IME_ACTION_SEARCH
-                        || keyEvent.getAction() == KeyEvent.ACTION_DOWN
-                        || keyEvent.getAction() == KeyEvent.KEYCODE_ENTER){
-                    geoLocate();
-                }
 
-                return false;
-            }
-        });
-        HideSoftKeyBoard();
         mImgback .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getDeviceLocation();
             }
         });
-    }
-    private void geoLocate(){
-        String respSearch = mEdtSearch.getText().toString();
-
-        Geocoder geocoder = new Geocoder(getApplicationContext());
-
-        List<Address> list =  new ArrayList<>();
-        try{
-            list = geocoder.getFromLocationName(respSearch, 1);
-
-        }catch (IOException e){
-            Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
-        }
-        if (list.size()>0){
-            Address address = list.get(0);
-            Toast.makeText(getApplicationContext(), address.toString(), Toast.LENGTH_LONG).show();
-
-            moveCamera(new LatLng(address.getLatitude(), address.getLongitude()), DEFAULT_ZOOM, address.getAddressLine(0));
-
-        }
     }
 
     private void getDeviceLocation() {
@@ -134,10 +99,9 @@ public class MapaActivity extends AppCompatActivity {
     private void moveCamera(LatLng latLng, float zoom, String title) {
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
 
-        MarkerOptions option = new MarkerOptions().position(latLng).title(title);
-        mMap.addMarker(option);
+        MarkerOptions options = new MarkerOptions().position(latLng).title("Eldest");
+        mMap.addMarker(options);
 
-        HideSoftKeyBoard();
     }
 
     private void initMap() {
@@ -197,9 +161,7 @@ public class MapaActivity extends AppCompatActivity {
         }
 
     }
-    private void HideSoftKeyBoard(){
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-    }
+
 
 
 

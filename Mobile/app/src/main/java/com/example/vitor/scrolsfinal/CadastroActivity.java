@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.vitor.scrolsfinal.Classes.User;
 import com.example.vitor.scrolsfinal.Database.DatabaseHelper;
 import com.example.vitor.scrolsfinal.LooginActivity;
 import com.example.vitor.scrolsfinal.R;
@@ -22,12 +23,16 @@ import java.util.Arrays;
 import java.util.List;
 
 import static android.widget.Toast.LENGTH_SHORT;
+import static com.example.vitor.scrolsfinal.LooginActivity.PREFS_NAME;
 
 public class CadastroActivity extends Activity {
 
     DatabaseHelper helper;
     EditText txtName, txtEmail, txtPass, txtPassConfirm;
     Button btnCadastrar1;
+    public static final String PREF_USERNAME = "username";
+    public static final String PREF_PASSWORD = "password";
+    public static final String PREF_USER_ID = "userId";
 
 
     @Override
@@ -51,10 +56,14 @@ public class CadastroActivity extends Activity {
     public void Cad (View view){
         tryCad();
     }
+    public void Login (View view){
+       Intent intent = new Intent(this, LooginActivity.class);
+       startActivity(intent);
+    }
 
     public void cadUser () {
 
-
+        User usuario = new User();
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
@@ -73,10 +82,15 @@ public class CadastroActivity extends Activity {
 
 
     public void tryCad () {
+
         String name = txtName.getText().toString();
         String password = txtPass.getText().toString();
         String email = txtEmail.getText().toString();
+
         String password_confirm = txtPassConfirm.getText().toString();
+
+
+
 
 
         txtEmail.setError(null);
@@ -139,30 +153,31 @@ public class CadastroActivity extends Activity {
         }
 
     }
-    public void CadProd (View v){
-        SQLiteDatabase db = helper.getWritableDatabase();
-        ContentValues values = new ContentValues();
+    /* public void CadProd (View v){
+          SQLiteDatabase db = helper.getWritableDatabase();
+          ContentValues values = new ContentValues();
 
-        values.put( "NameProd", "Livro");
-        values.put("PrecoProd", 1.99);
-        values.put("CategoriaProd", "Teste");
-        values.put("AutorProd","Joao");
-        values.put("PromocaoProd", 1);
-        values.put("ImagemProd", 1);
-
-
-
-        long res = db.insert("Prod", null, values);
+          values.put( "NameProd", "Livro");
+          values.put("PrecoProd", 1.99);
+          values.put("CategoriaProd", "Teste");
+          values.put("AutorProd","Joao");
+          values.put("PromocaoProd", 1);
+          values.put("ImagemProd", 1);
 
 
-        if (res != -1) {
-            Toast.makeText(this, "Cadastrado com sucesso!", LENGTH_SHORT).show();
+
+          long res = db.insert("Prod", null, values);
 
 
-        } else {
-            Toast.makeText(this, "Um erro ocorreu!", LENGTH_SHORT).show();
-        }
-    }
+          if (res != -1) {
+              Toast.makeText(this, "Cadastrado com sucesso!", LENGTH_SHORT).show();
+
+
+          } else {
+              Toast.makeText(this, "Um erro ocorreu!", LENGTH_SHORT).show();
+          }
+      }
+      */
     public boolean isNameValid (String name){
         return name.length() > 0;
     }

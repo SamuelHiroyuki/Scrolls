@@ -20,19 +20,21 @@
     <EditText
         android:layout_width="235dp"
         android:layout_height="35dp"
-        android:drawableLeft="@drawable/search_icon"
+        android:drawableLeft="@drawable/ic_search"
         android:background="@drawable/button_google_shape"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="35dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:textColor="@color/PretoPrincipal"
+        android:id="@+id/edtSeacrh"
         />
         <ImageView
             android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:src="@drawable/cart_icon"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="5dp"
+            android:id="@+id/imgCarrinho"
             />
     </LinearLayout>
 

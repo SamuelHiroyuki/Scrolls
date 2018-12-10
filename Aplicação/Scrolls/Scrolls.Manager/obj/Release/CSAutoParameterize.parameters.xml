@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="connString-Web.config Connection String" description="connString Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:scrolls.database.windows.net,1433;Initial Catalog=dbScrollsWeb;Persist Security Info=True;User ID={samuel};Password={Novasenha123};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+  <parameter name="connString-Web.config Connection String" description="connString Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:sqlscrolls.database.windows.net,1433;Initial Catalog=dbScrollsLib;Persist Security Info=False;User ID=mod;Password=Senha123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\TCCScrolls\\Aplicação\\Scrolls\\Scrolls\.Manager\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='connString']/@connectionString" />
   </parameter>
 </parameters>

@@ -1,6 +1,8 @@
 package com.example.vitor.scrolsfinal;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.vitor.scrolsfinal.Classes.DAO;
+import com.example.vitor.scrolsfinal.Classes.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,14 +29,19 @@ import in.goodiebag.carouselpicker.CarouselPicker;
 import technolifestyle.com.imageslider.FlipperLayout;
 import technolifestyle.com.imageslider.FlipperView;
 
+import static com.example.vitor.scrolsfinal.MainActivity.PREF_NAME;
+
 public class ProdutoInfoActivity extends AppCompatActivity {
     Button btnCarrinho,btnAgora;
-
+   int id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produto_info);
 
+        SharedPreferences preferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+
+        id = preferences.getInt("IdLoggedUser", 1);
         Toolbar mTopToolbar = (Toolbar) findViewById(R.id.IncludeToolbarProduto);
         setSupportActionBar(mTopToolbar);
 
@@ -61,7 +69,7 @@ public class ProdutoInfoActivity extends AppCompatActivity {
         Cursor cursor =dao.BuscarProd(nomeProd);
 
         cursor.moveToFirst();
-        final int id = cursor.getInt(cursor.getColumnIndex("_idProd"));
+        final int idprod = cursor.getInt(cursor.getColumnIndex("_idProd"));
         String preco = cursor.getString(cursor.getColumnIndex("PrecoProd"));
         String promocao = cursor.getString(cursor.getColumnIndex("PromocaoProd"));
         String Categoria = cursor.getString(cursor.getColumnIndex("CategoriaProd"));
@@ -76,13 +84,13 @@ public class ProdutoInfoActivity extends AppCompatActivity {
         txtAutor.setText(Autor);
         txtCategoria.setText(Categoria);
         txtnome.setText(nomeProd);
-        txtPreco.setText(preco);
-        txtPromo.setText(promocao);
+        txtPreco.setText("R$ "+preco+",00");
+        txtPromo.setText(promocao +"% OFF");
 
         btnCarrinho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String resp = dao.InserirProdNoCarrinho(id,1)/*pegariddouserno lugar disso*/;
+                String resp = dao.InserirProdNoCarrinho(idprod,id)/*pegariddouserno lugar disso*/;
                 Toast.makeText(getApplicationContext(), resp, Toast.LENGTH_LONG).show();
                 Intent intent1 = new Intent(getApplicationContext(), CarrinhoActivity.class);
                 startActivity(intent1);

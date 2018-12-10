@@ -16,12 +16,19 @@
        <EditText
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:hint="Endereço (Ex:Rua,avenida)"
+           android:hint="Logradouro (Ex:Rua,avenida)"
            android:textColorHint="@color/PretoPrincipal"
            android:layout_marginTop="80dp"
            android:background="@drawable/teste_edit_shape"
            android:id="@+id/EnderecoNomeForm"
            />
+        <EditText  android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Complemento"
+            android:textColorHint="@color/PretoPrincipal"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/teste_edit_shape"
+            android:id="@+id/EnderecoComp"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -33,15 +40,6 @@
             android:background="@drawable/teste_edit_shape"
             android:id="@+id/EnderecoNumeroForm"
             />
-        <EditText
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:hint="Complemento"
-        android:textColorHint="@color/PretoPrincipal"
-        android:background="@drawable/teste_edit_shape"
-        android:id="@+id/EnderecoComp"
-
-        />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

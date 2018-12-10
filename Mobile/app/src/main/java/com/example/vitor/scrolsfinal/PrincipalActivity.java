@@ -2,6 +2,7 @@ package com.example.vitor.scrolsfinal;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,12 +15,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.vitor.scrolsfinal.Classes.AppState;
 import com.example.vitor.scrolsfinal.Classes.DAO;
 import com.example.vitor.scrolsfinal.Classes.User;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -27,8 +30,9 @@ import com.google.zxing.integration.android.IntentResult;
 
 import org.w3c.dom.Text;
 
-import java.security.Principal;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -36,17 +40,16 @@ import in.goodiebag.carouselpicker.CarouselPicker;
 import technolifestyle.com.imageslider.FlipperLayout;
 import technolifestyle.com.imageslider.FlipperView;
 
-import static com.example.vitor.scrolsfinal.splashh.PREF_NAME;
+import static com.example.vitor.scrolsfinal.MainActivity.PREF_NAME;
 
-public class PrincipalActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-        CarouselPicker carouselPicker;
-        DrawerLayout drawer;
-        AdapterCat adapter;
-        AdapterProd prodAdapter1, prodAdapter2;
-        LinearLayout HeaderLayput;
-        User loggedUser;
-        TextView Perfil;
-        NavigationView navigationView;
+public class PrincipalActivity extends AppCompatActivity {
+    CarouselPicker carouselPicker;
+    DrawerLayout drawer;
+    AdapterCat adapter;
+    AdapterProd prodAdapter1, prodAdapter2;
+    LinearLayout HeaderLayput;
+    User loggedUser;
+    NavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,32 +57,29 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Toolbar mTopToolbar = findViewById(R.id.IncludeToolbarPrincipal);
         setSupportActionBar(mTopToolbar);
-
-        NavigationView navigationView1 = (NavigationView)findViewById(R.id.nav_viewPerfil);
-//        navigationView.setNavigationItemSelectedListener(this);
-
-//        View headerView = navigationView.getHeaderView(0);
-
-
-//        navigationView.setCheckedItem(R.id.itmComprar);
-
         loggedUser = (User) getIntent().getSerializableExtra("LoggedUser");
-    //  TextView txtNomeUsu = (TextView)navigationView1.getHeaderView(0).findViewById(R.id.txtPerfil);
-     //  TextView txtEmailUsu = (TextView)navigationView1.getHeaderView(0).findViewById(R.id.txtEmailPerfil);
+
+        ImageView carrinho = mTopToolbar.findViewById(R.id.imgCarrinho);
+        carrinho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CarrinhoActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
 
-      //  txtNomeUsu.setText(loggedUser.getNameUser());
-     // txtEmailUsu.setText(loggedUser.getEmailUser());
-      // navigationView.setNavigationItemSelectedListener(this);
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        //Perfil.setText(loggedUser.getNameUser());
+        //navigationView.setNavigationItemSelectedListener(this);
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,mTopToolbar,R.string.Drawer_open,R.string.Drawer_close);
-        drawer.addDrawerListener(toggle);
 
-        toggle.syncState();
 
-        HeaderLayput = (LinearLayout) findViewById(R.id.HeaderLayout);
+        // txtEmailUsu.setText(loggedUser.        txtUser.setText(loggedUser.getNameUser()); getEmailUser());
+        // navigationView.setNavigationItemSelectedListener(this);
+
+
+
 
         FlipperLayout fliper = (FlipperLayout) findViewById(R.id.FliperLyt);
 
@@ -111,14 +111,10 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         imagens.add(R.drawable.rainbow);
 
 
-        ArrayList<String> nomes = new ArrayList<>();
-        nomes.add("Fantasia");
-        nomes.add("Horror");
-        nomes.add("Ficção");
-        nomes.add("Classicos");
-        nomes.add("Nacionais");
-        nomes.add("Jogos");
-        nomes.add("Infantis");
+        Resources res = getResources();
+        String[] myBooks = res.getStringArray(R.array.my_books);
+
+        ArrayList<String> nomes = new ArrayList<>(Arrays.asList((myBooks)));
 
 
 
@@ -130,7 +126,7 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         adapter = new AdapterCat(this, imagens,nomes);
 
         recyclerView.setAdapter(adapter);
-/*
+
        DAO dao = new DAO(getApplicationContext());
 
       Cursor produtos = dao.ListarProd();
@@ -139,19 +135,20 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         ArrayList<Integer> imagens1 = new ArrayList<>();
         ArrayList<Integer> precos1 = new ArrayList<>();
 
-        for(int i =0; i<= 5;i++){
+        for(int i =0; i<= 3;i++){
             Nomes1.add(produtos.getString(produtos.getColumnIndex("NameProd")));
             imagens1.add(produtos.getInt(produtos.getColumnIndex("ImagemProd")));
             precos1.add(produtos.getInt(produtos.getColumnIndex("PrecoProd")));
+            produtos.moveToNext();
         }
 
-       // RecyclerView rv1 = findViewById(R.id.rvNovo);
-       // LinearLayoutManager VerticalLayoutManager
-          //      = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-      //  rv1.setLayoutManager(VerticalLayoutManager);
-        //prodAdapter1 = new AdapterProd(this,imagens1,Nomes1,precos1);
+        RecyclerView rv1 = findViewById(R.id.rvNovo);
+       LinearLayoutManager VerticalLayoutManager
+              = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+       rv1.setLayoutManager(VerticalLayoutManager);
+         prodAdapter1 = new AdapterProd(this,imagens1,Nomes1,precos1);
 
-        //rv1.setAdapter(prodAdapter1);
+        rv1.setAdapter(prodAdapter1);
 
         RecyclerView rv2 = findViewById(R.id.rvAvaliado);
         LinearLayoutManager verticalLayoutManager
@@ -162,55 +159,15 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         prodAdapter2 = new AdapterProd(this,imagens1,Nomes1,precos1);
 
         rv2.setAdapter(prodAdapter2);
-*/
-    }
-    @Override
-    public void onBackPressed(){
 
-        if(drawer.isDrawerOpen(GravityCompat.START)){
-            drawer.closeDrawer(GravityCompat.START);
-        }
-        else
-        super.onBackPressed();
+        setLoggedUser();
     }
 
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        int id = menuItem.getItemId();
-        Intent intent;
-        switch (id){
-            case R.id.itmMeusPedidos:
-                 intent = new Intent(getApplicationContext()  , MeusPedidosActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.itmMapa:
-               // intent = new Intent(getApplicationContext(), MapaActivity.class);
-               // startActivity(intent);
-
-                break;
-            case R.id.itmQRCam:
-                IntentIntegrator integrator = new IntentIntegrator(this);
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
-                integrator.setCameraId(0);
-                integrator.initiateScan();
-                break;
-
-            case R.id.itmPerfil:
-              Intent i = new Intent(this,PerfilActivity.class);
-              startActivity(i);
-
-
-        }
-        //drawer.closeDrawer(GravityCompat.START); linha com erro
-        return true;
-
-
-    }
 
     public void PerfilActivity(View v){
-        Intent intent = new Intent(this, PerfilActivity.class);
+        Intent intent = new Intent(getApplicationContext(), PerfilActivity.class);
         startActivity(intent);
     }
     public void MapaCLick(View v){
@@ -227,8 +184,13 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
     private void setLoggedUser(){
         SharedPreferences sp = getSharedPreferences(PREF_NAME, 0);
         SharedPreferences.Editor editor = sp.edit();
-        editor.putString("EmailLoggedUser",loggedUser.getEmailUser());
-        editor.commit();
+        try {
+            editor.putInt("IdLoggedUser", loggedUser.get_IdUser());
+            editor.commit();
+
+        }catch (Exception e){
+
+        }
     }
 
     @Override
@@ -240,14 +202,12 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
 
             if (result.getContents() != null) {
                 Intent intent = new Intent(getApplicationContext(), ProdutoInfoActivity.class);
+                intent.putExtra("NomeProd", result.getContents());
                 startActivity(intent);
             } else
                 super.onActivityResult(requestCode, resultCode, data);
         }
 
     }
- public void Editar (){
-     Intent i = new Intent (this, EditarPerfil.class);
-     startActivity(i);
- }
+
 }

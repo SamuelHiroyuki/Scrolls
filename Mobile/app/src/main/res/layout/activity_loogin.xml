@@ -18,25 +18,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_google_shape"
-            android:drawableLeft="@drawable/googleicon"
-            android:text="ACESSE SUA CONTA PELO GOOGLE"
-            android:textSize="18dp"
-            android:textColor="@color/PretoPrincipal"
-            android:layout_marginTop="60dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="ou"
-            android:textColor="#000000"
-            android:textSize="23dp"
-            android:textAlignment="center"
-             />
+
+
 
         <EditText
             android:layout_width="match_parent"
@@ -44,7 +27,7 @@
             android:hint="E-mail"
             android:inputType="textEmailAddress"
             android:textSize="18dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="110dp"
             android:textColorHint="@color/PretoPrincipal"
             android:id="@+id/Email"
             />
@@ -52,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Senha"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:inputType="textPassword"
             android:textSize="18dp"
             android:textColorHint="@color/PretoPrincipal"
@@ -67,7 +50,6 @@
             android:textColor="#ffffff"
             android:textSize="20dp"
             android:id="@+id/sign_in"
-
             />
         <TextView
             android:layout_width="wrap_content"

@@ -14,7 +14,7 @@
         android:layout_height="match_parent">
         <include
             android:id="@+id/IncludeToolbarCarrinho"
-            layout="@layout/toolbar_secundario"
+            layout="@layout/toolbar_produto"
             android:visibility="visible"/>
 
         <ScrollView

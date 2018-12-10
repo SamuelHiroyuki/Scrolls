@@ -8,9 +8,9 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -21,7 +21,8 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/GoogleApiMaps" />
+            android:value="@string/GoogleApiMaps"/>
+
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="barcode" />
@@ -35,7 +36,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -64,24 +65,23 @@
             android:parentActivityName=".PerfilActivity" />
         <activity
             android:name=".MeusPedidosActivity"
-            android:label="Meus Pedidos" />
-        <activity android:name=".PesquisaActivity" />
-        <activity android:name=".CarrinhoActivity" />
-        <activity android:name=".FinalizarCompraActivity" />
-        <activity android:name=".CameraActivity" />
-        <activity android:name=".MapaActivity" />
-        <activity
-            android:name=".splashh"
-            android:label="@string/title_activity_splashh">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:label="Meus Pedidos"
+            android:parentActivityName=".PerfilActivity"
+            />
+        <activity android:name=".PesquisaActivity"
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".EditarPerfil"
-            android:label="@string/title_activity_editar_perfil"></activity>
+            />
+        <activity android:name=".CarrinhoActivity"
+            android:parentActivityName=".PrincipalActivity"
+            android:theme="@style/Teste"
+            />
+        <activity android:name=".FinalizarCompraActivity"
+            android:theme="@style/Teste"
+            />
+        <activity android:name=".CameraActivity" />
+        <activity android:name=".MapaActivity"
+            android:parentActivityName=".PrincipalActivity"
+            ></activity>
     </application>
 
 </manifest>
